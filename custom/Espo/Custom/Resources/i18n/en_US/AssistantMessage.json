@@ -1,0 +1,41 @@
+{
+    "fields": {
+        "name": "Question",
+        "question": "Question",
+        "answer": "Answer",
+        "status": "Status",
+        "stopped": "Stop reason",
+        "errorCode": "Error code",
+        "toolNames": "Tools",
+        "toolsJson": "Tool calls",
+        "draftsJson": "Drafts",
+        "pseudonyms": "Pseudonyms",
+        "unsourced": "Figures without a source",
+        "steps": "Steps",
+        "tokensIn": "Input tokens",
+        "tokensOut": "Output tokens",
+        "cacheReadTokens": "Cache read",
+        "cacheWriteTokens": "Cache write",
+        "costUsd": "Cost, USD",
+        "model": "Model",
+        "ms": "Time, ms",
+        "fromPage": "From page",
+        "assignedUser": "User",
+        "createdAt": "Time",
+        "modifiedAt": "Modified"
+    },
+    "links": {
+        "assignedUser": "User"
+    },
+    "options": {
+        "status": {
+            "Pending": "Pending",
+            "Answered": "Answered",
+            "Stopped": "Stopped",
+            "Failed": "Failed"
+        }
+    },
+    "labels": {
+        "Create AssistantMessage": "Create entry"
+    }
+}

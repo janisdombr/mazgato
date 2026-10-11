@@ -1,0 +1,56 @@
+{
+    "fields": {
+        "name": {
+            "type": "varchar",
+            "pattern": "$noBadCharacters"
+        },
+        "employee": {
+            "type": "link",
+            "required": true
+        },
+        "startedAt": {
+            "type": "datetime",
+            "required": true,
+            "tooltip": true
+        },
+        "finishedAt": {
+            "type": "datetime",
+            "tooltip": true
+        },
+        "hours": {
+            "type": "float",
+            "readOnly": true,
+            "tooltip": true
+        },
+        "description": {
+            "type": "text"
+        },
+        "createdAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "modifiedAt": {
+            "type": "datetime",
+            "readOnly": true
+        }
+    },
+    "links": {
+        "employee": {
+            "type": "belongsTo",
+            "entity": "Employee",
+            "foreign": "shifts"
+        }
+    },
+    "collection": {
+        "orderBy": "startedAt",
+        "order": "desc"
+    },
+    "indexes": {
+        "employee": {
+            "columns": ["employeeId", "deleted"]
+        },
+        "open": {
+            "columns": ["employeeId", "finishedAt", "deleted"]
+        }
+    }
+}

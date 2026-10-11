@@ -1,0 +1,70 @@
+{
+    "fields": {
+        "name": {
+            "type": "varchar"
+        },
+        "contact": {
+            "type": "varchar",
+            "tooltip": true
+        },
+        "status": {
+            "type": "enum",
+            "options": [
+                "Pending",
+                "Sent",
+                "Failed",
+                "Skipped"
+            ],
+            "default": "Pending",
+            "displayAsLabel": true,
+            "style": {
+                "Pending": "default",
+                "Sent": "success",
+                "Failed": "danger",
+                "Skipped": "warning"
+            }
+        },
+        "error": {
+            "type": "varchar",
+            "readOnly": true
+        },
+        "deliveredAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "mailing": {
+            "type": "link"
+        },
+        "customer": {
+            "type": "link"
+        },
+        "createdAt": {
+            "type": "datetime",
+            "readOnly": true
+        }
+    },
+    "links": {
+        "mailing": {
+            "type": "belongsTo",
+            "entity": "Mailing",
+            "foreign": "recipients"
+        },
+        "customer": {
+            "type": "belongsTo",
+            "entity": "Customer"
+        }
+    },
+    "collection": {
+        "orderBy": "name",
+        "order": "asc",
+        "textFilterFields": ["name", "contact"]
+    },
+    "indexes": {
+        "mailing": {
+            "columns": ["mailingId", "deleted"]
+        },
+        "status": {
+            "columns": ["status", "deleted"]
+        }
+    }
+}

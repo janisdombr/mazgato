@@ -1,0 +1,5 @@
+{
+    "controller": "controllers/record",
+    "iconClass": "fas fa-id-card",
+    "color": "#64748b"
+}

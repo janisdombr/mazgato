@@ -1,0 +1,131 @@
+{
+    "fields": {
+        "name": {
+            "type": "varchar",
+            "required": true,
+            "maxLength": 80,
+            "pattern": "$noBadCharacters"
+        },
+        "code": {
+            "type": "varchar",
+            "required": true,
+            "maxLength": 40,
+            "tooltip": true
+        },
+        "role": {
+            "type": "enum",
+            "options": [
+                "Entry",
+                "Exit",
+                "Bay",
+                "Overview"
+            ],
+            "default": "Entry",
+            "required": true,
+            "displayAsLabel": true,
+            "style": {
+                "Entry": "info",
+                "Exit": "info",
+                "Bay": "success",
+                "Overview": "default"
+            }
+        },
+        "post": {
+            "type": "int",
+            "min": 1,
+            "max": 20,
+            "tooltip": true
+        },
+        "edgeNode": {
+            "type": "link",
+            "tooltip": true
+        },
+        "streamName": {
+            "type": "varchar",
+            "maxLength": 60,
+            "tooltip": true
+        },
+        "isActive": {
+            "type": "bool",
+            "default": true
+        },
+        "online": {
+            "type": "bool",
+            "default": false,
+            "readOnly": true
+        },
+        "lastFrameAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "lastError": {
+            "type": "varchar",
+            "maxLength": 200,
+            "readOnly": true
+        },
+        "secretInput": {
+            "type": "varchar",
+            "maxLength": 200,
+            "notStorable": true,
+            "layoutAvailabilityList": [
+                "detail"
+            ],
+            "tooltip": true
+        },
+        "secretClear": {
+            "type": "bool",
+            "notStorable": true,
+            "layoutAvailabilityList": [
+                "detail"
+            ]
+        },
+        "secretSet": {
+            "type": "bool",
+            "default": false,
+            "readOnly": true
+        },
+        "secretCipher": {
+            "type": "text",
+            "readOnly": true,
+            "layoutAvailabilityList": [],
+            "customizationDisabled": true
+        },
+        "note": {
+            "type": "text",
+            "rows": 2
+        },
+        "createdAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "modifiedAt": {
+            "type": "datetime",
+            "readOnly": true
+        }
+    },
+    "links": {
+        "edgeNode": {
+            "type": "belongsTo",
+            "entity": "EdgeNode",
+            "foreign": "cameras"
+        },
+        "plateEvents": {
+            "type": "hasMany",
+            "entity": "PlateEvent",
+            "foreign": "camera"
+        }
+    },
+    "collection": {
+        "orderBy": "name",
+        "order": "asc"
+    },
+    "indexes": {
+        "code": {
+            "type": "unique",
+            "columns": [
+                "code",
+                "deleted"
+            ]
+        }
+    }
+}

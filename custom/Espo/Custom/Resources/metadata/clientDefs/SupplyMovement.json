@@ -1,0 +1,5 @@
+{
+    "controller": "controllers/record",
+    "iconClass": "fas fa-exchange-alt",
+    "color": "#0d9488"
+}

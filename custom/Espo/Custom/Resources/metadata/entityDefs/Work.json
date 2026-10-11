@@ -1,0 +1,82 @@
+{
+    "fields": {
+        "name": {
+            "type": "varchar",
+            "required": true,
+            "pattern": "$noBadCharacters",
+            "view": "custom:views/fields/translated-name"
+        },
+        "defaultRole": {
+            "type": "link",
+            "tooltip": true
+        },
+        "sortOrder": {
+            "type": "int",
+            "default": 0
+        },
+        "isActive": {
+            "type": "bool",
+            "default": true
+        },
+        "baseRate": {
+            "type": "currency",
+            "tooltip": true
+        },
+        "serviceLinks": {
+            "type": "linkMultiple",
+            "noLoad": true
+        },
+        "rates": {
+            "type": "linkMultiple",
+            "noLoad": true
+        },
+        "description": {
+            "type": "text"
+        },
+        "createdAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "modifiedAt": {
+            "type": "datetime",
+            "readOnly": true
+        }
+    },
+    "links": {
+        "defaultRole": {
+            "type": "belongsTo",
+            "entity": "WorkRole",
+            "foreign": "works"
+        },
+        "serviceLinks": {
+            "type": "hasMany",
+            "entity": "ServiceWork",
+            "foreign": "work"
+        },
+        "rates": {
+            "type": "hasMany",
+            "entity": "WorkRate",
+            "foreign": "work"
+        },
+        "orderWorks": {
+            "type": "hasMany",
+            "entity": "OrderWork",
+            "foreign": "work"
+        }
+    },
+    "collection": {
+        "orderBy": "sortOrder",
+        "order": "asc",
+        "textFilterFields": [
+            "name"
+        ]
+    },
+    "indexes": {
+        "name": {
+            "columns": [
+                "name",
+                "deleted"
+            ]
+        }
+    }
+}

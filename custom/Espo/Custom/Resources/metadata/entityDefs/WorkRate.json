@@ -1,0 +1,58 @@
+{
+    "fields": {
+        "name": {
+            "type": "varchar",
+            "pattern": "$noBadCharacters"
+        },
+        "work": {
+            "type": "link",
+            "required": true
+        },
+        "service": {
+            "type": "link",
+            "tooltip": true
+        },
+        "employee": {
+            "type": "link",
+            "tooltip": true
+        },
+        "rate": {
+            "type": "currency",
+            "required": true,
+            "tooltip": true
+        },
+        "createdAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "modifiedAt": {
+            "type": "datetime",
+            "readOnly": true
+        }
+    },
+    "links": {
+        "work": {
+            "type": "belongsTo",
+            "entity": "Work",
+            "foreign": "rates"
+        },
+        "service": {
+            "type": "belongsTo",
+            "entity": "WashService"
+        },
+        "employee": {
+            "type": "belongsTo",
+            "entity": "Employee",
+            "foreign": "rates"
+        }
+    },
+    "collection": {
+        "orderBy": "createdAt",
+        "order": "desc"
+    },
+    "indexes": {
+        "lookup": {
+            "columns": ["workId", "serviceId", "employeeId", "deleted"]
+        }
+    }
+}

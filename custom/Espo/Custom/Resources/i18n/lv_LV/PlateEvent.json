@@ -1,0 +1,82 @@
+{
+    "fields": {
+        "name": "Numurs",
+        "plateRaw": "Nolasīts (neapstrādāts)",
+        "plate": "Numurs",
+        "plateSuggested": "Iespējamais numurs",
+        "matchKind": "Sakritība",
+        "confidence": "Pārliecība",
+        "direction": "Virziens",
+        "source": "Avots",
+        "status": "Statuss",
+        "takenAt": "Uzņemts",
+        "receivedAt": "Saņemts",
+        "lastSeenAt": "Pēdējoreiz redzēts",
+        "seenCount": "Redzēts reizes",
+        "externalId": "Notikuma ID",
+        "hasSnapshot": "Kadrs",
+        "snapshotKey": "Kadra atslēga",
+        "snapshotRetainUntil": "Kadru glabāt līdz",
+        "retainUntil": "Notikumu glabāt līdz",
+        "camera": "Kamera",
+        "edgeNode": "Mezgls",
+        "vehicle": "Auto",
+        "customer": "Klients",
+        "washOrder": "Pasūtījums",
+        "decidedBy": "Lēmumu pieņēma",
+        "decidedAt": "Lēmuma laiks",
+        "autoCreated": "Izveidots automātiski",
+        "corrected": "Numurs labots",
+        "dupIds": "Atkārtotie ID",
+        "note": "Piezīme",
+        "createdAt": "Izveidots",
+        "modifiedAt": "Mainīts"
+    },
+    "links": {
+        "camera": "Kamera",
+        "edgeNode": "Mezgls",
+        "vehicle": "Auto",
+        "customer": "Klients",
+        "washOrder": "Pasūtījums",
+        "decidedBy": "Lēmumu pieņēma"
+    },
+    "options": {
+        "status": {
+            "Pending": "Gaida",
+            "Confirmed": "Apstiprināts",
+            "Dismissed": "Noraidīts",
+            "Matched": "Piesaistīts pasūtījumam"
+        },
+        "matchKind": {
+            "None": "Nav",
+            "Exact": "Precīza",
+            "Fuzzy": "Līdzīga"
+        },
+        "direction": {
+            "Unknown": "Nezināms",
+            "In": "Iebraukšana",
+            "Out": "Izbraukšana"
+        },
+        "source": {
+            "Hikvision": "Hikvision",
+            "Dahua": "Dahua",
+            "Frigate": "Frigate",
+            "CodeProject": "CodeProject.AI",
+            "Simulator": "Simulators",
+            "Manual": "Manuāli",
+            "Other": "Cits"
+        }
+    },
+    "tooltips": {
+        "plateRaw": "Ko atpazīšanas dzinējs nolasīja, pirms normalizācijas.",
+        "plateSuggested": "Līdzīgs numurs no automašīnu saraksta (viens simbols atšķiras). Tikai ieteikums — apstiprina operators.",
+        "seenCount": "Cik reizes tas pats numurs tajā pašā kamerā parādījās dublēšanas logā.",
+        "externalId": "Mezgla ģenerēts ID; atkārtota nosūtīšana to nedublē.",
+        "snapshotRetainUntil": "Pēc šī datuma kadru dzēš (iestatījums). Pārbaudīt ar juristu.",
+        "retainUntil": "Pēc šī datuma notikuma ierakstu dzēš. Pārbaudīt ar juristu.",
+        "autoCreated": "Pasūtījumu izveidoja sistēma, nevis operators (iestatījums „Automātiski izveidot“)."
+    },
+    "labels": {
+        "Overview": "Pārskats"
+    }
+}

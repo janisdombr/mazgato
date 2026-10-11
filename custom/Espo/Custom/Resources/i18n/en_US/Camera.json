@@ -1,0 +1,57 @@
+{
+    "fields": {
+        "name": "Name",
+        "code": "Code",
+        "role": "Role",
+        "post": "Bay no.",
+        "edgeNode": "Edge node",
+        "streamName": "Stream name",
+        "isActive": "Active",
+        "online": "Online",
+        "lastFrameAt": "Last frame",
+        "lastError": "Last error",
+        "secretInput": "Access secret (write-only)",
+        "secretClear": "Remove the secret",
+        "secretSet": "Secret set",
+        "secretCipher": "Encrypted secret",
+        "note": "Note",
+        "plateEvents": "Plate events",
+        "createdAt": "Created",
+        "modifiedAt": "Modified"
+    },
+    "links": {
+        "edgeNode": "Edge node",
+        "plateEvents": "Plate events"
+    },
+    "options": {
+        "role": {
+            "Entry": "Entry",
+            "Exit": "Exit",
+            "Bay": "Bay",
+            "Overview": "Overview"
+        }
+    },
+    "tooltips": {
+        "code": "Short name the edge node knows the camera by (a-z, 0-9, _ -). For example entry1.",
+        "post": "Which bay the camera belongs to (optional).",
+        "edgeNode": "The edge node that collects this camera's events and frames.",
+        "streamName": "Only the name of the go2rtc/Frigate stream — no address, no login.",
+        "secretInput": "Camera password for the node. Write-only: after saving it is shown nowhere and never returned by the API."
+    },
+    "labels": {
+        "Overview": "Overview",
+        "cameraLive": "Live view and frame",
+        "snapshot": "Snapshot",
+        "snapshotWaiting": "Waiting for a frame from the node…",
+        "snapshotFailed": "Could not get a frame",
+        "liveStart": "Live view",
+        "liveStop": "Stop",
+        "liveHint": "Access lasts 5 minutes and is written to the access journal.",
+        "liveNoStream": "No stream name is set for this camera.",
+        "clips": "Recordings",
+        "clipsNone": "No recordings",
+        "nodeOffline": "The edge node is offline",
+        "viewAccessNote": "Every look is recorded.",
+        "Create Camera": "Add camera"
+    }
+}

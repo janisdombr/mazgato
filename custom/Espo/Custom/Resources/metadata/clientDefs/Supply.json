@@ -1,0 +1,69 @@
+{
+    "controller": "controllers/record",
+    "iconClass": "fas fa-flask",
+    "color": "#0d9488",
+    "menu": {
+        "list": {
+            "buttons": [
+                {
+                    "name": "receipt",
+                    "label": "receipt",
+                    "style": "primary",
+                    "acl": "create",
+                    "aclScope": "SupplyReceipt",
+                    "handler": "custom:handlers/supply/receipt",
+                    "actionFunction": "run"
+                },
+                {
+                    "name": "stocktake",
+                    "label": "stocktake",
+                    "style": "default",
+                    "acl": "create",
+                    "aclScope": "Stocktake",
+                    "handler": "custom:handlers/supply/stocktake",
+                    "actionFunction": "run"
+                },
+                {
+                    "name": "usageReport",
+                    "label": "usageReport",
+                    "style": "default",
+                    "acl": "read",
+                    "aclScope": "Supply",
+                    "handler": "custom:handlers/supply/usage-report",
+                    "actionFunction": "run"
+                },
+                {
+                    "name": "listTotals",
+                    "label": "listTotals",
+                    "style": "default",
+                    "acl": "read",
+                    "aclScope": "Supply",
+                    "handler": "custom:handlers/list/totals",
+                    "actionFunction": "run"
+                },
+                {
+                    "name": "movements",
+                    "label": "movementsLog",
+                    "style": "default",
+                    "acl": "read",
+                    "aclScope": "SupplyMovement",
+                    "link": "#SupplyMovement"
+                },
+                {
+                    "name": "receipts",
+                    "label": "receiptsList",
+                    "style": "default",
+                    "acl": "read",
+                    "aclScope": "SupplyReceipt",
+                    "link": "#SupplyReceipt"
+                }
+            ]
+        }
+    },
+    "massActionList": [
+        "export"
+    ],
+    "checkAllResultMassActionList": [
+        "export"
+    ]
+}

@@ -1,0 +1,41 @@
+[
+    {
+        "label": "Overview",
+        "rows": [
+            [
+                {
+                    "name": "name"
+                },
+                {
+                    "name": "customer"
+                }
+            ],
+            [
+                {
+                    "name": "plateTemporary"
+                },
+                false
+            ],
+            [
+                {
+                    "name": "brand"
+                },
+                {
+                    "name": "model"
+                }
+            ],
+            [
+                {
+                    "name": "bodyType"
+                },
+                false
+            ],
+            [
+                {
+                    "name": "description"
+                },
+                false
+            ]
+        ]
+    }
+]

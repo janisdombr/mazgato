@@ -1,0 +1,23 @@
+[
+    {
+        "name": "name",
+        "width": 32,
+        "link": true
+    },
+    {
+        "name": "channel",
+        "width": 14
+    },
+    {
+        "name": "status",
+        "width": 14
+    },
+    {
+        "name": "recipientCount",
+        "width": 14
+    },
+    {
+        "name": "sentAt",
+        "width": 22
+    }
+]

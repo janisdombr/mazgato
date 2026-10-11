@@ -1,0 +1,21 @@
+{
+    "fields": {
+        "name": "Название",
+        "employee": "Сотрудник",
+        "startedAt": "Пришёл",
+        "finishedAt": "Ушёл",
+        "hours": "Часов",
+        "description": "Заметки"
+    },
+    "links": {
+        "employee": "Сотрудник"
+    },
+    "tooltips": {
+        "startedAt": "Когда сотрудник пришёл.",
+        "finishedAt": "Когда ушёл. Пусто = смена ещё открыта.",
+        "hours": "Считается от прихода до ухода."
+    },
+    "labels": {
+        "Create Shift": "Создать смену"
+    }
+}

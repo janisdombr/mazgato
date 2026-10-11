@@ -1,0 +1,41 @@
+{
+    "fields": {
+        "name": "Nosaukums",
+        "washOrder": "Pasūtījums",
+        "kind": "Veids",
+        "source": "Avots",
+        "file": "Foto",
+        "employee": "Darbinieks",
+        "takenAt": "Uzņemts",
+        "retainUntil": "Glabāt līdz",
+        "note": "Piezīme",
+        "createdAt": "Izveidots",
+        "modifiedAt": "Mainīts"
+    },
+    "links": {
+        "washOrder": "Pasūtījums",
+        "employee": "Darbinieks"
+    },
+    "options": {
+        "kind": {
+            "Before": "Pirms",
+            "After": "Pēc",
+            "Entry": "Iebraukšana",
+            "Exit": "Izbraukšana",
+            "Other": "Cits"
+        },
+        "source": {
+            "Kiosk": "Planšete",
+            "Camera": "Kamera",
+            "Manual": "Manuāli"
+        }
+    },
+    "tooltips": {
+        "retainUntil": "Pēc šī datuma fotoattēlu automātiski dzēš (glabāšanas termiņš — Iestatījumos).",
+        "source": "No kurienes fotoattēls: darbinieka planšete, novērošanas kamera vai augšupielādēts manuāli."
+    },
+    "labels": {
+        "Create OrderPhoto": "Pievienot foto",
+        "Photos": "Foto"
+    }
+}

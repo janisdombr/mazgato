@@ -1,0 +1,20 @@
+{
+    "controller": "controllers/record",
+    "iconClass": "fas fa-list-check",
+    "color": "#0ea5e9",
+    "menu": {
+        "list": {
+            "buttons": [
+                {
+                    "name": "listTotals",
+                    "label": "listTotals",
+                    "style": "default",
+                    "acl": "read",
+                    "aclScope": "OrderWork",
+                    "handler": "custom:handlers/list/totals",
+                    "actionFunction": "run"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,51 @@
+[
+    {
+        "label": "Overview",
+        "rows": [
+            [
+                {
+                    "name": "type"
+                },
+                {
+                    "name": "status"
+                }
+            ],
+            [
+                {
+                    "name": "camera"
+                },
+                {
+                    "name": "edgeNode"
+                }
+            ],
+            [
+                {
+                    "name": "requestedBy"
+                },
+                {
+                    "name": "requestedAt"
+                }
+            ],
+            [
+                {
+                    "name": "leasedAt"
+                },
+                {
+                    "name": "doneAt"
+                }
+            ],
+            [
+                {
+                    "name": "error"
+                },
+                false
+            ],
+            [
+                {
+                    "name": "hasFile"
+                },
+                false
+            ]
+        ]
+    }
+]

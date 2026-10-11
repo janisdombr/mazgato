@@ -1,0 +1,11 @@
+{
+    "controller": "controllers/record",
+    "iconClass": "fas fa-hammer",
+    "color": "#d97706",
+    "massActionList": [
+        "export"
+    ],
+    "checkAllResultMassActionList": [
+        "export"
+    ]
+}

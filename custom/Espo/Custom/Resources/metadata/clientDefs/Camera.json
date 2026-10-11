@@ -1,0 +1,16 @@
+{
+    "controller": "controllers/record",
+    "iconClass": "fas fa-video",
+    "color": "#0b6e8e",
+    "bottomPanels": {
+        "detail": [
+            {
+                "name": "cameraLive",
+                "label": "cameraLive",
+                "view": "custom:views/camera/record/panels/live",
+                "sticked": true,
+                "order": 1
+            }
+        ]
+    }
+}

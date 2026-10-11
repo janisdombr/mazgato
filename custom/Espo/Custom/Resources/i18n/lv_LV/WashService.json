@@ -1,0 +1,35 @@
+{
+    "fields": {
+        "name": "Nosaukums",
+        "category": "Kategorija",
+        "priceRetail": "Mazumtirdzniecības cena",
+        "priceCorporate": "Korporatīvā cena",
+        "durationMinutes": "Ilgums (min)",
+        "isActive": "Aktīvs",
+        "description": "Apraksts",
+        "createdAt": "Izveidots",
+        "modifiedAt": "Mainīts",
+        "workLines": "Darbi",
+        "sortOrder": "Kārtība",
+        "supplyLines": "Materiālu normas"
+    },
+    "links": {
+        "orders": "Pasūtījumi",
+        "supplyLines": "Izejmateriāli (patēriņš)",
+        "addonOrders": "Pasūtījumi (kā papildpakalpojums)",
+        "workLines": "Darbi (sagatave)"
+    },
+    "options": {
+        "category": {
+            "Base": "Pamata mazgāšana",
+            "Add-on": "Papildpakalpojums"
+        }
+    },
+    "tooltips": {
+        "sortOrder": "Secība sarakstos un ātrās pieņemšanas formā — mazāks skaitlis ir augstāk."
+    },
+    "labels": {
+        "sortServices": "Kārtība",
+        "Create WashService": "Izveidot pakalpojumu"
+    }
+}

@@ -1,0 +1,50 @@
+/* CarWash design tokens, light (day shift). Single source of colour — see cw-components.css. */
+:root {                                   /* светлая — дневная смена */
+  color-scheme: light;
+  /* поверхности */
+  --cw-bg: #f4f6f8;        --cw-panel: #ffffff;     --cw-panel-2: #eef2f5;   /* полоса/шапка таблицы */
+  --cw-line: #e3e8ee;      --cw-line-strong: #8794a1;                        /* рамка поля: 2.9:1 на белом — ровно на пороге 1.4.11, не светлее */
+  --cw-hover: #e9eef3;
+  /* текст */
+  --cw-ink: #15202b;       /* 16.5:1 */   --cw-ink-2: #3d4a57;  /* 9.1:1 */   --cw-muted: #5f6b78;  /* 5.4:1 на панели, 5.0:1 на фоне */
+  /* продуктовый акцент — «глубокая вода», НЕ голубой cyan: одна главная кнопка, фокус, ссылки */
+  --cw-primary: #0b6e8e;   /* белый на нём 5.8:1 */  --cw-primary-strong: #0a5f7a; /* 7.2:1 — hover/active */
+  --cw-primary-ink: #ffffff;  --cw-focus: #0b6e8e;
+  /* бренд клиента — заполняется из настроек (§7); по умолчанию = продуктовый акцент */
+  --cw-brand: var(--cw-primary);  --cw-brand-ink: var(--cw-primary-ink);
+  /* статусы работы (ось «работа») — фон ~12 %, текст в тёмной ступени */
+  --cw-st-reserved-bg: #e9e8fb; --cw-st-reserved: #4338ca;   /* 6.6:1 */
+  --cw-st-wait-bg:     #fff1dc; --cw-st-wait:     #8a4b00;   /* 6.1:1  — New: машина ждёт поста */
+  --cw-st-progress-bg: #e0f1f8; --cw-st-progress: #0b5a78;   /* 6.6:1  — In Progress: вода */
+  --cw-st-done-bg:     #e3f5ea; --cw-st-done:     #0f6e3a;   /* 5.6:1 */
+  --cw-st-cancel-bg:   #eef2f5; --cw-st-cancel:   #5f6b78;
+  --cw-st-overrun:     #c42b3a;                              /* ТОЛЬКО перерасход времени; белый на нём 5.6:1 */
+  /* ось «деньги» — бейдж, никогда фон строки */
+  --cw-pay-unpaid-bg: #fde8ea; --cw-pay-unpaid: #a51f2a;     /* 6.3:1 */
+  --cw-pay-invoiced-bg: #fff1dc; --cw-pay-invoiced: #8a4b00;
+  --cw-pay-paid-bg: #e3f5ea;   --cw-pay-paid: #0f6e3a;
+  /* сплошные заливки для полосы статуса карточки и канбан-колонок (белый текст ≥ 5:1) */
+  --cw-solid-progress: #1f6f9f; --cw-solid-done: #1b7f4a; --cw-solid-wait: #f0b45a /* с тёмным текстом 8.9:1 */;
+  /* графики — категориальные, фиксированный порядок, никогда по кругу */
+  --cw-chart-1: #1f6f9f; --cw-chart-2: #1a9e8c; --cw-chart-3: #c47a10; --cw-chart-4: #7a5fd6; --cw-chart-5: #c9497a;
+  --cw-chart-other: #8b98a5; --cw-chart-track: #eef2f5; --cw-chart-grid: #e3e8ee;
+  /* последовательная шкала (загрузка по часам): один тон --cw-primary, 5 ступеней от 12 % до 100 % */
+  /* типографика: Inter ядра (уже preload) + tabular-nums для чисел */
+  --cw-font: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --cw-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;   /* номерной знак, суммы в чеке */
+  --cw-t-hero: 2rem;     /* 32/600 — сумма в шапке заказа, таймер */
+  --cw-t-plate: 1.75rem; /* 28/700 — номер машины на карточке */
+  --cw-t-figure: 1.5rem; /* 24/600 — KPI */
+  --cw-t-h1: 1.25rem;    --cw-t-h2: 1rem;  --cw-t-body: 0.9375rem; /* 15 — на планшете 14 мелко */
+  --cw-t-meta: 0.8125rem;/* 13 — подписи, единицы, время */
+  /* отступы, 4-px сетка; внутри блока всегда теснее, чем между блоками */
+  --cw-s1: 4px; --cw-s2: 8px; --cw-s3: 12px; --cw-s4: 16px; --cw-s5: 24px; --cw-s6: 32px;
+  /* цели касания */
+  --cw-tap: 48px;  --cw-tap-gap: 8px;  --cw-tap-lg: 64px; /* киоск */
+  /* радиусы и тени — по одному смыслу на каждый */
+  --cw-r-field: 8px; --cw-r-card: 12px; --cw-r-chip: 999px;
+  --cw-shadow-card: 0 1px 2px rgb(21 32 43 / 6%), 0 4px 12px rgb(21 32 43 / 6%);
+  --cw-shadow-pop: 0 8px 24px rgb(21 32 43 / 16%);        /* только всплывающие (suggest, модалки) */
+}
+
+/* тёмная — выбирается темой CarWashDark (Preferences) И системной настройкой, если тема = CarWash Auto */

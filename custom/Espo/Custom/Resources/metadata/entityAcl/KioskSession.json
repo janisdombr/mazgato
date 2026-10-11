@@ -1,0 +1,7 @@
+{
+    "fields": {
+        "tokenHash": {
+            "forbidden": true
+        }
+    }
+}

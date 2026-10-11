@@ -1,0 +1,43 @@
+{
+    "fields": {
+        "name": "Название",
+        "action": "Действие",
+        "outcome": "Результат",
+        "errorCode": "Код ошибки",
+        "httpStatus": "HTTP-статус",
+        "employee": "Работник",
+        "device": "Планшет",
+        "washOrder": "Заказ",
+        "orderWork": "Работа в заказе",
+        "clientActionId": "ID действия (клиент)",
+        "clientAt": "Время на клиенте",
+        "replayCount": "Повторы",
+        "meta": "Детали",
+        "resultJson": "Ответ",
+        "ip": "IP",
+        "createdAt": "Время",
+        "modifiedAt": "Изменено"
+    },
+    "links": {
+        "employee": "Работник",
+        "device": "Планшет",
+        "washOrder": "Заказ",
+        "orderWork": "Работа в заказе"
+    },
+    "options": {
+        "outcome": {
+            "Ok": "Выполнено",
+            "Denied": "Отказано",
+            "Conflict": "Конфликт",
+            "Failed": "Ошибка",
+            "RateLimited": "Слишком часто"
+        }
+    },
+    "tooltips": {
+        "clientActionId": "Уникальный ID, созданный планшетом. Повторная отправка (например, после обрыва сети) не дублирует действие.",
+        "clientAt": "Когда работник нажал кнопку на планшете (может отличаться от получения, если не было сети)."
+    },
+    "labels": {
+        "Create KioskEvent": "Создать запись"
+    }
+}

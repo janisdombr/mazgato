@@ -1,0 +1,18 @@
+{
+    "fields": {
+        "name": "Nosaukums",
+        "service": "Pakalpojums",
+        "supply": "Materiāls",
+        "quantity": "Daudzums uz reizi"
+    },
+    "links": {
+        "service": "Pakalpojums",
+        "supply": "Materiāls"
+    },
+    "tooltips": {
+        "quantity": "Cik daudz materiāla (tā mērvienībā) patērē viena šī pakalpojuma reize."
+    },
+    "labels": {
+        "Create ServiceSupply": "Izveidot pakalpojuma materiālu"
+    }
+}

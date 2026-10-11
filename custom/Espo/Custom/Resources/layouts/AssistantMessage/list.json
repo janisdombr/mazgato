@@ -1,0 +1,34 @@
+[
+    {
+        "name": "createdAt",
+        "width": 16
+    },
+    {
+        "name": "name",
+        "link": true
+    },
+    {
+        "name": "assignedUser",
+        "width": 13
+    },
+    {
+        "name": "status",
+        "width": 9
+    },
+    {
+        "name": "toolNames",
+        "width": 16
+    },
+    {
+        "name": "tokensOut",
+        "width": 8
+    },
+    {
+        "name": "costUsd",
+        "width": 9
+    },
+    {
+        "name": "ms",
+        "width": 7
+    }
+]

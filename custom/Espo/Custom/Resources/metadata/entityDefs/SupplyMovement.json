@@ -1,0 +1,121 @@
+{
+    "fields": {
+        "name": {
+            "type": "varchar",
+            "maxLength": 100
+        },
+        "kind": {
+            "type": "enum",
+            "options": [
+                "Receipt",
+                "Consumption",
+                "Stocktake",
+                "Manual"
+            ],
+            "default": "Manual",
+            "style": {
+                "Receipt": "success",
+                "Consumption": "info",
+                "Stocktake": "warning",
+                "Manual": "default"
+            },
+            "readOnly": true
+        },
+        "supply": {
+            "type": "link",
+            "required": true
+        },
+        "delta": {
+            "type": "float",
+            "readOnly": true
+        },
+        "quantityBefore": {
+            "type": "float",
+            "readOnly": true
+        },
+        "quantityAfter": {
+            "type": "float",
+            "readOnly": true
+        },
+        "unitCost": {
+            "type": "currency",
+            "readOnly": true,
+            "tooltip": true
+        },
+        "reason": {
+            "type": "varchar",
+            "maxLength": 255
+        },
+        "occurredAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "washOrder": {
+            "type": "link"
+        },
+        "receipt": {
+            "type": "link"
+        },
+        "stocktake": {
+            "type": "link"
+        },
+        "createdAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "modifiedAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "createdBy": {
+            "type": "link",
+            "readOnly": true,
+            "view": "views/fields/user"
+        }
+    },
+    "links": {
+        "supply": {
+            "type": "belongsTo",
+            "entity": "Supply",
+            "foreign": "movements"
+        },
+        "washOrder": {
+            "type": "belongsTo",
+            "entity": "WashOrder"
+        },
+        "receipt": {
+            "type": "belongsTo",
+            "entity": "SupplyReceipt"
+        },
+        "stocktake": {
+            "type": "belongsTo",
+            "entity": "Stocktake"
+        },
+        "createdBy": {
+            "type": "belongsTo",
+            "entity": "User"
+        }
+    },
+    "collection": {
+        "orderBy": "occurredAt",
+        "order": "desc",
+        "textFilterFields": [
+            "name",
+            "reason"
+        ]
+    },
+    "indexes": {
+        "supplyTime": {
+            "columns": [
+                "supplyId",
+                "occurredAt"
+            ]
+        },
+        "kind": {
+            "columns": [
+                "kind",
+                "occurredAt"
+            ]
+        }
+    }
+}

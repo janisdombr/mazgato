@@ -1,0 +1,82 @@
+{
+    "fields": {
+        "name": "Plate",
+        "plateRaw": "As read",
+        "plate": "Plate",
+        "plateSuggested": "Suggested plate",
+        "matchKind": "Match",
+        "confidence": "Confidence",
+        "direction": "Direction",
+        "source": "Source",
+        "status": "Status",
+        "takenAt": "Taken",
+        "receivedAt": "Received",
+        "lastSeenAt": "Last seen",
+        "seenCount": "Times seen",
+        "externalId": "Event id",
+        "hasSnapshot": "Snapshot",
+        "snapshotKey": "Snapshot key",
+        "snapshotRetainUntil": "Keep snapshot until",
+        "retainUntil": "Keep event until",
+        "camera": "Camera",
+        "edgeNode": "Edge node",
+        "vehicle": "Vehicle",
+        "customer": "Customer",
+        "washOrder": "Order",
+        "decidedBy": "Decided by",
+        "decidedAt": "Decided at",
+        "autoCreated": "Created automatically",
+        "corrected": "Plate corrected",
+        "dupIds": "Repeat ids",
+        "note": "Note",
+        "createdAt": "Created",
+        "modifiedAt": "Modified"
+    },
+    "links": {
+        "camera": "Camera",
+        "edgeNode": "Edge node",
+        "vehicle": "Vehicle",
+        "customer": "Customer",
+        "washOrder": "Order",
+        "decidedBy": "Decided by"
+    },
+    "options": {
+        "status": {
+            "Pending": "Pending",
+            "Confirmed": "Confirmed",
+            "Dismissed": "Dismissed",
+            "Matched": "Matched"
+        },
+        "matchKind": {
+            "None": "None",
+            "Exact": "Exact",
+            "Fuzzy": "Similar"
+        },
+        "direction": {
+            "Unknown": "Unknown",
+            "In": "In",
+            "Out": "Out"
+        },
+        "source": {
+            "Hikvision": "Hikvision",
+            "Dahua": "Dahua",
+            "Frigate": "Frigate",
+            "CodeProject": "CodeProject.AI",
+            "Simulator": "Simulator",
+            "Manual": "Manual",
+            "Other": "Other"
+        }
+    },
+    "tooltips": {
+        "plateRaw": "What the recognition engine read, before normalisation.",
+        "plateSuggested": "A similar plate from the vehicle list (one character off). A suggestion only — the operator decides.",
+        "seenCount": "How often the same plate on the same camera fell into the de-duplication window.",
+        "externalId": "Id made by the node; sending it again never makes a duplicate.",
+        "snapshotRetainUntil": "The picture is deleted after this date (a setting). Check with a lawyer.",
+        "retainUntil": "The event record is deleted after this date. Check with a lawyer.",
+        "autoCreated": "The order was made by the system, not an operator (the \"Create automatically\" setting)."
+    },
+    "labels": {
+        "Overview": "Overview"
+    }
+}

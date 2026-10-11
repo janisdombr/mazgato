@@ -1,0 +1,51 @@
+{
+    "labels": {
+        "title": "Import customers from a CSV",
+        "intro": "Load the customer list exported by your previous system. Nothing is written until you run the check and then confirm the import. People already in the CRM (same phone, e-mail or company number, or the same plate) are not created twice and are never changed. Marketing consent is NOT taken over: imported customers get no e-mail, WhatsApp or phone mailings until they agree.",
+        "template": "Download CSV template",
+        "file": "CSV file",
+        "encoding": "Encoding",
+        "mapping": "Which column is what",
+        "rows": "rows",
+        "check": "Check (nothing is written)",
+        "doImport": "Import now",
+        "confirmImport": "Import these customers and cars now?",
+        "loading": "Working…",
+        "readError": "The file could not be read or the mapping is wrong",
+        "reportDry": "Check result - nothing was written",
+        "reportDone": "Imported",
+        "customersNew": "new customers",
+        "customersExisting": "already in the CRM",
+        "carsNew": "new cars",
+        "carsExisting": "cars already there",
+        "skipped": "rows skipped",
+        "reason": "Problem"
+    },
+    "targets": {
+        "name": "Name (full)",
+        "firstName": "First name",
+        "lastName": "Last name",
+        "phone": "Phone",
+        "email": "E-mail",
+        "plate": "Plate(s)",
+        "brand": "Make",
+        "model": "Model",
+        "regNumber": "Company reg. no.",
+        "pvnNumber": "PVN no.",
+        "legalAddress": "Legal address",
+        "birthday": "Birthday",
+        "description": "Notes",
+        "isCorporate": "Company? (yes/no)",
+        "allowEmail": "Agreed to e-mail marketing (yes/no)"
+    },
+    "reasons": {
+        "empty_row": "Empty row, skipped",
+        "invalid_email": "E-mail not valid, left out",
+        "invalid_plate": "Plate not valid, car not created",
+        "plate_conflict": "Plate already belongs to another customer, not moved",
+        "no_customer_for_plate": "Plate without a person, skipped",
+        "customer_failed": "Customer could not be saved",
+        "vehicle_failed": "Car could not be saved",
+        "name_only_key": "Only a name to recognise the person by (a repeat import will match it by exact name)"
+    }
+}

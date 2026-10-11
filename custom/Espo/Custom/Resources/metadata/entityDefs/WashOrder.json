@@ -1,0 +1,485 @@
+{
+    "fields": {
+        "name": {
+            "type": "varchar",
+            "pattern": "$noBadCharacters",
+            "tooltip": true
+        },
+        "status": {
+            "type": "enum",
+            "options": [
+                "Reserved",
+                "New",
+                "In Progress",
+                "Completed",
+                "Cancelled"
+            ],
+            "default": "In Progress",
+            "style": {
+                "Reserved": "primary",
+                "New": "warning",
+                "In Progress": "info",
+                "Completed": "success",
+                "Cancelled": "default"
+            },
+            "view": "custom:views/fields/status-chip"
+        },
+        "source": {
+            "type": "enum",
+            "options": [
+                "",
+                "Phone",
+                "Email",
+                "WhatsApp",
+                "Telegram",
+                "Website",
+                "Walk-in"
+            ],
+            "default": "",
+            "displayAsLabel": true,
+            "style": {
+                "Email": "info",
+                "WhatsApp": "success",
+                "Telegram": "primary"
+            }
+        },
+        "reservationNote": {
+            "type": "text"
+        },
+        "orderDateTime": {
+            "type": "datetime",
+            "default": "javascript: return this.dateTime.getNow();"
+        },
+        "customer": {
+            "type": "link"
+        },
+        "vehicle": {
+            "type": "link"
+        },
+        "service": {
+            "type": "link"
+        },
+        "isCorporate": {
+            "type": "bool",
+            "readOnly": true,
+            "tooltip": true
+        },
+        "hasContract": {
+            "type": "bool",
+            "tooltip": true
+        },
+        "suppliesDeducted": {
+            "type": "bool",
+            "readOnly": true
+        },
+        "suppliesSummary": {
+            "type": "text",
+            "readOnly": true,
+            "tooltip": true
+        },
+        "addons": {
+            "type": "linkMultiple",
+            "tooltip": true
+        },
+        "orderAddons": {
+            "type": "linkMultiple",
+            "noLoad": true
+        },
+        "washer": {
+            "type": "link"
+        },
+        "dryer": {
+            "type": "link"
+        },
+        "salonCleaner": {
+            "type": "link"
+        },
+        "finalPrice": {
+            "type": "currency",
+            "tooltip": true,
+            "view": "custom:views/fields/money-eur"
+        },
+        "amountNet": {
+            "type": "currency",
+            "readOnly": true,
+            "tooltip": true,
+            "view": "custom:views/fields/money-eur"
+        },
+        "vatAmount": {
+            "type": "currency",
+            "readOnly": true,
+            "view": "custom:views/fields/money-eur"
+        },
+        "customerRegNumber": {
+            "type": "foreign",
+            "link": "customer",
+            "field": "regNumber",
+            "readOnly": true
+        },
+        "customerPvnNumber": {
+            "type": "foreign",
+            "link": "customer",
+            "field": "pvnNumber",
+            "readOnly": true
+        },
+        "customerLegalAddress": {
+            "type": "foreign",
+            "link": "customer",
+            "field": "legalAddress",
+            "readOnly": true
+        },
+        "customerPhone": {
+            "type": "foreign",
+            "link": "customer",
+            "field": "phone",
+            "readOnly": true
+        },
+        "vehiclePlate": {
+            "type": "foreign",
+            "link": "vehicle",
+            "field": "name",
+            "readOnly": true
+        },
+        "vehiclePlateTemporary": {
+            "type": "foreign",
+            "link": "vehicle",
+            "field": "plateTemporary",
+            "readOnly": true
+        },
+        "paymentMethod": {
+            "type": "enum",
+            "options": [
+                "Cash",
+                "Card",
+                "Invoice"
+            ],
+            "default": "Cash"
+        },
+        "paymentStatus": {
+            "type": "enum",
+            "options": [
+                "Unpaid",
+                "Invoiced",
+                "Paid"
+            ],
+            "default": "Unpaid",
+            "displayAsLabel": true,
+            "style": {
+                "Unpaid": "danger",
+                "Invoiced": "warning",
+                "Paid": "success"
+            },
+            "tooltip": true,
+            "view": "custom:views/fields/status-chip"
+        },
+        "pvnEnabled": {
+            "type": "bool",
+            "default": true,
+            "tooltip": true
+        },
+        "workAssignments": {
+            "type": "linkMultiple",
+            "noLoad": true
+        },
+        "orderWorks": {
+            "type": "linkMultiple",
+            "noLoad": true
+        },
+        "driver": {
+            "type": "link",
+            "tooltip": true
+        },
+        "worksTotal": {
+            "type": "currency",
+            "readOnly": true,
+            "tooltip": true,
+            "view": "custom:views/fields/money-eur"
+        },
+        "description": {
+            "type": "text"
+        },
+        "createdAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "modifiedAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "createdBy": {
+            "type": "link",
+            "readOnly": true,
+            "view": "views/fields/user"
+        },
+        "startedAt": {
+            "type": "datetime",
+            "readOnly": true,
+            "tooltip": true
+        },
+        "finishedAt": {
+            "type": "datetime",
+            "readOnly": true,
+            "tooltip": true
+        },
+        "invoiceSentAt": {
+            "type": "datetime",
+            "readOnly": true,
+            "tooltip": true
+        },
+        "linesHtml": {
+            "type": "text",
+            "readOnly": true,
+            "layoutDetailDisabled": true,
+            "layoutListDisabled": true,
+            "layoutFiltersDisabled": true,
+            "tooltip": true
+        },
+        "totalsHtml": {
+            "type": "text",
+            "readOnly": true,
+            "layoutDetailDisabled": true,
+            "layoutListDisabled": true,
+            "layoutFiltersDisabled": true
+        },
+        "paymentMethodText": {
+            "type": "varchar",
+            "readOnly": true,
+            "layoutDetailDisabled": true,
+            "layoutListDisabled": true,
+            "layoutFiltersDisabled": true,
+            "tooltip": true
+        },
+        "brandHeaderHtml": {
+            "type": "text",
+            "notStorable": true,
+            "readOnly": true,
+            "layoutAvailabilityList": [],
+            "customizationDisabled": true,
+            "directAccessDisabled": true
+        },
+        "brandFooterHtml": {
+            "type": "text",
+            "notStorable": true,
+            "readOnly": true,
+            "layoutAvailabilityList": [],
+            "customizationDisabled": true,
+            "directAccessDisabled": true
+        },
+        "photos": {
+            "type": "linkMultiple",
+            "noLoad": true,
+            "readOnly": true
+        },
+        "readyNotifiedAt": {
+            "type": "datetime",
+            "readOnly": true,
+            "tooltip": true
+        },
+        "reminderSentAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "post": {
+            "type": "int",
+            "min": 1,
+            "tooltip": true
+        },
+        "plannedMinutes": {
+            "type": "int",
+            "min": 0,
+            "tooltip": true
+        },
+        "noShow": {
+            "type": "bool",
+            "tooltip": true
+        },
+        "manageToken": {
+            "type": "varchar",
+            "maxLength": 40,
+            "readOnly": true,
+            "layoutListDisabled": true,
+            "layoutDetailDisabled": true,
+            "layoutFiltersDisabled": true,
+            "layoutMassUpdateDisabled": true
+        },
+        "bookingEmail": {
+            "type": "varchar",
+            "maxLength": 100,
+            "readOnly": true,
+            "layoutListDisabled": true,
+            "layoutDetailDisabled": true,
+            "layoutFiltersDisabled": true,
+            "layoutMassUpdateDisabled": true
+        },
+        "messages": {
+            "type": "linkMultiple",
+            "noLoad": true,
+            "readOnly": true
+        },
+        "fiscalStatus": {
+            "type": "enum",
+            "options": [
+                "",
+                "NotRequired",
+                "Pending",
+                "Registered",
+                "Receipt"
+            ],
+            "default": "",
+            "isSorted": false,
+            "style": {
+                "Pending": "warning",
+                "Registered": "success",
+                "NotRequired": null,
+                "Receipt": "info"
+            },
+            "tooltip": true
+        },
+        "fiscalReceiptSeries": {
+            "type": "varchar",
+            "maxLength": 8,
+            "tooltip": true
+        },
+        "fiscalReceiptNo": {
+            "type": "varchar",
+            "maxLength": 40,
+            "tooltip": true
+        },
+        "fiscalDeviceId": {
+            "type": "varchar",
+            "maxLength": 60,
+            "tooltip": true
+        },
+        "fiscalIntegrationId": {
+            "type": "varchar",
+            "maxLength": 60,
+            "tooltip": true
+        },
+        "fiscalPrintedAt": {
+            "type": "datetime",
+            "tooltip": true
+        },
+        "fiscalZReportNo": {
+            "type": "varchar",
+            "maxLength": 20
+        },
+        "fiscalHash": {
+            "type": "varchar",
+            "maxLength": 64,
+            "tooltip": true
+        },
+        "fiscalNote": {
+            "type": "text",
+            "rows": 2
+        },
+        "subscription": {
+            "type": "link",
+            "tooltip": true
+        },
+        "subscriptionSale": {
+            "type": "bool",
+            "readOnly": true,
+            "default": false
+        }
+    },
+    "links": {
+        "customer": {
+            "type": "belongsTo",
+            "entity": "Customer",
+            "foreign": "orders"
+        },
+        "vehicle": {
+            "type": "belongsTo",
+            "entity": "Vehicle",
+            "foreign": "orders"
+        },
+        "service": {
+            "type": "belongsTo",
+            "entity": "WashService",
+            "foreign": "orders"
+        },
+        "addons": {
+            "type": "hasMany",
+            "entity": "WashService",
+            "relationName": "washOrderAddon",
+            "foreign": "addonOrders"
+        },
+        "orderAddons": {
+            "type": "hasMany",
+            "entity": "OrderAddon",
+            "foreign": "washOrder"
+        },
+        "washer": {
+            "type": "belongsTo",
+            "entity": "Employee"
+        },
+        "dryer": {
+            "type": "belongsTo",
+            "entity": "Employee"
+        },
+        "salonCleaner": {
+            "type": "belongsTo",
+            "entity": "Employee"
+        },
+        "workAssignments": {
+            "type": "hasMany",
+            "entity": "WorkAssignment",
+            "foreign": "washOrder"
+        },
+        "orderWorks": {
+            "type": "hasMany",
+            "entity": "OrderWork",
+            "foreign": "washOrder"
+        },
+        "driver": {
+            "type": "belongsTo",
+            "entity": "Driver",
+            "foreign": "orders"
+        },
+        "createdBy": {
+            "type": "belongsTo",
+            "entity": "User"
+        },
+        "photos": {
+            "type": "hasMany",
+            "entity": "OrderPhoto",
+            "foreign": "washOrder"
+        },
+        "messages": {
+            "type": "hasMany",
+            "entity": "OrderMessage",
+            "foreign": "washOrder"
+        },
+        "subscription": {
+            "type": "belongsTo",
+            "entity": "Subscription",
+            "foreign": "orders"
+        }
+    },
+    "collection": {
+        "orderBy": "orderDateTime",
+        "order": "desc",
+        "textFilterFields": [
+            "name"
+        ]
+    },
+    "indexes": {
+        "status": {
+            "columns": [
+                "status",
+                "deleted"
+            ]
+        },
+        "paymentStatus": {
+            "columns": [
+                "paymentStatus",
+                "deleted"
+            ]
+        },
+        "orderDateTime": {
+            "columns": [
+                "orderDateTime"
+            ]
+        }
+    }
+}

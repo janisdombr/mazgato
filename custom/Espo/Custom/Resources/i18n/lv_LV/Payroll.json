@@ -1,0 +1,10 @@
+{
+    "labels": {
+        "refresh": "Rādīt",
+        "employee": "Darbinieks",
+        "works": "Darbi",
+        "earned": "Nopelnīts",
+        "total": "Kopā",
+        "noData": "Šajā periodā nav pabeigtu pasūtījumu."
+    }
+}

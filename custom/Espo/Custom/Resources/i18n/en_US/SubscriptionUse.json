@@ -1,0 +1,20 @@
+{
+    "fields": {
+        "name": "Name",
+        "subscription": "Subscription",
+        "washOrder": "Order",
+        "usedAt": "Used",
+        "refundedAt": "Given back",
+        "listPrice": "Value of the wash"
+    },
+    "tooltips": {
+        "listPrice": "What the wash would have cost; the order itself is brought to 0 EUR so the money is counted once, at the sale."
+    },
+    "links": {
+        "subscription": "Subscription",
+        "washOrder": "Order"
+    },
+    "labels": {
+        "Create SubscriptionUse": "Create"
+    }
+}

@@ -1,0 +1,33 @@
+{
+    "fields": {
+        "name": "Name",
+        "employee": "Employee",
+        "device": "Tablet",
+        "tokenHash": "Token hash",
+        "startedAt": "Started",
+        "expiresAt": "Expires",
+        "lastSeenAt": "Last seen",
+        "endedAt": "Ended",
+        "endReason": "End reason",
+        "ip": "IP",
+        "createdAt": "Created",
+        "modifiedAt": "Modified"
+    },
+    "links": {
+        "employee": "Employee",
+        "device": "Tablet"
+    },
+    "options": {
+        "endReason": {
+            "": "",
+            "Logout": "Logout",
+            "Idle": "Idle",
+            "Expired": "Expired",
+            "Revoked": "Revoked",
+            "Replaced": "Replaced"
+        }
+    },
+    "labels": {
+        "Create KioskSession": "Create session"
+    }
+}

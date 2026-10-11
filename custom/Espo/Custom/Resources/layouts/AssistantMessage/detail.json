@@ -1,0 +1,85 @@
+[
+    {
+        "label": "Overview",
+        "rows": [
+            [
+                {
+                    "name": "question"
+                },
+                {
+                    "name": "answer"
+                }
+            ],
+            [
+                {
+                    "name": "status"
+                },
+                {
+                    "name": "stopped"
+                }
+            ],
+            [
+                {
+                    "name": "assignedUser"
+                },
+                {
+                    "name": "createdAt"
+                }
+            ],
+            [
+                {
+                    "name": "toolNames"
+                },
+                {
+                    "name": "toolsJson"
+                }
+            ],
+            [
+                {
+                    "name": "model"
+                },
+                {
+                    "name": "steps"
+                }
+            ],
+            [
+                {
+                    "name": "tokensIn"
+                },
+                {
+                    "name": "tokensOut"
+                }
+            ],
+            [
+                {
+                    "name": "cacheReadTokens"
+                },
+                {
+                    "name": "cacheWriteTokens"
+                }
+            ],
+            [
+                {
+                    "name": "costUsd"
+                },
+                {
+                    "name": "ms"
+                }
+            ],
+            [
+                {
+                    "name": "errorCode"
+                },
+                {
+                    "name": "unsourced"
+                }
+            ],
+            [
+                {
+                    "name": "fromPage"
+                },
+                false
+            ]
+        ]
+    }
+]

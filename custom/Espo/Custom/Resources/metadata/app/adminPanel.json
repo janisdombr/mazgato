@@ -1,0 +1,98 @@
+{
+    "carwash": {
+        "label": "carwashPanel",
+        "itemList": [
+            {
+                "url": "#Admin/quickStart",
+                "label": "quickStart",
+                "iconClass": "fas fa-rocket",
+                "description": "quickStart",
+                "recordView": "custom:views/admin/quick-start"
+            },
+            {
+                "url": "#Admin/siteContent",
+                "label": "siteContent",
+                "iconClass": "fas fa-file-code",
+                "description": "siteContent",
+                "recordView": "custom:views/admin/site-content"
+            },
+            {
+                "url": "#Admin/brand",
+                "label": "brand",
+                "iconClass": "fas fa-palette",
+                "description": "brand",
+                "recordView": "custom:views/admin/brand"
+            },
+            {
+                "url": "#Admin/carwashRoles",
+                "label": "carwashRoles",
+                "iconClass": "fas fa-user-shield",
+                "description": "carwashRoles",
+                "view": "custom:views/admin/carwash-roles"
+            },
+            {
+                "url": "#Admin/kiosk",
+                "label": "kiosk",
+                "iconClass": "fas fa-tablet-screen-button",
+                "description": "kiosk",
+                "recordView": "custom:views/admin/kiosk"
+            },
+            {
+                "url": "#Admin/clientMessages",
+                "label": "clientMessages",
+                "iconClass": "fas fa-paper-plane",
+                "description": "clientMessages",
+                "recordView": "custom:views/admin/notifications"
+            },
+            {
+                "url": "#Admin/booking",
+                "label": "booking",
+                "iconClass": "fas fa-calendar-check",
+                "description": "booking",
+                "recordView": "custom:views/admin/booking"
+            },
+            {
+                "url": "#Admin/assistant",
+                "label": "assistant",
+                "iconClass": "fas fa-wand-magic-sparkles",
+                "description": "assistant",
+                "recordView": "custom:views/admin/assistant"
+            },
+            {
+                "url": "#Admin/clientAssistant",
+                "label": "clientAssistant",
+                "iconClass": "fas fa-comments",
+                "description": "clientAssistant",
+                "recordView": "custom:views/admin/client-assistant"
+            },
+            {
+                "url": "#Admin/anpr",
+                "label": "anpr",
+                "iconClass": "fas fa-car-side",
+                "description": "anpr",
+                "recordView": "custom:views/admin/anpr"
+            },
+            {
+                "url": "#Admin/license",
+                "label": "license",
+                "iconClass": "fas fa-key",
+                "description": "license",
+                "recordView": "custom:views/admin/license"
+            },
+            {
+                "url": "#Admin/accountingExport",
+                "label": "accountingExport",
+                "iconClass": "fas fa-file-export",
+                "description": "accountingExport",
+                "recordView": "custom:views/admin/accounting-export"
+            },
+            {
+                "url": "#Admin/importCustomers",
+                "label": "importCustomers",
+                "iconClass": "fas fa-file-import",
+                "description": "importCustomers",
+                "recordView": "custom:views/admin/import-customers"
+            }
+        ]
+    }
+}

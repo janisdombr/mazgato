@@ -1,0 +1,29 @@
+{
+    "fields": {
+        "name": "Инвентаризация",
+        "status": "Статус",
+        "reason": "Причина",
+        "postedAt": "Когда",
+        "postedBy": "Кто",
+        "linesCount": "Позиций",
+        "varianceCount": "Расхождений",
+        "lines": "Позиции",
+        "createdBy": "Создал"
+    },
+    "links": {
+        "lines": "Позиции",
+        "postedBy": "Кто",
+        "createdBy": "Создал"
+    },
+    "options": {
+        "status": {
+            "Posted": "Проведена"
+        }
+    },
+    "tooltips": {
+        "varianceCount": "В скольких позициях факт отличался от учёта."
+    },
+    "labels": {
+        "Create Stocktake": "Инвентаризация проводится кнопкой в списке «Расходники»"
+    }
+}

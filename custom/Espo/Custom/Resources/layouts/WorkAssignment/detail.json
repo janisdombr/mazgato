@@ -1,0 +1,10 @@
+[
+    {
+        "label": "Work Assignment",
+        "rows": [
+            [{"name": "washOrder"}, {"name": "employee"}],
+            [{"name": "role"}, {"name": "bonusEarned"}],
+            [{"name": "description"}, false]
+        ]
+    }
+]

@@ -1,0 +1,6 @@
+{
+    "controller": "controllers/record",
+    "iconClass": "fas fa-microchip",
+    "color": "#0b6e8e",
+    "createDisabled": true
+}

@@ -1,0 +1,29 @@
+[
+    {
+        "label": "Overview",
+        "rows": [
+            [
+                {
+                    "name": "receipt"
+                },
+                {
+                    "name": "supply"
+                }
+            ],
+            [
+                {
+                    "name": "quantity"
+                },
+                {
+                    "name": "unitPrice"
+                }
+            ],
+            [
+                {
+                    "name": "lineTotal"
+                },
+                false
+            ]
+        ]
+    }
+]

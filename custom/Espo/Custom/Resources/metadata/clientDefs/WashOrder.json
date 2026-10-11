@@ -1,0 +1,105 @@
+{
+    "controller": "controllers/record",
+    "iconClass": "fas fa-clipboard-list",
+    "color": "#d97706",
+    "kanbanViewMode": true,
+    "statusField": "status",
+    "menu": {
+        "detail": {
+            "dropdown": [
+                {
+                    "label": "emailInvoice",
+                    "name": "emailInvoice",
+                    "acl": "read",
+                    "handler": "custom:handlers/wash-order/email-invoice",
+                    "actionFunction": "emailInvoice",
+                    "iconClass": "fas fa-envelope"
+                }
+            ]
+        },
+        "list": {
+            "buttons": [
+                {
+                    "name": "listTotals",
+                    "label": "listTotals",
+                    "style": "default",
+                    "acl": "read",
+                    "aclScope": "WashOrder",
+                    "handler": "custom:handlers/list/totals",
+                    "actionFunction": "run"
+                }
+            ]
+        }
+    },
+    "bottomPanels": {
+        "detail": [
+            {
+                "name": "orderLines",
+                "label": "orderLines",
+                "view": "custom:views/wash-order/record/panels/lines",
+                "sticked": false
+            },
+            {
+                "name": "entryExit",
+                "label": "entryExit",
+                "view": "custom:views/wash-order/record/panels/entry-exit",
+                "sticked": false,
+                "order": 5
+            }
+        ]
+    },
+    "recordViews": {
+        "detail": "custom:views/wash-order/record/detail"
+    },
+    "dynamicLogic": {
+        "fields": {
+            "customer": {
+                "required": {
+                    "conditionGroup": [
+                        {
+                            "type": "or",
+                            "value": [
+                                {
+                                    "type": "isEmpty",
+                                    "attribute": "customerId"
+                                },
+                                {
+                                    "type": "isNotEmpty",
+                                    "attribute": "customerId"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "vehicle": {
+                "required": {
+                    "conditionGroup": [
+                        {
+                            "type": "equals",
+                            "attribute": "status",
+                            "value": "Reserved"
+                        }
+                    ]
+                }
+            },
+            "orderDateTime": {
+                "required": {
+                    "conditionGroup": [
+                        {
+                            "type": "equals",
+                            "attribute": "status",
+                            "value": "Reserved"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "massActionList": [
+        "export"
+    ],
+    "checkAllResultMassActionList": [
+        "export"
+    ]
+}

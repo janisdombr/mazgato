@@ -1,0 +1,85 @@
+{
+    "fields": {
+        "name": {
+            "type": "varchar",
+            "maxLength": 120,
+            "pattern": "$noBadCharacters"
+        },
+        "washOrder": {
+            "type": "link",
+            "required": true
+        },
+        "kind": {
+            "type": "enum",
+            "options": ["Before", "After", "Entry", "Exit", "Other"],
+            "default": "Other",
+            "required": true,
+            "displayAsLabel": true,
+            "style": {
+                "Before": "warning",
+                "After": "success",
+                "Entry": "info",
+                "Exit": "info",
+                "Other": "default"
+            }
+        },
+        "source": {
+            "type": "enum",
+            "options": ["Kiosk", "Camera", "Manual"],
+            "default": "Manual",
+            "tooltip": true
+        },
+        "file": {
+            "type": "image",
+            "required": true,
+            "previewSize": "medium",
+            "accept": ["image/jpeg", "image/png", "image/webp"]
+        },
+        "employee": {
+            "type": "link",
+            "tooltip": true
+        },
+        "takenAt": {
+            "type": "datetime"
+        },
+        "retainUntil": {
+            "type": "date",
+            "tooltip": true
+        },
+        "note": {
+            "type": "text",
+            "rows": 2
+        },
+        "createdAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "modifiedAt": {
+            "type": "datetime",
+            "readOnly": true
+        }
+    },
+    "links": {
+        "washOrder": {
+            "type": "belongsTo",
+            "entity": "WashOrder",
+            "foreign": "photos"
+        },
+        "employee": {
+            "type": "belongsTo",
+            "entity": "Employee"
+        }
+    },
+    "collection": {
+        "orderBy": "takenAt",
+        "order": "desc"
+    },
+    "indexes": {
+        "washOrder": {
+            "columns": ["washOrderId", "deleted"]
+        },
+        "retainUntil": {
+            "columns": ["retainUntil", "deleted"]
+        }
+    }
+}

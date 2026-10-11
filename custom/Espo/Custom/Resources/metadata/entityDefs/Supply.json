@@ -1,0 +1,90 @@
+{
+    "fields": {
+        "name": {
+            "type": "varchar",
+            "required": true,
+            "pattern": "$noBadCharacters"
+        },
+        "unit": {
+            "type": "enum",
+            "options": [
+                "L",
+                "ml",
+                "kg",
+                "g",
+                "pcs"
+            ],
+            "default": "L"
+        },
+        "stockQuantity": {
+            "type": "float",
+            "default": 0,
+            "tooltip": true
+        },
+        "reorderLevel": {
+            "type": "float",
+            "default": 0,
+            "tooltip": true
+        },
+        "needsReorder": {
+            "type": "bool",
+            "readOnly": true,
+            "tooltip": true
+        },
+        "unitCost": {
+            "type": "currency"
+        },
+        "supplier": {
+            "type": "varchar",
+            "maxLength": 120
+        },
+        "description": {
+            "type": "text"
+        },
+        "usages": {
+            "type": "linkMultiple",
+            "noLoad": true
+        },
+        "createdAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "modifiedAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "movements": {
+            "type": "linkMultiple",
+            "noLoad": true,
+            "layoutDetailDisabled": true
+        }
+    },
+    "links": {
+        "usages": {
+            "type": "hasMany",
+            "entity": "ServiceSupply",
+            "foreign": "supply"
+        },
+        "movements": {
+            "type": "hasMany",
+            "entity": "SupplyMovement",
+            "foreign": "supply"
+        }
+    },
+    "collection": {
+        "orderBy": "name",
+        "order": "asc",
+        "textFilterFields": [
+            "name",
+            "supplier"
+        ]
+    },
+    "indexes": {
+        "name": {
+            "columns": [
+                "name",
+                "deleted"
+            ]
+        }
+    }
+}

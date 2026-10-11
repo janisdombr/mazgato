@@ -1,0 +1,17 @@
+{
+    "labels": {
+        "loading": "Loading…",
+        "retry": "Retry",
+        "relogin": "Sign in again",
+        "sessionExpired": "Session expired",
+        "sessionExpiredHint": "You were signed out after a period of inactivity. Sign in again — saved data is safe.",
+        "loadError": "Could not load the data",
+        "loadErrorHint": "Check the connection and try again.",
+        "actionError": "The action failed",
+        "periodToday": "Today",
+        "periodWeek": "7 days",
+        "periodMonth": "Month",
+        "periodQuarter": "Quarter",
+        "periodRange": "Range"
+    }
+}

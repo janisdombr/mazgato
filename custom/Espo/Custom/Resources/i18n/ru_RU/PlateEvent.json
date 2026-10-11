@@ -1,0 +1,82 @@
+{
+    "fields": {
+        "name": "Номер",
+        "plateRaw": "Прочитано (как есть)",
+        "plate": "Номер",
+        "plateSuggested": "Возможный номер",
+        "matchKind": "Совпадение",
+        "confidence": "Уверенность",
+        "direction": "Направление",
+        "source": "Источник",
+        "status": "Статус",
+        "takenAt": "Снято",
+        "receivedAt": "Получено",
+        "lastSeenAt": "Последний раз замечено",
+        "seenCount": "Замечено раз",
+        "externalId": "ID события",
+        "hasSnapshot": "Кадр",
+        "snapshotKey": "Ключ кадра",
+        "snapshotRetainUntil": "Хранить кадр до",
+        "retainUntil": "Хранить событие до",
+        "camera": "Камера",
+        "edgeNode": "Узел",
+        "vehicle": "Автомобиль",
+        "customer": "Клиент",
+        "washOrder": "Заказ",
+        "decidedBy": "Решил",
+        "decidedAt": "Время решения",
+        "autoCreated": "Создан автоматически",
+        "corrected": "Номер исправлен",
+        "dupIds": "ID повторов",
+        "note": "Примечание",
+        "createdAt": "Создано",
+        "modifiedAt": "Изменено"
+    },
+    "links": {
+        "camera": "Камера",
+        "edgeNode": "Узел",
+        "vehicle": "Автомобиль",
+        "customer": "Клиент",
+        "washOrder": "Заказ",
+        "decidedBy": "Решил"
+    },
+    "options": {
+        "status": {
+            "Pending": "Ожидает",
+            "Confirmed": "Подтверждено",
+            "Dismissed": "Отклонено",
+            "Matched": "Привязано к заказу"
+        },
+        "matchKind": {
+            "None": "Нет",
+            "Exact": "Точное",
+            "Fuzzy": "Похожее"
+        },
+        "direction": {
+            "Unknown": "Неизвестно",
+            "In": "Въезд",
+            "Out": "Выезд"
+        },
+        "source": {
+            "Hikvision": "Hikvision",
+            "Dahua": "Dahua",
+            "Frigate": "Frigate",
+            "CodeProject": "CodeProject.AI",
+            "Simulator": "Симулятор",
+            "Manual": "Вручную",
+            "Other": "Другое"
+        }
+    },
+    "tooltips": {
+        "plateRaw": "Что прочитал движок распознавания до нормализации.",
+        "plateSuggested": "Похожий номер из базы машин (отличается один символ). Только подсказка — решает оператор.",
+        "seenCount": "Сколько раз тот же номер на той же камере попал в окно дедупликации.",
+        "externalId": "ID, созданный узлом; повторная отправка не создаёт дубль.",
+        "snapshotRetainUntil": "После этой даты кадр удаляется (настройка). Проверить с юристом.",
+        "retainUntil": "После этой даты запись события удаляется. Проверить с юристом.",
+        "autoCreated": "Заказ создала система, а не оператор (настройка «Создавать автоматически»)."
+    },
+    "labels": {
+        "Overview": "Обзор"
+    }
+}

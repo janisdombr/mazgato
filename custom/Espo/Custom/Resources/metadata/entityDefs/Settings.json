@@ -1,0 +1,199 @@
+{
+    "fields": {
+        "productName": {
+            "type": "varchar",
+            "maxLength": 60
+        },
+        "brandColor": {
+            "type": "varchar",
+            "maxLength": 7,
+            "pattern": "^#[0-9a-fA-F]{6}$",
+            "tooltip": true
+        },
+        "brandDocHeader": {
+            "type": "varchar",
+            "maxLength": 120,
+            "tooltip": true
+        },
+        "brandDocAddress": {
+            "type": "varchar",
+            "maxLength": 200
+        },
+        "brandDocRegNo": {
+            "type": "varchar",
+            "maxLength": 40
+        },
+        "brandDocPvnNo": {
+            "type": "varchar",
+            "maxLength": 40
+        },
+        "brandDocFooter": {
+            "type": "varchar",
+            "maxLength": 200
+        },
+        "brandEmailSignature": {
+            "type": "text",
+            "rows": 3
+        },
+        "landingSiteUrl": {
+            "type": "varchar",
+            "maxLength": 200,
+            "tooltip": true
+        },
+        "enabledModules": {
+            "type": "multiEnum",
+            "options": [
+                "kiosk",
+                "notify",
+                "booking",
+                "assistant",
+                "anpr",
+                "cameras",
+                "clientAssistant"
+            ],
+            "tooltip": true
+        },
+        "kioskTheme": {
+            "type": "enum",
+            "options": [
+                "dark",
+                "light",
+                "auto"
+            ],
+            "default": "dark"
+        },
+        "kioskIdleSeconds": {
+            "type": "int",
+            "min": 15,
+            "max": 900,
+            "default": 60,
+            "tooltip": true
+        },
+        "kioskSessionHours": {
+            "type": "int",
+            "min": 1,
+            "max": 24,
+            "default": 12,
+            "tooltip": true
+        },
+        "kioskPinMaxAttempts": {
+            "type": "int",
+            "min": 3,
+            "max": 20,
+            "default": 5,
+            "tooltip": true
+        },
+        "kioskPinLockMinutes": {
+            "type": "int",
+            "min": 1,
+            "max": 1440,
+            "default": 15,
+            "tooltip": true
+        },
+        "kioskRateLimitPerMinute": {
+            "type": "int",
+            "min": 10,
+            "max": 1000,
+            "default": 90,
+            "tooltip": true
+        },
+        "photoRetentionDays": {
+            "type": "int",
+            "min": 1,
+            "max": 3650,
+            "default": 30,
+            "tooltip": true
+        },
+        "anprAutoCreate": {
+            "type": "bool",
+            "default": false,
+            "tooltip": true
+        },
+        "anprMinConfidence": {
+            "type": "float",
+            "min": 0,
+            "max": 1,
+            "default": 0.6,
+            "tooltip": true
+        },
+        "anprHighConfidence": {
+            "type": "float",
+            "min": 0,
+            "max": 1,
+            "default": 0.9,
+            "tooltip": true
+        },
+        "anprDedupSeconds": {
+            "type": "int",
+            "min": 5,
+            "max": 3600,
+            "default": 300,
+            "tooltip": true
+        },
+        "anprRetentionDays": {
+            "type": "int",
+            "min": 1,
+            "max": 3650,
+            "default": 30,
+            "tooltip": true
+        },
+        "anprEventRetentionDays": {
+            "type": "int",
+            "min": 1,
+            "max": 3650,
+            "default": 90,
+            "tooltip": true
+        },
+        "anprAccessLogDays": {
+            "type": "int",
+            "min": 30,
+            "max": 3650,
+            "default": 180,
+            "tooltip": true
+        },
+        "anprRateLimitPerMinute": {
+            "type": "int",
+            "min": 10,
+            "max": 6000,
+            "default": 120,
+            "tooltip": true
+        },
+        "anprPollSeconds": {
+            "type": "int",
+            "min": 2,
+            "max": 60,
+            "default": 5,
+            "tooltip": true
+        },
+        "anprMaxEventAgeHours": {
+            "type": "int",
+            "min": 1,
+            "max": 336,
+            "default": 48,
+            "tooltip": true
+        },
+        "anprAlertSound": {
+            "type": "bool",
+            "default": true,
+            "tooltip": true
+        },
+        "camerasFrameKeepHours": {
+            "type": "int",
+            "min": 1,
+            "max": 336,
+            "default": 24,
+            "tooltip": true
+        },
+        "camerasViewBase": {
+            "type": "varchar",
+            "maxLength": 120,
+            "default": "/cam",
+            "tooltip": true
+        },
+        "sourceCodeUrl": {
+            "type": "url",
+            "maxLength": 200,
+            "tooltip": true
+        }
+    }
+}

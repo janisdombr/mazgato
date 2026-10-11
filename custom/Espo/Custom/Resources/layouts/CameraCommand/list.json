@@ -1,0 +1,23 @@
+[
+    {
+        "name": "type",
+        "width": 12,
+        "link": true
+    },
+    {
+        "name": "status",
+        "width": 12
+    },
+    {
+        "name": "camera",
+        "width": 20
+    },
+    {
+        "name": "requestedBy",
+        "width": 18
+    },
+    {
+        "name": "requestedAt",
+        "width": 18
+    }
+]

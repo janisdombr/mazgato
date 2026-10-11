@@ -1,0 +1,91 @@
+{
+    "fields": {
+        "name": {
+            "type": "varchar",
+            "maxLength": 100
+        },
+        "status": {
+            "type": "enum",
+            "options": [
+                "Posted"
+            ],
+            "default": "Posted",
+            "readOnly": true
+        },
+        "reason": {
+            "type": "varchar",
+            "maxLength": 255,
+            "required": true
+        },
+        "postedAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "postedBy": {
+            "type": "link",
+            "readOnly": true
+        },
+        "linesCount": {
+            "type": "int",
+            "readOnly": true
+        },
+        "varianceCount": {
+            "type": "int",
+            "readOnly": true,
+            "tooltip": true
+        },
+        "clientKey": {
+            "type": "varchar",
+            "maxLength": 64,
+            "readOnly": true
+        },
+        "lines": {
+            "type": "linkMultiple",
+            "noLoad": true
+        },
+        "createdAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "modifiedAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "createdBy": {
+            "type": "link",
+            "readOnly": true,
+            "view": "views/fields/user"
+        }
+    },
+    "links": {
+        "postedBy": {
+            "type": "belongsTo",
+            "entity": "User"
+        },
+        "lines": {
+            "type": "hasMany",
+            "entity": "StocktakeLine",
+            "foreign": "stocktake"
+        },
+        "createdBy": {
+            "type": "belongsTo",
+            "entity": "User"
+        }
+    },
+    "collection": {
+        "orderBy": "postedAt",
+        "order": "desc",
+        "textFilterFields": [
+            "name",
+            "reason"
+        ]
+    },
+    "indexes": {
+        "clientKey": {
+            "type": "unique",
+            "columns": [
+                "clientKey"
+            ]
+        }
+    }
+}

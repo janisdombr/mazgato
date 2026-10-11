@@ -1,0 +1,41 @@
+{
+    "fields": {
+        "name": "Nosaukums",
+        "type": "Veids",
+        "status": "Statuss",
+        "camera": "Kamera",
+        "edgeNode": "Mezgls",
+        "requestedBy": "Pieprasīja",
+        "requestedAt": "Pieprasīts",
+        "leasedAt": "Nodots mezglam",
+        "doneAt": "Izpildīts",
+        "error": "Kļūda",
+        "params": "Parametri",
+        "result": "Rezultāts",
+        "hasFile": "Kadrs",
+        "fileKey": "Kadra atslēga",
+        "createdAt": "Izveidots",
+        "modifiedAt": "Mainīts"
+    },
+    "links": {
+        "camera": "Kamera",
+        "edgeNode": "Mezgls",
+        "requestedBy": "Pieprasīja"
+    },
+    "options": {
+        "type": {
+            "Snapshot": "Kadrs",
+            "Clips": "Ieraksti"
+        },
+        "status": {
+            "Queued": "Rindā",
+            "Leased": "Nodots mezglam",
+            "Done": "Izpildīts",
+            "Failed": "Neizdevās",
+            "Expired": "Beidzies"
+        }
+    },
+    "labels": {
+        "Overview": "Pārskats"
+    }
+}

@@ -1,0 +1,78 @@
+{
+    "fields": {
+        "productName": "Product name",
+        "brandColor": "Brand colour",
+        "brandDocHeader": "Document header (name)",
+        "brandDocAddress": "Document address",
+        "brandDocRegNo": "Reg. no.",
+        "brandDocPvnNo": "VAT no.",
+        "brandDocFooter": "Document footer",
+        "brandEmailSignature": "Email signature",
+        "landingSiteUrl": "Website address (unsubscribe page)",
+        "enabledModules": "Enabled modules",
+        "kioskTheme": "Tablet theme",
+        "kioskIdleSeconds": "Tablet: sign out after idle, s",
+        "kioskSessionHours": "Tablet: session length, h",
+        "kioskPinMaxAttempts": "PIN: wrong attempts allowed",
+        "kioskPinLockMinutes": "PIN: lock time, min",
+        "kioskRateLimitPerMinute": "Tablet: actions per minute",
+        "photoRetentionDays": "Photo retention, days",
+        "anprAutoCreate": "Plates: create the order automatically",
+        "anprMinConfidence": "Plates: lower confidence threshold",
+        "anprHighConfidence": "Plates: high confidence threshold",
+        "anprDedupSeconds": "Plates: de-duplication window, s",
+        "anprRetentionDays": "Plates: snapshot retention, days",
+        "anprEventRetentionDays": "Plates: event retention, days",
+        "anprAccessLogDays": "Picture access journal, days",
+        "anprRateLimitPerMinute": "Node: events per minute",
+        "anprPollSeconds": "Board refresh, s",
+        "anprMaxEventAgeHours": "Node: oldest accepted event, h",
+        "anprAlertSound": "Sound alert for a new car",
+        "camerasFrameKeepHours": "On-demand frames: retention, h",
+        "camerasViewBase": "Live-view address (path)",
+        "sourceCodeUrl": "Source code address"
+    },
+    "tooltips": {
+        "brandColor": "Format #rrggbb. Tints the brand plate, the login stripe and accents; the main button stays the product colour.",
+        "brandDocHeader": "Legal or trade name on receipts and invoices. Falls back to the application name when empty.",
+        "landingSiteUrl": "The website that hosts the email unsubscribe page (unsubscribe.html). When empty the opt-out link points straight at the CRM.",
+        "enabledModules": "Available modules. Empty or removed — the matching API answers 403 and the tablet shows a notice. A signed licence will fill this list later.",
+        "kioskIdleSeconds": "Seconds without a touch before the tablet returns to the PIN screen.",
+        "kioskSessionHours": "How long a worker PIN sign-in stays valid on the server (also for sending offline actions).",
+        "kioskPinMaxAttempts": "After this many wrong entries the PIN is locked for a while.",
+        "kioskRateLimitPerMinute": "Click-spam guard: the most actions one tablet may send per minute.",
+        "photoRetentionDays": "How many days order photos are kept. Cleanup: bin/command purge-photos (and the daily job).",
+        "anprAutoCreate": "OFF by default. When on: a car read with high confidence that is already known and has no active order gets an order with its last service. In every other case an operator decides.",
+        "anprMinConfidence": "Below this (0–1) an event always waits for an operator.",
+        "anprHighConfidence": "From this value (0–1) the system may act on its own (when \"create automatically\" is on).",
+        "anprDedupSeconds": "The same plate on the same camera inside this window is one event.",
+        "anprRetentionDays": "After how many days snapshots are deleted. Guide: 30. CHECK WITH A LAWYER.",
+        "anprEventRetentionDays": "After how many days the event record (plate, time, camera) is deleted. Guide: 90. CHECK WITH A LAWYER.",
+        "anprAccessLogDays": "How long to keep the \"who looked at pictures\" journal.",
+        "anprAlertSound": "The board plays a short beep when a new car appears.",
+        "camerasViewBase": "Path or address where the reverse proxy publishes the go2rtc/Frigate viewer (default /cam).",
+        "sourceCodeUrl": "Address where the source code of THIS version is published (AGPL section 13). Shown as the \"Source code\" link in the footer and About. Required for a public or SaaS installation."
+    },
+    "labels": {
+        "Identity": "Identity",
+        "Documents": "Documents",
+        "Mail": "Mail",
+        "Kiosk": "Tablet"
+    },
+    "options": {
+        "enabledModules": {
+            "kiosk": "Worker tablet",
+            "notify": "Client notifications",
+            "booking": "Online booking",
+            "assistant": "AI assistant",
+            "anpr": "Plate recognition",
+            "cameras": "Cameras",
+            "clientAssistant": "Customer chat (AI)"
+        },
+        "kioskTheme": {
+            "dark": "Dark",
+            "light": "Light",
+            "auto": "Follow device"
+        }
+    }
+}

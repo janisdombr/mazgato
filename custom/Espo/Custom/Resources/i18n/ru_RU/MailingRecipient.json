@@ -1,0 +1,29 @@
+{
+    "fields": {
+        "name": "Клиент",
+        "contact": "Контакт",
+        "status": "Статус доставки",
+        "error": "Ошибка",
+        "deliveredAt": "Доставлено",
+        "customer": "Клиент",
+        "mailing": "Рассылка"
+    },
+    "links": {
+        "customer": "Клиент",
+        "mailing": "Рассылка"
+    },
+    "options": {
+        "status": {
+            "Pending": "Ожидает",
+            "Sent": "Отправлено",
+            "Failed": "Ошибка",
+            "Skipped": "Пропущено"
+        }
+    },
+    "tooltips": {
+        "contact": "E-mail или телефон, куда отправлено (в зависимости от канала)."
+    },
+    "labels": {
+        "Create MailingRecipient": "Создать получателя рассылки"
+    }
+}

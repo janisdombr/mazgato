@@ -1,0 +1,19 @@
+[
+    {
+        "name": "name",
+        "width": 22,
+        "link": true
+    },
+    {
+        "name": "customer",
+        "width": 34
+    },
+    {
+        "name": "brand",
+        "width": 22
+    },
+    {
+        "name": "model",
+        "width": 22
+    }
+]

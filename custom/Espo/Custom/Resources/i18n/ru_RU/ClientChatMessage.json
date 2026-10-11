@@ -1,0 +1,39 @@
+{
+    "fields": {
+        "name": "Вопрос",
+        "question": "Вопрос (контакты скрыты)",
+        "answer": "Ответ",
+        "status": "Статус",
+        "stopped": "Причина остановки",
+        "errorCode": "Код ошибки",
+        "toolNames": "Инструменты",
+        "toolsJson": "Вызовы инструментов",
+        "steps": "Шаги",
+        "tokensIn": "Входные токены",
+        "tokensOut": "Выходные токены",
+        "cacheReadTokens": "Чтение кэша",
+        "cacheWriteTokens": "Запись кэша",
+        "costUsd": "Стоимость, USD",
+        "model": "Модель",
+        "ms": "Время, мс",
+        "lang": "Язык",
+        "chatId": "Чат",
+        "ipHash": "Посетитель (хэш)",
+        "bookingOrder": "Созданная запись",
+        "vault": "Сейф",
+        "createdAt": "Время",
+        "modifiedAt": "Изменено"
+    },
+    "links": {},
+    "options": {
+        "status": {
+            "Pending": "Ожидает",
+            "Answered": "Отвечено",
+            "Stopped": "Остановлено",
+            "Failed": "Ошибка"
+        }
+    },
+    "labels": {
+        "Create ClientChatMessage": "Создать запись"
+    }
+}

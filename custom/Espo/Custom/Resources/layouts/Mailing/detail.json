@@ -1,0 +1,76 @@
+[
+    {
+        "label": "Overview",
+        "rows": [
+            [
+                {
+                    "name": "name"
+                },
+                {
+                    "name": "channel"
+                }
+            ],
+            [
+                {
+                    "name": "segment"
+                },
+                {
+                    "name": "discountPercent"
+                }
+            ],
+            [
+                {
+                    "name": "subject"
+                },
+                false
+            ],
+            [
+                {
+                    "name": "body"
+                },
+                false
+            ],
+            [
+                {
+                    "name": "offer"
+                },
+                false
+            ],
+            [
+                {
+                    "name": "status"
+                },
+                {
+                    "name": "sentAt"
+                }
+            ]
+        ]
+    },
+    {
+        "label": "Result",
+        "tabBreak": true,
+        "tabLabel": "$label:moreTab",
+        "rows": [
+            [
+                {
+                    "name": "recipientCount"
+                },
+                {
+                    "name": "sentCount"
+                }
+            ],
+            [
+                {
+                    "name": "failedCount"
+                },
+                false
+            ],
+            [
+                {
+                    "name": "description"
+                },
+                false
+            ]
+        ]
+    }
+]

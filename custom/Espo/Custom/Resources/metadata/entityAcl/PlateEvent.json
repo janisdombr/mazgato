@@ -1,0 +1,10 @@
+{
+    "fields": {
+        "snapshotKey": {
+            "forbidden": true
+        },
+        "dupIds": {
+            "forbidden": true
+        }
+    }
+}

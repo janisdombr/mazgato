@@ -1,0 +1,22 @@
+{
+    "fields": {
+        "name": "Vārds",
+        "phone": "Tālrunis",
+        "email": "E-pasts",
+        "customer": "Klients",
+        "isPrimary": "Galvenais vadītājs",
+        "isActive": "Aktīvs",
+        "description": "Piezīmes"
+    },
+    "links": {
+        "customer": "Klients",
+        "orders": "Pasūtījumi"
+    },
+    "tooltips": {
+        "customer": "Uzņēmums vai persona, kam pieder šis vadītājs. Uzņēmumam var būt vairāki vadītāji vieniem un tiem pašiem auto.",
+        "isPrimary": "Parastais šī klienta vadītājs."
+    },
+    "labels": {
+        "Create Driver": "Izveidot vadītāju"
+    }
+}

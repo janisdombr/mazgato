@@ -1,0 +1,157 @@
+{
+    "fields": {
+        "name": {
+            "type": "varchar",
+            "maxLength": 150,
+            "readOnly": true
+        },
+        "question": {
+            "type": "text",
+            "readOnly": true
+        },
+        "answer": {
+            "type": "text",
+            "readOnly": true
+        },
+        "status": {
+            "type": "enum",
+            "options": [
+                "Pending",
+                "Answered",
+                "Stopped",
+                "Failed"
+            ],
+            "default": "Pending",
+            "readOnly": true,
+            "displayAsLabel": true,
+            "style": {
+                "Pending": "default",
+                "Answered": "success",
+                "Stopped": "warning",
+                "Failed": "danger"
+            }
+        },
+        "stopped": {
+            "type": "varchar",
+            "readOnly": true,
+            "maxLength": 30
+        },
+        "errorCode": {
+            "type": "varchar",
+            "readOnly": true,
+            "maxLength": 40
+        },
+        "toolNames": {
+            "type": "varchar",
+            "readOnly": true,
+            "maxLength": 255
+        },
+        "toolsJson": {
+            "type": "text",
+            "readOnly": true
+        },
+        "draftsJson": {
+            "type": "text",
+            "readOnly": true,
+            "utility": true
+        },
+        "pseudonyms": {
+            "type": "text",
+            "readOnly": true,
+            "utility": true
+        },
+        "unsourced": {
+            "type": "varchar",
+            "readOnly": true,
+            "maxLength": 255
+        },
+        "steps": {
+            "type": "int",
+            "readOnly": true
+        },
+        "tokensIn": {
+            "type": "int",
+            "readOnly": true
+        },
+        "tokensOut": {
+            "type": "int",
+            "readOnly": true
+        },
+        "cacheReadTokens": {
+            "type": "int",
+            "readOnly": true
+        },
+        "cacheWriteTokens": {
+            "type": "int",
+            "readOnly": true
+        },
+        "costUsd": {
+            "type": "float",
+            "readOnly": true,
+            "decimals": 6
+        },
+        "model": {
+            "type": "varchar",
+            "readOnly": true,
+            "maxLength": 120
+        },
+        "ms": {
+            "type": "int",
+            "readOnly": true
+        },
+        "fromPage": {
+            "type": "varchar",
+            "readOnly": true,
+            "maxLength": 60
+        },
+        "createdAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "modifiedAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "assignedUser": {
+            "type": "link",
+            "readOnly": true,
+            "view": "views/fields/user"
+        },
+        "createdBy": {
+            "type": "link",
+            "readOnly": true,
+            "view": "views/fields/user"
+        }
+    },
+    "links": {
+        "assignedUser": {
+            "type": "belongsTo",
+            "entity": "User"
+        },
+        "createdBy": {
+            "type": "belongsTo",
+            "entity": "User"
+        }
+    },
+    "collection": {
+        "orderBy": "createdAt",
+        "order": "desc",
+        "textFilterFields": [
+            "name"
+        ]
+    },
+    "indexes": {
+        "userTime": {
+            "columns": [
+                "assignedUserId",
+                "createdAt"
+            ]
+        },
+        "created": {
+            "columns": [
+                "createdAt",
+                "status"
+            ]
+        }
+    }
+}

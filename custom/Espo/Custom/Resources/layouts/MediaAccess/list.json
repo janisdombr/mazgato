@@ -1,0 +1,23 @@
+[
+    {
+        "name": "createdAt",
+        "width": 18,
+        "link": true
+    },
+    {
+        "name": "kind",
+        "width": 12
+    },
+    {
+        "name": "user",
+        "width": 20
+    },
+    {
+        "name": "plateEvent",
+        "width": 18
+    },
+    {
+        "name": "camera",
+        "width": 18
+    }
+]

@@ -1,0 +1,15 @@
+{
+    "fields": {
+        "name": "Source text",
+        "textLv": "Latvian",
+        "textRu": "Russian",
+        "textEn": "English",
+        "description": "Notes"
+    },
+    "tooltips": {
+        "name": "The value exactly as it is stored in the data — e.g. a role or work name. Leave the other fields empty and the source text is shown as-is."
+    },
+    "labels": {
+        "Create Translation": "Create Translation"
+    }
+}

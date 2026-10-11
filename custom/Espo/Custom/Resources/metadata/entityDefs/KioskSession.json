@@ -1,0 +1,80 @@
+{
+    "fields": {
+        "name": {
+            "type": "varchar",
+            "maxLength": 150
+        },
+        "employee": {
+            "type": "link",
+            "required": true
+        },
+        "device": {
+            "type": "link",
+            "tooltip": true
+        },
+        "tokenHash": {
+            "type": "varchar",
+            "maxLength": 64,
+            "readOnly": true,
+            "utility": true
+        },
+        "startedAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "expiresAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "lastSeenAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "endedAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "endReason": {
+            "type": "enum",
+            "options": ["", "Logout", "Idle", "Expired", "Revoked", "Replaced"],
+            "default": "",
+            "readOnly": true
+        },
+        "ip": {
+            "type": "varchar",
+            "maxLength": 64,
+            "readOnly": true
+        },
+        "createdAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "modifiedAt": {
+            "type": "datetime",
+            "readOnly": true
+        }
+    },
+    "links": {
+        "employee": {
+            "type": "belongsTo",
+            "entity": "Employee"
+        },
+        "device": {
+            "type": "belongsTo",
+            "entity": "User"
+        }
+    },
+    "collection": {
+        "orderBy": "startedAt",
+        "order": "desc"
+    },
+    "indexes": {
+        "tokenHash": {
+            "type": "unique",
+            "columns": ["tokenHash"]
+        },
+        "employee": {
+            "columns": ["employeeId", "endedAt", "deleted"]
+        }
+    }
+}

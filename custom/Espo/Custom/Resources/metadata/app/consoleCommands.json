@@ -1,0 +1,66 @@
+{
+    "recalcOrderPrint": {
+        "className": "Espo\\Custom\\Classes\\ConsoleCommands\\RecalcOrderPrint",
+        "listed": true
+    },
+    "purgePhotos": {
+        "className": "Espo\\Custom\\Classes\\ConsoleCommands\\PurgePhotos",
+        "listed": true
+    },
+    "bookingMaintenance": {
+        "className": "Espo\\Custom\\Classes\\ConsoleCommands\\BookingMaintenance",
+        "listed": true
+    },
+    "migrateTheme": {
+        "className": "Espo\\Custom\\Classes\\ConsoleCommands\\MigrateTheme",
+        "listed": true
+    },
+    "assistantPurge": {
+        "className": "Espo\\Custom\\Classes\\ConsoleCommands\\AssistantPurge",
+        "listed": true
+    },
+    "assistantTestMode": {
+        "className": "Espo\\Custom\\Classes\\ConsoleCommands\\AssistantTestMode",
+        "listed": false
+    },
+    "turnstileTestMode": {
+        "className": "Espo\\Custom\\Classes\\ConsoleCommands\\TurnstileTestMode",
+        "listed": false
+    },
+    "anprPurge": {
+        "className": "Espo\\Custom\\Classes\\ConsoleCommands\\AnprPurge",
+        "listed": true
+    },
+    "licenseTestMode": {
+        "className": "Espo\\Custom\\Classes\\ConsoleCommands\\LicenseTestMode",
+        "listed": false
+    },
+    "licenseStatus": {
+        "className": "Espo\\Custom\\Classes\\ConsoleCommands\\LicenseStatus",
+        "listed": true
+    },
+    "licenseEnforce": {
+        "className": "Espo\\Custom\\Classes\\ConsoleCommands\\LicenseEnforce",
+        "listed": true
+    },
+    "importCustomers": {
+        "className": "Espo\\Custom\\Classes\\ConsoleCommands\\ImportCustomers",
+        "listed": true
+    },
+    "quickstartSeed": {
+        "className": "Espo\\Custom\\Classes\\ConsoleCommands\\QuickstartSeed",
+        "listed": true
+    },
+    "seedRoles": {
+        "className": "Espo\\Custom\\Classes\\ConsoleCommands\\SeedRoles",
+        "listed": true
+    },
+    "clientAssistantPurge": {
+        "className": "Espo\\Custom\\Classes\\ConsoleCommands\\ClientAssistantPurge",
+        "listed": true
+    },
+    "repairOrders": {
+        "className": "Espo\\Custom\\Classes\\ConsoleCommands\\RepairOrders",
+        "listed": true
+    }
+}

@@ -1,0 +1,87 @@
+{
+    "fields": {
+        "name": "Nosaukums / Vārds",
+        "isCorporate": "Juridiska persona",
+        "phone": "Tālrunis",
+        "email": "E-pasts",
+        "regNumber": "Reģ. Nr.",
+        "pvnNumber": "PVN Nr.",
+        "legalAddress": "Juridiskā adrese",
+        "description": "Piezīmes",
+        "vehicles": "Transportlīdzekļi",
+        "orders": "Pasūtījumi",
+        "createdAt": "Izveidots",
+        "modifiedAt": "Mainīts",
+        "createdBy": "Izveidoja",
+        "modifiedBy": "Mainīja",
+        "birthday": "Dzimšanas diena",
+        "drivers": "Vadītāji",
+        "hasContract": "Ir līgums",
+        "allowWhatsapp": "Atļaut WhatsApp",
+        "allowEmail": "Atļaut e-pastu",
+        "allowPhone": "Atļaut tālruni",
+        "unsubscribeToken": "Atteikšanās marķieris",
+        "unsubscribedAt": "Atteicās",
+        "vehiclePlates": "Auto numuri",
+        "driverNames": "Vadītāji",
+        "allowServiceMessages": "Servisa paziņojumi",
+        "serviceMessagesOffAt": "Servisa paziņojumi izslēgti",
+        "language": "Ziņu valoda",
+        "notifyChannel": "Vēlamais kanāls",
+        "telegramChatId": "Telegram čats",
+        "telegramLinkToken": "Telegram saites token"
+    },
+    "labels": {
+        "Marketing": "Mārketings",
+        "newOrder": "Jauns pasūtījums",
+        "noVehicles": "Šim klientam nav reģistrētu auto.",
+        "Create Customer": "Izveidot klientu",
+        "monthlyInvoice": "Rēķins par mēnesi",
+        "Summary": "Kopsavilkums",
+        "summaryVisits": "Apmeklējumi",
+        "summarySpent": "Iztērēts",
+        "summaryLast": "Pēdējais apmeklējums",
+        "summaryDebt": "Parāds",
+        "Notifications": "Paziņojumi",
+        "sellSubscription": "Pārdot abonementu",
+        "document": "Dokuments",
+        "documentInvoice": "Rēķins",
+        "documentAct": "Izpildīto darbu akts",
+        "consentTab": "Piekrišanas un ziņas"
+    },
+    "links": {
+        "vehicles": "Transportlīdzekļi",
+        "orders": "Pasūtījumi",
+        "drivers": "Vadītāji",
+        "subscriptions": "Abonementi"
+    },
+    "tooltips": {
+        "isCorporate": "Ieslēdziet juridiskām personām. Korporatīviem klientiem var izrakstīt PVN rēķinu un piemērot korporatīvās cenas.",
+        "hasContract": "Šis klients strādā pēc līguma — pasūtījumi tiek rēķināti, tāpēc uzreiz tiek atzīmēti kā apmaksāti. Neatkarīgs no 'Juridiska persona': ir līgumi arī ar privātpersonām.",
+        "allowWhatsapp": "Klients piekritis saņemt piedāvājumus WhatsApp. Bez atzīmes izsūtījumi caur šo kanālu viņu nesasniedz.",
+        "allowEmail": "Klients piekritis saņemt piedāvājumus e-pastā.",
+        "allowPhone": "Klients piekritis saņemt piedāvājumus pa tālruni (zvani / SMS).",
+        "vehiclePlates": "Klienta auto numuri (jaunākais pirmais). Aizpildās automātiski no auto saraksta.",
+        "driverNames": "Klienta vadītāji (jaunākais pirmais). Aizpildās automātiski no vadītāju saraksta.",
+        "allowServiceMessages": "Ziņas par paša klienta pasūtījumu: auto gatavs, pieraksta apstiprinājums un atgādinājums. Pēc noklusējuma ieslēgts; klients izslēdz ar saiti katrā ziņā vai atbildot STOP. Nav saistīts ar mārketinga piekrišanu.",
+        "serviceMessagesOffAt": "Kad klients atteicās no servisa ziņām.",
+        "language": "Ziņu valoda šim klientam. Tukšs = sistēmas valoda.",
+        "notifyChannel": "Automātiski izvēlas pirmo kanālu, kas ir ieslēgts, sakonfigurēts un kuram klientam ir kontakts (secība: Administrēšana, Paziņojumi).",
+        "telegramChatId": "Aizpilda, kad klients atver bota saiti un nospiež Start."
+    },
+    "options": {
+        "language": {
+            "": "Sistēmas noklusējums",
+            "lv_LV": "Latviešu",
+            "ru_RU": "Русский",
+            "en_US": "English"
+        },
+        "notifyChannel": {
+            "Auto": "Automātiski (pirmais pieejamais)",
+            "Email": "E-pasts",
+            "WhatsApp": "WhatsApp",
+            "Sms": "SMS",
+            "Telegram": "Telegram"
+        }
+    }
+}

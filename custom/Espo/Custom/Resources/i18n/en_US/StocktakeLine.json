@@ -1,0 +1,14 @@
+{
+    "fields": {
+        "name": "Material",
+        "stocktake": "Stocktake",
+        "supply": "Supply",
+        "expectedQuantity": "System",
+        "countedQuantity": "Counted",
+        "difference": "Difference"
+    },
+    "links": {
+        "stocktake": "Stocktake",
+        "supply": "Supply"
+    }
+}

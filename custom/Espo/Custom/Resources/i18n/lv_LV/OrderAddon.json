@@ -1,0 +1,22 @@
+{
+    "fields": {
+        "name": "Nosaukums",
+        "price": "Cena",
+        "washOrder": "Pasūtījums",
+        "service": "Pakalpojums",
+        "sortOrder": "Kārtība",
+        "isBase": "Pamata mazgāšana"
+    },
+    "links": {
+        "washOrder": "Pasūtījums",
+        "service": "Pakalpojums"
+    },
+    "tooltips": {
+        "name": "Papildpakalpojuma nosaukums, kā tas parādās kvītī.",
+        "price": "Cena, ko faktiski iekasēja par šo papildpakalpojumu šajā pasūtījumā. Saglabājas kvīts izdrukai.",
+        "isBase": "Šī rinda ir pasūtījuma pamata mazgāšana, nevis papildpakalpojums."
+    },
+    "labels": {
+        "Create OrderAddon": "Izveidot pasūtījuma papildpakalpojumu"
+    }
+}

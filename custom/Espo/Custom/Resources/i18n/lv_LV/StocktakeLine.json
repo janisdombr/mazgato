@@ -1,0 +1,14 @@
+{
+    "fields": {
+        "name": "Materiāls",
+        "stocktake": "Inventarizācija",
+        "supply": "Materiāls",
+        "expectedQuantity": "Uzskaitē",
+        "countedQuantity": "Saskaitīts",
+        "difference": "Starpība"
+    },
+    "links": {
+        "stocktake": "Inventarizācija",
+        "supply": "Materiāls"
+    }
+}

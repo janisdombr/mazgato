@@ -1,0 +1,107 @@
+{
+    "fields": {
+        "name": {
+            "type": "varchar",
+            "maxLength": 100
+        },
+        "supplier": {
+            "type": "varchar",
+            "maxLength": 120
+        },
+        "invoiceNumber": {
+            "type": "varchar",
+            "maxLength": 60
+        },
+        "receiptDate": {
+            "type": "date"
+        },
+        "status": {
+            "type": "enum",
+            "options": [
+                "Draft",
+                "Posted"
+            ],
+            "default": "Draft",
+            "style": {
+                "Draft": "warning",
+                "Posted": "success"
+            },
+            "readOnly": true
+        },
+        "postedAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "postedBy": {
+            "type": "link",
+            "readOnly": true
+        },
+        "total": {
+            "type": "currency",
+            "readOnly": true
+        },
+        "note": {
+            "type": "text"
+        },
+        "clientKey": {
+            "type": "varchar",
+            "maxLength": 64,
+            "readOnly": true
+        },
+        "lines": {
+            "type": "linkMultiple",
+            "noLoad": true
+        },
+        "createdAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "modifiedAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "createdBy": {
+            "type": "link",
+            "readOnly": true,
+            "view": "views/fields/user"
+        }
+    },
+    "links": {
+        "postedBy": {
+            "type": "belongsTo",
+            "entity": "User"
+        },
+        "lines": {
+            "type": "hasMany",
+            "entity": "SupplyReceiptLine",
+            "foreign": "receipt"
+        },
+        "createdBy": {
+            "type": "belongsTo",
+            "entity": "User"
+        }
+    },
+    "collection": {
+        "orderBy": "receiptDate",
+        "order": "desc",
+        "textFilterFields": [
+            "name",
+            "supplier",
+            "invoiceNumber"
+        ]
+    },
+    "indexes": {
+        "clientKey": {
+            "type": "unique",
+            "columns": [
+                "clientKey"
+            ]
+        },
+        "status": {
+            "columns": [
+                "status",
+                "deleted"
+            ]
+        }
+    }
+}

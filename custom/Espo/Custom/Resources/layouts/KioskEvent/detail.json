@@ -1,0 +1,14 @@
+[
+    {
+        "label": "Overview",
+        "rows": [
+            [{"name": "action"}, {"name": "outcome"}],
+            [{"name": "employee"}, {"name": "device"}],
+            [{"name": "washOrder"}, {"name": "orderWork"}],
+            [{"name": "errorCode"}, {"name": "httpStatus"}],
+            [{"name": "clientActionId"}, {"name": "clientAt"}],
+            [{"name": "replayCount"}, {"name": "ip"}],
+            [{"name": "meta"}, false]
+        ]
+    }
+]

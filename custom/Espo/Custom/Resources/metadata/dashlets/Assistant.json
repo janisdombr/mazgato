@@ -1,0 +1,33 @@
+{
+    "view": "custom:views/dashlets/assistant",
+    "options": {
+        "fields": {
+            "dashletWidth": {
+                "type": "enum",
+                "options": [
+                    "",
+                    "2",
+                    "4"
+                ],
+                "translation": "DashletOptions.options.dashletWidth"
+            },
+            "dashletHeight": {
+                "type": "enum",
+                "options": [
+                    "",
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "6"
+                ],
+                "translation": "DashletOptions.options.dashletHeight"
+            }
+        },
+        "defaults": {
+            "dashletWidth": null,
+            "dashletHeight": null
+        }
+    }
+}

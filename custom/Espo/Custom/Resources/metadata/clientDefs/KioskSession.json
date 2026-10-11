@@ -1,0 +1,5 @@
+{
+    "controller": "controllers/record",
+    "iconClass": "fas fa-tablet-screen-button",
+    "color": "#0b6e8e"
+}

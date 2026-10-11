@@ -1,0 +1,51 @@
+{
+    "labels": {
+        "title": "Klientu imports no CSV",
+        "intro": "Ielādējiet iepriekšējās sistēmas eksportēto klientu sarakstu. Nekas netiek ierakstīts, kamēr neizpildāt pārbaudi un neapstiprināt importu. Cilvēki, kas jau ir CRM (tas pats tālrunis, e-pasts vai uzņēmuma numurs, vai tā pati numurzīme), netiek veidoti atkārtoti un netiek mainīti. Mārketinga piekrišana NETIEK pārņemta: importētie klienti nesaņem e-pasta, WhatsApp vai tālruņa izsūtīšanas, kamēr nav piekrituši.",
+        "template": "Lejupielādēt CSV sagatavi",
+        "file": "CSV fails",
+        "encoding": "Kodējums",
+        "mapping": "Kura kolonna ir kas",
+        "rows": "rindas",
+        "check": "Pārbaudīt (nekas netiek ierakstīts)",
+        "doImport": "Importēt tagad",
+        "confirmImport": "Importēt šos klientus un auto tagad?",
+        "loading": "Darbojas…",
+        "readError": "Failu nevarēja nolasīt vai atbilstība ir nepareiza",
+        "reportDry": "Pārbaudes rezultāts - nekas netika ierakstīts",
+        "reportDone": "Importēts",
+        "customersNew": "jauni klienti",
+        "customersExisting": "jau ir CRM",
+        "carsNew": "jauni auto",
+        "carsExisting": "auto jau ir",
+        "skipped": "izlaistas rindas",
+        "reason": "Problēma"
+    },
+    "targets": {
+        "name": "Vārds (pilns)",
+        "firstName": "Vārds",
+        "lastName": "Uzvārds",
+        "phone": "Tālrunis",
+        "email": "E-pasts",
+        "plate": "Numurzīme(s)",
+        "brand": "Marka",
+        "model": "Modelis",
+        "regNumber": "Uzņēmuma reģ. nr.",
+        "pvnNumber": "PVN nr.",
+        "legalAddress": "Juridiskā adrese",
+        "birthday": "Dzimšanas diena",
+        "description": "Piezīmes",
+        "isCorporate": "Uzņēmums? (jā/nē)",
+        "allowEmail": "Piekrīt e-pasta mārketingam (jā/nē)"
+    },
+    "reasons": {
+        "empty_row": "Tukša rinda, izlaista",
+        "invalid_email": "E-pasts nederīgs, izlaists",
+        "invalid_plate": "Numurzīme nederīga, auto nav izveidots",
+        "plate_conflict": "Numurzīme jau pieder citam klientam, nav pārcelta",
+        "no_customer_for_plate": "Numurzīme bez personas, izlaista",
+        "customer_failed": "Klientu neizdevās saglabāt",
+        "vehicle_failed": "Auto neizdevās saglabāt",
+        "name_only_key": "Personu atpazīšanai ir tikai vārds (atkārtots imports to sasaistīs pēc precīza vārda)"
+    }
+}

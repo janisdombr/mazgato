@@ -1,0 +1,38 @@
+{
+    "fields": {
+        "name": "Kustība",
+        "kind": "Veids",
+        "supply": "Materiāls",
+        "delta": "Izmaiņa",
+        "quantityBefore": "Bija",
+        "quantityAfter": "Kļuva",
+        "unitCost": "Pašizmaksa",
+        "reason": "Pamatojums",
+        "occurredAt": "Kad",
+        "washOrder": "Pasūtījums",
+        "receipt": "Pieņemšana",
+        "stocktake": "Inventarizācija",
+        "createdBy": "Kas"
+    },
+    "links": {
+        "supply": "Materiāls",
+        "washOrder": "Pasūtījums",
+        "receipt": "Pieņemšana",
+        "stocktake": "Inventarizācija",
+        "createdBy": "Kas"
+    },
+    "options": {
+        "kind": {
+            "Receipt": "Pieņemšana",
+            "Consumption": "Patēriņš pasūtījumā",
+            "Stocktake": "Inventarizācija",
+            "Manual": "Labots ar roku"
+        }
+    },
+    "tooltips": {
+        "unitCost": "Materiāla pašizmaksa pēc šīs kustības."
+    },
+    "labels": {
+        "Create SupplyMovement": "Žurnāls ir tikai lasāms"
+    }
+}

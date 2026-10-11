@@ -1,0 +1,41 @@
+{
+    "fields": {
+        "name": "Вопрос",
+        "question": "Вопрос",
+        "answer": "Ответ",
+        "status": "Статус",
+        "stopped": "Причина остановки",
+        "errorCode": "Код ошибки",
+        "toolNames": "Инструменты",
+        "toolsJson": "Вызовы инструментов",
+        "draftsJson": "Черновики",
+        "pseudonyms": "Псевдонимы",
+        "unsourced": "Числа без источника",
+        "steps": "Шаги",
+        "tokensIn": "Входные токены",
+        "tokensOut": "Выходные токены",
+        "cacheReadTokens": "Чтение из кэша",
+        "cacheWriteTokens": "Запись в кэш",
+        "costUsd": "Стоимость, USD",
+        "model": "Модель",
+        "ms": "Время, мс",
+        "fromPage": "Со страницы",
+        "assignedUser": "Пользователь",
+        "createdAt": "Время",
+        "modifiedAt": "Изменено"
+    },
+    "links": {
+        "assignedUser": "Пользователь"
+    },
+    "options": {
+        "status": {
+            "Pending": "Выполняется",
+            "Answered": "Отвечен",
+            "Stopped": "Остановлен",
+            "Failed": "Ошибка"
+        }
+    },
+    "labels": {
+        "Create AssistantMessage": "Создать запись"
+    }
+}

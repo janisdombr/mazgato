@@ -1,0 +1,42 @@
+{
+    "labels": {
+        "siteContent": "Vietnes saturs",
+        "siteContentHint": "Lapas HTML tiek saglabāts uzreiz un ir dzīvs. Pirms rediģēšanas ieteicams nokopēt esošo saturu. Nepareizs HTML var salauzt lapas izskatu.",
+        "siteContentMissing": "Lapa vēl nav izveidota — saglabāšana to izveidos.",
+        "siteVersions": "Versijas",
+        "siteVersionLoaded": "Versija ielādēta redaktorā — nospiediet Saglabāt, lai to atjaunotu.",
+        "carwashPanel": "Automazgātava",
+        "brand": "Zīmols",
+        "Identity": "Identitāte",
+        "Documents": "Dokumenti",
+        "Mail": "Pasts",
+        "kiosk": "Planšetes",
+        "booking": "Tiešsaistes pieraksts",
+        "clientMessages": "Paziņojumi",
+        "assistant": "AI palīgs",
+        "anpr": "Numuri un kameras",
+        "license": "Licence",
+        "accountingExport": "Grāmatvedības eksports",
+        "importCustomers": "Klientu imports",
+        "quickStart": "Ātrā sākšana",
+        "clientAssistant": "Klientu čats (AI)",
+        "carwashRoles": "Lomas un piekļuve"
+    },
+    "messages": {
+        "brandReload": "Saglabāts. Zīmola krāsa un nosaukums stāsies spēkā pēc lapas pārlādes."
+    },
+    "descriptions": {
+        "brand": "Klienta logotips, nosaukums, krāsa, dokumentu galvene un paraksts.",
+        "kiosk": "Strādnieka planšete: ierīces, PIN kodi, žurnāls un iestatījumi.",
+        "booking": "Publiskā pieraksta lapa: darba laiks, vietas, laiki, atgādinājumi, aizsardzība.",
+        "clientMessages": "Ziņas «auto gatavs» un par pierakstu: kanāli, piekļuves dati, atsauksmes saite, testa sūtīšana.",
+        "assistant": "Palīgs vadītājam: pakalpojuma sniedzējs, atslēga, modeļi, limiti, privātums, izmaksas.",
+        "anpr": "Numuru atpazīšana: mezgli, kameras, sliekšņi, glabāšana un privātums.",
+        "license": "Moduļu parakstītā licence: instalācijas ID, augšupielāde, statuss, papildlaiks.",
+        "accountingExport": "Pabeigto pasūtījumu pārdošanas žurnāls grāmatvedim: CSV vai XML.",
+        "importCustomers": "Klienti un auto no iepriekšējās sistēmas CSV: vispirms pārbaude, bez dublikātiem.",
+        "quickStart": "Cenas, darbi, likmes un darbinieki vienā tabulā, ar pilnības pārbaudi.",
+        "clientAssistant": "Publisks AI čats apmeklētājiem: ieslēgšana, zināšanas, limiti, izmaksu griesti, pārbaude.",
+        "carwashRoles": "Trīs līmeņi vienkārši: ko drīkst īpašnieks, vadītājs, operators; lietotāji un viņu lomas."
+    }
+}

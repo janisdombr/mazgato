@@ -1,0 +1,23 @@
+[
+    {
+        "name": "name",
+        "width": 24,
+        "link": true
+    },
+    {
+        "name": "status",
+        "width": 12
+    },
+    {
+        "name": "version",
+        "width": 12
+    },
+    {
+        "name": "lastSeenAt",
+        "width": 18
+    },
+    {
+        "name": "queueDepth",
+        "width": 10
+    }
+]

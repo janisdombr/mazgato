@@ -1,0 +1,119 @@
+{
+    "controller": "controllers/record",
+    "iconClass": "fas fa-user-tie",
+    "color": "#2c6e9c",
+    "menu": {
+        "detail": {
+            "buttons": [
+                {
+                    "name": "newOrder",
+                    "label": "newOrder",
+                    "style": "primary",
+                    "acl": "create",
+                    "aclScope": "WashOrder",
+                    "handler": "custom:handlers/customer/new-order",
+                    "actionFunction": "run"
+                },
+                {
+                    "name": "monthlyInvoice",
+                    "label": "monthlyInvoice",
+                    "style": "default",
+                    "acl": "read",
+                    "aclScope": "WashOrder",
+                    "handler": "custom:handlers/customer/monthly-invoice",
+                    "actionFunction": "run"
+                },
+                {
+                    "name": "sellSubscription",
+                    "label": "sellSubscription",
+                    "style": "default",
+                    "acl": "create",
+                    "aclScope": "Subscription",
+                    "handler": "custom:handlers/subscription/sell",
+                    "actionFunction": "run"
+                }
+            ]
+        }
+    },
+    "relationshipPanels": {
+        "vehicles": {
+            "rowActionsView": "custom:views/vehicle/record/row-actions-relationship"
+        }
+    },
+    "recordViews": {
+        "detail": "custom:views/customer/record/detail"
+    },
+    "sidePanels": {
+        "detail": [
+            {
+                "name": "customerSummary",
+                "label": "Summary",
+                "view": "custom:views/customer/record/panels/summary",
+                "aclScope": "WashOrder",
+                "sticked": true
+            }
+        ]
+    },
+    "dynamicLogic": {
+        "fields": {
+            "regNumber": {
+                "visible": {
+                    "conditionGroup": [
+                        {
+                            "type": "isTrue",
+                            "attribute": "isCorporate"
+                        }
+                    ]
+                }
+            },
+            "pvnNumber": {
+                "visible": {
+                    "conditionGroup": [
+                        {
+                            "type": "isTrue",
+                            "attribute": "isCorporate"
+                        }
+                    ]
+                }
+            },
+            "legalAddress": {
+                "visible": {
+                    "conditionGroup": [
+                        {
+                            "type": "isTrue",
+                            "attribute": "isCorporate"
+                        }
+                    ]
+                }
+            },
+            "birthday": {
+                "visible": {
+                    "conditionGroup": [
+                        {
+                            "type": "isFalse",
+                            "attribute": "isCorporate"
+                        }
+                    ]
+                }
+            },
+            "description": {
+                "visible": {
+                    "conditionGroup": [
+                        {
+                            "type": "isNotEmpty",
+                            "attribute": "description"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "massActionList": [
+        "remove",
+        "export"
+    ],
+    "checkAllResultMassActionList": [
+        "remove",
+        "export"
+    ]
+}

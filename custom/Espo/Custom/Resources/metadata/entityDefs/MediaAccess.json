@@ -1,0 +1,88 @@
+{
+    "fields": {
+        "name": {
+            "type": "varchar",
+            "maxLength": 120,
+            "readOnly": true
+        },
+        "kind": {
+            "type": "enum",
+            "options": [
+                "PlateEvent",
+                "OrderPhoto",
+                "Snapshot",
+                "Live",
+                "Clip",
+                "Erase"
+            ],
+            "default": "PlateEvent",
+            "readOnly": true
+        },
+        "user": {
+            "type": "link",
+            "readOnly": true
+        },
+        "plateEvent": {
+            "type": "link",
+            "readOnly": true
+        },
+        "orderPhoto": {
+            "type": "link",
+            "readOnly": true
+        },
+        "camera": {
+            "type": "link",
+            "readOnly": true
+        },
+        "detail": {
+            "type": "varchar",
+            "maxLength": 200,
+            "readOnly": true
+        },
+        "ip": {
+            "type": "varchar",
+            "maxLength": 64,
+            "readOnly": true
+        },
+        "createdAt": {
+            "type": "datetime",
+            "readOnly": true
+        }
+    },
+    "links": {
+        "user": {
+            "type": "belongsTo",
+            "entity": "User"
+        },
+        "plateEvent": {
+            "type": "belongsTo",
+            "entity": "PlateEvent"
+        },
+        "orderPhoto": {
+            "type": "belongsTo",
+            "entity": "OrderPhoto"
+        },
+        "camera": {
+            "type": "belongsTo",
+            "entity": "Camera"
+        }
+    },
+    "collection": {
+        "orderBy": "createdAt",
+        "order": "desc"
+    },
+    "indexes": {
+        "when": {
+            "columns": [
+                "createdAt",
+                "deleted"
+            ]
+        },
+        "who": {
+            "columns": [
+                "userId",
+                "createdAt"
+            ]
+        }
+    }
+}

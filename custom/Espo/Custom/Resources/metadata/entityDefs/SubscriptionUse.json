@@ -1,0 +1,53 @@
+{
+    "fields": {
+        "name": {
+            "type": "varchar",
+            "maxLength": 100
+        },
+        "subscription": {
+            "type": "link",
+            "required": true
+        },
+        "washOrder": {
+            "type": "link",
+            "required": true
+        },
+        "usedAt": {
+            "type": "datetime"
+        },
+        "refundedAt": {
+            "type": "datetime"
+        },
+        "listPrice": {
+            "type": "currency",
+            "tooltip": true
+        },
+        "createdAt": {
+            "type": "datetime",
+            "readOnly": true
+        }
+    },
+    "links": {
+        "subscription": {
+            "type": "belongsTo",
+            "entity": "Subscription",
+            "foreign": "uses"
+        },
+        "washOrder": {
+            "type": "belongsTo",
+            "entity": "WashOrder"
+        }
+    },
+    "collection": {
+        "orderBy": "usedAt",
+        "order": "desc"
+    },
+    "indexes": {
+        "oneUsePerOrder": {
+            "type": "unique",
+            "columns": [
+                "washOrderId"
+            ]
+        }
+    }
+}

@@ -1,0 +1,27 @@
+[
+    {
+        "name": "name",
+        "width": 22,
+        "link": true
+    },
+    {
+        "name": "code",
+        "width": 14
+    },
+    {
+        "name": "role",
+        "width": 12
+    },
+    {
+        "name": "edgeNode",
+        "width": 18
+    },
+    {
+        "name": "online",
+        "width": 8
+    },
+    {
+        "name": "lastFrameAt",
+        "width": 18
+    }
+]

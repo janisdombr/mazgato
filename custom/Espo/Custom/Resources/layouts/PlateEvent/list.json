@@ -1,0 +1,31 @@
+[
+    {
+        "name": "hasSnapshot",
+        "width": 10
+    },
+    {
+        "name": "plate",
+        "width": 14,
+        "link": true
+    },
+    {
+        "name": "status",
+        "width": 11
+    },
+    {
+        "name": "confidence",
+        "width": 9
+    },
+    {
+        "name": "camera",
+        "width": 14
+    },
+    {
+        "name": "customer",
+        "width": 16
+    },
+    {
+        "name": "takenAt",
+        "width": 17
+    }
+]

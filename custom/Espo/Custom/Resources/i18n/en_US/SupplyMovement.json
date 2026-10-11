@@ -1,0 +1,38 @@
+{
+    "fields": {
+        "name": "Movement",
+        "kind": "Kind",
+        "supply": "Supply",
+        "delta": "Change",
+        "quantityBefore": "Before",
+        "quantityAfter": "After",
+        "unitCost": "Unit cost",
+        "reason": "Reason",
+        "occurredAt": "When",
+        "washOrder": "Order",
+        "receipt": "Receipt",
+        "stocktake": "Stocktake",
+        "createdBy": "Who"
+    },
+    "links": {
+        "supply": "Supply",
+        "washOrder": "Order",
+        "receipt": "Receipt",
+        "stocktake": "Stocktake",
+        "createdBy": "Who"
+    },
+    "options": {
+        "kind": {
+            "Receipt": "Receipt",
+            "Consumption": "Used by order",
+            "Stocktake": "Stocktake",
+            "Manual": "Manual edit"
+        }
+    },
+    "tooltips": {
+        "unitCost": "The supply unit cost after this movement."
+    },
+    "labels": {
+        "Create SupplyMovement": "The journal is read-only"
+    }
+}

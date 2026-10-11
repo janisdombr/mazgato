@@ -1,0 +1,20 @@
+{
+    "controller": "controllers/record",
+    "iconClass": "fas fa-ticket",
+    "color": "#7c3aed",
+    "menu": {
+        "list": {
+            "buttons": [
+                {
+                    "name": "sell",
+                    "label": "sell",
+                    "style": "primary",
+                    "acl": "create",
+                    "aclScope": "Subscription",
+                    "handler": "custom:handlers/subscription/sell",
+                    "actionFunction": "run"
+                }
+            ]
+        }
+    }
+}

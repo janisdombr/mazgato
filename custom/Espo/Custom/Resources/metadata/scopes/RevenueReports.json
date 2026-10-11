@@ -1,0 +1,8 @@
+{
+    "entity": false,
+    "tab": false,
+    "acl": "boolean",
+    "aclFieldLevelDisabled": true,
+    "module": "Custom",
+    "isCustom": true
+}

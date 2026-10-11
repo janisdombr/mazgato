@@ -1,0 +1,19 @@
+{
+    "labels": {
+        "refresh": "Rādīt",
+        "orders": "Pasūtījumi",
+        "works": "Darbi",
+        "supply": "Materiāls",
+        "quantity": "Patēriņš",
+        "unitCost": "Cena/vien.",
+        "cost": "Izmaksas",
+        "total": "Kopā",
+        "noData": "Šajā periodā nav patērētu materiālu.",
+        "services": "Pakalpojumi",
+        "byService": "Izmaksas pa pakalpojumiem",
+        "bySupply": "Patēriņš pa materiāliem",
+        "service": "Pakalpojums",
+        "times": "Reizes",
+        "costPerUnit": "Izmaksas/reizi"
+    }
+}

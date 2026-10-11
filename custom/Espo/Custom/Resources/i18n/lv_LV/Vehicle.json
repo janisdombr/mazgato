@@ -1,0 +1,46 @@
+{
+    "fields": {
+        "name": "Numura zīme",
+        "brand": "Marka",
+        "model": "Modelis",
+        "bodyType": "Virsbūves tips",
+        "customer": "Klients",
+        "orders": "Pasūtījumi",
+        "description": "Piezīmes",
+        "createdAt": "Izveidots",
+        "modifiedAt": "Mainīts",
+        "createdBy": "Izveidoja",
+        "plateTemporary": "Pagaidu numurs"
+    },
+    "links": {
+        "customer": "Klients",
+        "orders": "Pasūtījumi"
+    },
+    "options": {
+        "bodyType": {
+            "Sedan": "Sedans",
+            "Hatchback": "Hečbeks",
+            "Wagon": "Universālis",
+            "SUV": "Apvidus auto",
+            "Van": "Furgons",
+            "Truck": "Kravas auto",
+            "Other": "Cits"
+        }
+    },
+    "labels": {
+        "newOrder": "Jauns pasūtījums",
+        "Create Vehicle": "Izveidot transportlīdzekli",
+        "setRealPlate": "Norādīt īsto numuru",
+        "realPlate": "Īstais numurs",
+        "setRealPlateHint": "Automašīna saglabā vēsturi; pagaidu numurs pazūd.",
+        "mergeAsk": "Šis numurs jau pieder citai automašīnai. Apvienot šo automašīnu ar to (visi pasūtījumi pāries uz to)?",
+        "merge": "Apvienot",
+        "plateChanged": "Numurs nomainīts",
+        "carsMerged": "Automašīnas apvienotas",
+        "tempPlateBadge": "Pagaidu numurs",
+        "plateRequired": "Ievadiet numura zīmi"
+    },
+    "tooltips": {
+        "plateTemporary": "Sistēmas piešķirts numurs automašīnai bez reģistrācijas (BN-ggmmdd-NNN). Aizstājiet ar īsto: poga \"Norādīt īsto numuru\"."
+    }
+}

@@ -1,0 +1,14 @@
+[
+    {
+        "name": "vehicles"
+    },
+    {
+        "name": "drivers"
+    },
+    {
+        "name": "orders"
+    },
+    {
+        "name": "subscriptions"
+    }
+]

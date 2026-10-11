@@ -1,0 +1,29 @@
+[
+    {
+        "label": "Overview",
+        "rows": [
+            [
+                {
+                    "name": "subscription"
+                },
+                {
+                    "name": "washOrder"
+                }
+            ],
+            [
+                {
+                    "name": "usedAt"
+                },
+                {
+                    "name": "refundedAt"
+                }
+            ],
+            [
+                {
+                    "name": "listPrice"
+                },
+                false
+            ]
+        ]
+    }
+]

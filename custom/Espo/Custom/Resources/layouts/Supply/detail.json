@@ -1,0 +1,12 @@
+[
+    {
+        "label": "Supply",
+        "rows": [
+            [{"name": "name"}, {"name": "unit"}],
+            [{"name": "stockQuantity"}, {"name": "reorderLevel"}],
+            [{"name": "needsReorder"}, {"name": "unitCost"}],
+            [{"name": "supplier"}, false],
+            [{"name": "description"}, false]
+        ]
+    }
+]

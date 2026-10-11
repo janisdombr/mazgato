@@ -1,0 +1,67 @@
+[
+    {
+        "label": "Overview",
+        "rows": [
+            [
+                {
+                    "name": "name"
+                },
+                {
+                    "name": "code"
+                }
+            ],
+            [
+                {
+                    "name": "role"
+                },
+                {
+                    "name": "post"
+                }
+            ],
+            [
+                {
+                    "name": "edgeNode"
+                },
+                {
+                    "name": "streamName"
+                }
+            ],
+            [
+                {
+                    "name": "isActive"
+                },
+                {
+                    "name": "online"
+                }
+            ],
+            [
+                {
+                    "name": "lastFrameAt"
+                },
+                {
+                    "name": "lastError"
+                }
+            ],
+            [
+                {
+                    "name": "secretInput"
+                },
+                {
+                    "name": "secretSet"
+                }
+            ],
+            [
+                {
+                    "name": "secretClear"
+                },
+                false
+            ],
+            [
+                {
+                    "name": "note"
+                },
+                false
+            ]
+        ]
+    }
+]

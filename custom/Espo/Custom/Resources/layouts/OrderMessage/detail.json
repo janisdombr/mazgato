@@ -1,0 +1,51 @@
+[
+    {
+        "label": "Overview",
+        "rows": [
+            [
+                {
+                    "name": "name"
+                },
+                {
+                    "name": "status"
+                }
+            ],
+            [
+                {
+                    "name": "kind"
+                },
+                {
+                    "name": "channel"
+                }
+            ],
+            [
+                {
+                    "name": "recipient"
+                },
+                {
+                    "name": "sentAt"
+                }
+            ],
+            [
+                {
+                    "name": "customer"
+                },
+                {
+                    "name": "washOrder"
+                }
+            ],
+            [
+                {
+                    "name": "body"
+                },
+                false
+            ],
+            [
+                {
+                    "name": "error"
+                },
+                false
+            ]
+        ]
+    }
+]

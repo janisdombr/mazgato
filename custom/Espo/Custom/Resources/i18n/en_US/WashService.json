@@ -1,0 +1,35 @@
+{
+    "fields": {
+        "name": "Name",
+        "category": "Category",
+        "priceRetail": "Retail Price",
+        "priceCorporate": "Corporate Price",
+        "durationMinutes": "Duration (min)",
+        "isActive": "Active",
+        "description": "Description",
+        "createdAt": "Created At",
+        "modifiedAt": "Modified At",
+        "workLines": "Works",
+        "sortOrder": "Sort order",
+        "supplyLines": "Supply lines"
+    },
+    "links": {
+        "orders": "Orders",
+        "supplyLines": "Supplies (consumption)",
+        "addonOrders": "Orders (as add-on)",
+        "workLines": "Works (preset)"
+    },
+    "options": {
+        "category": {
+            "Base": "Base wash",
+            "Add-on": "Add-on"
+        }
+    },
+    "tooltips": {
+        "sortOrder": "Order in lists and in the quick-intake form — a smaller number comes first."
+    },
+    "labels": {
+        "sortServices": "Reorder",
+        "Create WashService": "Create Service"
+    }
+}

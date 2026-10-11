@@ -1,0 +1,5 @@
+[
+    {"name": "supply", "width": 40, "link": true},
+    {"name": "service", "width": 40},
+    {"name": "quantity", "width": 20}
+]

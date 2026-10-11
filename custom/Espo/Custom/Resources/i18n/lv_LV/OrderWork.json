@@ -1,0 +1,43 @@
+{
+    "fields": {
+        "name": "Nosaukums",
+        "washOrder": "Pasūtījums",
+        "work": "Darbs",
+        "service": "No pakalpojuma",
+        "role": "Loma",
+        "employee": "Darbinieks",
+        "rate": "Likme",
+        "share": "Daļa, %",
+        "amount": "Summa",
+        "description": "Piezīmes",
+        "amountManual": "Summa ievadīta manuāli",
+        "startedAt": "Sākts",
+        "doneAt": "Pabeigts",
+        "doneBy": "Pabeidza",
+        "doneDevice": "Ierīce"
+    },
+    "links": {
+        "washOrder": "Pasūtījums",
+        "work": "Darbs",
+        "service": "No pakalpojuma",
+        "role": "Loma",
+        "employee": "Darbinieks",
+        "doneBy": "Pabeidza",
+        "doneDevice": "Ierīce"
+    },
+    "tooltips": {
+        "service": "Pakalpojums, kas pievienoja šo darbu pasūtījumam.",
+        "role": "Aizpildās no darba noklusētās lomas; brīvi maināma.",
+        "rate": "Aizpildās no likmju matricas un ir rediģējama. Notīri lauku, lai pārrēķinātu.",
+        "share": "Likmes procents šai rindai. Lai sadalītu darbu starp diviem darbiniekiem, pievieno to pašu darbu divreiz — piem. 50 % + 50 %.",
+        "amount": "likme × daļa %. Aprēķināts.",
+        "amountManual": "Ieslēdzas automātiski, kad ievadi summu. Kamēr ieslēgts, likme x daļa netiek pārrēķināta — maini likmi vai daļu, lai atgrieztu automātisko rēķinu.",
+        "doneAt": "Kad darbs atzīmēts kā izdarīts (planšetē vai CRM). Raksta vienreiz; notīri, lai atzīmētu no jauna.",
+        "startedAt": "Kad darbinieks planšetē nospieda „Sākt“.",
+        "doneBy": "Kas atzīmēja darbu kā izdarītu. Planšetē tas vienmēr ir darba izpildītājs.",
+        "doneDevice": "No kuras planšetes darbs atzīmēts."
+    },
+    "labels": {
+        "Create OrderWork": "Izveidot darbu pasūtījumā"
+    }
+}

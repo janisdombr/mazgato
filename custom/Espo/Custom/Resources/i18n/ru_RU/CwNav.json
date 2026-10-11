@@ -1,0 +1,10 @@
+{
+    "labels": {
+        "home": "Главная",
+        "administration": "Администрирование",
+        "create": "Создание",
+        "edit": "Правка",
+        "carwashRoles": "Роли и доступ",
+        "userInterface": "Язык, тема, формат"
+    }
+}

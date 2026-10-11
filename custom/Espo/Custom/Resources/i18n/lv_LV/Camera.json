@@ -1,0 +1,57 @@
+{
+    "fields": {
+        "name": "Nosaukums",
+        "code": "Kods",
+        "role": "Loma",
+        "post": "Posteņa nr.",
+        "edgeNode": "Mezgls",
+        "streamName": "Straumes nosaukums",
+        "isActive": "Aktīva",
+        "online": "Tiešsaistē",
+        "lastFrameAt": "Pēdējais kadrs",
+        "lastError": "Pēdējā kļūda",
+        "secretInput": "Piekļuves parole (tikai ieraksts)",
+        "secretClear": "Dzēst paroli",
+        "secretSet": "Parole iestatīta",
+        "secretCipher": "Šifrēta parole",
+        "note": "Piezīme",
+        "plateEvents": "Numuru notikumi",
+        "createdAt": "Izveidots",
+        "modifiedAt": "Mainīts"
+    },
+    "links": {
+        "edgeNode": "Mezgls",
+        "plateEvents": "Numuru notikumi"
+    },
+    "options": {
+        "role": {
+            "Entry": "Iebraukšana",
+            "Exit": "Izbraukšana",
+            "Bay": "Posteņa kamera",
+            "Overview": "Pārskats"
+        }
+    },
+    "tooltips": {
+        "code": "Īss nosaukums, pēc kura mezgls atpazīst kameru (a-z, 0-9, _ -). Piemēram, entry1.",
+        "post": "Kuram postenim kamera pieder (neobligāti).",
+        "edgeNode": "Mezgls, kas uztver šīs kameras notikumus un kadrus.",
+        "streamName": "Tikai nosaukums go2rtc/Frigate straumei — nekādas adreses un paroles.",
+        "secretInput": "Kameras parole mezglam. To tikai ieraksta: pēc saglabāšanas nekur netiek rādīta un nav pieejama API."
+    },
+    "labels": {
+        "Overview": "Pārskats",
+        "cameraLive": "Tiešraide un kadrs",
+        "snapshot": "Kadrs",
+        "snapshotWaiting": "Gaidu kadru no mezgla…",
+        "snapshotFailed": "Kadru neizdevās iegūt",
+        "liveStart": "Tiešraide",
+        "liveStop": "Apturēt",
+        "liveHint": "Piekļuve ir 5 minūtes un tiek reģistrēta žurnālā.",
+        "liveNoStream": "Kamerai nav norādīts straumes nosaukums.",
+        "clips": "Ieraksti",
+        "clipsNone": "Ierakstu nav",
+        "nodeOffline": "Mezgls nav tiešsaistē",
+        "viewAccessNote": "Katrs skatījums tiek reģistrēts.",
+        "Create Camera": "Pievienot kameru"
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "fields": {
+        "name": "Nosaukums",
+        "subscription": "Abonements",
+        "washOrder": "Pasūtījums",
+        "usedAt": "Izmantots",
+        "refundedAt": "Atgriezts",
+        "listPrice": "Mazgāšanas vērtība"
+    },
+    "tooltips": {
+        "listPrice": "Cik mazgāšana būtu maksājusi; pats pasūtījums tiek nolīdzināts uz 0 EUR, lai nauda tiktu skaitīta vienreiz - pārdošanas brīdī."
+    },
+    "links": {
+        "subscription": "Abonements",
+        "washOrder": "Pasūtījums"
+    },
+    "labels": {
+        "Create SubscriptionUse": "Izveidot"
+    }
+}

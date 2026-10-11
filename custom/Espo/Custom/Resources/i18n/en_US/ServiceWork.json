@@ -1,0 +1,20 @@
+{
+    "fields": {
+        "name": "Title",
+        "service": "Service",
+        "work": "Work",
+        "role": "Role",
+        "sortOrder": "Sort order"
+    },
+    "links": {
+        "service": "Service",
+        "work": "Work",
+        "role": "Role"
+    },
+    "tooltips": {
+        "role": "Overrides the work's default role for this service only. Leave empty to use the default."
+    },
+    "labels": {
+        "Create ServiceWork": "Create Service work"
+    }
+}

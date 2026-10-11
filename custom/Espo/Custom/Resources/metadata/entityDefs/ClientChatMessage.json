@@ -1,0 +1,149 @@
+{
+    "fields": {
+        "name": {
+            "type": "varchar",
+            "maxLength": 150,
+            "readOnly": true
+        },
+        "question": {
+            "type": "text",
+            "readOnly": true
+        },
+        "answer": {
+            "type": "text",
+            "readOnly": true
+        },
+        "status": {
+            "type": "enum",
+            "options": [
+                "Pending",
+                "Answered",
+                "Stopped",
+                "Failed"
+            ],
+            "default": "Pending",
+            "readOnly": true,
+            "displayAsLabel": true,
+            "style": {
+                "Pending": "default",
+                "Answered": "success",
+                "Stopped": "warning",
+                "Failed": "danger"
+            }
+        },
+        "stopped": {
+            "type": "varchar",
+            "readOnly": true,
+            "maxLength": 30
+        },
+        "errorCode": {
+            "type": "varchar",
+            "readOnly": true,
+            "maxLength": 40
+        },
+        "toolNames": {
+            "type": "varchar",
+            "readOnly": true,
+            "maxLength": 255
+        },
+        "model": {
+            "type": "varchar",
+            "readOnly": true,
+            "maxLength": 120
+        },
+        "lang": {
+            "type": "varchar",
+            "readOnly": true,
+            "maxLength": 5
+        },
+        "chatId": {
+            "type": "varchar",
+            "readOnly": true,
+            "maxLength": 32
+        },
+        "ipHash": {
+            "type": "varchar",
+            "readOnly": true,
+            "maxLength": 24
+        },
+        "bookingOrder": {
+            "type": "varchar",
+            "readOnly": true,
+            "maxLength": 60
+        },
+        "toolsJson": {
+            "type": "text",
+            "readOnly": true
+        },
+        "vault": {
+            "type": "text",
+            "readOnly": true,
+            "utility": true
+        },
+        "steps": {
+            "type": "int",
+            "readOnly": true
+        },
+        "tokensIn": {
+            "type": "int",
+            "readOnly": true
+        },
+        "tokensOut": {
+            "type": "int",
+            "readOnly": true
+        },
+        "cacheReadTokens": {
+            "type": "int",
+            "readOnly": true
+        },
+        "cacheWriteTokens": {
+            "type": "int",
+            "readOnly": true
+        },
+        "ms": {
+            "type": "int",
+            "readOnly": true
+        },
+        "costUsd": {
+            "type": "float",
+            "readOnly": true,
+            "decimals": 6
+        },
+        "createdAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "modifiedAt": {
+            "type": "datetime",
+            "readOnly": true
+        }
+    },
+    "links": {},
+    "collection": {
+        "orderBy": "createdAt",
+        "order": "desc",
+        "textFilterFields": [
+            "name"
+        ]
+    },
+    "indexes": {
+        "ipTime": {
+            "columns": [
+                "ipHash",
+                "createdAt"
+            ]
+        },
+        "created": {
+            "columns": [
+                "createdAt",
+                "status"
+            ]
+        },
+        "chat": {
+            "columns": [
+                "chatId",
+                "createdAt"
+            ]
+        }
+    }
+}

@@ -1,0 +1,4 @@
+{
+    "loginView": "custom:views/login",
+    "navbarView": "custom:views/site/navbar"
+}

@@ -1,0 +1,32 @@
+{
+    "fields": {
+        "name": "Название",
+        "kind": "Что смотрели",
+        "user": "Пользователь",
+        "plateEvent": "Событие номера",
+        "orderPhoto": "Фото заказа",
+        "camera": "Камера",
+        "detail": "Детали",
+        "ip": "IP",
+        "createdAt": "Время"
+    },
+    "links": {
+        "user": "Пользователь",
+        "plateEvent": "Событие номера",
+        "orderPhoto": "Фото заказа",
+        "camera": "Камера"
+    },
+    "options": {
+        "kind": {
+            "PlateEvent": "Кадр номера",
+            "OrderPhoto": "Фото заказа с камеры",
+            "Snapshot": "Кадр по запросу",
+            "Live": "Прямой эфир",
+            "Clip": "Записи",
+            "Erase": "Удаление по запросу"
+        }
+    },
+    "labels": {
+        "Overview": "Обзор"
+    }
+}

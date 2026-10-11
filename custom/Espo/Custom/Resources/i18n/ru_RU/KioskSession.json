@@ -1,0 +1,33 @@
+{
+    "fields": {
+        "name": "Название",
+        "employee": "Работник",
+        "device": "Планшет",
+        "tokenHash": "Хеш токена",
+        "startedAt": "Начата",
+        "expiresAt": "Действует до",
+        "lastSeenAt": "Последняя активность",
+        "endedAt": "Завершена",
+        "endReason": "Причина завершения",
+        "ip": "IP",
+        "createdAt": "Создана",
+        "modifiedAt": "Изменена"
+    },
+    "links": {
+        "employee": "Работник",
+        "device": "Планшет"
+    },
+    "options": {
+        "endReason": {
+            "": "",
+            "Logout": "Выход",
+            "Idle": "Бездействие",
+            "Expired": "Истёк срок",
+            "Revoked": "Отозвана",
+            "Replaced": "Заменена"
+        }
+    },
+    "labels": {
+        "Create KioskSession": "Создать сессию"
+    }
+}

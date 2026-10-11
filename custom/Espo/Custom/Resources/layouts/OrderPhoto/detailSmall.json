@@ -1,0 +1,12 @@
+[
+    {
+        "label": "Overview",
+        "rows": [
+            [{"name": "washOrder"}, {"name": "kind"}],
+            [{"name": "file"}, {"name": "source"}],
+            [{"name": "employee"}, {"name": "takenAt"}],
+            [{"name": "retainUntil"}, false],
+            [{"name": "note"}, false]
+        ]
+    }
+]

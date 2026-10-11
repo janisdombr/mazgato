@@ -1,0 +1,22 @@
+{
+    "fields": {
+        "name": "Nosaukums",
+        "sortOrder": "Kārtība",
+        "isActive": "Aktīva",
+        "defaultEmployee": "Noklusētais darbinieks",
+        "works": "Darbi",
+        "description": "Piezīmes"
+    },
+    "links": {
+        "defaultEmployee": "Noklusētais darbinieks",
+        "works": "Darbi",
+        "orderWorks": "Darbi pasūtījumos"
+    },
+    "tooltips": {
+        "sortOrder": "Mazāks — pirmais. Aktīvās lomas pēc kārtības tiek piedāvātas ātrajā pieņemšanā.",
+        "defaultEmployee": "Darbinieks, kas ātrajā pieņemšanā šai lomai ir izvēlēts jau iepriekš."
+    },
+    "labels": {
+        "Create WorkRole": "Izveidot lomu"
+    }
+}

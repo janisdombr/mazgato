@@ -1,0 +1,29 @@
+{
+    "fields": {
+        "name": "Stocktake",
+        "status": "Status",
+        "reason": "Reason",
+        "postedAt": "When",
+        "postedBy": "By",
+        "linesCount": "Lines",
+        "varianceCount": "Differences",
+        "lines": "Lines",
+        "createdBy": "Created by"
+    },
+    "links": {
+        "lines": "Lines",
+        "postedBy": "By",
+        "createdBy": "Created by"
+    },
+    "options": {
+        "status": {
+            "Posted": "Posted"
+        }
+    },
+    "tooltips": {
+        "varianceCount": "How many lines differed from the system quantity."
+    },
+    "labels": {
+        "Create Stocktake": "Run a stocktake with the button on the Supplies list"
+    }
+}

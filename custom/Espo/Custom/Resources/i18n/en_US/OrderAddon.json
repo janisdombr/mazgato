@@ -1,0 +1,22 @@
+{
+    "fields": {
+        "name": "Name",
+        "price": "Price",
+        "washOrder": "Order",
+        "service": "Service",
+        "sortOrder": "Sort order",
+        "isBase": "Base wash"
+    },
+    "links": {
+        "washOrder": "Order",
+        "service": "Service"
+    },
+    "tooltips": {
+        "name": "The add-on name as it appears on the receipt.",
+        "price": "The price actually charged for this add-on on this order. Saved for the printed receipt.",
+        "isBase": "This line is the order's base wash, not an add-on."
+    },
+    "labels": {
+        "Create OrderAddon": "Create Order Add-on"
+    }
+}

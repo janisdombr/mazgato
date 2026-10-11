@@ -1,0 +1,119 @@
+{
+    "fields": {
+        "name": {
+            "type": "varchar",
+            "maxLength": 150
+        },
+        "action": {
+            "type": "varchar",
+            "maxLength": 40
+        },
+        "outcome": {
+            "type": "enum",
+            "options": ["Ok", "Denied", "Conflict", "Failed", "RateLimited"],
+            "default": "Ok",
+            "displayAsLabel": true,
+            "style": {
+                "Ok": "success",
+                "Denied": "danger",
+                "Conflict": "warning",
+                "Failed": "danger",
+                "RateLimited": "warning"
+            }
+        },
+        "errorCode": {
+            "type": "varchar",
+            "maxLength": 60
+        },
+        "httpStatus": {
+            "type": "int"
+        },
+        "employee": {
+            "type": "link"
+        },
+        "device": {
+            "type": "link"
+        },
+        "washOrder": {
+            "type": "link"
+        },
+        "orderWork": {
+            "type": "link"
+        },
+        "clientActionId": {
+            "type": "varchar",
+            "maxLength": 64,
+            "readOnly": true,
+            "tooltip": true
+        },
+        "clientAt": {
+            "type": "datetime",
+            "readOnly": true,
+            "tooltip": true
+        },
+        "replayCount": {
+            "type": "int",
+            "default": 0,
+            "readOnly": true
+        },
+        "meta": {
+            "type": "text",
+            "readOnly": true
+        },
+        "resultJson": {
+            "type": "text",
+            "readOnly": true,
+            "utility": true
+        },
+        "ip": {
+            "type": "varchar",
+            "maxLength": 64,
+            "readOnly": true
+        },
+        "createdAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "modifiedAt": {
+            "type": "datetime",
+            "readOnly": true
+        }
+    },
+    "links": {
+        "employee": {
+            "type": "belongsTo",
+            "entity": "Employee"
+        },
+        "device": {
+            "type": "belongsTo",
+            "entity": "User"
+        },
+        "washOrder": {
+            "type": "belongsTo",
+            "entity": "WashOrder"
+        },
+        "orderWork": {
+            "type": "belongsTo",
+            "entity": "OrderWork"
+        }
+    },
+    "collection": {
+        "orderBy": "createdAt",
+        "order": "desc"
+    },
+    "indexes": {
+        "clientActionId": {
+            "type": "unique",
+            "columns": ["clientActionId"]
+        },
+        "deviceTime": {
+            "columns": ["deviceId", "createdAt"]
+        },
+        "washOrder": {
+            "columns": ["washOrderId", "deleted"]
+        },
+        "employee": {
+            "columns": ["employeeId", "createdAt"]
+        }
+    }
+}

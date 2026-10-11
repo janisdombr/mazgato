@@ -1,0 +1,105 @@
+{
+    "fields": {
+        "name": {
+            "type": "varchar"
+        },
+        "kind": {
+            "type": "enum",
+            "options": [
+                "Ready",
+                "Booked",
+                "Reminder",
+                "Cancelled",
+                "Test"
+            ],
+            "default": "Ready"
+        },
+        "channel": {
+            "type": "enum",
+            "options": [
+                "",
+                "Email",
+                "WhatsApp",
+                "Sms",
+                "Telegram"
+            ],
+            "default": ""
+        },
+        "status": {
+            "type": "enum",
+            "options": [
+                "Sent",
+                "Failed",
+                "Skipped"
+            ],
+            "default": "Skipped",
+            "displayAsLabel": true,
+            "style": {
+                "Sent": "success",
+                "Failed": "danger",
+                "Skipped": "warning"
+            }
+        },
+        "error": {
+            "type": "varchar",
+            "readOnly": true
+        },
+        "recipient": {
+            "type": "varchar",
+            "readOnly": true,
+            "tooltip": true
+        },
+        "body": {
+            "type": "text",
+            "readOnly": true
+        },
+        "sentAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "customer": {
+            "type": "link"
+        },
+        "washOrder": {
+            "type": "link"
+        },
+        "createdAt": {
+            "type": "datetime",
+            "readOnly": true
+        }
+    },
+    "links": {
+        "customer": {
+            "type": "belongsTo",
+            "entity": "Customer"
+        },
+        "washOrder": {
+            "type": "belongsTo",
+            "entity": "WashOrder",
+            "foreign": "messages"
+        }
+    },
+    "collection": {
+        "orderBy": "createdAt",
+        "order": "desc",
+        "textFilterFields": [
+            "name",
+            "recipient"
+        ]
+    },
+    "indexes": {
+        "order": {
+            "columns": [
+                "washOrderId",
+                "kind",
+                "deleted"
+            ]
+        },
+        "status": {
+            "columns": [
+                "status",
+                "deleted"
+            ]
+        }
+    }
+}

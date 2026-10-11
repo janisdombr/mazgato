@@ -1,0 +1,59 @@
+/* Overrides of STOCK EspoCRM widgets (buttons, fields, labels, list cells). Only the CarWash themes load this. */
+/* ---------- core overrides (cascade over the stock EspoCRM stylesheet) ---------- */
+body { font-family: var(--cw-font); font-size: var(--cw-t-body); }
+:focus-visible { outline: 3px solid var(--cw-focus); outline-offset: 2px; }
+
+/* touch targets: buttons and fields are finger-sized, not 2016-desktop-sized */
+.btn { min-height: 40px; border-radius: var(--cw-r-field); font-weight: 600; }
+.btn-sm, .btn-xs { min-height: 40px; padding-left: var(--cw-s3); padding-right: var(--cw-s3); }
+.btn-primary { background-color: var(--cw-primary); border-color: var(--cw-primary); color: var(--cw-primary-ink); }
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+    background-color: var(--cw-primary-strong); border-color: var(--cw-primary-strong); color: var(--cw-primary-ink);
+}
+.form-control:not(textarea):not([multiple]) { min-height: 44px; border-radius: var(--cw-r-field); border-color: var(--cw-line-strong); }
+select.form-control { min-height: 44px; }
+
+/* D17: secondary text must stay readable (stock #999 on white is 2.8:1) */
+.text-muted { color: var(--cw-muted) !important; }
+
+/* D13/D14: every stock label becomes one chip: tinted surface, dark text, never colour alone */
+.label { border-radius: var(--cw-r-chip); font-size: var(--cw-t-meta); font-weight: 600; padding: 3px 10px; line-height: 1.5; }
+.label-default { background: var(--cw-st-cancel-bg); color: var(--cw-st-cancel); }
+.label-primary, .label-info { background: var(--cw-st-progress-bg); color: var(--cw-st-progress); }
+.label-success { background: var(--cw-st-done-bg); color: var(--cw-st-done); }
+.label-warning { background: var(--cw-st-wait-bg); color: var(--cw-st-wait); }
+.label-danger { background: var(--cw-pay-unpaid-bg); color: var(--cw-pay-unpaid); }
+
+/* money and counts line up by digit everywhere */
+.cw-num, .field[data-name="finalPrice"], td.cell[data-name="finalPrice"],
+.cell[data-name="amountNet"], .cell[data-name="vatAmount"] { font-variant-numeric: tabular-nums; }
+
+
+/* ---------- stock list/detail cells ---------- */
+td.cell .cw-money { display: block; text-align: right; }
+th[data-name="finalPrice"], th[data-name="amountNet"], th[data-name="vatAmount"], th[data-name="worksTotal"] { text-align: right; }
+/* coloured enum text left over in core views follows the same semantic tokens */
+.cell .text-info, .field .text-info { color: var(--cw-st-progress); }
+.cell .text-warning, .field .text-warning { color: var(--cw-st-wait); }
+.cell .text-success, .field .text-success { color: var(--cw-st-done); }
+.cell .text-danger, .field .text-danger { color: var(--cw-pay-unpaid); }
+
+/* ---------- client brand accents (--cw-brand is set from Settings via ?entryPoint=brandCss) ---------- */
+#login.panel { border-top: 6px solid var(--cw-brand); border-radius: var(--cw-r-card); }
+.cw-kpi { border-left: 4px solid var(--cw-brand); }
+
+/* ---------- sign-in screen (custom:views/login) ---------- */
+#login.cw-login { max-width: 420px; border-radius: var(--cw-r-card); box-shadow: var(--cw-shadow-card); }
+#login.cw-login .panel-heading { text-align: center; padding-bottom: var(--cw-s2); }
+#login.cw-login .logo-container { text-align: center; }
+#login.cw-login .logo { max-height: 72px; max-width: 80%; height: auto; }
+.cw-login__name { margin-top: var(--cw-s2); font-size: var(--cw-t-h1); font-weight: 600; color: var(--cw-ink); }
+#login.cw-login .form-control { min-height: 48px; }
+#login.cw-login .btn-primary { min-height: var(--cw-tap); width: 100%; font-size: var(--cw-t-body); }
+#login.cw-login [data-name="submit"] { display: flex; flex-direction: column-reverse; gap: var(--cw-s3); }
+#login.cw-login [data-name="submit"] .btn-link { align-self: center; min-height: 44px; display: inline-flex; align-items: center; margin: 0; float: none !important; }
+
+/* ---------- empty lists: say so, in a box, instead of a bare grey word ---------- */
+.list-container > .no-data { margin: var(--cw-s4) 0; padding: var(--cw-s6) var(--cw-s4); text-align: center; color: var(--cw-ink-2); font-size: var(--cw-t-body);
+    border: 2px dashed var(--cw-line-strong); border-radius: var(--cw-r-card); background: var(--cw-panel); }
+.panel-body .list-container > .no-data { margin: 0; padding: var(--cw-s4); border-width: 1px; }

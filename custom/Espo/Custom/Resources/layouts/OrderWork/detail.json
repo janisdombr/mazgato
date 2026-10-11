@@ -1,0 +1,61 @@
+[
+    {
+        "label": "Overview",
+        "rows": [
+            [
+                {
+                    "name": "work"
+                },
+                {
+                    "name": "employee"
+                }
+            ],
+            [
+                {
+                    "name": "amount"
+                },
+                {
+                    "name": "amountManual"
+                }
+            ],
+            [
+                {
+                    "name": "rate"
+                },
+                {
+                    "name": "share"
+                }
+            ],
+            [
+                {
+                    "name": "role"
+                },
+                {
+                    "name": "service"
+                }
+            ],
+            [
+                {
+                    "name": "startedAt"
+                },
+                {
+                    "name": "doneAt"
+                }
+            ],
+            [
+                {
+                    "name": "doneBy"
+                },
+                {
+                    "name": "doneDevice"
+                }
+            ],
+            [
+                {
+                    "name": "description"
+                },
+                false
+            ]
+        ]
+    }
+]

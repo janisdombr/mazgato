@@ -1,0 +1,11 @@
+{
+    "labels": {
+        "in": "In",
+        "out": "Out",
+        "onShift": "on shift since",
+        "noEmployees": "No hired employees.",
+        "clockedIn": "Clocked in",
+        "clockedOut": "Clocked out",
+        "hoursShort": "h"
+    }
+}

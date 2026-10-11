@@ -1,0 +1,41 @@
+{
+    "fields": {
+        "name": "Name",
+        "type": "Type",
+        "status": "Status",
+        "camera": "Camera",
+        "edgeNode": "Edge node",
+        "requestedBy": "Requested by",
+        "requestedAt": "Requested",
+        "leasedAt": "Handed to the node",
+        "doneAt": "Done at",
+        "error": "Error",
+        "params": "Parameters",
+        "result": "Result",
+        "hasFile": "Frame",
+        "fileKey": "Frame key",
+        "createdAt": "Created",
+        "modifiedAt": "Modified"
+    },
+    "links": {
+        "camera": "Camera",
+        "edgeNode": "Edge node",
+        "requestedBy": "Requested by"
+    },
+    "options": {
+        "type": {
+            "Snapshot": "Snapshot",
+            "Clips": "Clips"
+        },
+        "status": {
+            "Queued": "Queued",
+            "Leased": "Handed out",
+            "Done": "Done",
+            "Failed": "Failed",
+            "Expired": "Expired"
+        }
+    },
+    "labels": {
+        "Overview": "Overview"
+    }
+}

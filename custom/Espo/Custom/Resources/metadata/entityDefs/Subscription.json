@@ -1,0 +1,135 @@
+{
+    "fields": {
+        "name": {
+            "type": "varchar",
+            "required": false,
+            "maxLength": 150,
+            "trim": true
+        },
+        "customer": {
+            "type": "link",
+            "required": true
+        },
+        "kind": {
+            "type": "enum",
+            "options": [
+                "Pack",
+                "Unlimited"
+            ],
+            "default": "Pack",
+            "required": true
+        },
+        "washesTotal": {
+            "type": "int",
+            "min": 1,
+            "max": 10000
+        },
+        "washesRemaining": {
+            "type": "int",
+            "min": 0,
+            "readOnly": true
+        },
+        "service": {
+            "type": "link",
+            "tooltip": true
+        },
+        "validFrom": {
+            "type": "date"
+        },
+        "validTo": {
+            "type": "date",
+            "tooltip": true
+        },
+        "price": {
+            "type": "currency",
+            "required": true,
+            "min": 0
+        },
+        "status": {
+            "type": "enum",
+            "options": [
+                "Active",
+                "Exhausted",
+                "Expired",
+                "Cancelled"
+            ],
+            "default": "Active",
+            "style": {
+                "Active": "success",
+                "Exhausted": "warning",
+                "Expired": "warning",
+                "Cancelled": "danger"
+            }
+        },
+        "saleOrder": {
+            "type": "link",
+            "readOnly": true
+        },
+        "uses": {
+            "type": "linkMultiple",
+            "readOnly": true,
+            "layoutDetailDisabled": true
+        },
+        "orders": {
+            "type": "linkMultiple",
+            "readOnly": true,
+            "layoutDetailDisabled": true
+        },
+        "description": {
+            "type": "text"
+        },
+        "createdAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "modifiedAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "createdBy": {
+            "type": "link",
+            "readOnly": true
+        }
+    },
+    "links": {
+        "customer": {
+            "type": "belongsTo",
+            "entity": "Customer",
+            "foreign": "subscriptions"
+        },
+        "service": {
+            "type": "belongsTo",
+            "entity": "WashService"
+        },
+        "saleOrder": {
+            "type": "belongsTo",
+            "entity": "WashOrder"
+        },
+        "uses": {
+            "type": "hasMany",
+            "entity": "SubscriptionUse",
+            "foreign": "subscription"
+        },
+        "orders": {
+            "type": "hasMany",
+            "entity": "WashOrder",
+            "foreign": "subscription"
+        },
+        "createdBy": {
+            "type": "belongsTo",
+            "entity": "User"
+        }
+    },
+    "collection": {
+        "orderBy": "createdAt",
+        "order": "desc"
+    },
+    "indexes": {
+        "customerStatus": {
+            "columns": [
+                "customerId",
+                "status"
+            ]
+        }
+    }
+}

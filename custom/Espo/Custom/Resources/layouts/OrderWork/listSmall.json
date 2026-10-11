@@ -1,0 +1,15 @@
+[
+    {
+        "name": "work",
+        "width": 40,
+        "link": true
+    },
+    {
+        "name": "employee",
+        "width": 38
+    },
+    {
+        "name": "amount",
+        "width": 22
+    }
+]

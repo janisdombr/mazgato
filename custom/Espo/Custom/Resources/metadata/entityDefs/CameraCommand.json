@@ -1,0 +1,124 @@
+{
+    "fields": {
+        "name": {
+            "type": "varchar",
+            "maxLength": 80,
+            "readOnly": true
+        },
+        "type": {
+            "type": "enum",
+            "options": [
+                "Snapshot",
+                "Clips"
+            ],
+            "default": "Snapshot",
+            "readOnly": true
+        },
+        "status": {
+            "type": "enum",
+            "options": [
+                "Queued",
+                "Leased",
+                "Done",
+                "Failed",
+                "Expired"
+            ],
+            "default": "Queued",
+            "readOnly": true,
+            "displayAsLabel": true,
+            "style": {
+                "Queued": "warning",
+                "Leased": "info",
+                "Done": "success",
+                "Failed": "danger",
+                "Expired": "default"
+            }
+        },
+        "camera": {
+            "type": "link",
+            "readOnly": true
+        },
+        "edgeNode": {
+            "type": "link",
+            "readOnly": true
+        },
+        "requestedBy": {
+            "type": "link",
+            "readOnly": true
+        },
+        "requestedAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "leasedAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "doneAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "error": {
+            "type": "varchar",
+            "maxLength": 200,
+            "readOnly": true
+        },
+        "params": {
+            "type": "text",
+            "readOnly": true
+        },
+        "result": {
+            "type": "text",
+            "readOnly": true
+        },
+        "hasFile": {
+            "type": "bool",
+            "default": false,
+            "readOnly": true,
+            "view": "custom:views/fields/cw-media",
+            "mediaType": "command"
+        },
+        "fileKey": {
+            "type": "varchar",
+            "maxLength": 40,
+            "readOnly": true,
+            "layoutAvailabilityList": [],
+            "customizationDisabled": true
+        },
+        "createdAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "modifiedAt": {
+            "type": "datetime",
+            "readOnly": true
+        }
+    },
+    "links": {
+        "camera": {
+            "type": "belongsTo",
+            "entity": "Camera"
+        },
+        "edgeNode": {
+            "type": "belongsTo",
+            "entity": "EdgeNode"
+        },
+        "requestedBy": {
+            "type": "belongsTo",
+            "entity": "User"
+        }
+    },
+    "collection": {
+        "orderBy": "requestedAt",
+        "order": "desc"
+    },
+    "indexes": {
+        "queue": {
+            "columns": [
+                "edgeNodeId",
+                "status",
+                "deleted"
+            ]
+        }
+    }
+}

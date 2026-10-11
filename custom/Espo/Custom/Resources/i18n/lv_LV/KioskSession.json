@@ -1,0 +1,33 @@
+{
+    "fields": {
+        "name": "Nosaukums",
+        "employee": "Darbinieks",
+        "device": "Planšete",
+        "tokenHash": "Atslēgas kontrolsumma",
+        "startedAt": "Sākta",
+        "expiresAt": "Derīga līdz",
+        "lastSeenAt": "Pēdējā aktivitāte",
+        "endedAt": "Beigusies",
+        "endReason": "Beigu iemesls",
+        "ip": "IP",
+        "createdAt": "Izveidota",
+        "modifiedAt": "Mainīta"
+    },
+    "links": {
+        "employee": "Darbinieks",
+        "device": "Planšete"
+    },
+    "options": {
+        "endReason": {
+            "": "",
+            "Logout": "Iziešana",
+            "Idle": "Bezdarbība",
+            "Expired": "Beidzies termiņš",
+            "Revoked": "Atsaukta",
+            "Replaced": "Aizstāta"
+        }
+    },
+    "labels": {
+        "Create KioskSession": "Izveidot sesiju"
+    }
+}

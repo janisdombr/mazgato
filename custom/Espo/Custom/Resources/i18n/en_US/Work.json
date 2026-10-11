@@ -1,0 +1,25 @@
+{
+    "fields": {
+        "name": "Name",
+        "defaultRole": "Default role",
+        "sortOrder": "Sort order",
+        "isActive": "Active",
+        "baseRate": "Base rate",
+        "serviceLinks": "Services",
+        "rates": "Rates",
+        "description": "Notes"
+    },
+    "links": {
+        "defaultRole": "Default role",
+        "serviceLinks": "Services",
+        "rates": "Rates",
+        "orderWorks": "Order works"
+    },
+    "tooltips": {
+        "defaultRole": "Who normally does this work. Used when a service adds it to an order.",
+        "baseRate": "Fallback rate, used when no Work × Service × Employee rate matches."
+    },
+    "labels": {
+        "Create Work": "Create Work"
+    }
+}

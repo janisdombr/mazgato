@@ -1,0 +1,11 @@
+{
+    "labels": {
+        "platePlaceholder": "Plate number…",
+        "lookup": "Find",
+        "corporate": "Corporate",
+        "history": "Orders",
+        "spent": "Spent",
+        "notFound": "No customer found for this plate.",
+        "noHistory": "No orders yet"
+    }
+}

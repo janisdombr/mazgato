@@ -1,0 +1,19 @@
+[
+    {
+        "name": "name",
+        "width": 44,
+        "link": true
+    },
+    {
+        "name": "defaultRole",
+        "width": 26
+    },
+    {
+        "name": "baseRate",
+        "width": 16
+    },
+    {
+        "name": "isActive",
+        "width": 10
+    }
+]

@@ -1,0 +1,29 @@
+{
+    "fields": {
+        "name": "Название",
+        "washOrder": "Заказ",
+        "employee": "Сотрудник",
+        "role": "Роль",
+        "bonusEarned": "Начисленный бонус",
+        "description": "Заметки",
+        "createdAt": "Создано",
+        "modifiedAt": "Изменено"
+    },
+    "links": {
+        "washOrder": "Заказ",
+        "employee": "Сотрудник"
+    },
+    "options": {
+        "role": {
+            "Washer": "Мойщик",
+            "Detailer": "Детейлинг",
+            "Vacuum": "Пылесос",
+            "Polish": "Полировка",
+            "Supervisor": "Бригадир",
+            "Other": "Другое"
+        }
+    },
+    "labels": {
+        "Create WorkAssignment": "Создать назначение"
+    }
+}

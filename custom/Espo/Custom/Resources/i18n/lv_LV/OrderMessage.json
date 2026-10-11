@@ -1,0 +1,43 @@
+{
+    "fields": {
+        "name": "Ziņa",
+        "kind": "Veids",
+        "channel": "Kanāls",
+        "status": "Statuss",
+        "error": "Kļūda",
+        "recipient": "Saņēmējs",
+        "body": "Teksts",
+        "sentAt": "Nosūtīts",
+        "customer": "Klients",
+        "washOrder": "Pasūtījums",
+        "createdAt": "Izveidots"
+    },
+    "links": {
+        "customer": "Klients",
+        "washOrder": "Pasūtījums"
+    },
+    "options": {
+        "kind": {
+            "Ready": "Auto gatavs",
+            "Booked": "Pieraksts apstiprināts",
+            "Reminder": "Atgādinājums",
+            "Cancelled": "Pieraksts atcelts",
+            "Test": "Tests"
+        },
+        "channel": {
+            "": "—",
+            "Email": "E-pasts",
+            "WhatsApp": "WhatsApp",
+            "Sms": "SMS",
+            "Telegram": "Telegram"
+        },
+        "status": {
+            "Sent": "Nosūtīts",
+            "Failed": "Neizdevās",
+            "Skipped": "Izlaists"
+        }
+    },
+    "labels": {
+        "Create OrderMessage": "Izveidot ziņu"
+    }
+}

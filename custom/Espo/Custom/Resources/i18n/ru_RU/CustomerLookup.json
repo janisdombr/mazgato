@@ -1,0 +1,11 @@
+{
+    "labels": {
+        "platePlaceholder": "Гос. номер…",
+        "lookup": "Найти",
+        "corporate": "Юр. лицо",
+        "history": "Заказы",
+        "spent": "Потрачено",
+        "notFound": "Клиент по этому номеру не найден.",
+        "noHistory": "Заказов пока нет"
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "entity": true,
+    "object": true,
+    "isCustom": true,
+    "customizable": true,
+    "importable": false,
+    "notifications": false,
+    "stream": false,
+    "tab": false,
+    "acl": true,
+    "layouts": true,
+    "type": "Base",
+    "module": "Custom",
+    "cwBackTo": "#Camera"
+}

@@ -1,0 +1,43 @@
+[
+    {
+        "label": "Service",
+        "rows": [
+            [
+                {
+                    "name": "name"
+                },
+                {
+                    "name": "category"
+                }
+            ],
+            [
+                {
+                    "name": "priceRetail"
+                },
+                {
+                    "name": "priceCorporate"
+                }
+            ],
+            [
+                {
+                    "name": "durationMinutes"
+                },
+                {
+                    "name": "isActive"
+                }
+            ],
+            [
+                {
+                    "name": "description"
+                },
+                false
+            ],
+            [
+                {
+                    "name": "sortOrder"
+                },
+                false
+            ]
+        ]
+    }
+]

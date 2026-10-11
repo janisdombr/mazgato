@@ -1,0 +1,29 @@
+{
+    "fields": {
+        "name": "Inventarizācija",
+        "status": "Statuss",
+        "reason": "Pamatojums",
+        "postedAt": "Kad",
+        "postedBy": "Kas",
+        "linesCount": "Pozīcijas",
+        "varianceCount": "Atšķirības",
+        "lines": "Pozīcijas",
+        "createdBy": "Izveidoja"
+    },
+    "links": {
+        "lines": "Pozīcijas",
+        "postedBy": "Kas",
+        "createdBy": "Izveidoja"
+    },
+    "options": {
+        "status": {
+            "Posted": "Apstiprināta"
+        }
+    },
+    "tooltips": {
+        "varianceCount": "Cik pozīcijās skaitītais daudzums atšķīrās no uzskaites."
+    },
+    "labels": {
+        "Create Stocktake": "Inventarizāciju veic ar pogu sarakstā \"Materiāli\""
+    }
+}

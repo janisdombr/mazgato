@@ -1,0 +1,29 @@
+{
+    "fields": {
+        "name": "Customer",
+        "contact": "Contact",
+        "status": "Delivery Status",
+        "error": "Error",
+        "deliveredAt": "Delivered At",
+        "customer": "Customer",
+        "mailing": "Mailing"
+    },
+    "links": {
+        "customer": "Customer",
+        "mailing": "Mailing"
+    },
+    "options": {
+        "status": {
+            "Pending": "Pending",
+            "Sent": "Sent",
+            "Failed": "Failed",
+            "Skipped": "Skipped"
+        }
+    },
+    "tooltips": {
+        "contact": "The email or phone it was sent to (depending on the channel)."
+    },
+    "labels": {
+        "Create MailingRecipient": "Create Mailing Recipient"
+    }
+}

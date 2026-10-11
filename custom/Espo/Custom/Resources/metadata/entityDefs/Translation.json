@@ -1,0 +1,45 @@
+{
+    "fields": {
+        "name": {
+            "type": "varchar",
+            "required": true,
+            "trim": true,
+            "tooltip": true
+        },
+        "textLv": {
+            "type": "varchar",
+            "maxLength": 255
+        },
+        "textRu": {
+            "type": "varchar",
+            "maxLength": 255
+        },
+        "textEn": {
+            "type": "varchar",
+            "maxLength": 255
+        },
+        "description": {
+            "type": "text"
+        },
+        "createdAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "modifiedAt": {
+            "type": "datetime",
+            "readOnly": true
+        }
+    },
+    "links": {},
+    "collection": {
+        "orderBy": "name",
+        "order": "asc",
+        "textFilterFields": ["name", "textLv", "textRu", "textEn"]
+    },
+    "indexes": {
+        "nameUnique": {
+            "type": "unique",
+            "columns": ["name", "deleted"]
+        }
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "labels": {
+        "title": "Foto pirms / pēc",
+        "entryExit": "Iebraukšana → izbraukšana",
+        "beforeAfter": "Pirms → pēc",
+        "before": "Pirms",
+        "after": "Pēc",
+        "entry": "Iebraukšana",
+        "exit": "Izbraukšana",
+        "empty": "Nav foto, ko salīdzināt",
+        "missing": "Nav foto",
+        "slider": "Salīdzināt ar slīdni",
+        "sideBySide": "Blakus",
+        "enlarge": "Palielināt",
+        "close": "Aizvērt",
+        "prev": "Iepriekšējais",
+        "next": "Nākamais",
+        "allPhotos": "Visi foto",
+        "takenAt": "Uzņemts",
+        "sliderLabel": "Salīdzināšanas slīdnis",
+        "loadError": "Neizdevās ielādēt"
+    }
+}

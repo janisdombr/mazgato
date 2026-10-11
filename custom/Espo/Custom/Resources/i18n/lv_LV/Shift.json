@@ -1,0 +1,21 @@
+{
+    "fields": {
+        "name": "Nosaukums",
+        "employee": "Darbinieks",
+        "startedAt": "Ieradās",
+        "finishedAt": "Aizgāja",
+        "hours": "Stundas",
+        "description": "Piezīmes"
+    },
+    "links": {
+        "employee": "Darbinieks"
+    },
+    "tooltips": {
+        "startedAt": "Kad darbinieks ieradās.",
+        "finishedAt": "Kad aizgāja. Tukšs = maiņa vēl atvērta.",
+        "hours": "Aprēķinātas no ierašanās līdz aiziešanai."
+    },
+    "labels": {
+        "Create Shift": "Izveidot maiņu"
+    }
+}

@@ -1,0 +1,101 @@
+[
+    {
+        "label": "Overview",
+        "rows": [
+            [
+                {
+                    "name": "plate"
+                },
+                {
+                    "name": "status"
+                }
+            ],
+            [
+                {
+                    "name": "plateRaw"
+                },
+                {
+                    "name": "confidence"
+                }
+            ],
+            [
+                {
+                    "name": "hasSnapshot"
+                },
+                {
+                    "name": "matchKind"
+                }
+            ],
+            [
+                {
+                    "name": "plateSuggested"
+                },
+                {
+                    "name": "direction"
+                }
+            ],
+            [
+                {
+                    "name": "camera"
+                },
+                {
+                    "name": "source"
+                }
+            ],
+            [
+                {
+                    "name": "vehicle"
+                },
+                {
+                    "name": "customer"
+                }
+            ],
+            [
+                {
+                    "name": "washOrder"
+                },
+                {
+                    "name": "decidedBy"
+                }
+            ],
+            [
+                {
+                    "name": "takenAt"
+                },
+                {
+                    "name": "decidedAt"
+                }
+            ],
+            [
+                {
+                    "name": "seenCount"
+                },
+                {
+                    "name": "lastSeenAt"
+                }
+            ],
+            [
+                {
+                    "name": "autoCreated"
+                },
+                {
+                    "name": "corrected"
+                }
+            ],
+            [
+                {
+                    "name": "snapshotRetainUntil"
+                },
+                {
+                    "name": "retainUntil"
+                }
+            ],
+            [
+                {
+                    "name": "note"
+                },
+                false
+            ]
+        ]
+    }
+]

@@ -1,0 +1,63 @@
+{
+    "fields": {
+        "name": {
+            "type": "varchar",
+            "required": true,
+            "pattern": "$noBadCharacters"
+        },
+        "sortOrder": {
+            "type": "int",
+            "default": 0,
+            "tooltip": true
+        },
+        "isActive": {
+            "type": "bool",
+            "default": true
+        },
+        "defaultEmployee": {
+            "type": "link",
+            "tooltip": true
+        },
+        "works": {
+            "type": "linkMultiple",
+            "noLoad": true
+        },
+        "description": {
+            "type": "text"
+        },
+        "createdAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "modifiedAt": {
+            "type": "datetime",
+            "readOnly": true
+        }
+    },
+    "links": {
+        "defaultEmployee": {
+            "type": "belongsTo",
+            "entity": "Employee"
+        },
+        "works": {
+            "type": "hasMany",
+            "entity": "Work",
+            "foreign": "defaultRole"
+        },
+        "orderWorks": {
+            "type": "hasMany",
+            "entity": "OrderWork",
+            "foreign": "role"
+        }
+    },
+    "collection": {
+        "orderBy": "sortOrder",
+        "order": "asc",
+        "textFilterFields": ["name"]
+    },
+    "indexes": {
+        "sortOrder": {
+            "columns": ["sortOrder", "deleted"]
+        }
+    }
+}

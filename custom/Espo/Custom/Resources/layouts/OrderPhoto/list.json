@@ -1,0 +1,9 @@
+[
+    {"name": "file", "width": 14},
+    {"name": "kind", "width": 12},
+    {"name": "washOrder", "width": 18, "link": true},
+    {"name": "employee", "width": 16},
+    {"name": "source", "width": 10},
+    {"name": "takenAt", "width": 18},
+    {"name": "retainUntil", "width": 12}
+]

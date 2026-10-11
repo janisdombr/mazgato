@@ -1,0 +1,10 @@
+{
+    "labels": {
+        "refresh": "Show",
+        "employee": "Employee",
+        "works": "Works",
+        "earned": "Earned",
+        "total": "Total",
+        "noData": "No completed orders in this period."
+    }
+}

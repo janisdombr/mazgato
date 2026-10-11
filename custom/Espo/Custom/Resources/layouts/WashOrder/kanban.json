@@ -1,0 +1,22 @@
+[
+    {
+        "name": "vehicle",
+        "link": true,
+        "isLarge": true
+    },
+    {
+        "name": "service"
+    },
+    {
+        "name": "finalPrice",
+        "align": "right",
+        "isLarge": true
+    },
+    {
+        "name": "customer",
+        "isMuted": true
+    },
+    {
+        "name": "paymentStatus"
+    }
+]

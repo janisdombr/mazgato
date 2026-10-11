@@ -1,0 +1,11 @@
+[
+    {
+        "label": "Overview",
+        "rows": [
+            [{"name": "employee"}, {"name": "device"}],
+            [{"name": "startedAt"}, {"name": "expiresAt"}],
+            [{"name": "lastSeenAt"}, {"name": "endedAt"}],
+            [{"name": "endReason"}, {"name": "ip"}]
+        ]
+    }
+]

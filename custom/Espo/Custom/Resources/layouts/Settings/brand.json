@@ -1,0 +1,27 @@
+[
+    {
+        "rows": [
+            [{"name": "companyLogo"}, {"name": "applicationName"}],
+            [{"name": "brandColor"}, {"name": "productName"}],
+            [{"name": "sourceCodeUrl"}, false]
+        ],
+        "tabBreak": true,
+        "tabLabel": "$label:Identity"
+    },
+    {
+        "rows": [
+            [{"name": "brandDocHeader"}, {"name": "brandDocAddress"}],
+            [{"name": "brandDocRegNo"}, {"name": "brandDocPvnNo"}],
+            [{"name": "brandDocFooter"}, false]
+        ],
+        "tabBreak": true,
+        "tabLabel": "$label:Documents"
+    },
+    {
+        "rows": [
+            [{"name": "brandEmailSignature"}, {"name": "landingSiteUrl"}]
+        ],
+        "tabBreak": true,
+        "tabLabel": "$label:Mail"
+    }
+]

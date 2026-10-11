@@ -1,0 +1,53 @@
+{
+    "fields": {
+        "name": {
+            "type": "varchar",
+            "pattern": "$noBadCharacters"
+        },
+        "service": {
+            "type": "link",
+            "required": true
+        },
+        "work": {
+            "type": "link",
+            "required": true
+        },
+        "role": {
+            "type": "link",
+            "tooltip": true
+        },
+        "sortOrder": {
+            "type": "int",
+            "default": 0
+        },
+        "createdAt": {
+            "type": "datetime",
+            "readOnly": true
+        }
+    },
+    "links": {
+        "service": {
+            "type": "belongsTo",
+            "entity": "WashService",
+            "foreign": "workLines"
+        },
+        "work": {
+            "type": "belongsTo",
+            "entity": "Work",
+            "foreign": "serviceLinks"
+        },
+        "role": {
+            "type": "belongsTo",
+            "entity": "WorkRole"
+        }
+    },
+    "collection": {
+        "orderBy": "sortOrder",
+        "order": "asc"
+    },
+    "indexes": {
+        "service": {
+            "columns": ["serviceId", "deleted"]
+        }
+    }
+}

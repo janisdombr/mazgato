@@ -1,0 +1,22 @@
+{
+    "fields": {
+        "dashletWidth": "Platums",
+        "dashletHeight": "Augstums"
+    },
+    "options": {
+        "dashletWidth": {
+            "": "Kā ir (velkot)",
+            "2": "1 kolonna",
+            "4": "2 kolonnas (visa platuma)"
+        },
+        "dashletHeight": {
+            "": "Kā ir (velkot)",
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6"
+        }
+    }
+}

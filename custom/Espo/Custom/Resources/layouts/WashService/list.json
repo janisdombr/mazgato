@@ -1,0 +1,23 @@
+[
+    {
+        "name": "name",
+        "width": 34,
+        "link": true
+    },
+    {
+        "name": "category",
+        "width": 16
+    },
+    {
+        "name": "priceRetail",
+        "width": 16
+    },
+    {
+        "name": "priceCorporate",
+        "width": 18
+    },
+    {
+        "name": "isActive",
+        "width": 10
+    }
+]

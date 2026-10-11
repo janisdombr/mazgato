@@ -1,0 +1,22 @@
+{
+    "fields": {
+        "name": "Title",
+        "work": "Work",
+        "service": "Service",
+        "employee": "Employee",
+        "rate": "Rate"
+    },
+    "links": {
+        "work": "Work",
+        "service": "Service",
+        "employee": "Employee"
+    },
+    "tooltips": {
+        "service": "Leave empty to apply to every service.",
+        "employee": "Leave empty to apply to every employee.",
+        "rate": "Paid for one performance of this work. The most specific match wins: work+service+employee → work+service → work+employee → work."
+    },
+    "labels": {
+        "Create WorkRate": "Create Rate"
+    }
+}

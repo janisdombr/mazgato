@@ -1,0 +1,37 @@
+{
+    "controller": "controllers/record",
+    "iconClass": "fas fa-car",
+    "color": "#3a7d44",
+    "menu": {
+        "detail": {
+            "buttons": [
+                {
+                    "name": "newOrder",
+                    "label": "newOrder",
+                    "style": "primary",
+                    "acl": "create",
+                    "aclScope": "WashOrder",
+                    "handler": "custom:handlers/vehicle/new-order",
+                    "actionFunction": "run"
+                },
+                {
+                    "name": "setRealPlate",
+                    "label": "setRealPlate",
+                    "acl": "edit",
+                    "handler": "custom:handlers/vehicle/set-real-plate",
+                    "checkVisibilityFunction": "isAvailable",
+                    "actionFunction": "run"
+                }
+            ]
+        }
+    },
+    "rowActionsView": "custom:views/vehicle/record/row-actions",
+    "massActionList": [
+        "remove",
+        "export"
+    ],
+    "checkAllResultMassActionList": [
+        "remove",
+        "export"
+    ]
+}

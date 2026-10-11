@@ -1,0 +1,29 @@
+[
+    {
+        "label": "Overview",
+        "rows": [
+            [
+                {
+                    "name": "stocktake"
+                },
+                {
+                    "name": "supply"
+                }
+            ],
+            [
+                {
+                    "name": "expectedQuantity"
+                },
+                {
+                    "name": "countedQuantity"
+                }
+            ],
+            [
+                {
+                    "name": "difference"
+                },
+                false
+            ]
+        ]
+    }
+]

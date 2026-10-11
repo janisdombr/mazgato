@@ -1,0 +1,54 @@
+{
+    "labels": {
+        "save": "Save",
+        "saved": "Saved",
+        "clear": "Remove",
+        "secretSet": "set — leave blank to keep",
+        "moduleOff": "This module is switched off in Settings → Enabled modules.",
+        "publicLink": "Public page:",
+        "resetRate": "Reset the public form's rate limits",
+        "rateReset": "Limits reset",
+        "loading": "Loading…",
+        "loadError": "Could not load the data",
+        "retry": "Retry"
+    },
+    "groups": {
+        "hours": "Working hours",
+        "capacity": "Capacity",
+        "followup": "Reminders and no-show",
+        "guards": "Public form guards",
+        "turnstile": "Bot check (Cloudflare Turnstile)"
+    },
+    "fields": {
+        "bookingHoursMon": "Monday",
+        "bookingHoursTue": "Tuesday",
+        "bookingHoursWed": "Wednesday",
+        "bookingHoursThu": "Thursday",
+        "bookingHoursFri": "Friday",
+        "bookingHoursSat": "Saturday",
+        "bookingHoursSun": "Sunday",
+        "bookingClosedDates": "Closed dates",
+        "bookingSlotMinutes": "Slot length, min",
+        "bookingPosts": "Bays (posts)",
+        "bookingMaxCarsPerHour": "Max cars starting per hour (0 = bays only)",
+        "bookingBufferMinutes": "Buffer between cars, min",
+        "bookingMinLeadMinutes": "Earliest booking from now, min",
+        "bookingHorizonDays": "Book up to, days ahead",
+        "bookingReminderHours": "Reminder, hours before (0 = off)",
+        "bookingNoShowGraceMinutes": "No-show after, min (0 = manual)",
+        "bookingRatePerHour": "Bookings per IP per hour",
+        "bookingMinFillSeconds": "Minimum seconds to fill the form",
+        "turnstileSiteKey": "Turnstile site key (public)",
+        "turnstileSecret": "Turnstile secret key",
+        "turnstileHostname": "Expected hostname (optional)"
+    },
+    "hints": {
+        "bookingHoursMon": "HH:MM-HH:MM. Type 'closed' to shut that weekday; empty = default hours.",
+        "bookingClosedDates": "One per line: 2026-12-25 or a range 2026-12-24 - 2026-12-26.",
+        "bookingPosts": "How many cars can be on the ramps at once.",
+        "bookingReminderHours": "Needs the CRM cron (job BookingMaintenance, every 5 min).",
+        "turnstileSiteKey": "From the Cloudflare dashboard (Turnstile). Public: it is shown to visitors. Empty = no bot check.",
+        "turnstileSecret": "Write-only: kept on the server and never shown again. The check is on only while the secret is set; if Cloudflare is unreachable, booking is refused (closed).",
+        "turnstileHostname": "Empty = the host of the CRM address. Only for tests (Cloudflare's dummy keys answer example.com)."
+    }
+}

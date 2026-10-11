@@ -1,0 +1,4 @@
+{
+    "controller": "custom:controllers/assistant",
+    "iconClass": "fas fa-wand-magic-sparkles"
+}

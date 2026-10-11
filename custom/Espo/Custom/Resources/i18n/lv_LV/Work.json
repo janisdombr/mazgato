@@ -1,0 +1,25 @@
+{
+    "fields": {
+        "name": "Nosaukums",
+        "defaultRole": "Noklusētā loma",
+        "sortOrder": "Kārtība",
+        "isActive": "Aktīvs",
+        "baseRate": "Pamata likme",
+        "serviceLinks": "Pakalpojumi",
+        "rates": "Likmes",
+        "description": "Piezīmes"
+    },
+    "links": {
+        "defaultRole": "Noklusētā loma",
+        "serviceLinks": "Pakalpojumi",
+        "rates": "Likmes",
+        "orderWorks": "Darbi pasūtījumos"
+    },
+    "tooltips": {
+        "defaultRole": "Kas parasti veic šo darbu. Izmanto, kad pakalpojums to pievieno pasūtījumam.",
+        "baseRate": "Rezerves likme, ja neviena Darbs × Pakalpojums × Darbinieks likme neatbilst."
+    },
+    "labels": {
+        "Create Work": "Izveidot darbu"
+    }
+}

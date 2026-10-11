@@ -1,0 +1,14 @@
+{
+    "labels": {
+        "title": "Dienas grafiks",
+        "bay": "Vieta",
+        "today": "Šodien",
+        "prev": "Iepriekšējā diena",
+        "next": "Nākamā diena",
+        "closed": "Šajā dienā slēgts",
+        "empty": "Nav pierakstu.",
+        "start": "Sākt",
+        "noShow": "Neieradās",
+        "min": "min"
+    }
+}

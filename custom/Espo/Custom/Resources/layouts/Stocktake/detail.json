@@ -1,0 +1,31 @@
+[
+    {
+        "label": "Overview",
+        "rows": [
+            [
+                {
+                    "name": "reason"
+                },
+                {
+                    "name": "status"
+                }
+            ],
+            [
+                {
+                    "name": "postedAt"
+                },
+                {
+                    "name": "postedBy"
+                }
+            ],
+            [
+                {
+                    "name": "linesCount"
+                },
+                {
+                    "name": "varianceCount"
+                }
+            ]
+        ]
+    }
+]

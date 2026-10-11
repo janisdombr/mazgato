@@ -1,0 +1,22 @@
+{
+    "fields": {
+        "name": "Name",
+        "sortOrder": "Sort order",
+        "isActive": "Active",
+        "defaultEmployee": "Default employee",
+        "works": "Works",
+        "description": "Notes"
+    },
+    "links": {
+        "defaultEmployee": "Default employee",
+        "works": "Works",
+        "orderWorks": "Order works"
+    },
+    "tooltips": {
+        "sortOrder": "Lower comes first. The active roles, in order, are the performers offered in Quick Intake.",
+        "defaultEmployee": "The employee pre-selected for this role in the Quick Intake form."
+    },
+    "labels": {
+        "Create WorkRole": "Create Role"
+    }
+}

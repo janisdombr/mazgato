@@ -1,0 +1,43 @@
+{
+    "fields": {
+        "name": "Name",
+        "action": "Action",
+        "outcome": "Outcome",
+        "errorCode": "Error code",
+        "httpStatus": "HTTP status",
+        "employee": "Employee",
+        "device": "Tablet",
+        "washOrder": "Order",
+        "orderWork": "Order work",
+        "clientActionId": "Client action id",
+        "clientAt": "Client time",
+        "replayCount": "Replays",
+        "meta": "Details",
+        "resultJson": "Result",
+        "ip": "IP",
+        "createdAt": "Time",
+        "modifiedAt": "Modified"
+    },
+    "links": {
+        "employee": "Employee",
+        "device": "Tablet",
+        "washOrder": "Order",
+        "orderWork": "Order work"
+    },
+    "options": {
+        "outcome": {
+            "Ok": "OK",
+            "Denied": "Denied",
+            "Conflict": "Conflict",
+            "Failed": "Failed",
+            "RateLimited": "Rate limited"
+        }
+    },
+    "tooltips": {
+        "clientActionId": "Unique id made by the tablet. A resend (e.g. after a network drop) never repeats the action.",
+        "clientAt": "When the worker pressed the button on the tablet (differs from receipt time if the network was down)."
+    },
+    "labels": {
+        "Create KioskEvent": "Create entry"
+    }
+}

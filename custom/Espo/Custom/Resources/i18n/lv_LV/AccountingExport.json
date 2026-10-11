@@ -1,0 +1,24 @@
+{
+    "labels": {
+        "title": "Grāmatvedības eksports - pārdošanas žurnāls",
+        "intro": "Perioda pabeigtie pasūtījumi, katrs vienu reizi (tie paši, ko Statistika skaita kā ieņēmumus). Atceltie un nepabeigtie pasūtījumi netiek iekļauti.",
+        "dateFrom": "No",
+        "dateTo": "Līdz",
+        "format": "Formāts",
+        "delimiter": "CSV atdalītājs",
+        "decimal": "Decimālā zīme",
+        "lines": "Viena rinda uz katru cenas rindu (pamata mazgāšana + papildpakalpojumi), nevis uz pasūtījumu",
+        "preview": "Priekšskatījums",
+        "download": "Lejupielādēt",
+        "downloaded": "Fails saglabāts",
+        "loading": "Ielādē…",
+        "error": "Neizdevās sagatavot eksportu",
+        "retry": "Mēģināt vēlreiz",
+        "orders": "pasūtījumi",
+        "gross": "kopā",
+        "net": "bez PVN",
+        "fiscalPending": "Skaidrās naudas/kartes darījumi, kuriem vēl nav kases čeka numura",
+        "empty": "Šajā periodā nav pabeigtu pasūtījumu.",
+        "mapping": "Kolonnas ir fiksētas un aprakstītas (docs/FISCAL.md). Tas ir universāls žurnāls, nevis konkrētas grāmatvedības programmas importa formāts: kolonnas jāsaista programmas importā. Jumis un Horizon importa specifikācijas nevarēja pārbaudīt - lūdziet ražotājam importa aprakstu."
+    }
+}

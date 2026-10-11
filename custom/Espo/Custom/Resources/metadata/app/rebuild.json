@@ -1,0 +1,5 @@
+{
+    "actionClassNameList": [
+        "Espo\\Custom\\Classes\\RebuildActions\\MigrateTheme"
+    ]
+}

@@ -1,0 +1,79 @@
+[
+    {
+        "label": "Overview",
+        "rows": [
+            [
+                {
+                    "name": "question"
+                },
+                {
+                    "name": "answer"
+                }
+            ],
+            [
+                {
+                    "name": "status"
+                },
+                {
+                    "name": "stopped"
+                }
+            ],
+            [
+                {
+                    "name": "createdAt"
+                },
+                {
+                    "name": "bookingOrder"
+                }
+            ],
+            [
+                {
+                    "name": "toolNames"
+                },
+                {
+                    "name": "toolsJson"
+                }
+            ],
+            [
+                {
+                    "name": "model"
+                },
+                {
+                    "name": "steps"
+                }
+            ],
+            [
+                {
+                    "name": "tokensIn"
+                },
+                {
+                    "name": "tokensOut"
+                }
+            ],
+            [
+                {
+                    "name": "cacheReadTokens"
+                },
+                {
+                    "name": "cacheWriteTokens"
+                }
+            ],
+            [
+                {
+                    "name": "costUsd"
+                },
+                {
+                    "name": "ms"
+                }
+            ],
+            [
+                {
+                    "name": "errorCode"
+                },
+                {
+                    "name": "lang"
+                }
+            ]
+        ]
+    }
+]

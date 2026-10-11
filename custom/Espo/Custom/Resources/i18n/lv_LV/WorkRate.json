@@ -1,0 +1,22 @@
+{
+    "fields": {
+        "name": "Nosaukums",
+        "work": "Darbs",
+        "service": "Pakalpojums",
+        "employee": "Darbinieks",
+        "rate": "Likme"
+    },
+    "links": {
+        "work": "Darbs",
+        "service": "Pakalpojums",
+        "employee": "Darbinieks"
+    },
+    "tooltips": {
+        "service": "Atstāj tukšu, lai attiektos uz visiem pakalpojumiem.",
+        "employee": "Atstāj tukšu, lai attiektos uz visiem darbiniekiem.",
+        "rate": "Maksā par vienu šī darba izpildi. Uzvar konkrētākā atbilstība: darbs+pakalpojums+darbinieks → darbs+pakalpojums → darbs+darbinieks → darbs."
+    },
+    "labels": {
+        "Create WorkRate": "Izveidot likmi"
+    }
+}

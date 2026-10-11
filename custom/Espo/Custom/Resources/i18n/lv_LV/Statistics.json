@@ -1,0 +1,33 @@
+{
+    "labels": {
+        "revenue": "Ieņēmumi",
+        "ordersCompleted": "Izpildīti pasūtījumi",
+        "averageCheck": "Vidējais čeks",
+        "unpaid": "Neapmaksāts",
+        "labourCost": "Darba izmaksas",
+        "margin": "Starpība",
+        "hours": "Nostrādātās stundas",
+        "newCustomers": "Jauni klienti",
+        "topServices": "Pakalpojumi",
+        "topCustomers": "Klienti",
+        "employees": "Darbinieki",
+        "service": "Pakalpojums",
+        "customer": "Klients",
+        "employee": "Darbinieks",
+        "count": "Skaits",
+        "works": "Darbi",
+        "noOrdersPeriod": "Šajā periodā pasūtījumu nav",
+        "noOrdersPeriodHint": "Izvēlieties citu periodu vai pieņemiet pirmo auto.",
+        "vsPrevious": "pret iepriekšējo periodu",
+        "chartRevenueByDay": "Ieņēmumi pa dienām",
+        "chartLoadByHour": "Noslodze pa stundām",
+        "chartServiceShare": "Pakalpojumu daļa",
+        "chartTopCustomers": "Lielākie klienti",
+        "chartEmployees": "Darbinieki",
+        "showTable": "Rādīt tabulu",
+        "other": "Pārējie",
+        "ordersLabel": "Pasūtījumi",
+        "day": "Diena",
+        "hour": "Stunda"
+    }
+}

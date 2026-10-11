@@ -1,0 +1,39 @@
+[
+    {
+        "label": "Overview",
+        "rows": [
+            [
+                {
+                    "name": "name"
+                },
+                {
+                    "name": "status"
+                }
+            ],
+            [
+                {
+                    "name": "version"
+                },
+                {
+                    "name": "lastSeenAt"
+                }
+            ],
+            [
+                {
+                    "name": "lastIp"
+                },
+                {
+                    "name": "queueDepth"
+                }
+            ],
+            [
+                {
+                    "name": "enrolledAt"
+                },
+                {
+                    "name": "clockSkewSeconds"
+                }
+            ]
+        ]
+    }
+]

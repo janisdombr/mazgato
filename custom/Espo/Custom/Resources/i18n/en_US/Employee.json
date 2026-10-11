@@ -1,0 +1,61 @@
+{
+    "fields": {
+        "name": "Name",
+        "phone": "Phone",
+        "position": "Position",
+        "salaryRate": "Reference rate/h",
+        "workAssignments": "Work Assignments",
+        "description": "Notes",
+        "createdAt": "Created At",
+        "modifiedAt": "Modified At",
+        "status": "Status",
+        "onShift": "On shift",
+        "shiftStartedAt": "Shift started",
+        "language": "Language",
+        "workRole": "Usual role",
+        "pinSetAt": "PIN set",
+        "pinLockedUntil": "PIN locked until"
+    },
+    "links": {
+        "workAssignments": "Work Assignments",
+        "rates": "Rates",
+        "orderWorks": "Works done",
+        "shifts": "Shifts",
+        "workRole": "Usual role"
+    },
+    "options": {
+        "position": {
+            "Washer": "Washer",
+            "Administrator": "Administrator"
+        },
+        "status": {
+            "Hired": "Hired",
+            "OnLeave": "On leave",
+            "Dismissed": "Dismissed"
+        },
+        "language": {
+            "lv_LV": "Latvian",
+            "ru_RU": "Russian",
+            "en_US": "English"
+        }
+    },
+    "tooltips": {
+        "salaryRate": "Reference only. Pay is PER WORK DONE: rates are set per work in Quick Start and the rate matrix. Shift hours feed statistics.",
+        "status": "Hired = can be assigned to work. On leave and Dismissed are not offered in Quick Intake.",
+        "onShift": "Set by clocking in/out. Read-only — use the Shift record or the Shift dashlet.",
+        "shiftStartedAt": "When the current shift started.",
+        "language": "Tablet language once the employee has signed in with the PIN.",
+        "workRole": "Tablet \"Take\" assigns only this role's works. When empty, every free work.",
+        "pinSetAt": "The PIN itself is never stored or shown, only its hash. Change it on the employee card or in Administration → Tablets.",
+        "pinLockedUntil": "After several wrong PIN entries sign-in is blocked for a while."
+    },
+    "labels": {
+        "Create Employee": "Create Employee",
+        "Kiosk": "Tablet",
+        "setPin": "Set PIN",
+        "pinHint": "4–6 digits. The PIN is not visible or recoverable — a forgotten one can only be replaced.",
+        "pinSaved": "PIN saved",
+        "pinInvalid": "PIN must be 4–6 digits, not all the same and not sequential.",
+        "moreTab": "More"
+    }
+}

@@ -1,0 +1,59 @@
+{
+    "labels": {
+        "save": "Saglabāt",
+        "saved": "Saglabāts",
+        "clear": "Dzēst",
+        "secretSet": "iestatīts — atstājiet tukšu, lai saglabātu",
+        "moduleOff": "Šis modulis ir izslēgts: Iestatījumi → Pieejamie moduļi.",
+        "ready": "gatavs",
+        "notReady": "nav sakonfigurēts",
+        "send": "Sūtīt testu",
+        "testHint": "Nosūta testa tekstu caur kanāla īsto adapteri. Ja nav atslēgas — pateiks.",
+        "testOk": "Nosūtīts",
+        "testFail": "Nenosūtīts",
+        "loading": "Ielādē…",
+        "loadError": "Neizdevās ielādēt datus",
+        "retry": "Mēģināt vēlreiz"
+    },
+    "groups": {
+        "general": "Vispārīgi",
+        "email": "E-pasts",
+        "whatsapp": "WhatsApp",
+        "sms": "SMS (HTTP vārteja)",
+        "telegram": "Telegram bots",
+        "inbound": "Atbildes (STOP)",
+        "test": "Testa sūtīšana"
+    },
+    "fields": {
+        "reviewUrl": "Atsauksmes saite",
+        "notifyChannelOrder": "Kanālu prioritāte",
+        "notifyCountryCode": "Noklusējuma valsts kods",
+        "notifyEmailOn": "E-pasts ieslēgts (sistēmas SMTP)",
+        "notifyWhatsappOn": "WhatsApp ieslēgts",
+        "whatsappPhoneNumberId": "Tālruņa numura ID",
+        "whatsappAccessToken": "Piekļuves token",
+        "whatsappNotifyTemplate": "Apstiprinātās veidnes nosaukums",
+        "whatsappTemplateLang": "Veidnes valoda",
+        "notifySmsOn": "SMS ieslēgts",
+        "smsWebhookUrl": "Vārtejas URL",
+        "smsWebhookMethod": "Metode",
+        "smsWebhookFormat": "Satura formāts",
+        "smsWebhookBody": "Satura veidne",
+        "smsWebhookHeaders": "Papildu galvenes",
+        "smsBasicAuth": "Basic auth lietotājs:parole",
+        "smsFrom": "Sūtītājs",
+        "notifyTelegramOn": "Telegram ieslēgts",
+        "telegramBotUsername": "Bota lietotājvārds (bez @)",
+        "telegramBotToken": "Bota token",
+        "telegramWebhookSecret": "Webhook noslēpums",
+        "notifyInboundSecret": "Noslēpums SMS / WhatsApp atbildēm"
+    },
+    "hints": {
+        "reviewUrl": "Tiek pievienota ziņai «auto gatavs». Tukšs = rindas nav.",
+        "notifyChannelOrder": "Atdalīts ar komatiem: Telegram,Email,WhatsApp,Sms. Klienta izvēle ir svarīgāka.",
+        "whatsappNotifyTemplate": "Neobligāts. Ārpus 24 h loga Meta pieņem tikai veidnes; viss teksts tiek nodots kā mainīgais {{1}}.",
+        "smsWebhookBody": "Vietturi {to} {text} {from}. Tukšs = vienkāršs JSON / form saturs.",
+        "smsWebhookHeaders": "Viena rinda: 'Nosaukums: vērtība'.",
+        "notifyInboundSecret": "Webhook: POST /api/v1/Notify/inbound/sms?secret=… (Meta WhatsApp: …/whatsapp?secret=…)"
+    }
+}

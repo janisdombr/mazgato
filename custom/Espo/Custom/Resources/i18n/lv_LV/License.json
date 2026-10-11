@@ -1,0 +1,50 @@
+{
+    "labels": {
+        "loading": "Ielādē…",
+        "loadError": "Neizdevās ielādēt datus",
+        "retry": "Mēģināt vēlreiz",
+        "installation": "Instalācija",
+        "installationHint": "Nosūtiet šo identifikatoru piegādātājam; licence ir piesaistīta tam. Pārbaude notiek bezsaistē - nekas netiek sūtīts.",
+        "mode": "Licences režīms",
+        "modeEnforced": "Obligāts - darbojas tikai licencētie moduļi",
+        "modeOpen": "Atvērts - moduļi pēc Iestatījumi → Iespējotie moduļi",
+        "noKey": "Nav iestatīta piegādātāja publiskā atslēga, tāpēc licenci nevar pārbaudīt.",
+        "licence": "Licence",
+        "status": "Statuss",
+        "customer": "Klients",
+        "expires": "Derīga līdz",
+        "graceUntil": "Papildlaiks līdz",
+        "remove": "Noņemt licenci",
+        "uploaded": "Licence uzstādīta",
+        "uploadFailed": "Fails tika noraidīts",
+        "modules": "Moduļi",
+        "module": "Modulis",
+        "licensed": "Licencē",
+        "enabled": "Aktīvs tagad"
+    },
+    "statuses": {
+        "missing": "Licence nav uzstādīta",
+        "valid": "Derīga",
+        "grace": "Beigusies - papildlaiks",
+        "expired": "Beigusies",
+        "bad_signature": "Nederīgs paraksts",
+        "wrong_installation": "Izsniegta citai instalācijai",
+        "malformed": "Nesalasāms fails",
+        "no_key": "Nav publiskās atslēgas"
+    },
+    "modules": {
+        "kiosk": "Darbinieku planšete",
+        "notify": "Klientu paziņojumi",
+        "booking": "Tiešsaistes pieteikšanās",
+        "assistant": "AI asistents",
+        "anpr": "Numurzīmju atpazīšana",
+        "cameras": "Kameras",
+        "clientAssistant": "Klientu čats (AI)"
+    },
+    "errors": {
+        "bad_signature": "Nederīgs paraksts",
+        "wrong_installation": "Izsniegta citai instalācijai",
+        "malformed": "Nav licences fails",
+        "no_key": "Nav iestatīta piegādātāja publiskā atslēga"
+    }
+}

@@ -1,0 +1,15 @@
+[
+    {
+        "name": "supply",
+        "link": true
+    },
+    {
+        "name": "expectedQuantity"
+    },
+    {
+        "name": "countedQuantity"
+    },
+    {
+        "name": "difference"
+    }
+]

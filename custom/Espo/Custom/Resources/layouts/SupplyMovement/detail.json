@@ -1,0 +1,59 @@
+[
+    {
+        "label": "Overview",
+        "rows": [
+            [
+                {
+                    "name": "supply"
+                },
+                {
+                    "name": "kind"
+                }
+            ],
+            [
+                {
+                    "name": "delta"
+                },
+                {
+                    "name": "occurredAt"
+                }
+            ],
+            [
+                {
+                    "name": "quantityBefore"
+                },
+                {
+                    "name": "quantityAfter"
+                }
+            ],
+            [
+                {
+                    "name": "unitCost"
+                },
+                {
+                    "name": "createdBy"
+                }
+            ],
+            [
+                {
+                    "name": "reason"
+                },
+                false
+            ],
+            [
+                {
+                    "name": "washOrder"
+                },
+                {
+                    "name": "receipt"
+                }
+            ],
+            [
+                {
+                    "name": "stocktake"
+                },
+                false
+            ]
+        ]
+    }
+]

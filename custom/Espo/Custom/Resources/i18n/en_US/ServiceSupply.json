@@ -1,0 +1,18 @@
+{
+    "fields": {
+        "name": "Title",
+        "service": "Service",
+        "supply": "Supply",
+        "quantity": "Quantity per use"
+    },
+    "links": {
+        "service": "Service",
+        "supply": "Supply"
+    },
+    "tooltips": {
+        "quantity": "How much of the supply (in its unit) one use of this service consumes."
+    },
+    "labels": {
+        "Create ServiceSupply": "Create Service Supply"
+    }
+}

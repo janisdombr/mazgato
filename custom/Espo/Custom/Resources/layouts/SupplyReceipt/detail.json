@@ -1,0 +1,43 @@
+[
+    {
+        "label": "Overview",
+        "rows": [
+            [
+                {
+                    "name": "supplier"
+                },
+                {
+                    "name": "invoiceNumber"
+                }
+            ],
+            [
+                {
+                    "name": "receiptDate"
+                },
+                {
+                    "name": "status"
+                }
+            ],
+            [
+                {
+                    "name": "total"
+                },
+                {
+                    "name": "postedAt"
+                }
+            ],
+            [
+                {
+                    "name": "postedBy"
+                },
+                false
+            ],
+            [
+                {
+                    "name": "note"
+                },
+                false
+            ]
+        ]
+    }
+]

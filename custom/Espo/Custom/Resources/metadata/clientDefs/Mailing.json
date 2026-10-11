@@ -1,0 +1,14 @@
+{
+    "controller": "controllers/record",
+    "iconClass": "fas fa-bullhorn",
+    "color": "#0ea5e9",
+    "recordViews": {
+        "detail": "custom:views/mailing/record/detail"
+    },
+    "massActionList": [
+        "remove"
+    ],
+    "checkAllResultMassActionList": [
+        "remove"
+    ]
+}

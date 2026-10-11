@@ -1,0 +1,19 @@
+{
+    "labels": {
+        "refresh": "Show",
+        "orders": "Orders",
+        "works": "Works",
+        "supply": "Supply",
+        "quantity": "Consumed",
+        "unitCost": "Unit Cost",
+        "cost": "Cost",
+        "total": "Total",
+        "noData": "No supplies consumed in this period.",
+        "services": "Services",
+        "byService": "Cost by service",
+        "bySupply": "Consumption by supply",
+        "service": "Service",
+        "times": "Times",
+        "costPerUnit": "Cost per run"
+    }
+}

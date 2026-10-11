@@ -1,0 +1,233 @@
+{
+    "groups": [
+        {
+            "id": "quickStart",
+            "icon": "fas fa-rocket",
+            "items": [
+                {
+                    "id": "quickStart",
+                    "url": "#Admin/quickStart",
+                    "icon": "fas fa-rocket"
+                }
+            ]
+        },
+        {
+            "id": "catalog",
+            "icon": "fas fa-list-check",
+            "items": [
+                {
+                    "id": "washService",
+                    "url": "#WashService",
+                    "icon": "fas fa-soap"
+                },
+                {
+                    "id": "work",
+                    "url": "#Work",
+                    "icon": "fas fa-hands-bubbles"
+                },
+                {
+                    "id": "workRole",
+                    "url": "#WorkRole",
+                    "icon": "fas fa-user-tag"
+                },
+                {
+                    "id": "workRate",
+                    "url": "#WorkRate",
+                    "icon": "fas fa-coins"
+                },
+                {
+                    "id": "serviceWork",
+                    "url": "#ServiceWork",
+                    "icon": "fas fa-link"
+                },
+                {
+                    "id": "translation",
+                    "url": "#Translation",
+                    "icon": "fas fa-language"
+                }
+            ]
+        },
+        {
+            "id": "people",
+            "icon": "fas fa-users-gear",
+            "items": [
+                {
+                    "id": "users",
+                    "url": "#User",
+                    "icon": "fas fa-user"
+                },
+                {
+                    "id": "roles",
+                    "url": "#Admin/carwashRoles",
+                    "icon": "fas fa-user-shield"
+                },
+                {
+                    "id": "employees",
+                    "url": "#Employee",
+                    "icon": "fas fa-id-badge"
+                },
+                {
+                    "id": "kiosk",
+                    "url": "#Admin/kiosk",
+                    "icon": "fas fa-tablet-screen-button"
+                },
+                {
+                    "id": "shifts",
+                    "url": "#Shift",
+                    "icon": "fas fa-clock"
+                }
+            ]
+        },
+        {
+            "id": "brand",
+            "icon": "fas fa-palette",
+            "items": [
+                {
+                    "id": "brand",
+                    "url": "#Admin/brand",
+                    "icon": "fas fa-palette"
+                },
+                {
+                    "id": "templates",
+                    "url": "#Template",
+                    "icon": "fas fa-file-pdf"
+                },
+                {
+                    "id": "siteContent",
+                    "url": "#Admin/siteContent",
+                    "icon": "fas fa-file-code"
+                }
+            ]
+        },
+        {
+            "id": "messages",
+            "icon": "fas fa-paper-plane",
+            "items": [
+                {
+                    "id": "booking",
+                    "url": "#Admin/booking",
+                    "icon": "fas fa-calendar-check"
+                },
+                {
+                    "id": "clientMessages",
+                    "url": "#Admin/clientMessages",
+                    "icon": "fas fa-paper-plane"
+                },
+                {
+                    "id": "clientAssistant",
+                    "url": "#Admin/clientAssistant",
+                    "icon": "fas fa-comments"
+                },
+                {
+                    "id": "mailing",
+                    "url": "#Mailing",
+                    "icon": "fas fa-bullhorn"
+                },
+                {
+                    "id": "orderMessage",
+                    "url": "#OrderMessage",
+                    "icon": "fas fa-envelope-open-text"
+                }
+            ]
+        },
+        {
+            "id": "stock",
+            "icon": "fas fa-boxes-stacked",
+            "items": [
+                {
+                    "id": "supply",
+                    "url": "#Supply",
+                    "icon": "fas fa-box"
+                },
+                {
+                    "id": "supplyReceipt",
+                    "url": "#SupplyReceipt",
+                    "icon": "fas fa-truck-loading"
+                },
+                {
+                    "id": "stocktake",
+                    "url": "#Stocktake",
+                    "icon": "fas fa-clipboard-check"
+                },
+                {
+                    "id": "supplyMovement",
+                    "url": "#SupplyMovement",
+                    "icon": "fas fa-exchange-alt"
+                }
+            ]
+        },
+        {
+            "id": "accounting",
+            "icon": "fas fa-file-invoice-dollar",
+            "items": [
+                {
+                    "id": "accountingExport",
+                    "url": "#Admin/accountingExport",
+                    "icon": "fas fa-file-export"
+                },
+                {
+                    "id": "fiscal",
+                    "url": "#WashOrder",
+                    "icon": "fas fa-receipt"
+                },
+                {
+                    "id": "importCustomers",
+                    "url": "#Admin/importCustomers",
+                    "icon": "fas fa-file-import"
+                }
+            ]
+        },
+        {
+            "id": "cameras",
+            "icon": "fas fa-video",
+            "items": [
+                {
+                    "id": "anpr",
+                    "url": "#Admin/anpr",
+                    "icon": "fas fa-car-side"
+                },
+                {
+                    "id": "camera",
+                    "url": "#Camera",
+                    "icon": "fas fa-video"
+                },
+                {
+                    "id": "plateEvent",
+                    "url": "#PlateEvent",
+                    "icon": "fas fa-id-card"
+                }
+            ]
+        },
+        {
+            "id": "system",
+            "icon": "fas fa-gear",
+            "items": [
+                {
+                    "id": "license",
+                    "url": "#Admin/license",
+                    "icon": "fas fa-key"
+                },
+                {
+                    "id": "backups",
+                    "info": true,
+                    "icon": "fas fa-database"
+                },
+                {
+                    "id": "language",
+                    "url": "#Admin/userInterface",
+                    "icon": "fas fa-language"
+                },
+                {
+                    "id": "currency",
+                    "url": "#Admin/currency",
+                    "icon": "fas fa-euro-sign"
+                },
+                {
+                    "id": "assistant",
+                    "url": "#Admin/assistant",
+                    "icon": "fas fa-wand-magic-sparkles"
+                }
+            ]
+        }
+    ]
+}

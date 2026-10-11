@@ -1,0 +1,38 @@
+{
+    "fields": {
+        "name": "Движение",
+        "kind": "Вид",
+        "supply": "Расходник",
+        "delta": "Изменение",
+        "quantityBefore": "Было",
+        "quantityAfter": "Стало",
+        "unitCost": "Себестоимость",
+        "reason": "Основание",
+        "occurredAt": "Когда",
+        "washOrder": "Заказ",
+        "receipt": "Приёмка",
+        "stocktake": "Инвентаризация",
+        "createdBy": "Кто"
+    },
+    "links": {
+        "supply": "Расходник",
+        "washOrder": "Заказ",
+        "receipt": "Приёмка",
+        "stocktake": "Инвентаризация",
+        "createdBy": "Кто"
+    },
+    "options": {
+        "kind": {
+            "Receipt": "Приход",
+            "Consumption": "Расход заказом",
+            "Stocktake": "Инвентаризация",
+            "Manual": "Правка вручную"
+        }
+    },
+    "tooltips": {
+        "unitCost": "Себестоимость расходника после этого движения."
+    },
+    "labels": {
+        "Create SupplyMovement": "Журнал только для чтения"
+    }
+}

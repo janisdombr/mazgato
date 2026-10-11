@@ -1,0 +1,41 @@
+{
+    "fields": {
+        "name": "Jautājums",
+        "question": "Jautājums",
+        "answer": "Atbilde",
+        "status": "Statuss",
+        "stopped": "Beigu iemesls",
+        "errorCode": "Kļūdas kods",
+        "toolNames": "Rīki",
+        "toolsJson": "Rīku izsaukumi",
+        "draftsJson": "Melnraksti",
+        "pseudonyms": "Pseidonīmi",
+        "unsourced": "Skaitļi bez avota",
+        "steps": "Soļi",
+        "tokensIn": "Ievades tokeni",
+        "tokensOut": "Izvades tokeni",
+        "cacheReadTokens": "Kešatmiņas lasījums",
+        "cacheWriteTokens": "Kešatmiņas ieraksts",
+        "costUsd": "Izmaksas, USD",
+        "model": "Modelis",
+        "ms": "Laiks, ms",
+        "fromPage": "No lapas",
+        "assignedUser": "Lietotājs",
+        "createdAt": "Laiks",
+        "modifiedAt": "Mainīts"
+    },
+    "links": {
+        "assignedUser": "Lietotājs"
+    },
+    "options": {
+        "status": {
+            "Pending": "Gaida",
+            "Answered": "Atbildēts",
+            "Stopped": "Apturēts",
+            "Failed": "Kļūda"
+        }
+    },
+    "labels": {
+        "Create AssistantMessage": "Izveidot ierakstu"
+    }
+}

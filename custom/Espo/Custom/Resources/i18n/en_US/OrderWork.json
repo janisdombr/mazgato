@@ -1,0 +1,43 @@
+{
+    "fields": {
+        "name": "Title",
+        "washOrder": "Order",
+        "work": "Work",
+        "service": "From service",
+        "role": "Role",
+        "employee": "Employee",
+        "rate": "Rate",
+        "share": "Share, %",
+        "amount": "Amount",
+        "description": "Notes",
+        "amountManual": "Amount set by hand",
+        "startedAt": "Started",
+        "doneAt": "Done at",
+        "doneBy": "Closed by",
+        "doneDevice": "Device"
+    },
+    "links": {
+        "washOrder": "Order",
+        "work": "Work",
+        "service": "From service",
+        "role": "Role",
+        "employee": "Employee",
+        "doneBy": "Closed by",
+        "doneDevice": "Device"
+    },
+    "tooltips": {
+        "service": "The service that added this work to the order.",
+        "role": "Filled from the work's default role; change it freely.",
+        "rate": "Prefilled from the rate matrix and editable. Clear the field to re-resolve it.",
+        "share": "Percent of the rate for this line. To split a work between two employees, add the same work twice — e.g. 50 % + 50 %.",
+        "amount": "rate × share %. Computed.",
+        "amountManual": "Set automatically when you type an amount. While on, the rate x share is not recomputed — edit the rate or the share to hand control back.",
+        "doneAt": "When the work was marked done (tablet or CRM). Written once; clear it to re-stamp.",
+        "startedAt": "When the employee pressed \"Start\" on the tablet.",
+        "doneBy": "Who marked the work done. On the tablet it is always the work's performer.",
+        "doneDevice": "Which tablet marked the work."
+    },
+    "labels": {
+        "Create OrderWork": "Create Order work"
+    }
+}

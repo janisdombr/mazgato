@@ -1,0 +1,11 @@
+{
+    "labels": {
+        "in": "Ieradās",
+        "out": "Aizgāja",
+        "onShift": "maiņā kopš",
+        "noEmployees": "Nav pieņemtu darbinieku.",
+        "clockedIn": "Maiņa sākta",
+        "clockedOut": "Maiņa beigta",
+        "hoursShort": "h"
+    }
+}

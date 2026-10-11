@@ -1,0 +1,67 @@
+{
+    "fields": {
+        "name": "Nosaukums",
+        "customer": "Klients",
+        "kind": "Veids",
+        "washesTotal": "Mazgāšanu skaits paketē",
+        "washesRemaining": "Atlikušas mazgāšanas",
+        "service": "Tikai pakalpojumam",
+        "validFrom": "Derīgs no",
+        "validTo": "Derīgs līdz",
+        "price": "Cena",
+        "status": "Statuss",
+        "saleOrder": "Pārdošanas pasūtījums",
+        "uses": "Izmantotās mazgāšanas",
+        "orders": "Ar to apmaksātie pasūtījumi",
+        "description": "Piezīmes"
+    },
+    "tooltips": {
+        "service": "Tukšs = jebkura pamata mazgāšana. Norādiet, lai ierobežotu abonementu ar vienu mazgāšanas veidu.",
+        "validTo": "Paketei beigu datuma var nebūt; neierobežotam abonementam tas ir obligāts."
+    },
+    "options": {
+        "kind": {
+            "Pack": "Mazgāšanu pakete",
+            "Unlimited": "Neierobežots periodam"
+        },
+        "status": {
+            "Active": "Aktīvs",
+            "Exhausted": "Izmantots",
+            "Expired": "Beidzies",
+            "Cancelled": "Atcelts"
+        }
+    },
+    "links": {
+        "customer": "Klients",
+        "service": "Pakalpojums",
+        "saleOrder": "Pārdošanas pasūtījums",
+        "uses": "Izmantotās mazgāšanas",
+        "orders": "Ar to apmaksātie pasūtījumi"
+    },
+    "labels": {
+        "Create Subscription": "Izveidot abonementu",
+        "Subscription": "Abonements",
+        "Overview": "Pārskats",
+        "sell": "Pārdot abonementu",
+        "sellTitle": "Pārdot abonementu",
+        "sellHint": "Izveido abonementu un pabeigtu pārdošanas pasūtījumu ar vienu cenas rindu. Skaidrā naudā un ar karti pārdotajam joprojām vajadzīgs kases čeks (pasūtījuma panelis Fiskālie dati).",
+        "sold": "Abonements pārdots",
+        "washes": "Mazgāšanas",
+        "paid": "Apmaksāts uz vietas",
+        "left": "atlikušas",
+        "until": "līdz",
+        "byService": "tikai",
+        "unlimited": "neierobežots",
+        "cancel": "Atcelt",
+        "none": "Nav abonementu"
+    },
+    "messages": {
+        "subscription_wrong_customer": "Šis abonements pieder citam klientam.",
+        "subscription_expired": "Šī abonementa termiņš ir beidzies.",
+        "subscription_exhausted": "Abonementā nav atlikušu mazgāšanu.",
+        "subscription_cancelled": "Šis abonements ir atcelts.",
+        "subscription_not_started": "Šis abonements vēl nav derīgs.",
+        "subscription_wrong_service": "Šis abonements neattiecas uz šo mazgāšanu.",
+        "subscription_not_found": "Abonements nav atrasts."
+    }
+}

@@ -1,0 +1,20 @@
+[
+    {
+        "rows": [
+            [
+                {
+                    "name": "work"
+                },
+                {
+                    "name": "employee"
+                }
+            ],
+            [
+                {
+                    "name": "amount"
+                },
+                false
+            ]
+        ]
+    }
+]

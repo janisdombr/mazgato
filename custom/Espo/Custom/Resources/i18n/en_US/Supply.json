@@ -1,0 +1,69 @@
+{
+    "fields": {
+        "name": "Name",
+        "unit": "Unit",
+        "stockQuantity": "In stock",
+        "reorderLevel": "Reorder level",
+        "needsReorder": "Needs reorder",
+        "unitCost": "Unit cost",
+        "supplier": "Supplier",
+        "description": "Notes",
+        "usages": "Used by services",
+        "movements": "Movement journal"
+    },
+    "links": {
+        "usages": "Used by services",
+        "movements": "Movement journal"
+    },
+    "options": {
+        "unit": {
+            "L": "L",
+            "ml": "ml",
+            "kg": "kg",
+            "g": "g",
+            "pcs": "pcs"
+        }
+    },
+    "tooltips": {
+        "stockQuantity": "Current stock. Change it with \"Receipt\" (incoming) or \"Stocktake\" (count); orders deduct it by themselves. Every change is in the movement journal.",
+        "reorderLevel": "When stock reaches this level, the supply is flagged for reorder.",
+        "needsReorder": "Set automatically when stock ≤ reorder level. Filter the list by this to plan purchases."
+    },
+    "labels": {
+        "usageReport": "Usage report",
+        "Create Supply": "Create Supply",
+        "receipt": "Receipt",
+        "stocktake": "Stocktake",
+        "movementsLog": "Movement journal",
+        "receiptsList": "Receipts",
+        "receiptHeader": "Goods receipt",
+        "supplier": "Supplier",
+        "invoiceNumber": "Invoice no.",
+        "receiptDate": "Date",
+        "chooseSupply": "— supply —",
+        "qtyCol": "Quantity",
+        "priceCol": "Unit price, €",
+        "sumCol": "Sum, €",
+        "addLine": "+ Add line",
+        "removeLine": "Remove line",
+        "receiptTotal": "Total",
+        "postReceipt": "Post receipt",
+        "receiptPosted": "Receipt posted",
+        "costHint": "The unit cost is re-averaged (weighted); an empty price leaves it unchanged.",
+        "stocktakeHeader": "Stocktake",
+        "stocktakeReason": "Reason (required)",
+        "reasonPlaceholder": "e.g. monthly count",
+        "systemQty": "System",
+        "countedQty": "Counted",
+        "diffCol": "Difference",
+        "unitCol": "Unit",
+        "stocktakeHint": "Fill in only what you counted; empty lines stay as they are. Differences go to the journal with your name and the reason.",
+        "postStocktake": "Post stocktake",
+        "stocktakeDone": "Stocktake posted",
+        "differencesWord": "differences",
+        "nothingCounted": "Nothing counted",
+        "reasonRequired": "Enter the reason",
+        "noLines": "Add at least one line with a supply and a quantity",
+        "failed": "Could not save"
+    }
+}

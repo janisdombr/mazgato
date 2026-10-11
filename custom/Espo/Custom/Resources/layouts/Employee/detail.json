@@ -1,0 +1,66 @@
+[
+    {
+        "label": "Overview",
+        "rows": [
+            [
+                {
+                    "name": "name"
+                },
+                {
+                    "name": "status"
+                }
+            ],
+            [
+                {
+                    "name": "phone"
+                },
+                {
+                    "name": "position"
+                }
+            ],
+            [
+                {
+                    "name": "salaryRate"
+                },
+                {
+                    "name": "workRole"
+                }
+            ],
+            [
+                {
+                    "name": "onShift"
+                },
+                {
+                    "name": "shiftStartedAt"
+                }
+            ]
+        ]
+    },
+    {
+        "label": "Kiosk",
+        "tabBreak": true,
+        "tabLabel": "$label:moreTab",
+        "rows": [
+            [
+                {
+                    "name": "pinSetAt"
+                },
+                {
+                    "name": "pinLockedUntil"
+                }
+            ],
+            [
+                {
+                    "name": "language"
+                },
+                false
+            ],
+            [
+                {
+                    "name": "description"
+                },
+                false
+            ]
+        ]
+    }
+]

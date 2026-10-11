@@ -1,0 +1,54 @@
+{
+    "labels": {
+        "save": "Сохранить",
+        "saved": "Сохранено",
+        "clear": "Удалить",
+        "secretSet": "задано — оставьте пустым, чтобы сохранить",
+        "moduleOff": "Модуль выключен: Настройки → Доступные модули.",
+        "publicLink": "Публичная страница:",
+        "resetRate": "Сбросить лимиты публичной формы",
+        "rateReset": "Лимиты сброшены",
+        "loading": "Загрузка…",
+        "loadError": "Не удалось загрузить данные",
+        "retry": "Повторить"
+    },
+    "groups": {
+        "hours": "Рабочие часы",
+        "capacity": "Вместимость",
+        "followup": "Напоминания и неявка",
+        "guards": "Защита публичной формы",
+        "turnstile": "Проверка от ботов (Cloudflare Turnstile)"
+    },
+    "fields": {
+        "bookingHoursMon": "Понедельник",
+        "bookingHoursTue": "Вторник",
+        "bookingHoursWed": "Среда",
+        "bookingHoursThu": "Четверг",
+        "bookingHoursFri": "Пятница",
+        "bookingHoursSat": "Суббота",
+        "bookingHoursSun": "Воскресенье",
+        "bookingClosedDates": "Закрытые дни",
+        "bookingSlotMinutes": "Длина слота, мин",
+        "bookingPosts": "Посты",
+        "bookingMaxCarsPerHour": "Макс. машин в час (0 = только посты)",
+        "bookingBufferMinutes": "Буфер между машинами, мин",
+        "bookingMinLeadMinutes": "Ближайшая запись от текущего момента, мин",
+        "bookingHorizonDays": "Запись не дальше, дней вперёд",
+        "bookingReminderHours": "Напоминание, за сколько часов (0 = выкл.)",
+        "bookingNoShowGraceMinutes": "Неявка через, мин (0 = вручную)",
+        "bookingRatePerHour": "Записей с одного IP в час",
+        "bookingMinFillSeconds": "Минимум секунд на заполнение формы",
+        "turnstileSiteKey": "Site key Turnstile (публичный)",
+        "turnstileSecret": "Secret key Turnstile",
+        "turnstileHostname": "Ожидаемый домен (необязательно)"
+    },
+    "hints": {
+        "bookingHoursMon": "ЧЧ:ММ-ЧЧ:ММ. Напишите 'closed', чтобы день был выходным; пусто = часы по умолчанию.",
+        "bookingClosedDates": "По одному в строке: 2026-12-25 или диапазон 2026-12-24 - 2026-12-26.",
+        "bookingPosts": "Сколько машин может быть на постах одновременно.",
+        "bookingReminderHours": "Нужен cron CRM (задание BookingMaintenance, каждые 5 мин).",
+        "turnstileSiteKey": "Из панели Cloudflare (Turnstile). Публичный: показывается посетителям. Пусто = проверки нет.",
+        "turnstileSecret": "Только для записи: хранится на сервере и больше не показывается. Проверка включена, пока задан секрет; если Cloudflare недоступен, запись отклоняется (закрыто).",
+        "turnstileHostname": "Пусто = домен адреса CRM. Только для тестов (тестовые ключи Cloudflare отвечают example.com)."
+    }
+}

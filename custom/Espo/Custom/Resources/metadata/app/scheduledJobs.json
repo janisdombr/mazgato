@@ -1,0 +1,27 @@
+{
+    "PurgeExpiredPhotos": {
+        "name": "Purge expired order photos",
+        "isSystem": true,
+        "scheduling": "20 3 * * *"
+    },
+    "BookingMaintenance": {
+        "name": "Booking reminders and no-show release",
+        "isSystem": true,
+        "scheduling": "*/5 * * * *"
+    },
+    "PurgeAssistantLog": {
+        "name": "Purge old assistant journal rows",
+        "isSystem": true,
+        "scheduling": "40 3 * * *"
+    },
+    "PurgeAnprData": {
+        "name": "Purge expired plate events, snapshots and camera frames",
+        "isSystem": true,
+        "scheduling": "50 3 * * *"
+    },
+    "PurgeClientChatLog": {
+        "name": "Purge old public chat journal rows",
+        "isSystem": true,
+        "scheduling": "45 3 * * *"
+    }
+}

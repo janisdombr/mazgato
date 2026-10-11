@@ -1,0 +1,259 @@
+{
+    "fields": {
+        "name": {
+            "type": "varchar",
+            "maxLength": 80,
+            "readOnly": true
+        },
+        "plateRaw": {
+            "type": "varchar",
+            "maxLength": 40,
+            "readOnly": true,
+            "tooltip": true
+        },
+        "plate": {
+            "type": "varchar",
+            "maxLength": 24,
+            "trim": true,
+            "readOnly": true,
+            "view": "custom:views/fields/plate",
+            "required": true
+        },
+        "plateSuggested": {
+            "type": "varchar",
+            "maxLength": 24,
+            "readOnly": true,
+            "tooltip": true
+        },
+        "matchKind": {
+            "type": "enum",
+            "options": [
+                "None",
+                "Exact",
+                "Fuzzy"
+            ],
+            "default": "None",
+            "readOnly": true
+        },
+        "confidence": {
+            "type": "float",
+            "min": 0,
+            "max": 1,
+            "readOnly": true,
+            "decimalPlaces": 3
+        },
+        "direction": {
+            "type": "enum",
+            "options": [
+                "Unknown",
+                "In",
+                "Out"
+            ],
+            "default": "Unknown",
+            "readOnly": true
+        },
+        "source": {
+            "type": "enum",
+            "options": [
+                "Hikvision",
+                "Dahua",
+                "Frigate",
+                "CodeProject",
+                "Simulator",
+                "Manual",
+                "Other"
+            ],
+            "default": "Other",
+            "readOnly": true
+        },
+        "status": {
+            "type": "enum",
+            "options": [
+                "Pending",
+                "Confirmed",
+                "Dismissed",
+                "Matched"
+            ],
+            "default": "Pending",
+            "readOnly": true,
+            "displayAsLabel": true,
+            "style": {
+                "Pending": "warning",
+                "Confirmed": "success",
+                "Dismissed": "default",
+                "Matched": "info"
+            }
+        },
+        "takenAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "receivedAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "lastSeenAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "seenCount": {
+            "type": "int",
+            "default": 1,
+            "readOnly": true,
+            "tooltip": true
+        },
+        "externalId": {
+            "type": "varchar",
+            "maxLength": 80,
+            "readOnly": true,
+            "tooltip": true
+        },
+        "hasSnapshot": {
+            "type": "bool",
+            "default": false,
+            "readOnly": true,
+            "view": "custom:views/fields/cw-media",
+            "mediaType": "plateEvent"
+        },
+        "snapshotKey": {
+            "type": "varchar",
+            "maxLength": 40,
+            "readOnly": true,
+            "layoutAvailabilityList": [],
+            "customizationDisabled": true
+        },
+        "snapshotRetainUntil": {
+            "type": "date",
+            "readOnly": true,
+            "tooltip": true
+        },
+        "retainUntil": {
+            "type": "date",
+            "readOnly": true,
+            "tooltip": true
+        },
+        "camera": {
+            "type": "link",
+            "readOnly": true
+        },
+        "edgeNode": {
+            "type": "link",
+            "readOnly": true
+        },
+        "vehicle": {
+            "type": "link",
+            "readOnly": true
+        },
+        "customer": {
+            "type": "link",
+            "readOnly": true
+        },
+        "washOrder": {
+            "type": "link",
+            "readOnly": true
+        },
+        "decidedBy": {
+            "type": "link",
+            "readOnly": true
+        },
+        "decidedAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "autoCreated": {
+            "type": "bool",
+            "default": false,
+            "readOnly": true,
+            "tooltip": true
+        },
+        "corrected": {
+            "type": "bool",
+            "default": false,
+            "readOnly": true
+        },
+        "dupIds": {
+            "type": "text",
+            "readOnly": true,
+            "layoutAvailabilityList": [],
+            "customizationDisabled": true
+        },
+        "note": {
+            "type": "text",
+            "rows": 2
+        },
+        "createdAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "modifiedAt": {
+            "type": "datetime",
+            "readOnly": true
+        }
+    },
+    "links": {
+        "camera": {
+            "type": "belongsTo",
+            "entity": "Camera",
+            "foreign": "plateEvents"
+        },
+        "edgeNode": {
+            "type": "belongsTo",
+            "entity": "EdgeNode"
+        },
+        "vehicle": {
+            "type": "belongsTo",
+            "entity": "Vehicle"
+        },
+        "customer": {
+            "type": "belongsTo",
+            "entity": "Customer"
+        },
+        "washOrder": {
+            "type": "belongsTo",
+            "entity": "WashOrder"
+        },
+        "decidedBy": {
+            "type": "belongsTo",
+            "entity": "User"
+        }
+    },
+    "collection": {
+        "orderBy": "takenAt",
+        "order": "desc"
+    },
+    "indexes": {
+        "idempotency": {
+            "type": "unique",
+            "columns": [
+                "edgeNodeId",
+                "externalId",
+                "deleted"
+            ]
+        },
+        "board": {
+            "columns": [
+                "status",
+                "deleted",
+                "takenAt"
+            ]
+        },
+        "plateTime": {
+            "columns": [
+                "plate",
+                "takenAt"
+            ]
+        },
+        "retainUntil": {
+            "columns": [
+                "retainUntil",
+                "deleted"
+            ]
+        },
+        "snapshotRetainUntil": {
+            "columns": [
+                "snapshotRetainUntil",
+                "deleted"
+            ]
+        }
+    }
+}

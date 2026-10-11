@@ -1,0 +1,35 @@
+[
+    {
+        "name": "work",
+        "width": 22,
+        "link": true
+    },
+    {
+        "name": "role",
+        "width": 15
+    },
+    {
+        "name": "employee",
+        "width": 20
+    },
+    {
+        "name": "service",
+        "width": 16
+    },
+    {
+        "name": "rate",
+        "width": 10
+    },
+    {
+        "name": "share",
+        "width": 7
+    },
+    {
+        "name": "amount",
+        "width": 10
+    },
+    {
+        "name": "doneAt",
+        "width": 12
+    }
+]

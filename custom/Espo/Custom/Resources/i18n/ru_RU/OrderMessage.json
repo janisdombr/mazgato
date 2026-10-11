@@ -1,0 +1,43 @@
+{
+    "fields": {
+        "name": "Сообщение",
+        "kind": "Вид",
+        "channel": "Канал",
+        "status": "Статус",
+        "error": "Ошибка",
+        "recipient": "Получатель",
+        "body": "Текст",
+        "sentAt": "Отправлено",
+        "customer": "Клиент",
+        "washOrder": "Заказ",
+        "createdAt": "Создано"
+    },
+    "links": {
+        "customer": "Клиент",
+        "washOrder": "Заказ"
+    },
+    "options": {
+        "kind": {
+            "Ready": "Машина готова",
+            "Booked": "Запись подтверждена",
+            "Reminder": "Напоминание",
+            "Cancelled": "Запись отменена",
+            "Test": "Тест"
+        },
+        "channel": {
+            "": "—",
+            "Email": "E-mail",
+            "WhatsApp": "WhatsApp",
+            "Sms": "SMS",
+            "Telegram": "Telegram"
+        },
+        "status": {
+            "Sent": "Отправлено",
+            "Failed": "Ошибка",
+            "Skipped": "Пропущено"
+        }
+    },
+    "labels": {
+        "Create OrderMessage": "Создать сообщение"
+    }
+}

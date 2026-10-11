@@ -1,0 +1,35 @@
+{
+    "fields": {
+        "name": "Название",
+        "status": "Статус",
+        "tokenHash": "Хеш токена",
+        "enrollHash": "Хеш регистрации",
+        "enrollExpiresAt": "Токен регистрации действует до",
+        "enrolledAt": "Зарегистрирован",
+        "lastSeenAt": "Последний сигнал",
+        "lastIp": "Последний IP",
+        "version": "Версия",
+        "queueDepth": "Очередь на узле",
+        "clockSkewSeconds": "Сдвиг часов, с",
+        "report": "Отчёт",
+        "cameras": "Камеры",
+        "createdAt": "Создано",
+        "modifiedAt": "Изменено"
+    },
+    "links": {
+        "cameras": "Камеры"
+    },
+    "options": {
+        "status": {
+            "Pending": "Ждёт регистрации",
+            "Active": "Активен",
+            "Revoked": "Отозван"
+        }
+    },
+    "tooltips": {
+        "queueDepth": "Сколько событий узел ещё не отправил (обрыв сети)."
+    },
+    "labels": {
+        "Overview": "Обзор"
+    }
+}

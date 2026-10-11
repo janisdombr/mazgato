@@ -1,0 +1,104 @@
+[
+    {
+        "label": "Overview",
+        "rows": [
+            [
+                {
+                    "name": "name"
+                },
+                {
+                    "name": "isCorporate"
+                }
+            ],
+            [
+                {
+                    "name": "phone"
+                },
+                {
+                    "name": "email"
+                }
+            ],
+            [
+                {
+                    "name": "hasContract"
+                },
+                false
+            ],
+            [
+                {
+                    "name": "regNumber"
+                },
+                {
+                    "name": "pvnNumber"
+                }
+            ],
+            [
+                {
+                    "name": "legalAddress"
+                },
+                false
+            ]
+        ]
+    },
+    {
+        "label": "Marketing",
+        "tabBreak": true,
+        "tabLabel": "$label:consentTab",
+        "rows": [
+            [
+                {
+                    "name": "allowWhatsapp"
+                },
+                {
+                    "name": "allowEmail"
+                }
+            ],
+            [
+                {
+                    "name": "allowPhone"
+                },
+                false
+            ]
+        ]
+    },
+    {
+        "label": "Notifications",
+        "rows": [
+            [
+                {
+                    "name": "allowServiceMessages"
+                },
+                {
+                    "name": "notifyChannel"
+                }
+            ],
+            [
+                {
+                    "name": "language"
+                },
+                {
+                    "name": "telegramChatId"
+                }
+            ]
+        ]
+    },
+    {
+        "label": "Other",
+        "tabBreak": true,
+        "tabLabel": "$label:moreTab",
+        "rows": [
+            [
+                {
+                    "name": "birthday"
+                },
+                false
+            ],
+            [
+                {
+                    "name": "description"
+                },
+                false
+            ]
+        ]
+    }
+]

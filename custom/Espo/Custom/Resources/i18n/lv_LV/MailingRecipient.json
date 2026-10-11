@@ -1,0 +1,29 @@
+{
+    "fields": {
+        "name": "Klients",
+        "contact": "Kontakts",
+        "status": "Piegādes statuss",
+        "error": "Kļūda",
+        "deliveredAt": "Piegādāts",
+        "customer": "Klients",
+        "mailing": "Izsūtījums"
+    },
+    "links": {
+        "customer": "Klients",
+        "mailing": "Izsūtījums"
+    },
+    "options": {
+        "status": {
+            "Pending": "Gaida",
+            "Sent": "Nosūtīts",
+            "Failed": "Neizdevās",
+            "Skipped": "Izlaists"
+        }
+    },
+    "tooltips": {
+        "contact": "E-pasts vai tālrunis, uz kuru sūtīts (atkarībā no kanāla)."
+    },
+    "labels": {
+        "Create MailingRecipient": "Izveidot izsūtījuma saņēmēju"
+    }
+}

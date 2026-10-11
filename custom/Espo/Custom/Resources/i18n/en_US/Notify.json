@@ -1,0 +1,59 @@
+{
+    "labels": {
+        "save": "Save",
+        "saved": "Saved",
+        "clear": "Remove",
+        "secretSet": "set — leave blank to keep",
+        "moduleOff": "This module is switched off in Settings → Enabled modules.",
+        "ready": "ready",
+        "notReady": "not set up",
+        "send": "Send test",
+        "testHint": "Sends a test text through that channel's real adapter. No key — it says so.",
+        "testOk": "Sent",
+        "testFail": "Not sent",
+        "loading": "Loading…",
+        "loadError": "Could not load the data",
+        "retry": "Retry"
+    },
+    "groups": {
+        "general": "General",
+        "email": "Email",
+        "whatsapp": "WhatsApp",
+        "sms": "SMS (HTTP gateway)",
+        "telegram": "Telegram bot",
+        "inbound": "Replies (STOP)",
+        "test": "Test send"
+    },
+    "fields": {
+        "reviewUrl": "Review link",
+        "notifyChannelOrder": "Channel priority",
+        "notifyCountryCode": "Default country code",
+        "notifyEmailOn": "Email on (uses the system SMTP)",
+        "notifyWhatsappOn": "WhatsApp on",
+        "whatsappPhoneNumberId": "Phone number ID",
+        "whatsappAccessToken": "Access token",
+        "whatsappNotifyTemplate": "Approved template name",
+        "whatsappTemplateLang": "Template language",
+        "notifySmsOn": "SMS on",
+        "smsWebhookUrl": "Gateway URL",
+        "smsWebhookMethod": "Method",
+        "smsWebhookFormat": "Body format",
+        "smsWebhookBody": "Body template",
+        "smsWebhookHeaders": "Extra headers",
+        "smsBasicAuth": "Basic auth user:password",
+        "smsFrom": "Sender",
+        "notifyTelegramOn": "Telegram on",
+        "telegramBotUsername": "Bot username (without @)",
+        "telegramBotToken": "Bot token",
+        "telegramWebhookSecret": "Webhook secret",
+        "notifyInboundSecret": "Secret for SMS / WhatsApp replies"
+    },
+    "hints": {
+        "reviewUrl": "Added to the 'car ready' message. Empty = no line.",
+        "notifyChannelOrder": "Comma-separated: Telegram,Email,WhatsApp,Sms. The customer's own choice wins.",
+        "whatsappNotifyTemplate": "Optional. Outside the 24 h window Meta accepts templates only; the whole text goes in as variable {{1}}.",
+        "smsWebhookBody": "Placeholders {to} {text} {from}. Empty = a plain JSON / form body.",
+        "smsWebhookHeaders": "One 'Name: value' per line.",
+        "notifyInboundSecret": "Webhook: POST /api/v1/Notify/inbound/sms?secret=… (Meta WhatsApp: …/whatsapp?secret=…)"
+    }
+}

@@ -1,0 +1,87 @@
+{
+    "fields": {
+        "name": "Name",
+        "isCorporate": "Corporate (legal entity)",
+        "phone": "Phone",
+        "email": "Email",
+        "regNumber": "Reg. No. (Reģ. Nr.)",
+        "pvnNumber": "VAT No. (PVN Nr.)",
+        "legalAddress": "Legal Address",
+        "description": "Notes",
+        "vehicles": "Vehicles",
+        "orders": "Orders",
+        "createdAt": "Created At",
+        "modifiedAt": "Modified At",
+        "createdBy": "Created By",
+        "modifiedBy": "Modified By",
+        "birthday": "Birthday",
+        "drivers": "Drivers",
+        "hasContract": "Has contract",
+        "allowWhatsapp": "Allow WhatsApp",
+        "allowEmail": "Allow email",
+        "allowPhone": "Allow phone",
+        "unsubscribeToken": "Unsubscribe token",
+        "unsubscribedAt": "Unsubscribed at",
+        "vehiclePlates": "Vehicle plates",
+        "driverNames": "Drivers",
+        "allowServiceMessages": "Service messages",
+        "serviceMessagesOffAt": "Service messages off since",
+        "language": "Message language",
+        "notifyChannel": "Preferred channel",
+        "telegramChatId": "Telegram chat",
+        "telegramLinkToken": "Telegram link token"
+    },
+    "labels": {
+        "Marketing": "Marketing",
+        "newOrder": "New order",
+        "noVehicles": "This customer has no vehicles.",
+        "Create Customer": "Create Customer",
+        "monthlyInvoice": "Monthly invoice",
+        "Summary": "Summary",
+        "summaryVisits": "Visits",
+        "summarySpent": "Spent",
+        "summaryLast": "Last visit",
+        "summaryDebt": "Owes",
+        "Notifications": "Notifications",
+        "sellSubscription": "Sell subscription",
+        "document": "Document",
+        "documentInvoice": "Invoice",
+        "documentAct": "Act of work performed",
+        "consentTab": "Consents and messages"
+    },
+    "links": {
+        "vehicles": "Vehicles",
+        "orders": "Orders",
+        "drivers": "Drivers",
+        "subscriptions": "Subscriptions"
+    },
+    "tooltips": {
+        "isCorporate": "Enable for legal entities. Corporate customers can be issued a VAT invoice (rēķins) and use corporate pricing.",
+        "hasContract": "This customer works under a contract — orders are invoiced, so they are marked Paid on creation. Independent of 'Corporate': there are contracts with private individuals.",
+        "allowWhatsapp": "The customer consented to receive offers via WhatsApp. Without it, a mailing on this channel does not reach them.",
+        "allowEmail": "The customer consented to receive offers via email.",
+        "allowPhone": "The customer consented to receive offers by phone (calls / SMS).",
+        "vehiclePlates": "The customer's plate numbers (newest first). Filled automatically from the vehicle list.",
+        "driverNames": "The customer's drivers (newest first). Filled automatically from the driver list.",
+        "allowServiceMessages": "Messages about the customer's own order: car ready, booking confirmation and reminder. On by default; the customer turns it off with the link in every message or by replying STOP. Independent of marketing consent.",
+        "serviceMessagesOffAt": "When the customer opted out of service messages.",
+        "language": "Language of messages to this customer. Empty = the system language.",
+        "notifyChannel": "Automatic picks the first channel that is enabled, configured and has a contact for this customer (order: Administration, Notifications).",
+        "telegramChatId": "Filled when the customer opens the bot link and presses Start."
+    },
+    "options": {
+        "language": {
+            "": "System default",
+            "lv_LV": "Latviešu",
+            "ru_RU": "Русский",
+            "en_US": "English"
+        },
+        "notifyChannel": {
+            "Auto": "Automatic (first available)",
+            "Email": "Email",
+            "WhatsApp": "WhatsApp",
+            "Sms": "SMS",
+            "Telegram": "Telegram"
+        }
+    }
+}

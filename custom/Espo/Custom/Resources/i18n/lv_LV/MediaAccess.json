@@ -1,0 +1,32 @@
+{
+    "fields": {
+        "name": "Nosaukums",
+        "kind": "Ko skatīja",
+        "user": "Lietotājs",
+        "plateEvent": "Numura notikums",
+        "orderPhoto": "Pasūtījuma foto",
+        "camera": "Kamera",
+        "detail": "Detaļas",
+        "ip": "IP",
+        "createdAt": "Laiks"
+    },
+    "links": {
+        "user": "Lietotājs",
+        "plateEvent": "Numura notikums",
+        "orderPhoto": "Pasūtījuma foto",
+        "camera": "Kamera"
+    },
+    "options": {
+        "kind": {
+            "PlateEvent": "Numura kadrs",
+            "OrderPhoto": "Pasūtījuma kameras foto",
+            "Snapshot": "Kadrs pēc pieprasījuma",
+            "Live": "Tiešraide",
+            "Clip": "Ieraksti",
+            "Erase": "Dzēšana pēc pieprasījuma"
+        }
+    },
+    "labels": {
+        "Overview": "Pārskats"
+    }
+}

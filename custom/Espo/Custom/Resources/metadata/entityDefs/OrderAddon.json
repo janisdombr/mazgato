@@ -1,0 +1,59 @@
+{
+    "fields": {
+        "name": {
+            "type": "varchar",
+            "tooltip": true
+        },
+        "price": {
+            "type": "currency",
+            "tooltip": true
+        },
+        "washOrder": {
+            "type": "link",
+            "required": true
+        },
+        "service": {
+            "type": "link"
+        },
+        "sortOrder": {
+            "type": "int",
+            "utility": true
+        },
+        "createdAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "modifiedAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "isBase": {
+            "type": "bool",
+            "readOnly": true,
+            "tooltip": true
+        }
+    },
+    "links": {
+        "washOrder": {
+            "type": "belongsTo",
+            "entity": "WashOrder",
+            "foreign": "orderAddons"
+        },
+        "service": {
+            "type": "belongsTo",
+            "entity": "WashService"
+        }
+    },
+    "collection": {
+        "orderBy": "sortOrder",
+        "order": "asc"
+    },
+    "indexes": {
+        "washOrder": {
+            "columns": [
+                "washOrderId",
+                "deleted"
+            ]
+        }
+    }
+}

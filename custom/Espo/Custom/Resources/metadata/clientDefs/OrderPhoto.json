@@ -1,0 +1,5 @@
+{
+    "controller": "controllers/record",
+    "iconClass": "fas fa-camera",
+    "color": "#0b6e8e"
+}

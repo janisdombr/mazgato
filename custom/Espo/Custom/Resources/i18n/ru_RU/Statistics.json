@@ -1,0 +1,33 @@
+{
+    "labels": {
+        "revenue": "Выручка",
+        "ordersCompleted": "Выполнено заказов",
+        "averageCheck": "Средний чек",
+        "unpaid": "Не оплачено",
+        "labourCost": "Затраты на работы",
+        "margin": "Разница",
+        "hours": "Часы",
+        "newCustomers": "Новые клиенты",
+        "topServices": "Услуги",
+        "topCustomers": "Клиенты",
+        "employees": "Работники",
+        "service": "Услуга",
+        "customer": "Клиент",
+        "employee": "Работник",
+        "count": "Кол-во",
+        "works": "Работы",
+        "noOrdersPeriod": "За этот период заказов нет",
+        "noOrdersPeriodHint": "Выберите другой период или примите первую машину.",
+        "vsPrevious": "к прошлому периоду",
+        "chartRevenueByDay": "Выручка по дням",
+        "chartLoadByHour": "Загрузка по часам",
+        "chartServiceShare": "Доля услуг",
+        "chartTopCustomers": "Топ клиентов",
+        "chartEmployees": "Сотрудники",
+        "showTable": "Показать таблицу",
+        "other": "Прочее",
+        "ordersLabel": "Заказы",
+        "day": "День",
+        "hour": "Час"
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "controller": "controllers/record",
+    "iconClass": "fas fa-soap",
+    "color": "#0aa2c0",
+    "menu": {
+        "list": {
+            "buttons": [
+                {
+                    "name": "sortServices",
+                    "label": "sortServices",
+                    "style": "default",
+                    "acl": "edit",
+                    "aclScope": "WashService",
+                    "handler": "custom:handlers/wash-service/sort",
+                    "actionFunction": "run"
+                }
+            ]
+        }
+    },
+    "massActionList": [
+        "export"
+    ],
+    "checkAllResultMassActionList": [
+        "export"
+    ]
+}

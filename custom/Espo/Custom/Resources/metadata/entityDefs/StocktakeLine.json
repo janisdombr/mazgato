@@ -1,0 +1,51 @@
+{
+    "fields": {
+        "name": {
+            "type": "varchar",
+            "maxLength": 150
+        },
+        "stocktake": {
+            "type": "link",
+            "required": true
+        },
+        "supply": {
+            "type": "link",
+            "required": true
+        },
+        "expectedQuantity": {
+            "type": "float",
+            "readOnly": true
+        },
+        "countedQuantity": {
+            "type": "float",
+            "readOnly": true
+        },
+        "difference": {
+            "type": "float",
+            "readOnly": true
+        },
+        "createdAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "modifiedAt": {
+            "type": "datetime",
+            "readOnly": true
+        }
+    },
+    "links": {
+        "stocktake": {
+            "type": "belongsTo",
+            "entity": "Stocktake",
+            "foreign": "lines"
+        },
+        "supply": {
+            "type": "belongsTo",
+            "entity": "Supply"
+        }
+    },
+    "collection": {
+        "orderBy": "createdAt",
+        "order": "asc"
+    }
+}

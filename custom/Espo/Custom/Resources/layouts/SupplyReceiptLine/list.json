@@ -1,0 +1,19 @@
+[
+    {
+        "name": "supply",
+        "width": 40,
+        "link": true
+    },
+    {
+        "name": "quantity",
+        "width": 18
+    },
+    {
+        "name": "unitPrice",
+        "width": 20
+    },
+    {
+        "name": "lineTotal",
+        "width": 20
+    }
+]

@@ -1,0 +1,6 @@
+[
+    {"name": "employee", "width": 25, "link": true},
+    {"name": "washOrder", "width": 25},
+    {"name": "role", "width": 20},
+    {"name": "bonusEarned", "width": 20}
+]

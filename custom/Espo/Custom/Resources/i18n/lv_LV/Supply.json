@@ -1,0 +1,69 @@
+{
+    "fields": {
+        "name": "Nosaukums",
+        "unit": "Mērvienība",
+        "stockQuantity": "Noliktavā",
+        "reorderLevel": "Pasūtīšanas līmenis",
+        "needsReorder": "Jāpasūta",
+        "unitCost": "Vienības cena",
+        "supplier": "Piegādātājs",
+        "description": "Piezīmes",
+        "usages": "Izmanto pakalpojumi",
+        "movements": "Kustību žurnāls"
+    },
+    "links": {
+        "usages": "Izmanto pakalpojumi",
+        "movements": "Kustību žurnāls"
+    },
+    "options": {
+        "unit": {
+            "L": "L",
+            "ml": "ml",
+            "kg": "kg",
+            "g": "g",
+            "pcs": "gab."
+        }
+    },
+    "tooltips": {
+        "stockQuantity": "Pašreizējais daudzums noliktavā. Pareizie veidi, kā to mainīt: \"Pieņemšana\" (ienākošais), \"Inventarizācija\" (skaitījums); pasūtījums to samazina pats. Katra izmaiņa ir kustību žurnālā.",
+        "reorderLevel": "Kad krājumi sasniedz šo līmeni, materiāls tiek atzīmēts pasūtīšanai.",
+        "needsReorder": "Iestatās automātiski, kad krājumi ≤ pasūtīšanas līmenis. Filtrē sarakstu, lai plānotu iepirkumus."
+    },
+    "labels": {
+        "usageReport": "Patēriņa atskaite",
+        "Create Supply": "Izveidot materiālu",
+        "receipt": "Pieņemšana",
+        "stocktake": "Inventarizācija",
+        "movementsLog": "Kustību žurnāls",
+        "receiptsList": "Pieņemšanas akti",
+        "receiptHeader": "Preču pieņemšana noliktavā",
+        "supplier": "Piegādātājs",
+        "invoiceNumber": "Pavadzīmes Nr.",
+        "receiptDate": "Datums",
+        "chooseSupply": "— materiāls —",
+        "qtyCol": "Daudzums",
+        "priceCol": "Cena par vienību, €",
+        "sumCol": "Summa, €",
+        "addLine": "+ Pievienot rindu",
+        "removeLine": "Noņemt rindu",
+        "receiptTotal": "Kopā",
+        "postReceipt": "Pieņemt noliktavā",
+        "receiptPosted": "Pieņemts noliktavā",
+        "costHint": "Pašizmaksa tiek pārrēķināta kā svērtais vidējais; tukša cena to nemaina.",
+        "stocktakeHeader": "Inventarizācija",
+        "stocktakeReason": "Pamatojums (obligāts)",
+        "reasonPlaceholder": "Piem., mēneša inventarizācija",
+        "systemQty": "Uzskaitē",
+        "countedQty": "Saskaitīts",
+        "diffCol": "Starpība",
+        "unitCol": "Mērv.",
+        "stocktakeHint": "Aizpildi tikai tās pozīcijas, kuras saskaitīji; tukšās netiek mainītas. Starpības tiek ierakstītas žurnālā ar tavu vārdu un pamatojumu.",
+        "postStocktake": "Apstiprināt inventarizāciju",
+        "stocktakeDone": "Inventarizācija saglabāta",
+        "differencesWord": "atšķirības",
+        "nothingCounted": "Nav ievadīts neviens skaitījums",
+        "reasonRequired": "Norādi pamatojumu",
+        "noLines": "Pievieno vismaz vienu rindu ar materiālu un daudzumu",
+        "failed": "Neizdevās saglabāt"
+    }
+}

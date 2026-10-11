@@ -1,0 +1,46 @@
+{
+    "fields": {
+        "name": "Plate Number",
+        "brand": "Brand",
+        "model": "Model",
+        "bodyType": "Body Type",
+        "customer": "Customer",
+        "orders": "Orders",
+        "description": "Notes",
+        "createdAt": "Created At",
+        "modifiedAt": "Modified At",
+        "createdBy": "Created By",
+        "plateTemporary": "Temporary number"
+    },
+    "links": {
+        "customer": "Customer",
+        "orders": "Orders"
+    },
+    "options": {
+        "bodyType": {
+            "Sedan": "Sedan",
+            "Hatchback": "Hatchback",
+            "Wagon": "Wagon",
+            "SUV": "SUV",
+            "Van": "Van",
+            "Truck": "Truck",
+            "Other": "Other"
+        }
+    },
+    "labels": {
+        "newOrder": "New order",
+        "Create Vehicle": "Create Vehicle",
+        "setRealPlate": "Set the real plate",
+        "realPlate": "Real plate number",
+        "setRealPlateHint": "The car keeps its history; the temporary number is gone.",
+        "mergeAsk": "This plate already belongs to another car. Merge this car into it (all its orders move there)?",
+        "merge": "Merge",
+        "plateChanged": "Plate changed",
+        "carsMerged": "Cars merged",
+        "tempPlateBadge": "Temporary number",
+        "plateRequired": "Enter the plate number"
+    },
+    "tooltips": {
+        "plateTemporary": "A number given by the system to a car without registration (BN-yymmdd-NNN). Replace it with the real one: button \"Set the real plate\"."
+    }
+}

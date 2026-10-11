@@ -1,0 +1,163 @@
+[
+    {
+        "label": "Overview",
+        "rows": [
+            [
+                {
+                    "name": "customer"
+                },
+                {
+                    "name": "vehicle"
+                }
+            ],
+            [
+                {
+                    "name": "status"
+                },
+                {
+                    "name": "paymentStatus"
+                }
+            ],
+            [
+                {
+                    "name": "paymentMethod"
+                },
+                {
+                    "name": "orderDateTime"
+                }
+            ],
+            [
+                {
+                    "name": "service"
+                },
+                {
+                    "name": "addons"
+                }
+            ]
+        ]
+    },
+    {
+        "label": "Details",
+        "tabBreak": true,
+        "tabLabel": "$label:moreTab",
+        "rows": [
+            [
+                {
+                    "name": "name"
+                },
+                {
+                    "name": "pvnEnabled"
+                }
+            ],
+            [
+                {
+                    "name": "startedAt"
+                },
+                {
+                    "name": "finishedAt"
+                }
+            ],
+            [
+                {
+                    "name": "hasContract"
+                },
+                {
+                    "name": "isCorporate"
+                }
+            ],
+            [
+                {
+                    "name": "driver"
+                },
+                {
+                    "name": "post"
+                }
+            ],
+            [
+                {
+                    "name": "noShow"
+                },
+                {
+                    "name": "plannedMinutes"
+                }
+            ],
+            [
+                {
+                    "name": "readyNotifiedAt"
+                },
+                {
+                    "name": "source"
+                }
+            ],
+            [
+                {
+                    "name": "subscription"
+                },
+                {
+                    "name": "subscriptionSale"
+                }
+            ],
+            [
+                {
+                    "name": "suppliesSummary"
+                },
+                {
+                    "name": "worksTotal"
+                }
+            ],
+            [
+                {
+                    "name": "description"
+                },
+                false
+            ]
+        ]
+    },
+    {
+        "label": "Fiscal",
+        "rows": [
+            [
+                {
+                    "name": "fiscalStatus"
+                },
+                false
+            ],
+            [
+                {
+                    "name": "fiscalReceiptSeries"
+                },
+                {
+                    "name": "fiscalReceiptNo"
+                }
+            ],
+            [
+                {
+                    "name": "fiscalDeviceId"
+                },
+                {
+                    "name": "fiscalIntegrationId"
+                }
+            ],
+            [
+                {
+                    "name": "fiscalPrintedAt"
+                },
+                {
+                    "name": "fiscalZReportNo"
+                }
+            ],
+            [
+                {
+                    "name": "fiscalHash"
+                },
+                false
+            ],
+            [
+                {
+                    "name": "fiscalNote"
+                },
+                false
+            ]
+        ]
+    }
+]

@@ -1,0 +1,13 @@
+{
+    "fields": {
+        "vault": {
+            "forbidden": true
+        },
+        "ipHash": {
+            "forbidden": true
+        },
+        "chatId": {
+            "forbidden": true
+        }
+    }
+}

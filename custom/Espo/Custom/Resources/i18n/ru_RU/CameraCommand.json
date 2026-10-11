@@ -1,0 +1,41 @@
+{
+    "fields": {
+        "name": "Название",
+        "type": "Тип",
+        "status": "Статус",
+        "camera": "Камера",
+        "edgeNode": "Узел",
+        "requestedBy": "Запросил",
+        "requestedAt": "Запрошено",
+        "leasedAt": "Выдано узлу",
+        "doneAt": "Выполнено",
+        "error": "Ошибка",
+        "params": "Параметры",
+        "result": "Результат",
+        "hasFile": "Кадр",
+        "fileKey": "Ключ кадра",
+        "createdAt": "Создано",
+        "modifiedAt": "Изменено"
+    },
+    "links": {
+        "camera": "Камера",
+        "edgeNode": "Узел",
+        "requestedBy": "Запросил"
+    },
+    "options": {
+        "type": {
+            "Snapshot": "Кадр",
+            "Clips": "Записи"
+        },
+        "status": {
+            "Queued": "В очереди",
+            "Leased": "Выдано узлу",
+            "Done": "Выполнено",
+            "Failed": "Не удалось",
+            "Expired": "Просрочено"
+        }
+    },
+    "labels": {
+        "Overview": "Обзор"
+    }
+}

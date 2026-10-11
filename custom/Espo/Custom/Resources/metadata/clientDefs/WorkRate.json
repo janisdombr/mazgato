@@ -1,0 +1,5 @@
+{
+    "controller": "controllers/record",
+    "iconClass": "fas fa-euro-sign",
+    "color": "#16a34a"
+}

@@ -1,0 +1,61 @@
+{
+    "fields": {
+        "name": "Name",
+        "channel": "Channel",
+        "subject": "Subject",
+        "body": "Body",
+        "offer": "Offer",
+        "discountPercent": "Discount %",
+        "status": "Status",
+        "sentAt": "Sent At",
+        "recipientCount": "Recipients",
+        "description": "Notes",
+        "segment": "Audience",
+        "sentCount": "Sent",
+        "failedCount": "Failed",
+        "recipients": "Recipients"
+    },
+    "labels": {
+        "preview": "Preview",
+        "previewSample": "Sample",
+        "noSmtp": "SMTP not configured — segmentation only",
+        "send": "Send Mailing",
+        "buildAudience": "Build recipients",
+        "addRecipients": "Add recipients",
+        "onlyConsented": "Only consented",
+        "found": "Found",
+        "noRecipients": "No recipients",
+        "recipientsAdded": "Recipients added",
+        "Create Mailing": "Create Mailing",
+        "moreTab": "More",
+        "Result": "Result"
+    },
+    "options": {
+        "channel": {
+            "WhatsApp": "WhatsApp",
+            "Email": "Email",
+            "Phone": "Phone"
+        },
+        "status": {
+            "Draft": "Draft",
+            "Sent": "Sent"
+        },
+        "segment": {
+            "All": "All (opted-in)",
+            "Corporate": "Corporate only",
+            "Individual": "Individuals only"
+        }
+    },
+    "tooltips": {
+        "offer": "Discount offer text sent to customers.",
+        "subject": "Email subject. You can use placeholders: {name}, {discount}, {offer}.",
+        "body": "Email body. Placeholders are auto-filled with the customer's data: {name} — name, {discount} — discount %, {offer} — offer, {phone} — phone.",
+        "discountPercent": "Discount percentage in the offer.",
+        "recipientCount": "How many customers this mailing reached — only those who opted in for this channel. Filled when the status becomes 'Sent'.",
+        "segment": "Who to deliver to: everyone opted in for the channel, or only companies / individuals.",
+        "sentCount": "How many recipients were actually sent to."
+    },
+    "links": {
+        "recipients": "Recipients"
+    }
+}

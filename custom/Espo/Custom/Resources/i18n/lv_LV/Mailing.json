@@ -1,0 +1,61 @@
+{
+    "fields": {
+        "name": "Nosaukums",
+        "channel": "Kanāls",
+        "subject": "Tēma",
+        "body": "Vēstules teksts",
+        "offer": "Piedāvājums",
+        "discountPercent": "Atlaide %",
+        "status": "Statuss",
+        "sentAt": "Nosūtīts",
+        "recipientCount": "Saņēmēji",
+        "description": "Piezīmes",
+        "segment": "Auditorija",
+        "sentCount": "Nosūtīts",
+        "failedCount": "Neizdevās",
+        "recipients": "Saņēmēji"
+    },
+    "labels": {
+        "preview": "Priekšskatījums",
+        "previewSample": "Paraugs",
+        "noSmtp": "SMTP nav konfigurēts — tikai segmentēšana",
+        "send": "Nosūtīt izsūtījumu",
+        "buildAudience": "Sagatavot saņēmējus",
+        "addRecipients": "Pievienot saņēmējus",
+        "onlyConsented": "Tikai ar piekrišanu",
+        "found": "Atrasti",
+        "noRecipients": "Nav saņēmēju",
+        "recipientsAdded": "Pievienoti saņēmēji",
+        "Create Mailing": "Izveidot izsūtījumu",
+        "moreTab": "Papildus",
+        "Result": "Rezultāts"
+    },
+    "options": {
+        "channel": {
+            "WhatsApp": "WhatsApp",
+            "Email": "E-pasts",
+            "Phone": "Tālrunis"
+        },
+        "status": {
+            "Draft": "Melnraksts",
+            "Sent": "Nosūtīts"
+        },
+        "segment": {
+            "All": "Visi (kas piekrituši)",
+            "Corporate": "Tikai juridiskās personas",
+            "Individual": "Tikai privātpersonas"
+        }
+    },
+    "tooltips": {
+        "offer": "Piedāvājuma teksts ar atlaidi, ko izsūta klientiem.",
+        "subject": "E-pasta tēma. Var izmantot vietturus: {name}, {discount}, {offer}.",
+        "body": "Vēstules teksts. Vietturi tiek automātiski aizstāti ar klienta datiem: {name} — klienta vārds, {discount} — atlaide %, {offer} — piedāvājums, {phone} — tālrunis.",
+        "discountPercent": "Atlaides procents piedāvājumā.",
+        "recipientCount": "Cik klientu sasniedza šis izsūtījums — tikai tie, kas piekrituši šim kanālam. Aizpildās, kad statuss kļūst 'Nosūtīts'.",
+        "segment": "Kam piegādāt: visiem, kas piekrituši kanālam, vai tikai uzņēmumiem / privātpersonām.",
+        "sentCount": "Cik saņēmējiem faktiski nosūtīts."
+    },
+    "links": {
+        "recipients": "Saņēmēji"
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "fields": {
+        "name": "Avota teksts",
+        "textLv": "Latviski",
+        "textRu": "Krieviski",
+        "textEn": "Angliski",
+        "description": "Piezīmes"
+    },
+    "tooltips": {
+        "name": "Vērtība tieši tā, kā tā saglabāta datos — piem. lomas vai darba nosaukums. Ja pārējie lauki tukši, rāda avota tekstu."
+    },
+    "labels": {
+        "Create Translation": "Izveidot tulkojumu"
+    }
+}

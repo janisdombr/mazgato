@@ -1,0 +1,42 @@
+{
+    "fields": {
+        "name": {
+            "type": "varchar",
+            "pattern": "$noBadCharacters"
+        },
+        "service": {
+            "type": "link",
+            "required": true
+        },
+        "supply": {
+            "type": "link",
+            "required": true
+        },
+        "quantity": {
+            "type": "float",
+            "required": true,
+            "default": 0,
+            "tooltip": true
+        },
+        "createdAt": {
+            "type": "datetime",
+            "readOnly": true
+        }
+    },
+    "links": {
+        "service": {
+            "type": "belongsTo",
+            "entity": "WashService",
+            "foreign": "supplyLines"
+        },
+        "supply": {
+            "type": "belongsTo",
+            "entity": "Supply",
+            "foreign": "usages"
+        }
+    },
+    "collection": {
+        "orderBy": "createdAt",
+        "order": "desc"
+    }
+}

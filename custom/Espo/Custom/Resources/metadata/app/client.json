@@ -1,0 +1,12 @@
+{
+    "linkList": [
+        {
+            "href": "?entryPoint=brandCss",
+            "rel": "stylesheet",
+            "noTimestamp": true
+        }
+    ],
+    "scriptList": [
+        "client/custom/lib/source-link.js"
+    ]
+}

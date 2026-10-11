@@ -1,0 +1,37 @@
+{
+    "params": {
+        "whatsappAccessToken": {
+            "level": "internal"
+        },
+        "smsBasicAuth": {
+            "level": "internal"
+        },
+        "smsWebhookHeaders": {
+            "level": "internal"
+        },
+        "telegramBotToken": {
+            "level": "internal"
+        },
+        "telegramWebhookSecret": {
+            "level": "internal"
+        },
+        "notifyInboundSecret": {
+            "level": "internal"
+        },
+        "assistantApiKey": {
+            "level": "internal"
+        },
+        "turnstileSecret": {
+            "level": "internal"
+        },
+        "turnstileBackup": {
+            "level": "internal"
+        },
+        "assistantBackup": {
+            "level": "internal"
+        },
+        "licenseBackup": {
+            "level": "internal"
+        }
+    }
+}

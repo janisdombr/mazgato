@@ -1,0 +1,9 @@
+/*
+ * CarWash theme "CarWash": stock EspoCRM stylesheet underneath (its LESS sources are not
+ * shipped, so cascade is the only seam), then tokens, then the shared component layer.
+ * The client's brand enters via --cw-brand (set from Settings in R4), never by editing this.
+ */
+@import url("../../css/espo/espo.css");
+@import url("cw-tokens-light.css");
+@import url("cw-components.css");
+@import url("cw-core.css");

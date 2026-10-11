@@ -1,0 +1,22 @@
+{
+    "fields": {
+        "name": "Name",
+        "phone": "Phone",
+        "email": "Email",
+        "customer": "Customer",
+        "isPrimary": "Primary driver",
+        "isActive": "Active",
+        "description": "Notes"
+    },
+    "links": {
+        "customer": "Customer",
+        "orders": "Orders"
+    },
+    "tooltips": {
+        "customer": "The company or person this driver belongs to. A company may have several drivers for the same cars.",
+        "isPrimary": "The usual driver for this customer."
+    },
+    "labels": {
+        "Create Driver": "Create Driver"
+    }
+}

@@ -1,0 +1,12 @@
+[
+    {
+        "name": "plate",
+        "link": true
+    },
+    {
+        "name": "status"
+    },
+    {
+        "name": "takenAt"
+    }
+]

@@ -1,0 +1,215 @@
+{
+    "fields": {
+        "name": {
+            "type": "varchar",
+            "required": true,
+            "pattern": "$noBadCharacters"
+        },
+        "isCorporate": {
+            "type": "bool",
+            "tooltip": true
+        },
+        "hasContract": {
+            "type": "bool",
+            "tooltip": true
+        },
+        "phone": {
+            "type": "varchar",
+            "maxLength": 30
+        },
+        "email": {
+            "type": "varchar",
+            "maxLength": 100
+        },
+        "vehiclePlates": {
+            "type": "varchar",
+            "maxLength": 255,
+            "readOnly": true,
+            "tooltip": true
+        },
+        "driverNames": {
+            "type": "varchar",
+            "maxLength": 255,
+            "readOnly": true,
+            "tooltip": true
+        },
+        "birthday": {
+            "type": "date",
+            "tooltip": true
+        },
+        "regNumber": {
+            "type": "varchar",
+            "maxLength": 50
+        },
+        "pvnNumber": {
+            "type": "varchar",
+            "maxLength": 50
+        },
+        "legalAddress": {
+            "type": "text"
+        },
+        "allowWhatsapp": {
+            "type": "bool",
+            "tooltip": true
+        },
+        "allowEmail": {
+            "type": "bool",
+            "default": true,
+            "tooltip": true
+        },
+        "allowPhone": {
+            "type": "bool",
+            "tooltip": true
+        },
+        "unsubscribeToken": {
+            "type": "varchar",
+            "maxLength": 40,
+            "readOnly": true,
+            "tooltip": true,
+            "layoutListDisabled": true,
+            "layoutDetailDisabled": true,
+            "layoutFiltersDisabled": true,
+            "layoutMassUpdateDisabled": true
+        },
+        "unsubscribedAt": {
+            "type": "datetime",
+            "readOnly": true,
+            "tooltip": true
+        },
+        "description": {
+            "type": "text"
+        },
+        "vehicles": {
+            "type": "linkMultiple",
+            "noLoad": true
+        },
+        "drivers": {
+            "type": "linkMultiple",
+            "noLoad": true
+        },
+        "orders": {
+            "type": "linkMultiple",
+            "noLoad": true
+        },
+        "createdAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "modifiedAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "createdBy": {
+            "type": "link",
+            "readOnly": true,
+            "view": "views/fields/user"
+        },
+        "modifiedBy": {
+            "type": "link",
+            "readOnly": true,
+            "view": "views/fields/user"
+        },
+        "allowServiceMessages": {
+            "type": "bool",
+            "default": true,
+            "tooltip": true
+        },
+        "serviceMessagesOffAt": {
+            "type": "datetime",
+            "readOnly": true,
+            "tooltip": true
+        },
+        "language": {
+            "type": "enum",
+            "options": [
+                "",
+                "lv_LV",
+                "ru_RU",
+                "en_US"
+            ],
+            "default": "",
+            "tooltip": true
+        },
+        "notifyChannel": {
+            "type": "enum",
+            "options": [
+                "Auto",
+                "Email",
+                "WhatsApp",
+                "Sms",
+                "Telegram"
+            ],
+            "default": "Auto",
+            "tooltip": true
+        },
+        "telegramChatId": {
+            "type": "varchar",
+            "maxLength": 40,
+            "readOnly": true,
+            "tooltip": true
+        },
+        "telegramLinkToken": {
+            "type": "varchar",
+            "maxLength": 40,
+            "readOnly": true,
+            "layoutListDisabled": true,
+            "layoutDetailDisabled": true,
+            "layoutFiltersDisabled": true,
+            "layoutMassUpdateDisabled": true
+        },
+        "subscriptions": {
+            "type": "linkMultiple",
+            "readOnly": true,
+            "layoutDetailDisabled": true,
+            "layoutListDisabled": true
+        }
+    },
+    "links": {
+        "vehicles": {
+            "type": "hasMany",
+            "entity": "Vehicle",
+            "foreign": "customer"
+        },
+        "drivers": {
+            "type": "hasMany",
+            "entity": "Driver",
+            "foreign": "customer"
+        },
+        "orders": {
+            "type": "hasMany",
+            "entity": "WashOrder",
+            "foreign": "customer"
+        },
+        "createdBy": {
+            "type": "belongsTo",
+            "entity": "User"
+        },
+        "modifiedBy": {
+            "type": "belongsTo",
+            "entity": "User"
+        },
+        "subscriptions": {
+            "type": "hasMany",
+            "entity": "Subscription",
+            "foreign": "customer"
+        }
+    },
+    "collection": {
+        "orderBy": "createdAt",
+        "order": "desc",
+        "textFilterFields": [
+            "name",
+            "phone",
+            "regNumber",
+            "pvnNumber"
+        ]
+    },
+    "indexes": {
+        "name": {
+            "columns": [
+                "name",
+                "deleted"
+            ]
+        }
+    }
+}

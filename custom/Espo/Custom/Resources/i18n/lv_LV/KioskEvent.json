@@ -1,0 +1,43 @@
+{
+    "fields": {
+        "name": "Nosaukums",
+        "action": "Darbība",
+        "outcome": "Rezultāts",
+        "errorCode": "Kļūdas kods",
+        "httpStatus": "HTTP statuss",
+        "employee": "Darbinieks",
+        "device": "Planšete",
+        "washOrder": "Pasūtījums",
+        "orderWork": "Darbs pasūtījumā",
+        "clientActionId": "Darbības ID (klients)",
+        "clientAt": "Klienta laiks",
+        "replayCount": "Atkārtojumi",
+        "meta": "Detaļas",
+        "resultJson": "Atbilde",
+        "ip": "IP",
+        "createdAt": "Laiks",
+        "modifiedAt": "Mainīts"
+    },
+    "links": {
+        "employee": "Darbinieks",
+        "device": "Planšete",
+        "washOrder": "Pasūtījums",
+        "orderWork": "Darbs pasūtījumā"
+    },
+    "options": {
+        "outcome": {
+            "Ok": "Izpildīts",
+            "Denied": "Aizliegts",
+            "Conflict": "Konflikts",
+            "Failed": "Kļūda",
+            "RateLimited": "Pārāk bieži"
+        }
+    },
+    "tooltips": {
+        "clientActionId": "Planšetes izveidots unikāls ID. Atkārtots sūtījums (piem., pēc tīkla zuduma) nedublē darbību.",
+        "clientAt": "Kad darbinieks nospieda pogu planšetē (var atšķirties no saņemšanas laika, ja nebija tīkla)."
+    },
+    "labels": {
+        "Create KioskEvent": "Izveidot ierakstu"
+    }
+}

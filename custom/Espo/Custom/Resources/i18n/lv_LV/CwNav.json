@@ -1,0 +1,10 @@
+{
+    "labels": {
+        "home": "Sākums",
+        "administration": "Administrēšana",
+        "create": "Izveide",
+        "edit": "Labošana",
+        "carwashRoles": "Lomas un piekļuve",
+        "userInterface": "Valoda, tēma, formāts"
+    }
+}

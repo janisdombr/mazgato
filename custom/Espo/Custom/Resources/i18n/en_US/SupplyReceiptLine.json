@@ -1,0 +1,20 @@
+{
+    "fields": {
+        "name": "Material",
+        "receipt": "Receipt",
+        "supply": "Supply",
+        "quantity": "Quantity",
+        "unitPrice": "Unit price",
+        "lineTotal": "Line total"
+    },
+    "links": {
+        "receipt": "Receipt",
+        "supply": "Supply"
+    },
+    "tooltips": {
+        "unitPrice": "Unit cost without VAT. Leave empty to keep the cost unchanged."
+    },
+    "labels": {
+        "Create SupplyReceiptLine": "Add line"
+    }
+}

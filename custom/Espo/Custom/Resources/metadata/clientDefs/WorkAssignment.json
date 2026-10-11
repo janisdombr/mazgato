@@ -1,0 +1,5 @@
+{
+    "controller": "controllers/record",
+    "iconClass": "fas fa-hand-sparkles",
+    "color": "#be185d"
+}

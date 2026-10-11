@@ -1,0 +1,6 @@
+[
+    {"name": "file", "width": 24},
+    {"name": "kind", "width": 18},
+    {"name": "employee", "width": 22},
+    {"name": "takenAt", "width": 36}
+]

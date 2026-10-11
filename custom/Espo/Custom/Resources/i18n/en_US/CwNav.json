@@ -1,0 +1,10 @@
+{
+    "labels": {
+        "home": "Home",
+        "administration": "Administration",
+        "create": "Create",
+        "edit": "Edit",
+        "carwashRoles": "Roles and access",
+        "userInterface": "Language, theme, format"
+    }
+}

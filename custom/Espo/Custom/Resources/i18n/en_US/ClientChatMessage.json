@@ -1,0 +1,39 @@
+{
+    "fields": {
+        "name": "Question",
+        "question": "Question (contacts masked)",
+        "answer": "Answer",
+        "status": "Status",
+        "stopped": "Stop reason",
+        "errorCode": "Error code",
+        "toolNames": "Tools",
+        "toolsJson": "Tool calls",
+        "steps": "Steps",
+        "tokensIn": "Input tokens",
+        "tokensOut": "Output tokens",
+        "cacheReadTokens": "Cache read",
+        "cacheWriteTokens": "Cache write",
+        "costUsd": "Cost, USD",
+        "model": "Model",
+        "ms": "Time, ms",
+        "lang": "Language",
+        "chatId": "Chat",
+        "ipHash": "Visitor (hash)",
+        "bookingOrder": "Booking made",
+        "vault": "Vault",
+        "createdAt": "Time",
+        "modifiedAt": "Modified"
+    },
+    "links": {},
+    "options": {
+        "status": {
+            "Pending": "Pending",
+            "Answered": "Answered",
+            "Stopped": "Stopped",
+            "Failed": "Failed"
+        }
+    },
+    "labels": {
+        "Create ClientChatMessage": "Create entry"
+    }
+}

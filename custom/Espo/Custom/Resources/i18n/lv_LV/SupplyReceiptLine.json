@@ -1,0 +1,20 @@
+{
+    "fields": {
+        "name": "Materiāls",
+        "receipt": "Pieņemšana",
+        "supply": "Materiāls",
+        "quantity": "Daudzums",
+        "unitPrice": "Cena par vienību",
+        "lineTotal": "Summa"
+    },
+    "links": {
+        "receipt": "Pieņemšana",
+        "supply": "Materiāls"
+    },
+    "tooltips": {
+        "unitPrice": "Cena par vienību bez PVN. Ja atstāj tukšu, pašizmaksa nemainās."
+    },
+    "labels": {
+        "Create SupplyReceiptLine": "Pievienot rindu"
+    }
+}

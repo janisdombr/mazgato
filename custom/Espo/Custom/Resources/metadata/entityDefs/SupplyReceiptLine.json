@@ -1,0 +1,52 @@
+{
+    "fields": {
+        "name": {
+            "type": "varchar",
+            "maxLength": 150
+        },
+        "receipt": {
+            "type": "link",
+            "required": true
+        },
+        "supply": {
+            "type": "link",
+            "required": true
+        },
+        "quantity": {
+            "type": "float",
+            "required": true,
+            "min": 0
+        },
+        "unitPrice": {
+            "type": "currency",
+            "tooltip": true
+        },
+        "lineTotal": {
+            "type": "currency",
+            "readOnly": true
+        },
+        "createdAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "modifiedAt": {
+            "type": "datetime",
+            "readOnly": true
+        }
+    },
+    "links": {
+        "receipt": {
+            "type": "belongsTo",
+            "entity": "SupplyReceipt",
+            "foreign": "lines"
+        },
+        "supply": {
+            "type": "belongsTo",
+            "entity": "Supply"
+        }
+    },
+    "collection": {
+        "orderBy": "createdAt",
+        "order": "asc"
+    }
+}

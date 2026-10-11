@@ -1,0 +1,14 @@
+{
+    "labels": {
+        "title": "Day schedule",
+        "bay": "Bay",
+        "today": "Today",
+        "prev": "Previous day",
+        "next": "Next day",
+        "closed": "Closed this day",
+        "empty": "No cars booked.",
+        "start": "Start",
+        "noShow": "No-show",
+        "min": "min"
+    }
+}

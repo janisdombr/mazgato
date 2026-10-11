@@ -1,0 +1,23 @@
+[
+    {
+        "name": "name",
+        "width": 34,
+        "link": true
+    },
+    {
+        "name": "stockQuantity",
+        "width": 16
+    },
+    {
+        "name": "unit",
+        "width": 10
+    },
+    {
+        "name": "reorderLevel",
+        "width": 16
+    },
+    {
+        "name": "needsReorder",
+        "width": 14
+    }
+]

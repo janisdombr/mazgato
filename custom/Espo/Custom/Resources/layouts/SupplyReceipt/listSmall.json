@@ -1,0 +1,12 @@
+[
+    {
+        "name": "receiptDate",
+        "link": true
+    },
+    {
+        "name": "supplier"
+    },
+    {
+        "name": "total"
+    }
+]

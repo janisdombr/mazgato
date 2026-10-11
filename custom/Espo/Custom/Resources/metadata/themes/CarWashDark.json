@@ -1,0 +1,27 @@
+{
+    "stylesheet": "client/custom/css/cw-dark.css",
+    "stylesheetIframe": "client/css/espo/dark-iframe.css",
+    "stylesheetIframeFallback": "client/css/espo/hazyblue-iframe.css",
+    "logo": "client/img/logo.svg",
+    "dashboardCellHeight": 40,
+    "dashboardCellMargin": 16,
+    "navbarHeight": 43,
+    "modalFooterAtTheTop": true,
+    "modalFullHeight": true,
+    "fontSize": 15,
+    "textColor": "#e8edf2",
+    "hoverColor": "#4fb4da",
+    "chartGridColor": "#26313c",
+    "chartTickColor": "#26313c",
+    "chartSuccessColor": "#1fa070",
+    "chartColorList": ["#3a86bd", "#1fa070", "#c4861f", "#8f7ae0", "#d6568a", "#5c6b7a"],
+    "chartColorAlternativeList": ["#3a86bd", "#1fa070", "#c4861f", "#8f7ae0", "#d6568a"],
+    "calendarColors": {
+        "": "#a58dc7a0",
+        "bg": "#323a49b3",
+        "Meeting": "#4c5972",
+        "Call": "#9b4260",
+        "Task": "#52744c"
+    },
+    "isDark": true
+}

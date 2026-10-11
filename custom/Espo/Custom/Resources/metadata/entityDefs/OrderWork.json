@@ -1,0 +1,130 @@
+{
+    "fields": {
+        "name": {
+            "type": "varchar",
+            "pattern": "$noBadCharacters"
+        },
+        "washOrder": {
+            "type": "link",
+            "required": true
+        },
+        "work": {
+            "type": "link",
+            "required": true
+        },
+        "service": {
+            "type": "link",
+            "tooltip": true
+        },
+        "role": {
+            "type": "link",
+            "tooltip": true
+        },
+        "employee": {
+            "type": "link",
+            "tooltip": true
+        },
+        "rate": {
+            "type": "currency",
+            "tooltip": true
+        },
+        "share": {
+            "type": "float",
+            "default": 100,
+            "min": 0,
+            "max": 100,
+            "tooltip": true
+        },
+        "amount": {
+            "type": "currency",
+            "tooltip": true
+        },
+        "description": {
+            "type": "text"
+        },
+        "createdAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "modifiedAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "amountManual": {
+            "type": "bool",
+            "readOnly": true,
+            "tooltip": true
+        },
+        "startedAt": {
+            "type": "datetime",
+            "readOnly": true,
+            "tooltip": true
+        },
+        "doneAt": {
+            "type": "datetime",
+            "tooltip": true
+        },
+        "doneBy": {
+            "type": "link",
+            "readOnly": true,
+            "tooltip": true
+        },
+        "doneDevice": {
+            "type": "link",
+            "readOnly": true,
+            "tooltip": true
+        }
+    },
+    "links": {
+        "washOrder": {
+            "type": "belongsTo",
+            "entity": "WashOrder",
+            "foreign": "orderWorks"
+        },
+        "work": {
+            "type": "belongsTo",
+            "entity": "Work",
+            "foreign": "orderWorks"
+        },
+        "service": {
+            "type": "belongsTo",
+            "entity": "WashService"
+        },
+        "role": {
+            "type": "belongsTo",
+            "entity": "WorkRole",
+            "foreign": "orderWorks"
+        },
+        "employee": {
+            "type": "belongsTo",
+            "entity": "Employee",
+            "foreign": "orderWorks"
+        },
+        "doneBy": {
+            "type": "belongsTo",
+            "entity": "Employee"
+        },
+        "doneDevice": {
+            "type": "belongsTo",
+            "entity": "User"
+        }
+    },
+    "collection": {
+        "orderBy": "createdAt",
+        "order": "asc"
+    },
+    "indexes": {
+        "washOrder": {
+            "columns": [
+                "washOrderId",
+                "deleted"
+            ]
+        },
+        "employee": {
+            "columns": [
+                "employeeId",
+                "deleted"
+            ]
+        }
+    }
+}

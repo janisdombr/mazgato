@@ -1,0 +1,146 @@
+[
+    {
+        "route": "/Booking/action/config",
+        "method": "post",
+        "params": {
+            "controller": "Booking",
+            "action": "config"
+        },
+        "noAuth": true
+    },
+    {
+        "route": "/Booking/action/slots",
+        "method": "post",
+        "params": {
+            "controller": "Booking",
+            "action": "slots"
+        },
+        "noAuth": true
+    },
+    {
+        "route": "/Booking/action/create",
+        "method": "post",
+        "params": {
+            "controller": "Booking",
+            "action": "create"
+        },
+        "noAuth": true
+    },
+    {
+        "route": "/Booking/action/manage",
+        "method": "post",
+        "params": {
+            "controller": "Booking",
+            "action": "manage"
+        },
+        "noAuth": true
+    },
+    {
+        "route": "/Booking/action/cancel",
+        "method": "post",
+        "params": {
+            "controller": "Booking",
+            "action": "cancel"
+        },
+        "noAuth": true
+    },
+    {
+        "route": "/Booking/action/reschedule",
+        "method": "post",
+        "params": {
+            "controller": "Booking",
+            "action": "reschedule"
+        },
+        "noAuth": true
+    },
+    {
+        "route": "/Notify/inbound/:channel",
+        "method": "post",
+        "params": {
+            "controller": "Booking",
+            "action": "inbound"
+        },
+        "noAuth": true
+    },
+    {
+        "route": "/Booking/action/optOut",
+        "method": "post",
+        "params": {
+            "controller": "Booking",
+            "action": "optOut"
+        },
+        "noAuth": true
+    },
+    {
+        "route": "/Anpr/action/register",
+        "method": "post",
+        "params": {
+            "controller": "AnprEdge",
+            "action": "register"
+        },
+        "noAuth": true
+    },
+    {
+        "route": "/Anpr/action/event",
+        "method": "post",
+        "params": {
+            "controller": "AnprEdge",
+            "action": "event"
+        },
+        "noAuth": true
+    },
+    {
+        "route": "/Anpr/action/heartbeat",
+        "method": "post",
+        "params": {
+            "controller": "AnprEdge",
+            "action": "heartbeat"
+        },
+        "noAuth": true
+    },
+    {
+        "route": "/Anpr/action/config",
+        "method": "post",
+        "params": {
+            "controller": "AnprEdge",
+            "action": "config"
+        },
+        "noAuth": true
+    },
+    {
+        "route": "/Anpr/action/commands",
+        "method": "post",
+        "params": {
+            "controller": "AnprEdge",
+            "action": "commands"
+        },
+        "noAuth": true
+    },
+    {
+        "route": "/Anpr/action/commandResult",
+        "method": "post",
+        "params": {
+            "controller": "AnprEdge",
+            "action": "commandResult"
+        },
+        "noAuth": true
+    },
+    {
+        "route": "/ClientAssistant/action/config",
+        "method": "post",
+        "params": {
+            "controller": "ClientAssistant",
+            "action": "config"
+        },
+        "noAuth": true
+    },
+    {
+        "route": "/ClientAssistant/action/ask",
+        "method": "post",
+        "params": {
+            "controller": "ClientAssistant",
+            "action": "ask"
+        },
+        "noAuth": true
+    }
+]

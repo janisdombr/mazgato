@@ -1,0 +1,31 @@
+[
+    {
+        "name": "vehicle",
+        "width": 12,
+        "link": true
+    },
+    {
+        "name": "customer",
+        "width": 18
+    },
+    {
+        "name": "service",
+        "width": 16
+    },
+    {
+        "name": "orderDateTime",
+        "width": 15
+    },
+    {
+        "name": "status",
+        "width": 12
+    },
+    {
+        "name": "paymentStatus",
+        "width": 12
+    },
+    {
+        "name": "finalPrice",
+        "width": 12
+    }
+]

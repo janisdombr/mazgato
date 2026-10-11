@@ -1,0 +1,5 @@
+{
+    "controller": "controllers/record",
+    "iconClass": "fas fa-receipt",
+    "color": "#7c3aed"
+}

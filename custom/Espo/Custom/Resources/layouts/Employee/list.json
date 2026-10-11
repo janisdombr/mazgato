@@ -1,0 +1,23 @@
+[
+    {
+        "name": "name",
+        "width": 30,
+        "link": true
+    },
+    {
+        "name": "status",
+        "width": 18
+    },
+    {
+        "name": "onShift",
+        "width": 14
+    },
+    {
+        "name": "position",
+        "width": 20
+    },
+    {
+        "name": "phone",
+        "width": 18
+    }
+]

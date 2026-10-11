@@ -1,0 +1,27 @@
+{
+    "controller": "controllers/record",
+    "iconClass": "fas fa-truck-loading",
+    "color": "#0d9488",
+    "menu": {
+        "detail": {
+            "buttons": [
+                {
+                    "name": "postReceipt",
+                    "label": "postReceipt",
+                    "style": "primary",
+                    "acl": "edit",
+                    "handler": "custom:handlers/supply-receipt/post",
+                    "actionFunction": "run",
+                    "checkVisibilityFunction": "isDraft"
+                }
+            ]
+        }
+    },
+    "relationshipPanels": {
+        "lines": {
+            "createDisabled": false,
+            "selectDisabled": true,
+            "unlinkDisabled": true
+        }
+    }
+}

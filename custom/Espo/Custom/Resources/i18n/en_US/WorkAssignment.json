@@ -1,0 +1,29 @@
+{
+    "fields": {
+        "name": "Title",
+        "washOrder": "Order",
+        "employee": "Employee",
+        "role": "Role",
+        "bonusEarned": "Bonus Earned",
+        "description": "Notes",
+        "createdAt": "Created At",
+        "modifiedAt": "Modified At"
+    },
+    "links": {
+        "washOrder": "Order",
+        "employee": "Employee"
+    },
+    "options": {
+        "role": {
+            "Washer": "Washer",
+            "Detailer": "Detailer",
+            "Vacuum": "Vacuum",
+            "Polish": "Polish",
+            "Supervisor": "Supervisor",
+            "Other": "Other"
+        }
+    },
+    "labels": {
+        "Create WorkAssignment": "Create Work Assignment"
+    }
+}

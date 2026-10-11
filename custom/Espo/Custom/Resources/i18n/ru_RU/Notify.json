@@ -1,0 +1,59 @@
+{
+    "labels": {
+        "save": "Сохранить",
+        "saved": "Сохранено",
+        "clear": "Удалить",
+        "secretSet": "задано — оставьте пустым, чтобы сохранить",
+        "moduleOff": "Модуль выключен: Настройки → Доступные модули.",
+        "ready": "готов",
+        "notReady": "не настроен",
+        "send": "Отправить тест",
+        "testHint": "Отправляет тестовый текст через настоящий адаптер канала. Нет ключа — так и скажет.",
+        "testOk": "Отправлено",
+        "testFail": "Не отправлено",
+        "loading": "Загрузка…",
+        "loadError": "Не удалось загрузить данные",
+        "retry": "Повторить"
+    },
+    "groups": {
+        "general": "Общее",
+        "email": "E-mail",
+        "whatsapp": "WhatsApp",
+        "sms": "SMS (HTTP-шлюз)",
+        "telegram": "Telegram-бот",
+        "inbound": "Ответы (STOP)",
+        "test": "Тест-отправка"
+    },
+    "fields": {
+        "reviewUrl": "Ссылка на отзыв",
+        "notifyChannelOrder": "Приоритет каналов",
+        "notifyCountryCode": "Код страны по умолчанию",
+        "notifyEmailOn": "E-mail включён (системный SMTP)",
+        "notifyWhatsappOn": "WhatsApp включён",
+        "whatsappPhoneNumberId": "ID номера телефона",
+        "whatsappAccessToken": "Токен доступа",
+        "whatsappNotifyTemplate": "Имя одобренного шаблона",
+        "whatsappTemplateLang": "Язык шаблона",
+        "notifySmsOn": "SMS включён",
+        "smsWebhookUrl": "URL шлюза",
+        "smsWebhookMethod": "Метод",
+        "smsWebhookFormat": "Формат тела",
+        "smsWebhookBody": "Шаблон тела",
+        "smsWebhookHeaders": "Доп. заголовки",
+        "smsBasicAuth": "Basic-авторизация user:password",
+        "smsFrom": "Отправитель",
+        "notifyTelegramOn": "Telegram включён",
+        "telegramBotUsername": "Имя бота (без @)",
+        "telegramBotToken": "Токен бота",
+        "telegramWebhookSecret": "Секрет вебхука",
+        "notifyInboundSecret": "Секрет для ответов SMS / WhatsApp"
+    },
+    "hints": {
+        "reviewUrl": "Добавляется в сообщение «машина готова». Пусто = строки нет.",
+        "notifyChannelOrder": "Через запятую: Telegram,Email,WhatsApp,Sms. Выбор клиента важнее.",
+        "whatsappNotifyTemplate": "Необязательно. Вне 24-часового окна Meta принимает только шаблоны; весь текст идёт как переменная {{1}}.",
+        "smsWebhookBody": "Плейсхолдеры {to} {text} {from}. Пусто = простой JSON / form.",
+        "smsWebhookHeaders": "По одному 'Имя: значение' в строке.",
+        "notifyInboundSecret": "Вебхук: POST /api/v1/Notify/inbound/sms?secret=… (Meta WhatsApp: …/whatsapp?secret=…)"
+    }
+}

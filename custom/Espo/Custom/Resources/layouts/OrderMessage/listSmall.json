@@ -1,0 +1,22 @@
+[
+    {
+        "name": "kind",
+        "width": 20
+    },
+    {
+        "name": "channel",
+        "width": 20
+    },
+    {
+        "name": "status",
+        "width": 20
+    },
+    {
+        "name": "sentAt",
+        "width": 24
+    },
+    {
+        "name": "error",
+        "width": 16
+    }
+]

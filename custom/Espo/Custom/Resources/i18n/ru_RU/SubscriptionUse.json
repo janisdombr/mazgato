@@ -1,0 +1,20 @@
+{
+    "fields": {
+        "name": "Название",
+        "subscription": "Абонемент",
+        "washOrder": "Заказ",
+        "usedAt": "Использовано",
+        "refundedAt": "Возвращено",
+        "listPrice": "Стоимость мойки"
+    },
+    "tooltips": {
+        "listPrice": "Сколько стоила бы мойка; сам заказ приводится к 0 EUR, чтобы деньги считались один раз - при продаже."
+    },
+    "links": {
+        "subscription": "Абонемент",
+        "washOrder": "Заказ"
+    },
+    "labels": {
+        "Create SubscriptionUse": "Создать"
+    }
+}

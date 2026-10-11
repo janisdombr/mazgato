@@ -1,0 +1,26 @@
+{
+    "controller": "controllers/record",
+    "iconClass": "fas fa-user-gear",
+    "color": "#7c3aed",
+    "menu": {
+        "detail": {
+            "dropdown": [
+                {
+                    "name": "setPin",
+                    "label": "setPin",
+                    "acl": "edit",
+                    "aclScope": "Employee",
+                    "handler": "custom:handlers/employee/set-pin",
+                    "actionFunction": "run",
+                    "iconClass": "fas fa-key"
+                }
+            ]
+        }
+    },
+    "massActionList": [
+        "export"
+    ],
+    "checkAllResultMassActionList": [
+        "export"
+    ]
+}

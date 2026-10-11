@@ -1,0 +1,10 @@
+{
+    "fields": {
+        "tokenHash": {
+            "forbidden": true
+        },
+        "enrollHash": {
+            "forbidden": true
+        }
+    }
+}

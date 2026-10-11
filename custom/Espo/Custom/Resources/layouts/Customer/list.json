@@ -1,0 +1,19 @@
+[
+    {
+        "name": "name",
+        "width": 32,
+        "link": true
+    },
+    {
+        "name": "vehiclePlates",
+        "width": 28
+    },
+    {
+        "name": "phone",
+        "width": 24
+    },
+    {
+        "name": "isCorporate",
+        "width": 10
+    }
+]

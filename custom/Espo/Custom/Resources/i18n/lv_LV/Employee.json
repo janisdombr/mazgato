@@ -1,0 +1,61 @@
+{
+    "fields": {
+        "name": "Vārds",
+        "phone": "Tālrunis",
+        "position": "Amats",
+        "salaryRate": "Orientējošā likme/h",
+        "workAssignments": "Darba uzdevumi",
+        "description": "Piezīmes",
+        "createdAt": "Izveidots",
+        "modifiedAt": "Mainīts",
+        "status": "Statuss",
+        "onShift": "Maiņā",
+        "shiftStartedAt": "Maiņa sākta",
+        "language": "Valoda",
+        "workRole": "Parastā loma",
+        "pinSetAt": "PIN iestatīts",
+        "pinLockedUntil": "PIN bloķēts līdz"
+    },
+    "links": {
+        "workAssignments": "Darba uzdevumi",
+        "rates": "Likmes",
+        "orderWorks": "Paveiktie darbi",
+        "shifts": "Maiņas",
+        "workRole": "Parastā loma"
+    },
+    "options": {
+        "position": {
+            "Washer": "Mazgātājs",
+            "Administrator": "Administrators"
+        },
+        "status": {
+            "Hired": "Pieņemts",
+            "OnLeave": "Atvaļinājumā",
+            "Dismissed": "Atlaists"
+        },
+        "language": {
+            "lv_LV": "Latviešu",
+            "ru_RU": "Krievu",
+            "en_US": "Angļu"
+        }
+    },
+    "tooltips": {
+        "salaryRate": "Tikai informācijai. Alga tiek rēķināta pa DARBIEM: pēc paveiktajiem darbiem; darbu likmes — «Ātrajā startā» un likmju matricā. Maiņu stundas — statistikā.",
+        "status": "Pieņemts = var norīkot darbā. Atvaļinājumā un Atlaists netiek piedāvāti ātrajā pieņemšanā.",
+        "onShift": "Iestatās, reģistrējot ierašanos/aiziešanu. Tikai lasāms.",
+        "shiftStartedAt": "Kad sākta pašreizējā maiņa.",
+        "language": "Planšetes valoda, kad darbinieks ir pieteicies ar PIN.",
+        "workRole": "Planšetē „Paņemt“ piešķir tikai šīs lomas darbus. Ja tukšs — visus brīvos darbus.",
+        "pinSetAt": "PIN kods netiek glabāts un netiek rādīts — tikai tā kontrolsumma. Maini to darbinieka kartītē vai sadaļā Administrēšana → Planšetes.",
+        "pinLockedUntil": "Pēc vairākām nepareizām PIN ievadēm pieteikšanās uz laiku bloķēta."
+    },
+    "labels": {
+        "Create Employee": "Izveidot darbinieku",
+        "Kiosk": "Planšete",
+        "setPin": "Iestatīt PIN",
+        "pinHint": "4–6 cipari. PIN nav redzams un nav atgūstams — aizmirsto var tikai nomainīt.",
+        "pinSaved": "PIN saglabāts",
+        "pinInvalid": "PIN jābūt 4–6 cipariem, ne visi vienādi un ne secīgi.",
+        "moreTab": "Papildus"
+    }
+}

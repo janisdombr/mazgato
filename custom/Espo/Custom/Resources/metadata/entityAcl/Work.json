@@ -1,0 +1,7 @@
+{
+    "fields": {
+        "baseRate": {
+            "onlyAdmin": true
+        }
+    }
+}

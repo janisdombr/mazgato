@@ -1,0 +1,22 @@
+/* CarWash design tokens, dark overrides on top of the light set (night shift). */
+:root {
+  color-scheme: dark;
+  --cw-bg: #0f151b; --cw-panel: #161e26; --cw-panel-2: #1c2630; --cw-line: #26313c; --cw-line-strong: #5c6b7a; /* 3.1:1 */
+  --cw-hover: #202b36;
+  --cw-ink: #e8edf2; /* 14.3:1 */ --cw-ink-2: #c3ccd5; /* 10.4:1 */ --cw-muted: #9aa7b4; /* 6.9:1 */
+  --cw-primary: #4fb4da; --cw-primary-strong: #6cc3e4; --cw-primary-ink: #0f151b; /* тёмный текст на кнопке 7.8:1 */
+  --cw-focus: #4fb4da;
+  --cw-st-reserved-bg: #23224a; --cw-st-reserved: #b4b0f5;
+  --cw-st-wait-bg: #3a2a10;     --cw-st-wait: #f6c76f;     /* 8.8:1 */
+  --cw-st-progress-bg: #10303d; --cw-st-progress: #8dd3f0; /* 8.4:1 */
+  --cw-st-done-bg: #143526;     --cw-st-done: #7fe0a5;     /* 8.4:1 */
+  --cw-st-cancel-bg: #1c2630;   --cw-st-cancel: #9aa7b4;
+  --cw-st-overrun: #ff6b7a;
+  --cw-pay-unpaid-bg: #3d1a1f; --cw-pay-unpaid: #ff9aa3;   /* 7.6:1 */
+  --cw-pay-invoiced-bg: #3a2a10; --cw-pay-invoiced: #f6c76f;
+  --cw-pay-paid-bg: #143526;   --cw-pay-paid: #7fe0a5;
+  --cw-solid-progress: #3a86bd; --cw-solid-done: #1fa070; --cw-solid-wait: #c4861f;
+  --cw-chart-1: #3a86bd; --cw-chart-2: #1fa070; --cw-chart-3: #c4861f; --cw-chart-4: #8f7ae0; --cw-chart-5: #d6568a;
+  --cw-chart-other: #5c6b7a; --cw-chart-track: #1c2630; --cw-chart-grid: #26313c;
+  --cw-shadow-card: 0 1px 2px rgb(0 0 0 / 40%), 0 4px 12px rgb(0 0 0 / 30%);
+}

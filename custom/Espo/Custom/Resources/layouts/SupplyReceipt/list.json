@@ -1,0 +1,27 @@
+[
+    {
+        "name": "receiptDate",
+        "width": 12,
+        "link": true
+    },
+    {
+        "name": "supplier",
+        "width": 24
+    },
+    {
+        "name": "invoiceNumber",
+        "width": 18
+    },
+    {
+        "name": "total",
+        "width": 14
+    },
+    {
+        "name": "status",
+        "width": 14
+    },
+    {
+        "name": "postedBy",
+        "width": 18
+    }
+]

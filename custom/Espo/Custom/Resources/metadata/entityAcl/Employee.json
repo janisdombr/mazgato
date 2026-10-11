@@ -1,0 +1,13 @@
+{
+    "fields": {
+        "pinHash": {
+            "forbidden": true
+        },
+        "pinFailedCount": {
+            "forbidden": true
+        },
+        "salaryRate": {
+            "onlyAdmin": true
+        }
+    }
+}

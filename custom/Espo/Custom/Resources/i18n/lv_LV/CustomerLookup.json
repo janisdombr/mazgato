@@ -1,0 +1,11 @@
+{
+    "labels": {
+        "platePlaceholder": "Numura zīme…",
+        "lookup": "Atrast",
+        "corporate": "Juridiska persona",
+        "history": "Pasūtījumi",
+        "spent": "Iztērēts",
+        "notFound": "Šai numura zīmei klients nav atrasts.",
+        "noHistory": "Vēl nav pasūtījumu"
+    }
+}

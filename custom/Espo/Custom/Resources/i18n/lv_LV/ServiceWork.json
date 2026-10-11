@@ -1,0 +1,20 @@
+{
+    "fields": {
+        "name": "Nosaukums",
+        "service": "Pakalpojums",
+        "work": "Darbs",
+        "role": "Loma",
+        "sortOrder": "Kārtība"
+    },
+    "links": {
+        "service": "Pakalpojums",
+        "work": "Darbs",
+        "role": "Loma"
+    },
+    "tooltips": {
+        "role": "Aizstāj darba noklusēto lomu tikai šim pakalpojumam. Atstāj tukšu, lai izmantotu noklusēto."
+    },
+    "labels": {
+        "Create ServiceWork": "Izveidot pakalpojuma darbu"
+    }
+}

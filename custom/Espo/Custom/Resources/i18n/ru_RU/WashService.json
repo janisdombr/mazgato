@@ -1,0 +1,35 @@
+{
+    "fields": {
+        "name": "Название",
+        "category": "Категория",
+        "priceRetail": "Розничная цена",
+        "priceCorporate": "Корпоративная цена",
+        "durationMinutes": "Длительность (мин)",
+        "isActive": "Активна",
+        "description": "Описание",
+        "createdAt": "Создано",
+        "modifiedAt": "Изменено",
+        "workLines": "Работы",
+        "sortOrder": "Порядок",
+        "supplyLines": "Нормы расхода"
+    },
+    "links": {
+        "orders": "Заказы",
+        "supplyLines": "Расходники (расход)",
+        "addonOrders": "Заказы (как доп. услуга)",
+        "workLines": "Работы (пресет)"
+    },
+    "options": {
+        "category": {
+            "Base": "Базовая мойка",
+            "Add-on": "Доп. услуга"
+        }
+    },
+    "tooltips": {
+        "sortOrder": "Порядок в списках и в форме быстрого заказа — меньше число, выше в списке."
+    },
+    "labels": {
+        "sortServices": "Порядок",
+        "Create WashService": "Создать услугу"
+    }
+}

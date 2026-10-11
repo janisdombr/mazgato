@@ -1,0 +1,33 @@
+{
+    "labels": {
+        "revenue": "Revenue",
+        "ordersCompleted": "Completed orders",
+        "averageCheck": "Average check",
+        "unpaid": "Unpaid",
+        "labourCost": "Labour cost",
+        "margin": "Margin",
+        "hours": "Hours",
+        "newCustomers": "New customers",
+        "topServices": "Services",
+        "topCustomers": "Customers",
+        "employees": "Employees",
+        "service": "Service",
+        "customer": "Customer",
+        "employee": "Employee",
+        "count": "Count",
+        "works": "Works",
+        "noOrdersPeriod": "No orders in this period",
+        "noOrdersPeriodHint": "Pick another period or take in the first car.",
+        "vsPrevious": "vs previous period",
+        "chartRevenueByDay": "Revenue by day",
+        "chartLoadByHour": "Load by hour",
+        "chartServiceShare": "Share of services",
+        "chartTopCustomers": "Top customers",
+        "chartEmployees": "Employees",
+        "showTable": "Show table",
+        "other": "Other",
+        "ordersLabel": "Orders",
+        "day": "Day",
+        "hour": "Hour"
+    }
+}

@@ -1,0 +1,35 @@
+{
+    "fields": {
+        "name": "Dokuments",
+        "supplier": "Piegādātājs",
+        "invoiceNumber": "Pavadzīmes numurs",
+        "receiptDate": "Datums",
+        "status": "Statuss",
+        "postedAt": "Pieņemts",
+        "postedBy": "Pieņēma",
+        "total": "Summa",
+        "note": "Piezīmes",
+        "lines": "Rindas",
+        "createdBy": "Izveidoja"
+    },
+    "links": {
+        "lines": "Rindas",
+        "postedBy": "Pieņēma",
+        "createdBy": "Izveidoja"
+    },
+    "options": {
+        "status": {
+            "Draft": "Melnraksts",
+            "Posted": "Pieņemts noliktavā"
+        }
+    },
+    "tooltips": {
+        "status": "Melnrakstu var labot. Pēc pieņemšanas noliktavā krājumi pieaug vienreiz un dokumentu vairs nevar mainīt vai dzēst."
+    },
+    "labels": {
+        "Create SupplyReceipt": "Jauna pieņemšana",
+        "postReceipt": "Pieņemt noliktavā",
+        "posted": "Pieņemts noliktavā",
+        "alreadyPosted": "Jau pieņemts agrāk — krājumi nemainīti"
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "fields": {
+        "name": "Nosaukums",
+        "washOrder": "Pasūtījums",
+        "employee": "Darbinieks",
+        "role": "Loma",
+        "bonusEarned": "Nopelnītais bonuss",
+        "description": "Piezīmes",
+        "createdAt": "Izveidots",
+        "modifiedAt": "Mainīts"
+    },
+    "links": {
+        "washOrder": "Pasūtījums",
+        "employee": "Darbinieks"
+    },
+    "options": {
+        "role": {
+            "Washer": "Mazgātājs",
+            "Detailer": "Detailings",
+            "Vacuum": "Putekļsūcējs",
+            "Polish": "Pulēšana",
+            "Supervisor": "Vadītājs",
+            "Other": "Cits"
+        }
+    },
+    "labels": {
+        "Create WorkAssignment": "Izveidot darba uzdevumu"
+    }
+}

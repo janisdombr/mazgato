@@ -1,0 +1,124 @@
+{
+    "fields": {
+        "name": {
+            "type": "varchar",
+            "required": true,
+            "pattern": "$noBadCharacters"
+        },
+        "channel": {
+            "type": "enum",
+            "options": [
+                "WhatsApp",
+                "Email",
+                "Phone"
+            ],
+            "default": "Email",
+            "displayAsLabel": true,
+            "style": {
+                "WhatsApp": "success",
+                "Email": "info",
+                "Phone": "primary"
+            }
+        },
+        "segment": {
+            "type": "enum",
+            "options": [
+                "All",
+                "Corporate",
+                "Individual"
+            ],
+            "default": "All",
+            "tooltip": true
+        },
+        "offer": {
+            "type": "text",
+            "tooltip": true
+        },
+        "subject": {
+            "type": "varchar",
+            "tooltip": true
+        },
+        "body": {
+            "type": "text",
+            "tooltip": true
+        },
+        "discountPercent": {
+            "type": "int",
+            "min": 0,
+            "max": 100,
+            "tooltip": true
+        },
+        "status": {
+            "type": "enum",
+            "options": [
+                "Draft",
+                "Sent"
+            ],
+            "default": "Draft",
+            "displayAsLabel": true,
+            "style": {
+                "Draft": "default",
+                "Sent": "success"
+            }
+        },
+        "sentAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "recipientCount": {
+            "type": "int",
+            "readOnly": true,
+            "tooltip": true
+        },
+        "sentCount": {
+            "type": "int",
+            "readOnly": true,
+            "tooltip": true
+        },
+        "failedCount": {
+            "type": "int",
+            "readOnly": true
+        },
+        "recipients": {
+            "type": "linkMultiple",
+            "noLoad": true
+        },
+        "description": {
+            "type": "text"
+        },
+        "createdAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "modifiedAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "createdBy": {
+            "type": "link",
+            "readOnly": true,
+            "view": "views/fields/user"
+        }
+    },
+    "links": {
+        "recipients": {
+            "type": "hasMany",
+            "entity": "MailingRecipient",
+            "foreign": "mailing"
+        },
+        "createdBy": {
+            "type": "belongsTo",
+            "entity": "User"
+        }
+    },
+    "collection": {
+        "orderBy": "createdAt",
+        "order": "desc",
+        "textFilterFields": ["name"]
+    },
+    "indexes": {
+        "status": {
+            "columns": ["status", "deleted"]
+        }
+    }
+}

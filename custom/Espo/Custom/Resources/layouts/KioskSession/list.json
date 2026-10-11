@@ -1,0 +1,8 @@
+[
+    {"name": "employee", "width": 22, "link": true},
+    {"name": "device", "width": 18},
+    {"name": "startedAt", "width": 18},
+    {"name": "lastSeenAt", "width": 18},
+    {"name": "endedAt", "width": 18},
+    {"name": "endReason", "width": 10}
+]

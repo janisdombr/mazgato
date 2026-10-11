@@ -1,0 +1,102 @@
+{
+    "fields": {
+        "name": {
+            "type": "varchar",
+            "required": true,
+            "maxLength": 80,
+            "pattern": "$noBadCharacters"
+        },
+        "status": {
+            "type": "enum",
+            "options": [
+                "Pending",
+                "Active",
+                "Revoked"
+            ],
+            "default": "Pending",
+            "readOnly": true,
+            "displayAsLabel": true,
+            "style": {
+                "Pending": "warning",
+                "Active": "success",
+                "Revoked": "danger"
+            }
+        },
+        "tokenHash": {
+            "type": "varchar",
+            "maxLength": 80,
+            "readOnly": true,
+            "layoutAvailabilityList": [],
+            "customizationDisabled": true
+        },
+        "enrollHash": {
+            "type": "varchar",
+            "maxLength": 80,
+            "readOnly": true,
+            "layoutAvailabilityList": [],
+            "customizationDisabled": true
+        },
+        "enrollExpiresAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "enrolledAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "lastSeenAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "lastIp": {
+            "type": "varchar",
+            "maxLength": 64,
+            "readOnly": true
+        },
+        "version": {
+            "type": "varchar",
+            "maxLength": 40,
+            "readOnly": true
+        },
+        "queueDepth": {
+            "type": "int",
+            "readOnly": true,
+            "default": 0,
+            "tooltip": true
+        },
+        "clockSkewSeconds": {
+            "type": "int",
+            "readOnly": true
+        },
+        "report": {
+            "type": "text",
+            "readOnly": true,
+            "layoutAvailabilityList": [],
+            "customizationDisabled": true
+        },
+        "cameras": {
+            "type": "linkMultiple",
+            "noLoad": true,
+            "readOnly": true
+        },
+        "createdAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "modifiedAt": {
+            "type": "datetime",
+            "readOnly": true
+        }
+    },
+    "links": {
+        "cameras": {
+            "type": "hasMany",
+            "entity": "Camera",
+            "foreign": "edgeNode"
+        }
+    },
+    "collection": {
+        "orderBy": "name",
+        "order": "asc"
+    }
+}

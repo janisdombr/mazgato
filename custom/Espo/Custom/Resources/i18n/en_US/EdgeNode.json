@@ -1,0 +1,35 @@
+{
+    "fields": {
+        "name": "Name",
+        "status": "Status",
+        "tokenHash": "Token hash",
+        "enrollHash": "Enrolment hash",
+        "enrollExpiresAt": "Enrolment token valid until",
+        "enrolledAt": "Enrolled",
+        "lastSeenAt": "Last heartbeat",
+        "lastIp": "Last IP",
+        "version": "Version",
+        "queueDepth": "Queue on the node",
+        "clockSkewSeconds": "Clock skew, s",
+        "report": "Report",
+        "cameras": "Cameras",
+        "createdAt": "Created",
+        "modifiedAt": "Modified"
+    },
+    "links": {
+        "cameras": "Cameras"
+    },
+    "options": {
+        "status": {
+            "Pending": "Awaiting enrolment",
+            "Active": "Active",
+            "Revoked": "Revoked"
+        }
+    },
+    "tooltips": {
+        "queueDepth": "How many events the node has not delivered yet (network drop)."
+    },
+    "labels": {
+        "Overview": "Overview"
+    }
+}

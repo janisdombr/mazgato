@@ -1,0 +1,9 @@
+[
+    {
+        "label": "Service Supply",
+        "rows": [
+            [{"name": "service"}, {"name": "supply"}],
+            [{"name": "quantity"}, false]
+        ]
+    }
+]

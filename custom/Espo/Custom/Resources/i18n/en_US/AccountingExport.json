@@ -1,0 +1,24 @@
+{
+    "labels": {
+        "title": "Accounting export - sales journal",
+        "intro": "Completed orders of the period, once each (the same orders Statistics counts as revenue). Cancelled and unfinished orders are not included.",
+        "dateFrom": "From",
+        "dateTo": "To",
+        "format": "Format",
+        "delimiter": "CSV delimiter",
+        "decimal": "Decimal separator",
+        "lines": "One row per priced line (base wash + add-ons) instead of per order",
+        "preview": "Preview",
+        "download": "Download",
+        "downloaded": "File saved",
+        "loading": "Loading…",
+        "error": "Could not build the export",
+        "retry": "Retry",
+        "orders": "orders",
+        "gross": "total",
+        "net": "net",
+        "fiscalPending": "Cash/card sales still waiting for a till receipt number",
+        "empty": "No completed orders in this period.",
+        "mapping": "The columns are fixed and documented (docs/FISCAL.md). This is a universal journal, not the import format of a specific accounting program: map the columns in the program's import. The Jumis and Horizon import specifications could not be verified - ask the vendor for their import description."
+    }
+}

@@ -1,0 +1,166 @@
+{
+    "fields": {
+        "name": {
+            "type": "varchar",
+            "required": true,
+            "pattern": "$noBadCharacters"
+        },
+        "phone": {
+            "type": "varchar",
+            "maxLength": 30
+        },
+        "position": {
+            "type": "enum",
+            "options": [
+                "Washer",
+                "Administrator"
+            ],
+            "default": "Washer",
+            "style": {
+                "Administrator": "info"
+            }
+        },
+        "salaryRate": {
+            "type": "float",
+            "min": 0,
+            "tooltip": true
+        },
+        "workAssignments": {
+            "type": "linkMultiple",
+            "noLoad": true
+        },
+        "description": {
+            "type": "text"
+        },
+        "createdAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "modifiedAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "status": {
+            "type": "enum",
+            "options": [
+                "Hired",
+                "OnLeave",
+                "Dismissed"
+            ],
+            "default": "Hired",
+            "displayAsLabel": true,
+            "style": {
+                "Hired": "success",
+                "OnLeave": "warning",
+                "Dismissed": "danger"
+            },
+            "tooltip": true
+        },
+        "onShift": {
+            "type": "bool",
+            "readOnly": true,
+            "tooltip": true
+        },
+        "shiftStartedAt": {
+            "type": "datetime",
+            "readOnly": true,
+            "tooltip": true
+        },
+        "language": {
+            "type": "enum",
+            "options": [
+                "lv_LV",
+                "ru_RU",
+                "en_US"
+            ],
+            "default": "lv_LV",
+            "tooltip": true
+        },
+        "workRole": {
+            "type": "link",
+            "tooltip": true
+        },
+        "pinHash": {
+            "type": "varchar",
+            "maxLength": 100,
+            "readOnly": true,
+            "utility": true,
+            "layoutAvailabilityList": [],
+            "duplicateIgnore": true,
+            "importDisabled": true,
+            "exportDisabled": true
+        },
+        "pinFailedCount": {
+            "type": "int",
+            "default": 0,
+            "readOnly": true,
+            "utility": true,
+            "duplicateIgnore": true,
+            "importDisabled": true,
+            "exportDisabled": true
+        },
+        "pinLockedUntil": {
+            "type": "datetime",
+            "readOnly": true,
+            "tooltip": true,
+            "duplicateIgnore": true,
+            "importDisabled": true
+        },
+        "pinSetAt": {
+            "type": "datetime",
+            "readOnly": true,
+            "tooltip": true,
+            "duplicateIgnore": true,
+            "importDisabled": true
+        }
+    },
+    "links": {
+        "workAssignments": {
+            "type": "hasMany",
+            "entity": "WorkAssignment",
+            "foreign": "employee"
+        },
+        "orderWorks": {
+            "type": "hasMany",
+            "entity": "OrderWork",
+            "foreign": "employee"
+        },
+        "rates": {
+            "type": "hasMany",
+            "entity": "WorkRate",
+            "foreign": "employee"
+        },
+        "shifts": {
+            "type": "hasMany",
+            "entity": "Shift",
+            "foreign": "employee"
+        },
+        "workRole": {
+            "type": "belongsTo",
+            "entity": "WorkRole"
+        }
+    },
+    "collection": {
+        "orderBy": "name",
+        "order": "asc",
+        "textFilterFields": [
+            "name",
+            "phone",
+            "position"
+        ]
+    },
+    "indexes": {
+        "name": {
+            "columns": [
+                "name",
+                "deleted"
+            ]
+        },
+        "status": {
+            "columns": [
+                "status",
+                "deleted"
+            ]
+        }
+    }
+}

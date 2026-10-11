@@ -1,0 +1,31 @@
+[
+    {
+        "name": "occurredAt",
+        "width": 16,
+        "link": true
+    },
+    {
+        "name": "supply",
+        "width": 22
+    },
+    {
+        "name": "kind",
+        "width": 16
+    },
+    {
+        "name": "delta",
+        "width": 9
+    },
+    {
+        "name": "quantityAfter",
+        "width": 9
+    },
+    {
+        "name": "reason",
+        "width": 18
+    },
+    {
+        "name": "createdBy",
+        "width": 10
+    }
+]

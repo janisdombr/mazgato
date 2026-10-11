@@ -1,0 +1,23 @@
+{
+    "labels": {
+        "title": "Before / after photos",
+        "entryExit": "Entry → exit",
+        "beforeAfter": "Before → after",
+        "before": "Before",
+        "after": "After",
+        "entry": "Entry",
+        "exit": "Exit",
+        "empty": "No photos to compare",
+        "missing": "No photo",
+        "slider": "Compare with a slider",
+        "sideBySide": "Side by side",
+        "enlarge": "Enlarge",
+        "close": "Close",
+        "prev": "Previous",
+        "next": "Next",
+        "allPhotos": "All photos",
+        "takenAt": "Taken",
+        "sliderLabel": "Comparison slider",
+        "loadError": "Could not load"
+    }
+}

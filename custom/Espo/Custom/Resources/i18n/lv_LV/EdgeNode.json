@@ -1,0 +1,35 @@
+{
+    "fields": {
+        "name": "Nosaukums",
+        "status": "Statuss",
+        "tokenHash": "Žetona jaucējkods",
+        "enrollHash": "Reģistrācijas jaucējkods",
+        "enrollExpiresAt": "Reģistrācijas žetons derīgs līdz",
+        "enrolledAt": "Reģistrēts",
+        "lastSeenAt": "Pēdējais signāls",
+        "lastIp": "Pēdējā IP",
+        "version": "Versija",
+        "queueDepth": "Rinda mezglā",
+        "clockSkewSeconds": "Pulksteņa nobīde, s",
+        "report": "Ziņojums",
+        "cameras": "Kameras",
+        "createdAt": "Izveidots",
+        "modifiedAt": "Mainīts"
+    },
+    "links": {
+        "cameras": "Kameras"
+    },
+    "options": {
+        "status": {
+            "Pending": "Gaida reģistrāciju",
+            "Active": "Aktīvs",
+            "Revoked": "Atsaukts"
+        }
+    },
+    "tooltips": {
+        "queueDepth": "Cik notikumu mezgls vēl nav nosūtījis (tīkla pārtraukums)."
+    },
+    "labels": {
+        "Overview": "Pārskats"
+    }
+}

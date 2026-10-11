@@ -1,0 +1,78 @@
+{
+    "fields": {
+        "productName": "Produkta nosaukums",
+        "brandColor": "Zīmola krāsa",
+        "brandDocHeader": "Dokumentu galvene (nosaukums)",
+        "brandDocAddress": "Adrese dokumentos",
+        "brandDocRegNo": "Reģ. Nr.",
+        "brandDocPvnNo": "PVN Nr.",
+        "brandDocFooter": "Dokumentu kājene",
+        "brandEmailSignature": "E-pasta paraksts",
+        "landingSiteUrl": "Mājaslapas adrese (atteikšanās lapa)",
+        "enabledModules": "Ieslēgtie moduļi",
+        "kioskTheme": "Planšetes tēma",
+        "kioskIdleSeconds": "Planšete: atslēgšana pēc, s",
+        "kioskSessionHours": "Planšete: sesijas ilgums, h",
+        "kioskPinMaxAttempts": "PIN: kļūdainu mēģinājumu skaits",
+        "kioskPinLockMinutes": "PIN: bloķēšana, min",
+        "kioskRateLimitPerMinute": "Planšete: darbības minūtē",
+        "photoRetentionDays": "Foto glabāšanas termiņš, dienas",
+        "anprAutoCreate": "Numuri: izveidot pasūtījumu automātiski",
+        "anprMinConfidence": "Numuri: zemākā pārliecība",
+        "anprHighConfidence": "Numuri: augstā pārliecība",
+        "anprDedupSeconds": "Numuri: dublēšanas logs, s",
+        "anprRetentionDays": "Numuri: kadru glabāšana, dienas",
+        "anprEventRetentionDays": "Numuri: notikumu glabāšana, dienas",
+        "anprAccessLogDays": "Kadru skatījumu žurnāls, dienas",
+        "anprRateLimitPerMinute": "Mezgls: notikumi minūtē",
+        "anprPollSeconds": "Dēļa atjaunošana, s",
+        "anprMaxEventAgeHours": "Mezgls: vecākais pieņemamais notikums, h",
+        "anprAlertSound": "Skaņas signāls par jaunu auto",
+        "camerasFrameKeepHours": "Kadri pēc pieprasījuma: glabāšana, h",
+        "camerasViewBase": "Tiešraides adrese (ceļš)",
+        "sourceCodeUrl": "Pirmkoda adrese"
+    },
+    "tooltips": {
+        "brandColor": "Formāts #rrggbb. Krāso zīmola plāksni, pieteikšanās joslu un akcentus; galvenā poga paliek produkta krāsā.",
+        "brandDocHeader": "Juridiskais vai tirdzniecības nosaukums kvītīs un rēķinos. Ja tukšs — lietotnes nosaukums.",
+        "landingSiteUrl": "Mājaslapa, kurā atrodas atteikšanās no e-pastiem lapa (unsubscribe.html). Ja tukšs — atteikšanās saite ved tieši uz CRM.",
+        "enabledModules": "Pieejamie moduļi. Tukšs vai izņemts — attiecīgie API atbild 403, planšete rāda paziņojumu. Vēlāk šo sarakstu aizpildīs parakstīta licence.",
+        "kioskIdleSeconds": "Cik sekundes bez pieskāriena planšete atgriežas pie PIN ekrāna.",
+        "kioskSessionHours": "Cik ilgi derīgs darbinieka PIN pieteikums serverī (arī bezsaistes darbību nosūtīšanai).",
+        "kioskPinMaxAttempts": "Pēc tik daudz nepareizām ievadēm PIN uz laiku bloķē.",
+        "kioskRateLimitPerMinute": "Aizsardzība pret spiešanu uz paņēmienu: maksimālais darbību skaits no vienas planšetes minūtē.",
+        "photoRetentionDays": "Cik dienas glabā pasūtījuma foto. Tīrīšana: bin/command purge-photos (un ikdienas darbs).",
+        "anprAutoCreate": "Pēc noklusējuma IZSLĒGTS. Ja ieslēgts: auto ar augstu pārliecību, kas jau ir sistēmā un kam nav aktīva pasūtījuma, saņem pasūtījumu ar pēdējo pakalpojumu. Citos gadījumos lēmumu vienmēr pieņem operators.",
+        "anprMinConfidence": "Zem šīs vērtības (0–1) notikums vienmēr gaida operatoru.",
+        "anprHighConfidence": "No šīs vērtības (0–1) sistēma drīkst rīkoties pati (ja ieslēgts „izveidot automātiski“).",
+        "anprDedupSeconds": "Tas pats numurs tajā pašā kamerā šajā laikā ir viens notikums.",
+        "anprRetentionDays": "Pēc cik dienām kadrus dzēš. Ieteikums 30. PĀRBAUDĪT AR JURISTU.",
+        "anprEventRetentionDays": "Pēc cik dienām notikuma ieraksts (numurs, laiks, kamera) tiek dzēsts. Ieteikums 90. PĀRBAUDĪT AR JURISTU.",
+        "anprAccessLogDays": "Cik ilgi glabāt žurnālu „kurš skatījās kadrus“.",
+        "anprAlertSound": "Dēlis atskaņo īsu signālu, kad parādās jauns auto.",
+        "camerasViewBase": "Ceļš vai adrese, kur reverse proxy publicē go2rtc/Frigate skatītāju (noklusējums /cam).",
+        "sourceCodeUrl": "Adrese, kur publicēts ŠĪS versijas pirmkods (AGPL 13. punkts). Tiek rādīta kā saite “Pirmkods” kājenē un sadaļā Par. Obligāta publiskai vai SaaS instalācijai."
+    },
+    "labels": {
+        "Identity": "Identitāte",
+        "Documents": "Dokumenti",
+        "Mail": "Pasts",
+        "Kiosk": "Planšete"
+    },
+    "options": {
+        "enabledModules": {
+            "kiosk": "Strādnieka planšete",
+            "notify": "Paziņojumi klientiem",
+            "booking": "Tiešsaistes pieraksts",
+            "assistant": "AI palīgs",
+            "anpr": "Numuru atpazīšana",
+            "cameras": "Kameras",
+            "clientAssistant": "Klientu čats (AI)"
+        },
+        "kioskTheme": {
+            "dark": "Tumšā",
+            "light": "Gaišā",
+            "auto": "Pēc ierīces"
+        }
+    }
+}

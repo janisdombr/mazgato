@@ -1,0 +1,50 @@
+{
+    "labels": {
+        "loading": "Loading…",
+        "loadError": "Could not load the data",
+        "retry": "Retry",
+        "installation": "Installation",
+        "installationHint": "Send this id to the vendor; the licence is bound to it. Verification is offline - nothing is sent anywhere.",
+        "mode": "Licence mode",
+        "modeEnforced": "Enforced - only licensed modules run",
+        "modeOpen": "Open - modules follow Settings → Enabled modules",
+        "noKey": "No vendor public key is configured, so no licence can be verified.",
+        "licence": "Licence",
+        "status": "Status",
+        "customer": "Customer",
+        "expires": "Valid until",
+        "graceUntil": "Grace until",
+        "remove": "Remove licence",
+        "uploaded": "Licence installed",
+        "uploadFailed": "The file was refused",
+        "modules": "Modules",
+        "module": "Module",
+        "licensed": "In licence",
+        "enabled": "Active now"
+    },
+    "statuses": {
+        "missing": "No licence installed",
+        "valid": "Valid",
+        "grace": "Expired - grace period",
+        "expired": "Expired",
+        "bad_signature": "Signature invalid",
+        "wrong_installation": "Issued for another installation",
+        "malformed": "Unreadable",
+        "no_key": "No public key"
+    },
+    "modules": {
+        "kiosk": "Worker tablet",
+        "notify": "Client notifications",
+        "booking": "Online booking",
+        "assistant": "AI assistant",
+        "anpr": "Plate recognition",
+        "cameras": "Cameras",
+        "clientAssistant": "Customer chat (AI)"
+    },
+    "errors": {
+        "bad_signature": "Signature invalid",
+        "wrong_installation": "Issued for another installation",
+        "malformed": "Not a licence file",
+        "no_key": "No vendor public key is configured"
+    }
+}

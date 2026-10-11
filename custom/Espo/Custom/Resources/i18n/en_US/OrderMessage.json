@@ -1,0 +1,43 @@
+{
+    "fields": {
+        "name": "Message",
+        "kind": "Kind",
+        "channel": "Channel",
+        "status": "Status",
+        "error": "Error",
+        "recipient": "Recipient",
+        "body": "Text",
+        "sentAt": "Sent at",
+        "customer": "Customer",
+        "washOrder": "Order",
+        "createdAt": "Created at"
+    },
+    "links": {
+        "customer": "Customer",
+        "washOrder": "Order"
+    },
+    "options": {
+        "kind": {
+            "Ready": "Car ready",
+            "Booked": "Booking confirmed",
+            "Reminder": "Reminder",
+            "Cancelled": "Booking cancelled",
+            "Test": "Test"
+        },
+        "channel": {
+            "": "—",
+            "Email": "Email",
+            "WhatsApp": "WhatsApp",
+            "Sms": "SMS",
+            "Telegram": "Telegram"
+        },
+        "status": {
+            "Sent": "Sent",
+            "Failed": "Failed",
+            "Skipped": "Skipped"
+        }
+    },
+    "labels": {
+        "Create OrderMessage": "Create message"
+    }
+}

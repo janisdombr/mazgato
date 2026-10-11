@@ -1,0 +1,17 @@
+{
+    "labels": {
+        "loading": "Ielādējam…",
+        "retry": "Mēģināt vēlreiz",
+        "relogin": "Pieslēgties no jauna",
+        "sessionExpired": "Sesija beigusies",
+        "sessionExpiredHint": "Bezdarbības dēļ jūs izrakstīja. Pieslēdzieties vēlreiz — nesaglabātie dati netiks zaudēti.",
+        "loadError": "Neizdevās ielādēt datus",
+        "loadErrorHint": "Pārbaudiet savienojumu un mēģiniet vēlreiz.",
+        "actionError": "Darbība neizdevās",
+        "periodToday": "Šodien",
+        "periodWeek": "7 dienas",
+        "periodMonth": "Mēnesis",
+        "periodQuarter": "Ceturksnis",
+        "periodRange": "Periods"
+    }
+}

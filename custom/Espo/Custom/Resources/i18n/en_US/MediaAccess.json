@@ -1,0 +1,32 @@
+{
+    "fields": {
+        "name": "Name",
+        "kind": "What was viewed",
+        "user": "User",
+        "plateEvent": "Plate event",
+        "orderPhoto": "Order photo",
+        "camera": "Camera",
+        "detail": "Detail",
+        "ip": "IP",
+        "createdAt": "Time"
+    },
+    "links": {
+        "user": "User",
+        "plateEvent": "Plate event",
+        "orderPhoto": "Order photo",
+        "camera": "Camera"
+    },
+    "options": {
+        "kind": {
+            "PlateEvent": "Plate snapshot",
+            "OrderPhoto": "Order camera photo",
+            "Snapshot": "On-demand frame",
+            "Live": "Live view",
+            "Clip": "Recordings",
+            "Erase": "Erasure on request"
+        }
+    },
+    "labels": {
+        "Overview": "Overview"
+    }
+}

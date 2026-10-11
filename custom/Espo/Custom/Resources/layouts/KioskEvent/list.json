@@ -1,0 +1,9 @@
+[
+    {"name": "createdAt", "width": 16},
+    {"name": "action", "width": 14, "link": true},
+    {"name": "outcome", "width": 10},
+    {"name": "employee", "width": 15},
+    {"name": "device", "width": 13},
+    {"name": "washOrder", "width": 14},
+    {"name": "errorCode", "width": 14}
+]

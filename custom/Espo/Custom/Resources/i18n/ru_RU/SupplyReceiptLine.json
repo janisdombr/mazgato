@@ -1,0 +1,20 @@
+{
+    "fields": {
+        "name": "Материал",
+        "receipt": "Приёмка",
+        "supply": "Расходник",
+        "quantity": "Количество",
+        "unitPrice": "Цена за единицу",
+        "lineTotal": "Сумма"
+    },
+    "links": {
+        "receipt": "Приёмка",
+        "supply": "Расходник"
+    },
+    "tooltips": {
+        "unitPrice": "Цена за единицу без НДС. Если пусто — себестоимость не меняется."
+    },
+    "labels": {
+        "Create SupplyReceiptLine": "Добавить строку"
+    }
+}

@@ -1,0 +1,41 @@
+{
+    "fields": {
+        "name": "Name",
+        "washOrder": "Order",
+        "kind": "Kind",
+        "source": "Source",
+        "file": "Photo",
+        "employee": "Employee",
+        "takenAt": "Taken at",
+        "retainUntil": "Keep until",
+        "note": "Note",
+        "createdAt": "Created",
+        "modifiedAt": "Modified"
+    },
+    "links": {
+        "washOrder": "Order",
+        "employee": "Employee"
+    },
+    "options": {
+        "kind": {
+            "Before": "Before",
+            "After": "After",
+            "Entry": "Entry",
+            "Exit": "Exit",
+            "Other": "Other"
+        },
+        "source": {
+            "Kiosk": "Tablet",
+            "Camera": "Camera",
+            "Manual": "Manual"
+        }
+    },
+    "tooltips": {
+        "retainUntil": "The photo is deleted automatically after this date (retention is set in Settings).",
+        "source": "Where the photo came from: the worker tablet, a camera, or a manual upload."
+    },
+    "labels": {
+        "Create OrderPhoto": "Add photo",
+        "Photos": "Photos"
+    }
+}

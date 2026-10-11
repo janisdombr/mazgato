@@ -1,0 +1,23 @@
+[
+    {
+        "name": "postedAt",
+        "width": 18,
+        "link": true
+    },
+    {
+        "name": "reason",
+        "width": 36
+    },
+    {
+        "name": "linesCount",
+        "width": 12
+    },
+    {
+        "name": "varianceCount",
+        "width": 12
+    },
+    {
+        "name": "postedBy",
+        "width": 20
+    }
+]

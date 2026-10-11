@@ -1,0 +1,39 @@
+[
+    {
+        "label": "Overview",
+        "rows": [
+            [
+                {
+                    "name": "kind"
+                },
+                {
+                    "name": "user"
+                }
+            ],
+            [
+                {
+                    "name": "plateEvent"
+                },
+                {
+                    "name": "orderPhoto"
+                }
+            ],
+            [
+                {
+                    "name": "camera"
+                },
+                {
+                    "name": "ip"
+                }
+            ],
+            [
+                {
+                    "name": "detail"
+                },
+                {
+                    "name": "createdAt"
+                }
+            ]
+        ]
+    }
+]

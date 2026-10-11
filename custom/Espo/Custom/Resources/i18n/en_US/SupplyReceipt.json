@@ -1,0 +1,35 @@
+{
+    "fields": {
+        "name": "Document",
+        "supplier": "Supplier",
+        "invoiceNumber": "Invoice number",
+        "receiptDate": "Date",
+        "status": "Status",
+        "postedAt": "Posted at",
+        "postedBy": "Posted by",
+        "total": "Total",
+        "note": "Note",
+        "lines": "Lines",
+        "createdBy": "Created by"
+    },
+    "links": {
+        "lines": "Lines",
+        "postedBy": "Posted by",
+        "createdBy": "Created by"
+    },
+    "options": {
+        "status": {
+            "Draft": "Draft",
+            "Posted": "Posted"
+        }
+    },
+    "tooltips": {
+        "status": "A draft can be edited. Posting raises the stock exactly once; a posted document can no longer be changed or deleted."
+    },
+    "labels": {
+        "Create SupplyReceipt": "New receipt",
+        "postReceipt": "Post receipt",
+        "posted": "Receipt posted",
+        "alreadyPosted": "Already posted earlier - stock unchanged"
+    }
+}

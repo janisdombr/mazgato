@@ -1,0 +1,14 @@
+{
+    "fields": {
+        "name": "Материал",
+        "stocktake": "Инвентаризация",
+        "supply": "Расходник",
+        "expectedQuantity": "По учёту",
+        "countedQuantity": "Фактически",
+        "difference": "Разница"
+    },
+    "links": {
+        "stocktake": "Инвентаризация",
+        "supply": "Расходник"
+    }
+}

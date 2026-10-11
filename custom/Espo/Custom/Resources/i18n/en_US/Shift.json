@@ -1,0 +1,21 @@
+{
+    "fields": {
+        "name": "Title",
+        "employee": "Employee",
+        "startedAt": "Clocked in",
+        "finishedAt": "Clocked out",
+        "hours": "Hours",
+        "description": "Notes"
+    },
+    "links": {
+        "employee": "Employee"
+    },
+    "tooltips": {
+        "startedAt": "When the employee arrived.",
+        "finishedAt": "When they left. Empty = the shift is still open.",
+        "hours": "Computed from clock-in to clock-out."
+    },
+    "labels": {
+        "Create Shift": "Create Shift"
+    }
+}

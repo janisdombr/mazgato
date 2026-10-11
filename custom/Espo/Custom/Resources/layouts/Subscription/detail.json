@@ -1,0 +1,59 @@
+[
+    {
+        "label": "Overview",
+        "rows": [
+            [
+                {
+                    "name": "customer"
+                },
+                {
+                    "name": "name"
+                }
+            ],
+            [
+                {
+                    "name": "kind"
+                },
+                {
+                    "name": "status"
+                }
+            ],
+            [
+                {
+                    "name": "washesTotal"
+                },
+                {
+                    "name": "washesRemaining"
+                }
+            ],
+            [
+                {
+                    "name": "validFrom"
+                },
+                {
+                    "name": "validTo"
+                }
+            ],
+            [
+                {
+                    "name": "service"
+                },
+                {
+                    "name": "price"
+                }
+            ],
+            [
+                {
+                    "name": "saleOrder"
+                },
+                false
+            ],
+            [
+                {
+                    "name": "description"
+                },
+                false
+            ]
+        ]
+    }
+]

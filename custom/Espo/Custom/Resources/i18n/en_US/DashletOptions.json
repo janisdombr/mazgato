@@ -1,0 +1,22 @@
+{
+    "fields": {
+        "dashletWidth": "Width",
+        "dashletHeight": "Height"
+    },
+    "options": {
+        "dashletWidth": {
+            "": "As dragged",
+            "2": "1 column",
+            "4": "2 columns (full width)"
+        },
+        "dashletHeight": {
+            "": "As dragged",
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6"
+        }
+    }
+}

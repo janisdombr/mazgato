@@ -1,0 +1,39 @@
+{
+    "fields": {
+        "name": "Jautājums",
+        "question": "Jautājums (kontakti maskēti)",
+        "answer": "Atbilde",
+        "status": "Statuss",
+        "stopped": "Apstāšanās iemesls",
+        "errorCode": "Kļūdas kods",
+        "toolNames": "Rīki",
+        "toolsJson": "Rīku izsaukumi",
+        "steps": "Soļi",
+        "tokensIn": "Ievades tokeni",
+        "tokensOut": "Izvades tokeni",
+        "cacheReadTokens": "Kešatmiņas lasīšana",
+        "cacheWriteTokens": "Kešatmiņas rakstīšana",
+        "costUsd": "Izmaksas, USD",
+        "model": "Modelis",
+        "ms": "Laiks, ms",
+        "lang": "Valoda",
+        "chatId": "Čats",
+        "ipHash": "Apmeklētājs (jaucējkods)",
+        "bookingOrder": "Izveidotais pieraksts",
+        "vault": "Seifs",
+        "createdAt": "Laiks",
+        "modifiedAt": "Mainīts"
+    },
+    "links": {},
+    "options": {
+        "status": {
+            "Pending": "Gaida",
+            "Answered": "Atbildēts",
+            "Stopped": "Apturēts",
+            "Failed": "Kļūda"
+        }
+    },
+    "labels": {
+        "Create ClientChatMessage": "Izveidot ierakstu"
+    }
+}
