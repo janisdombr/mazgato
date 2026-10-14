@@ -11,7 +11,7 @@ tooling.
     custom/          -> EspoCRM's `custom/` directory   (PHP, metadata, layouts, translations)
     client/custom/   -> EspoCRM's `client/custom/`      (views, dashlets, libraries, themes)
 
-Built from the private source tree at revision `c04a91067e06` on 2026-10-14. The EspoCRM core itself is not included; get it, and its
+Built from the private source tree at revision `08986b7e8e2b` on 2026-10-14. The EspoCRM core itself is not included; get it, and its
 licence notices, from the EspoCRM project. EspoCRM is a registered trademark of EspoCRM, Inc.; this code is not made, endorsed
 or supported by EspoCRM, Inc.
 
