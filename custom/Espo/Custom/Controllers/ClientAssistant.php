@@ -15,6 +15,7 @@ use Espo\Custom\Tools\ClientAssistant\ChatService;
 use Espo\Custom\Tools\ClientAssistant\ClientConfig;
 use Espo\Custom\Tools\ClientAssistant\ClientHarness;
 use Espo\Custom\Tools\ClientAssistant\ClientJournal;
+use Espo\Custom\Tools\ClientAssistant\Details;
 use Espo\Custom\Tools\ClientAssistant\Knowledge;
 use Espo\Custom\Tools\Kiosk\DeviceGuard;
 use Espo\Custom\Tools\Licensing\Modules;
@@ -26,9 +27,9 @@ use stdClass;
  *
  * PUBLIC (no login; routes.json noAuth - the visitor is anonymous):
  *   config   what the chat widget needs: is it on / available, brand, phone, a signed form token
- *   ask      { question, chatId?, lang?, token, website }  one question -> one answer
- *            200 {ok, state: answered|error|unavailable, answer, booking?, chatId}
- *            429 {state: limit_*|busy|rate_limited}   400 {error: bad-token|too-fast|expired|empty_question|question_too_long}
+ *   ask      { question, chatId?, lang?, token, website, details? }  one question -> one answer (details = the form: name, phone, plate, email?, promo?, referral?)
+ *            200 {ok, state: answered|error|unavailable, answer, booking?, needDetails, chatId}
+ *            429 {state: limit_*|busy|rate_limited}   400 {error: bad-token|too-fast|expired|empty_question|question_too_long|details_invalid, fields?}
  *            403 {error: module_disabled}
  *
  * ADMINISTRATOR ONLY (login; the generic route): adminGet / adminSave / adminTest / adminResetRate /
@@ -134,6 +135,8 @@ class ClientAssistant
             'canBook' => $bookable,
             'language' => substr((string) $this->config->get('language', 'lv_LV'), 0, 2),
             'questionMax' => ClientConfig::QUESTION_MAX,
+            'promo' => $this->knowledge->codes()['promo'],
+            'referral' => $this->knowledge->codes()['referral'],
             'token' => $this->token->issue(),
         ];
     }
@@ -171,7 +174,21 @@ class ClientAssistant
         // 4. the question
         $q = $this->str($d, 'question', ClientConfig::QUESTION_MAX + 1);
 
-        if ($q === '') {
+        // 4b. the details form (name / phone / plate / e-mail / codes): hard validation, before anything is stored or sent
+        $details = null;
+
+        if (isset($d->details)) {
+            $codes = $this->knowledge->codes();
+            $v = Details::validate($d->details, $codes['promo'], $codes['referral']);
+
+            if (!$v['ok']) {
+                return $this->refuse($res, 400, ['error' => 'details_invalid', 'fields' => $v['fields']]);
+            }
+
+            $details = $v['values'];
+        }
+
+        if ($q === '' && !$details) {
             return $this->refuse($res, 400, ['error' => 'empty_question']);
         }
 
@@ -200,7 +217,7 @@ class ClientAssistant
         ignore_user_abort(true);
         @set_time_limit($this->cfg->turnSeconds() + 20);
 
-        $out = $this->service->ask($q, $chatId, $lang, $ip, $token);
+        $out = $this->service->ask($q, $chatId, $lang, $ip, $token, $details);
 
         return (object) (['chatId' => $chatId] + $out);
     }

@@ -38,7 +38,7 @@ class Toolbox
         private string $ipHash,
         private string $token,
         private string $lang,
-        private string $rawQuestion,
+        private string $typed,
         private bool $hasHistory
     ) {}
 
@@ -58,17 +58,17 @@ class Toolbox
             ],
             [
                 'name' => 'create_booking',
-                'description' => 'Book a wash. Call ONLY after the customer has said yes to your written summary, and only with a time that free_slots returned. Phone and e-mail: pass the placeholder exactly as shown in the customer message, e.g. [PHONE-1].',
+                'description' => 'Book a wash. Call ONLY after the customer has said yes to your written summary, and only with a time that free_slots returned. Name, phone, plate and e-mail: pass the placeholder exactly as shown in the conversation, e.g. [NAME-1], [PHONE-1], [PLATE-1], [EMAIL-1]; never write a real name, number or plate yourself.',
                 'input_schema' => ['type' => 'object', 'properties' => [
                     'confirmed' => ['type' => 'boolean', 'description' => 'true only if the customer explicitly confirmed the summary'],
                     'serviceId' => ['type' => 'string'],
                     'addonIds' => ['type' => 'array', 'items' => ['type' => 'string']],
                     'date' => ['type' => 'string', 'description' => 'YYYY-MM-DD'],
                     'time' => ['type' => 'string', 'description' => 'HH:MM, a time from free_slots'],
-                    'name' => ['type' => 'string'],
+                    'name' => ['type' => 'string', 'description' => 'the placeholder, e.g. [NAME-1]'],
                     'phone' => ['type' => 'string', 'description' => 'the placeholder, e.g. [PHONE-1]'],
                     'email' => ['type' => 'string', 'description' => 'optional, the placeholder e.g. [EMAIL-1]'],
-                    'plate' => ['type' => 'string', 'description' => 'car plate number'],
+                    'plate' => ['type' => 'string', 'description' => 'the placeholder, e.g. [PLATE-1]'],
                     'note' => ['type' => 'string', 'description' => 'optional wish of the customer, up to 200 characters'],
                     'promo' => ['type' => 'string', 'description' => 'optional promo code exactly as the customer wrote it; leave it out if they gave none. Never invent one.'],
                     'referral' => ['type' => 'string', 'description' => 'optional referral code of a friend who recommended the wash (letters and digits), exactly as the customer wrote it; leave it out if they gave none. Never invent one.'],
@@ -209,14 +209,26 @@ class Toolbox
             return $this->fail(400, 'serviceId must be the id of an active Base service from the price list.');
         }
 
-        $phone = $this->vault->resolve($this->s($a['phone'] ?? '', 40), $this->rawQuestion, 'PHONE');
+        $phone = $this->vault->resolve($this->s($a['phone'] ?? '', 40), $this->typed, 'PHONE');
 
         if ($phone === null) {
-            return $this->fail(400, 'phone: pass the placeholder exactly as it appears in the customer message (like [PHONE-1]). If the customer has not given a number yet, ask for it.');
+            return $this->fail(400, 'phone: pass the placeholder exactly as it appears in the conversation (like [PHONE-1]). If the customer has not given a number yet, end your message with [[DETAILS]] so that the form is shown.');
+        }
+
+        $name = $this->vault->resolve($this->s($a['name'] ?? '', 80), $this->typed, 'NAME');
+
+        if ($name === null) {
+            return $this->fail(400, 'name: pass the placeholder exactly as it appears in the conversation (like [NAME-1]). If the customer has not given a name yet, end your message with [[DETAILS]] so that the form is shown.');
+        }
+
+        $plate = $this->vault->resolve($this->s($a['plate'] ?? '', 20), $this->typed, 'PLATE');
+
+        if ($plate === null) {
+            return $this->fail(400, 'plate: pass the placeholder exactly as it appears in the conversation (like [PLATE-1]). If the customer has not given a plate yet, end your message with [[DETAILS]] so that the form is shown.');
         }
 
         $emailArg = $this->s($a['email'] ?? '', 100);
-        $email = $emailArg === '' ? '' : $this->vault->resolve($emailArg, $this->rawQuestion, 'EMAIL');
+        $email = $emailArg === '' ? '' : $this->vault->resolve($emailArg, $this->typed, 'EMAIL');
 
         if ($email === null) {
             return $this->fail(400, 'email: pass the placeholder (like [EMAIL-1]) or leave it out.');
@@ -231,10 +243,10 @@ class Toolbox
             'addonIds' => $addons,
             'date' => $this->s($a['date'] ?? '', 10),
             'time' => $this->s($a['time'] ?? '', 5),
-            'name' => Untrusted::clean($this->s($a['name'] ?? '', 80), 80),
+            'name' => Untrusted::clean($name, 80),
             'phone' => $phone,
             'email' => $email,
-            'plate' => $this->s($a['plate'] ?? '', 20),
+            'plate' => $plate,
             'note' => '[chat] ' . Untrusted::clean($note, 200),
             'lang' => $lang,
             // forwarded as it is: the booking code answers "ok" or "invalid" and counts failures per address

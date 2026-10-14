@@ -26,6 +26,9 @@ use Espo\Custom\Tools\Booking\RateLimiter;
  */
 class ChatService
 {
+    /** What the model ends its message with to ask the widget for the details form (also a broken half of it). */
+    public const MARKER = '/\[{1,2}\s*DETAILS\s*\]{0,2}/i';
+
     public function __construct(
         private ClientConfig $cfg,
         private ClientJournal $journal,
@@ -119,7 +122,7 @@ class ChatService
     /**
      * @return array<string, mixed>
      */
-    public function ask(string $rawQuestion, string $chatId, string $lang, string $ip, string $token): array
+    public function ask(string $rawQuestion, string $chatId, string $lang, string $ip, string $token, ?array $details = null): array
     {
         $t0 = microtime(true);
         $ipHash = $this->journal->ipHash($ip);
@@ -128,22 +131,30 @@ class ChatService
         $vault = new ContactVault($this->journal->vaultFor($chatId, $ipHash));
         $question = $vault->protect($raw);
 
+        // Details from the widget's form (already validated by Details::validate): name / phone / plate / e-mail go into the vault,
+        // the model is told only the placeholders (and the two codes, which are codes, not personal data).
+        if ($details) {
+            $question = trim($question . "\n" . Details::line($details, $vault));
+        }
+
         // 1. on record (contacts already masked) before the provider hears of it
         $row = $this->journal->open($ipHash, $chatId, $lang, $question, $vault->map());
 
         // 2. context: this chat's earlier answered turns, from OUR journal (a visitor cannot forge them)
         $history = [];
+        $typed = $raw;
 
         foreach ($this->journal->history($chatId, $ipHash) as $prev) {
             if ($prev->getId() === $row->getId()) {
                 continue;
             }
 
+            $typed .= "\n" . (string) $prev->get('question');
             $history[] = ['role' => 'user', 'content' => [['type' => 'text', 'text' => (string) $prev->get('question')]]];
             $history[] = ['role' => 'assistant', 'content' => [['type' => 'text', 'text' => (string) $prev->get('answer')]]];
         }
 
-        $box = new Toolbox($this->em, $this->planner, $this->factory, $this->cfg, $this->journal, $vault, $ip, $ipHash, $token, $lang, $raw, $history !== []);
+        $box = new Toolbox($this->em, $this->planner, $this->factory, $this->cfg, $this->journal, $vault, $ip, $ipHash, $token, $lang, $typed, $history !== []);
         $now = $this->planner->now()->setTimezone($this->planner->tz());
         $system = ClientPrompt::system(
             $this->knowledge->block(), $now->format('Y-m-d l'), $this->cfg->timeZone(), $now->format('H:i'),
@@ -161,6 +172,10 @@ class ChatService
             $result->text = '';
         }
 
+        // The marker the model ends with when it wants the details form: never shown, never journaled.
+        $needDetails = (bool) preg_match(self::MARKER, $result->text);
+        $result->text = trim((string) preg_replace(self::MARKER, ' ', $result->text));
+
         $ms = (int) round((microtime(true) - $t0) * 1000);
         $this->journal->close($row, $result, $ms, (string) ($box->booking['orderNumber'] ?? ''));
 
@@ -171,6 +186,7 @@ class ChatService
             'state' => $ok ? 'answered' : 'error',
             'answer' => $ok ? $vault->restore(self::sanitize($result->text)) : '',
             'booking' => $box->booking,
+            'needDetails' => $ok && $needDetails,
         ];
     }
 

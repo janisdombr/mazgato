@@ -99,6 +99,14 @@ class Knowledge
     }
 
     /** The knowledge block of the system prompt. */
+    /** Which optional codes the booking can take now (the widget shows the matching form fields only then). @return array{promo: bool, referral: bool} */
+    public function codes(): array
+    {
+        $on = $this->modules->moduleEnabled(\Espo\Custom\Tools\Licensing\Modules::LOYALTY);
+
+        return ['promo' => $on && $this->promo->anyPublic(), 'referral' => $on && $this->referral->enabled()];
+    }
+
     public function block(): string
     {
         $l = [];
