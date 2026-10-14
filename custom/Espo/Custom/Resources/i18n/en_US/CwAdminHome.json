@@ -28,7 +28,7 @@
         "item_serviceWork": "Works of a service",
         "desc_serviceWork": "Which works each service brings.",
         "item_translation": "Name translations",
-        "desc_translation": "Service and work names in three languages.",
+        "desc_translation": "Service and work names in four languages.",
         "item_users": "Users",
         "desc_users": "Staff accounts that sign in to the CRM.",
         "item_roles": "Roles and access",
@@ -85,6 +85,17 @@
         "item_currency": "Currency",
         "desc_currency": "Base currency (euro) and rates.",
         "item_assistant": "Staff assistant",
-        "desc_assistant": "Manager's AI assistant: provider, key, limits, privacy."
+        "desc_assistant": "Manager's AI assistant: provider, key, limits, privacy.",
+        "item_accountingIntegration": "Accounting integration",
+        "desc_accountingIntegration": "Completed orders into the accounting program, with a retry queue.",
+        "group_loyalty": "Loyalty",
+        "item_loyaltySettings": "Loyalty settings",
+        "desc_loyaltySettings": "Every N-th wash free: how many, what is free, the smallest wash that counts. Points, referral rewards and expiry: settings.",
+        "item_promoCode": "Promo codes",
+        "desc_promoCode": "Discount codes: percent or sum, period, limits.",
+        "item_promoRedemption": "Promo redemptions",
+        "desc_promoRedemption": "Who used a code and when (read only).",
+        "item_loyaltyLedger": "Points ledger",
+        "desc_loyaltyLedger": "Every change of a customer's points (read only)."
     }
 }

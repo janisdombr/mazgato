@@ -1,0 +1,17 @@
+{
+    "labels": {
+        "loading": "Įkeliama…",
+        "retry": "Bandyti dar kartą",
+        "relogin": "Prisijungti iš naujo",
+        "sessionExpired": "Sesija baigėsi",
+        "sessionExpiredHint": "Po neveiklumo laikotarpio buvote atjungti. Prisijunkite iš naujo — išsaugoti duomenys saugūs.",
+        "loadError": "Nepavyko įkelti duomenų",
+        "loadErrorHint": "Patikrinkite ryšį ir bandykite dar kartą.",
+        "actionError": "Veiksmas nepavyko",
+        "periodToday": "Šiandien",
+        "periodWeek": "7 dienos",
+        "periodMonth": "Mėnuo",
+        "periodQuarter": "Ketvirtis",
+        "periodRange": "Intervalas"
+    }
+}

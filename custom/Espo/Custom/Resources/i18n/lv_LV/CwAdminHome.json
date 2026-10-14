@@ -28,7 +28,7 @@
         "item_serviceWork": "Pakalpojuma darbi",
         "desc_serviceWork": "Kuri darbi ietilpst katrā pakalpojumā.",
         "item_translation": "Nosaukumu lokalizācijas",
-        "desc_translation": "Pakalpojumu un darbu nosaukumi trijās valodās.",
+        "desc_translation": "Pakalpojumu un darbu nosaukumi četrās valodās.",
         "item_users": "Lietotāji",
         "desc_users": "Darbinieku konti, kas ieiet CRM.",
         "item_roles": "Lomas un piekļuve",
@@ -85,6 +85,17 @@
         "item_currency": "Valūta",
         "desc_currency": "Pamatvaluta (eiro) un kursi.",
         "item_assistant": "Palīgs personālam",
-        "desc_assistant": "Vadītāja MI palīgs: pakalpojuma sniedzējs, atslēga, limiti, privātums."
+        "desc_assistant": "Vadītāja MI palīgs: pakalpojuma sniedzējs, atslēga, limiti, privātums.",
+        "item_accountingIntegration": "Grāmatvedības integrācija",
+        "desc_accountingIntegration": "Pabeigtie pasūtījumi grāmatvedības programmā, ar atkārtošanas rindu.",
+        "group_loyalty": "Lojalitāte",
+        "item_loyaltySettings": "Lojalitātes iestatījumi",
+        "desc_loyaltySettings": "Katra N-tā mazgāšana bezmaksas: cik, kas ir bezmaksas, minimālā cena. Punkti, atlīdzības par ieteikumiem un derīgums: iestatījumi.",
+        "item_promoCode": "Akcijas kodi",
+        "desc_promoCode": "Atlaides kodi: procenti vai summa, termiņš, limiti.",
+        "item_promoRedemption": "Akcijas kodu izmantojumi",
+        "desc_promoRedemption": "Kurš un kad izmantoja kodu (tikai lasāms).",
+        "item_loyaltyLedger": "Punktu žurnāls",
+        "desc_loyaltyLedger": "Katra klienta punktu izmaiņa (tikai lasāms)."
     }
 }

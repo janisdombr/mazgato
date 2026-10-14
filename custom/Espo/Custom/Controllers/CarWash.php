@@ -47,6 +47,12 @@ class CarWash
         private SalesJournal $salesJournal,
         private Subscriptions $subscriptions,
         private Acl $acl,
+        private \Espo\Custom\Tools\Loyalty\Loyalty $loyalty,
+        private \Espo\Custom\Tools\Loyalty\FreeWash $freeWash,
+        private \Espo\Custom\Tools\Loyalty\LoyaltyConfig $loyaltyCfg,
+        private \Espo\Custom\Tools\Loyalty\Promo $promo,
+        private \Espo\Custom\Tools\Loyalty\Points $loyaltyPoints,
+        private \Espo\Custom\Tools\Loyalty\Referral $referral,
         DeviceGuard $deviceGuard
     ) {
         // A tablet's API key is a device, not an operator: it gets the Kiosk endpoints only.
@@ -338,6 +344,10 @@ class CarWash
                 $result->subscriptions = $this->acl->checkScope('Subscription', 'read')
                     ? $this->subscriptions->usableFor($customer->getId())
                     : [];
+                // "Wash #10 is free" / "washes to the next free one" (module loyalty; only when the scheme is on)
+                if ($this->loyaltyCfg->enabled() && $this->acl->checkScope('WashOrder', 'read')) {
+                    $result->loyalty = (object) $this->freeWash->info($customer);
+                }
             }
         }
 
@@ -538,6 +548,70 @@ class CarWash
             $this->requireScope('Customer', 'create');
         }
 
+        // A promo code typed at the counter is checked BEFORE anything is created (a wrong code is a 400 `promo_<reason>`, not a silent
+        // full price): module on, code known and usable for this customer and amount. The order is re-checked when it is built.
+        $promoCode = \Espo\Custom\Tools\Loyalty\Promo::normalize((string) ($data->promoCode ?? ''));
+        $skipLoyalty = !empty($data->skipLoyalty);
+
+        if ($promoCode !== '' && !$skipLoyalty) {
+            if (!$this->loyaltyCfg->enabled()) {
+                throw new Forbidden('module_disabled');
+            }
+
+            $why = $this->promo->problem(
+                $this->promo->find($promoCode),
+                $customer ? $customer->getId() : null,
+                $this->listAmountOf($data, $customer, (bool) ($customer ? $customer->get('isCorporate') : ($data->isCorporate ?? false)))
+            );
+
+            if ($why !== null) {
+                throw new BadRequest('promo_' . $why);
+            }
+        }
+
+        // Points to use and a referral code are checked the same way: a wrong request is a 400 (`points_<reason>` / `referral_<reason>`) before
+        // anything is created. The order is re-checked when it is built (a race for the same points leaves a note on the order, never a negative balance).
+        $redeemPoints = 0;
+
+        if (isset($data->redeemPoints) && $data->redeemPoints !== '' && $data->redeemPoints !== null) {
+            \Espo\Custom\Tools\Validation\Numbers::assertNumber('redeemPoints', $data->redeemPoints, 0.0, 100000000.0);
+            $redeemPoints = (int) $data->redeemPoints;
+        }
+
+        if ($redeemPoints > 0) {
+            if (!$this->loyaltyCfg->enabled()) {
+                throw new Forbidden('module_disabled');
+            }
+
+            $corp = (bool) ($customer ? $customer->get('isCorporate') : ($data->isCorporate ?? false));
+            $list = $this->listAmountOf($data, $customer, $corp);
+            $base = $this->listAmountOf((object) ['serviceId' => $data->serviceId ?? null], $customer, $corp);
+            $pv = $this->loyalty->preview($promoCode, $customer ? $customer->getId() : null, $list, $base, $skipLoyalty, $redeemPoints);
+
+            if ($pv['points']['reason'] !== null) {
+                throw new BadRequest($pv['points']['reason']);
+            }
+        }
+
+        $referralCode = \Espo\Custom\Tools\Loyalty\Referral::normalize((string) ($data->referralCode ?? ''));
+
+        if ($referralCode !== '') {
+            if (!$this->loyaltyCfg->enabled()) {
+                throw new Forbidden('module_disabled');
+            }
+
+            $why = $this->referral->problem($this->referral->findByCode($referralCode), $customer, [
+                'phone' => $data->phone ?? null,
+                'email' => $data->email ?? null,
+                'plates' => $plate !== '' ? [$plate] : [],
+                'vehicleCustomerId' => $vehicle ? $vehicle->get('customerId') : null,
+            ]);
+
+            if ($why !== null) {
+                throw new BadRequest('referral_' . $why);
+            }
+        }
+
         if (!$customer) {
             $customer = $em->createEntity('Customer', [
                 'name' => trim((string) $data->customerName),
@@ -610,6 +684,8 @@ class CarWash
         $generateOptions = array_filter([
             'roleMap' => $roleMap,
             'workMap' => $workMap,
+            // the lines carry their charged prices only at the end of this method: the loyalty discount is applied there
+            'skipApplyLoyalty' => true,
         ]);
 
         // Add-ons on this order. The `addons` link still drives the bill-of-materials,
@@ -641,6 +717,22 @@ class CarWash
         if (!empty($data->paymentMethod)) {
             $orderData['paymentMethod'] = $data->paymentMethod;
             $generateOptions['explicitPaymentMethod'] = true;
+        }
+
+        if ($promoCode !== '') {
+            $orderData['promoCode'] = $promoCode;
+        }
+
+        if ($skipLoyalty) {
+            $orderData['skipLoyalty'] = true;
+        }
+
+        if ($redeemPoints > 0) {
+            $orderData['redeemPoints'] = $redeemPoints;
+        }
+
+        if ($referralCode !== '') {
+            $orderData['referralCode'] = $referralCode;
         }
 
         // Pay this wash from one of the customer's subscriptions (chosen by the operator in the intake hint).
@@ -744,7 +836,29 @@ class CarWash
             }
         }
 
+        // Loyalty (promo code / every N-th wash free): now that the lines hold what was charged, the discount is taken off them
+        // through the same Distributor path as a typed total.
+        $loyalty = null;
+
+        if ($this->loyaltyCfg->enabled()) {
+            $order = $em->getEntityById('WashOrder', $order->getId()) ?? $order;
+            $this->loyalty->applyToNew($order);
+            $order = $em->getEntityById('WashOrder', $order->getId()) ?? $order;
+
+            $loyalty = (object) [
+                'kind' => (string) $order->get('loyaltyKind'),
+                'discount' => round((float) $order->get('loyaltyDiscount'), 2),
+                'note' => (string) $order->get('loyaltyNote'),
+                'finalPrice' => round((float) $order->get('finalPrice'), 2),
+                'pointsRedeemed' => (int) $order->get('pointsRedeemed'),
+                'pointsDiscount' => round((float) $order->get('pointsDiscount'), 2),
+                'pointsNote' => (string) $order->get('pointsNote'),
+                'referralNote' => (string) $order->get('referralNote'),
+            ];
+        }
+
         return (object) [
+            'loyalty' => $loyalty,
             'orderId' => $order->getId(),
             'orderName' => $order->get('name'),
             'customerId' => $customer->getId(),
@@ -755,6 +869,32 @@ class CarWash
             'isCorporate' => (bool) $customer->get('isCorporate'),
             'hasContract' => (bool) $customer->get('hasContract'),
         ];
+    }
+
+    /**
+     * The order lines' total BEFORE any loyalty discount, as createOrder will build it: the typed total if there is one, else the
+     * base wash plus the ticked add-ons at their charged (or catalogue) prices. Only used to check a promo code's minimum up front.
+     */
+    private function listAmountOf(stdClass $data, ?\Espo\ORM\Entity $customer, bool $corporate): float
+    {
+        if (isset($data->finalPrice) && $data->finalPrice !== '' && is_numeric($data->finalPrice)) {
+            return (float) $data->finalPrice;
+        }
+
+        $price = function (?string $id) use ($corporate): float {
+            $svc = $id ? $this->entityManager->getEntityById('WashService', $id) : null;
+
+            return $svc ? (float) ($corporate ? ($svc->get('priceCorporate') ?? $svc->get('priceRetail')) : $svc->get('priceRetail')) : 0.0;
+        };
+
+        $sum = $price($data->serviceId ?? null);
+        $prices = (isset($data->addonPrices) && is_object($data->addonPrices)) ? $data->addonPrices : null;
+
+        foreach (($data->addonIds ?? []) as $addonId) {
+            $sum += ($prices && isset($prices->$addonId)) ? (float) $prices->$addonId : $price((string) $addonId);
+        }
+
+        return round($sum, 2);
     }
 
     private function parties(): \Espo\Custom\Tools\Data\Parties
@@ -1664,6 +1804,7 @@ class CarWash
         $orderIds = [];
         $daily = [];
         $byHour = array_fill(0, 24, 0);
+        $disc = ['promo' => 0.0, 'free' => 0.0, 'points' => 0.0];
 
         foreach ($orders as $o) {
             $total++;
@@ -1697,6 +1838,15 @@ class CarWash
                 $completed++;
                 // Revenue counts completed work only — a car still on the ramp is not money.
                 $revenue += $price;
+                // What loyalty gave away on those orders (already inside the lower price above)
+                $kind = (string) $o->get('loyaltyKind');
+                if ($kind === 'Promo') {
+                    $disc['promo'] += (float) $o->get('loyaltyDiscount');
+                } elseif ($kind === 'FreeWash') {
+                    $disc['free'] += (float) $o->get('loyaltyDiscount');
+                }
+
+                $disc['points'] += (float) $o->get('pointsDiscount');
 
                 if ($local) {
                     $daily[$day]['revenue'] += $price;
@@ -1840,6 +1990,51 @@ class CarWash
             'byHour' => $byHour,
             // The same headline numbers for the previous period of equal length — the delta.
             'previous' => $this->periodTotals($from, $to),
+            // Loyalty (module loyalty): discounts given on completed orders, points moved, referral rewards. Same gate as the revenue above.
+            'loyalty' => $this->loyaltyStatistics($disc, $fromU, $toU),
+        ];
+    }
+
+    /**
+     * @param array{promo: float, free: float, points: float} $disc
+     */
+    private function loyaltyStatistics(array $disc, string $fromU, string $toU): ?stdClass
+    {
+        if (!$this->loyaltyCfg->enabled()) {
+            return null;
+        }
+
+        $pdo = $this->entityManager->getPDO();
+        $sum = function (string $where) use ($pdo, $fromU, $toU): int {
+            $st = $pdo->prepare('SELECT COALESCE(SUM(points), 0) FROM loyalty_ledger WHERE deleted = 0 AND created_at >= ? AND created_at <= ? AND ' . $where);
+            $st->execute([$fromU, $toU]);
+
+            return (int) $st->fetchColumn();
+        };
+        $count = function (string $where) use ($pdo, $fromU, $toU): int {
+            $st = $pdo->prepare('SELECT COUNT(*) FROM loyalty_ledger WHERE deleted = 0 AND created_at >= ? AND created_at <= ? AND ' . $where);
+            $st->execute([$fromU, $toU]);
+
+            return (int) $st->fetchColumn();
+        };
+
+        return (object) [
+            'discounts' => (object) [
+                'promo' => round($disc['promo'], 2),
+                'free' => round($disc['free'], 2),
+                'points' => round($disc['points'], 2),
+                'total' => round($disc['promo'] + $disc['free'] + $disc['points'], 2),
+            ],
+            'points' => (object) [
+                'earned' => $sum("kind = 'Earn'") + $sum("kind = 'Reverse' AND note = 'earn reversed'"),
+                'redeemed' => -$sum("kind = 'Redeem'") - $sum("kind = 'Reverse' AND note = 'returned'"),
+                'expired' => -$sum("kind = 'Expire'"),
+                'adjusted' => $sum("kind = 'Adjust'"),
+            ],
+            'referrals' => (object) [
+                'rewarded' => $count("kind = 'Referral' AND unique_key LIKE 'ref:%'") - $count("kind = 'Reverse' AND note = 'referral'"),
+                'points' => $sum("kind = 'Referral'") + $sum("kind = 'Reverse' AND note LIKE 'referral%'"),
+            ],
         ];
     }
 

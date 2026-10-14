@@ -52,22 +52,55 @@ class Recalculator
             ->order('sortOrder')
             ->find();
 
+        // A loyalty discount (promo code / free wash) is applied to the lines themselves, so the stored prices are the ones AFTER it.
+        // The printed document shows the prices before it and a discount row, so it explains the total (it always adds up: the row is
+        // the difference between what is printed above it and the total).
+        $orig = json_decode((string) $order->get('loyaltyLinesJson'), true);
+        $orig = is_array($orig) && $order->get('loyaltyKind') ? $orig : [];
+        // points are taken off on top of that: their own snapshot is the prices after the promo / free wash
+        $porig = json_decode((string) $order->get('pointsLinesJson'), true);
+        $porig = is_array($porig) && (int) $order->get('pointsRedeemed') > 0 ? $porig : [];
+        $shownTotal2 = 0.0;
+
         $rows = '';
         $total = 0.0;
+        $shownTotal = 0.0;
         $hasLines = false;
 
         foreach ($lines as $line) {
             $hasLines = true;
             $total += (float) $line->get('price');
+            $afterPromo = isset($porig[$line->getId()]) ? (float) $porig[$line->getId()] : (float) $line->get('price');
+            $shown = isset($orig[$line->getId()]) ? (float) $orig[$line->getId()] : $afterPromo;
+            $shownTotal += $shown;
+            $shownTotal2 += $afterPromo;
 
             $name = htmlspecialchars((string) $line->get('name'), ENT_QUOTES, 'UTF-8');
-            $price = number_format((float) $line->get('price'), 2, '.', '');
+            $price = number_format($shown, 2, '.', '');
 
             $rows .= '<tr><td style="padding:2px 0">' . $name . '</td>' .
                 '<td style="padding:2px 0; text-align:right; width:110px">' . $price . ' EUR</td></tr>';
         }
 
         $total = round($total, 2);
+        // the promo / free-wash part is what lies between the shown prices and the prices after it; the points part is the rest
+        $off = round($shownTotal - $shownTotal2, 2);
+        $pointsOff = $porig ? round($shownTotal2 - $total, 2) : 0.0;
+
+        if ($hasLines && $orig && $off > 0.004) {
+            $code = htmlspecialchars((string) $order->get('promoCode'), ENT_QUOTES, 'UTF-8');
+            $label = $order->get('loyaltyKind') === 'FreeWash'
+                ? 'Atlaide: bezmaksas mazgāšana (uzticības programma)'
+                : 'Atlaide (akcijas kods ' . $code . ')';
+
+            $rows .= '<tr><td style="padding:2px 0"><i>' . $label . '</i></td>' .
+                '<td style="padding:2px 0; text-align:right; width:110px"><i>-' . number_format($off, 2, '.', '') . ' EUR</i></td></tr>';
+        }
+
+        if ($hasLines && $porig && $pointsOff > 0.004) {
+            $rows .= '<tr><td style="padding:2px 0"><i>Punkti (' . (int) $order->get('pointsRedeemed') . ')</i></td>' .
+                '<td style="padding:2px 0; text-align:right; width:110px"><i>-' . number_format($pointsOff, 2, '.', '') . ' EUR</i></td></tr>';
+        }
 
         // A COMPLETE table, not bare <tr> rows: the placeholder in the template must be a
         // block-level element. A `{{{linesHtml}}}` sitting inside <table> is bare text in

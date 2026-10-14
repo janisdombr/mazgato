@@ -10,6 +10,7 @@ use Espo\Core\Exceptions\Forbidden;
 use Espo\Core\Utils\Config;
 use Espo\Core\Utils\Config\ConfigWriter;
 use Espo\Core\Utils\Log;
+use Espo\Custom\Tools\Booking\CapacityReport;
 use Espo\Custom\Tools\Booking\FormToken;
 use Espo\Custom\Tools\Booking\Maintenance;
 use Espo\Custom\Tools\Booking\Planner;
@@ -55,6 +56,8 @@ class Booking
         'bookingClosedDates' => ['text'], 'bookingMinLeadMinutes' => ['int'], 'bookingHorizonDays' => ['int'],
         'bookingReminderHours' => ['int'], 'bookingNoShowGraceMinutes' => ['int'], 'bookingRatePerHour' => ['int'],
         'bookingMinFillSeconds' => ['int'],
+        'bookingWashers' => ['int'], 'bookingWashersByWeekday' => ['str'], 'bookingCrewDefault' => ['int'],
+        'bookingDayCapacityPercent' => ['int'], 'bookingMaxCarsPerDay' => ['int'],
         'turnstileSiteKey' => ['str'], 'turnstileSecret' => ['str', true], 'turnstileHostname' => ['str'],
     ];
 
@@ -74,6 +77,9 @@ class Booking
         private Inbound $inbound,
         private Acl $acl,
         private Turnstile $turnstile,
+        private \Espo\Custom\Tools\Loyalty\Promo $promo,
+        private \Espo\Custom\Tools\Loyalty\Referral $referral,
+        private CapacityReport $report,
         DeviceGuard $deviceGuard
     ) {
         $deviceGuard->denyDevice($user);
@@ -201,6 +207,17 @@ class Booking
             $answer->turnstile = ['siteKey' => $key];
         }
 
+        // Module loyalty: the form shows its optional "Promo code" field only while some code could work (a yes/no, no code is revealed).
+        // Absent otherwise, so the answer is exactly what it was before.
+        if ($this->modules->moduleEnabled(Modules::LOYALTY) && $this->promo->anyPublic()) {
+            $answer->promo = true;
+        }
+
+        // The optional "Referral code" field: a boolean only (the programme is on). No customer, no code, no reward is revealed.
+        if ($this->modules->moduleEnabled(Modules::LOYALTY) && $this->referral->enabled()) {
+            $answer->referral = true;
+        }
+
         return $answer;
     }
 
@@ -236,7 +253,7 @@ class Booking
         $slots = [];
 
         if ($day >= $today && $day <= $today->modify('+' . $this->planner->horizonDays() . ' days')) {
-            $slots = $this->planner->slots($date, $minutes, $exclude);
+            $slots = $this->planner->slots($date, $minutes, $exclude, ['crew' => $this->planner->crewFor($svc->getId()), 'online' => true]);
         }
 
         return (object) ['ok' => true, 'date' => $date, 'minutes' => $minutes, 'slots' => $slots];
@@ -282,9 +299,46 @@ class Booking
             return $this->refuse($res, 400, 'validation', ['fields' => $errors]);
         }
 
+        // Optional promo code. The visitor learns "ok" or "invalid" - never why (unknown, off, expired and used-up codes look the
+        // same) - and failures are counted per address on top of the form's own limit, so the form cannot be used to guess codes.
+        // Only code-level checks run here; the customer's own limits and the discount itself are decided when the car arrives
+        // (Hooks/WashOrder/ApplyLoyalty), and nothing about an existing customer is ever looked at or said.
+        $promoCode = \Espo\Custom\Tools\Loyalty\Promo::normalize($this->str($d, 'promo', 40));
+        // The same for the optional referral code: ok / invalid only (an unknown code, a switched-off programme look alike), and a wrong
+        // one is counted in the SAME per-address bucket as a wrong promo code. Whether it can be given to THIS customer (self, a customer who
+        // already washed, a cap ...) is decided when the car arrives and never said here: a booking says nothing about an existing customer.
+        $referralCode = \Espo\Custom\Tools\Loyalty\Referral::normalize($this->str($d, 'referral', 20));
+
+        if ($promoCode !== '' || $referralCode !== '') {
+            $ip = $this->ip($req);
+
+            if ($this->limiter->exceeded('promo-bad', $ip, 5, 3600)) {
+                return $this->refuse($res, 429, 'rate_limited');
+            }
+
+            $bad = [];
+            $on = $this->modules->moduleEnabled(Modules::LOYALTY);
+
+            if ($promoCode !== '' && (!$on || !$this->promo->publicOk($promoCode))) {
+                $bad[] = 'promo';
+            }
+
+            if ($referralCode !== '' && (!$on || !$this->referral->publicOk($referralCode))) {
+                $bad[] = 'referral';
+            }
+
+            if ($bad) {
+                $this->limiter->hit('promo-bad', $ip, 5, 3600);
+
+                return $this->refuse($res, 400, 'validation', ['fields' => $bad]);
+            }
+        }
+
         // Cloudflare Turnstile (only when a secret is stored): after the cheap local checks so a typo does not burn the
         // one-time token, before anything touches the schedule. CLOSED: Cloudflare unreachable = refused, no detail.
-        if ($this->turnstile->enabled()) {
+        // The customer chat replays the booking from inside the server (ForwardedRequest): it has no widget to solve, and it carries its own
+        // gates (form token, per-address limits, bookings per address per day, honeypot), so the bot check is not asked of it.
+        if ($this->turnstile->enabled() && !($req instanceof \Espo\Custom\Tools\ClientAssistant\ForwardedRequest)) {
             $ts = $this->turnstile->verify($this->str($d, 'turnstileToken', 2100), $this->ip($req));
 
             if ($ts === Turnstile::FAILED) {
@@ -309,10 +363,10 @@ class Booking
         $pdo->query("SELECT GET_LOCK('carwash_booking', 5)");
 
         try {
-            $chk = $this->planner->check($start, $minutes, null, true);
+            $chk = $this->planner->check($start, $minutes, null, true, null, ['crew' => $this->planner->crewFor($svc->getId()), 'online' => true]);
 
             if (!$chk['ok']) {
-                return $this->refuse($res, 409, 'slot_taken');
+                return $this->refuse($res, 409, $chk['reason'] === 'day_full' ? 'day_full' : 'slot_taken');
             }
 
             $isNewCustomer = false;
@@ -331,7 +385,7 @@ class Booking
                     'name' => $name,
                     'phone' => $phone,
                     'email' => $email !== '' ? $email : null,
-                    'language' => in_array($lang, ['lv_LV', 'ru_RU', 'en_US'], true) ? $lang : '',
+                    'language' => in_array($lang, ['lv_LV', 'ru_RU', 'en_US', 'et_EE', 'lt_LT'], true) ? $lang : '',
                 ]);
             }
 
@@ -353,9 +407,11 @@ class Booking
                     'bookingEmail' => $email !== '' ? $email : null,
                     'reservationNote' => $this->str($d, 'note', 300) ?: null,
                     'isCorporate' => (bool) $customer->get('isCorporate'),
-                ]);
+                    'promoCode' => $promoCode !== '' ? $promoCode : null,
+                    'referralCode' => $referralCode !== '' ? $referralCode : null,
+                ], ['bookingOnline' => true]);
             } catch (Conflict $e) {
-                return $this->refuse($res, 409, 'slot_taken');
+                return $this->refuse($res, 409, str_starts_with($e->getMessage(), 'day_full') ? 'day_full' : 'slot_taken');
             }
         } finally {
             $pdo->query("SELECT RELEASE_LOCK('carwash_booking')");
@@ -505,9 +561,9 @@ class Booking
 
         try {
             $o->set(['orderDateTime' => $start->format('Y-m-d H:i:s'), 'reminderSentAt' => null]);
-            $this->em->saveEntity($o);
+            $this->em->saveEntity($o, ['bookingOnline' => true]);
         } catch (Conflict $e) {
-            return $this->refuse($res, 409, 'slot_taken');
+            return $this->refuse($res, 409, str_starts_with($e->getMessage(), 'day_full') ? 'day_full' : 'slot_taken');
         } finally {
             $pdo->query("SELECT RELEASE_LOCK('carwash_booking')");
         }
@@ -639,6 +695,40 @@ class Booking
         $this->maintenance->markNoShow($o);
 
         return (object) ['ok' => true];
+    }
+
+    /**
+     * The order calendar: per day (and, for up to 8 days, per hour) the capacity, what is booked, what is free, and the orders.
+     * Staff only: the right to read every order (level all), because it shows plates and customer names of the whole shop.
+     */
+    public function postActionRange(Request $req, Response $res): ?stdClass
+    {
+        if (!$this->modules->moduleEnabled(Modules::BOOKING)) {
+            return $this->refuse($res, 403, 'module_disabled');
+        }
+
+        if (!$this->acl->checkScope('WashOrder', 'read') || $this->acl->getLevel('WashOrder', 'read') !== 'all') {
+            throw new Forbidden();
+        }
+
+        $d = $req->getParsedBody();
+
+        return (object) (['ok' => true] + $this->report->range($this->str($d, 'from', 10), $this->str($d, 'to', 10), !empty($d->summary)));
+    }
+
+    /** The capacity calculator on the booking settings page: the same Planner, fed with the (unsaved) form values. Administrator only. */
+    public function postActionCapacityPreview(Request $req): stdClass
+    {
+        $this->admin();
+        $values = [];
+
+        foreach ((array) ($req->getParsedBody()->values ?? []) as $k => $v) {
+            if (isset(self::KEYS[$k]) && str_starts_with((string) $k, 'booking')) {
+                $values[$k] = self::KEYS[$k][0] === 'int' ? ($v === '' || $v === null ? null : max(0, (int) $v)) : (is_string($v) ? mb_substr($v, 0, 2000) : $v);
+            }
+        }
+
+        return (object) (['ok' => true] + $this->report->preview($values));
     }
 
     private function admin(): void

@@ -27,9 +27,17 @@
         "rateReset": "Skaitītāji atiestatīti",
         "privacyHint": "Apmeklētāju tālruņi un e-pasti nekad nenonāk pie modeļa vai žurnālā: tie tiek aizstāti ar vietturiem, un īstā vērtība tiek glabāta tikai 24 stundas, lai pabeigtu pierakstu. Čatam nav rīka, kas lasa klientus, pasūtījumus, apgrozījumu vai darbiniekus.",
         "legalHint": "Pirms ieslēgšanas: informējiet apmeklētājus, ka viņi runā ar AI (logrīks to dara), noslēdziet datu apstrādes līgumu ar pakalpojuma sniedzēju, veiciet ierakstu apstrādes reģistrā. Skatiet docs/CLIENT_ASSISTANT.md.",
-        "keyHint": "API atslēga ir kopīga ar darbinieku palīgu (tikai ierakstāma, glabājas data/config-internal.php).",
+        "keyHint": "Atslēga pieder izvēlētajam piegādātājam (tikai ierakstīšana, glabājas data/config-internal.php). Anthropic gadījumā tukšs lauks izmanto personāla asistenta atslēgu. Iestatiet izdevumu limitu arī piegādātāja konsolē.",
         "knowledgeNote": "Tieši to čats drīkst apgalvot kā faktu. Darba laiks nāk no tiešsaistes pieteikšanās, cenas no pakalpojumu saraksta, adrese no zīmola, ja zemāk nav pārrakstīta.",
-        "title": "Klientu čats (AI)"
+        "title": "Klientu čats (AI)",
+        "providerSendsTo": "Atslēga tiek sūtīta tikai uz",
+        "providerModels": "Modeļi:",
+        "providerNote_anthropic": "ASV uzņēmums; pieejama datu apstrādes vienošanās.",
+        "providerNote_openai": "Datu apstrādes vienošanās; glabāšana ES tikai projektam, kas izveidots ar reģionu Europe.",
+        "providerNote_gemini": "Izmantojiet MAKSAS atslēgu: ar bezmaksas atslēgu nosūtīto saturu Google var izmantot savu produktu uzlabošanai.",
+        "providerNote_mistral": "ES uzņēmums, dati pēc noklusējuma ES, pieejama datu apstrādes vienošanās.",
+        "providerNote_deepseek": "Serveri Ķīnā: klientu vārdus un tālruņus bez tiesiska pamata nosūtīt nedrīkst.",
+        "providerNote_groq": "ASV uzņēmums; tā cenas mūsu tabulā nav, tāpēc izmaksu aplēse ir apzināti augsta."
     },
     "groups": {
         "switch": "Slēdzis",
@@ -65,13 +73,14 @@
         "clientAssistantTurnSeconds": "Laika limits uz jautājumu, s",
         "clientAssistantTurnTokens": "Ievades tokeni uz jautājumu",
         "clientAssistantMaxOutputTokens": "Atbildes garums (tokeni)",
-        "clientAssistantRetentionDays": "Žurnāla glabāšana, dienas"
+        "clientAssistantRetentionDays": "Žurnāla glabāšana, dienas",
+        "clientAssistantApiKey": "API atslēga (šim piegādātājam)"
     },
     "hints": {
         "clientAssistantEnabled": "Pēc noklusējuma izslēgts. Ieslēgts čats parādās /booking/ un /booking/chat/ — tikai ja ir iestatīts sniedzējs un atslēga.",
         "clientAssistantProvider": "Izslēgts: čats atbild “nav pieejams” un nekas netiek nekur sūtīts.",
         "assistantApiKey": "Tikai ierakstāma. Kopīga ar darbinieku palīgu.",
-        "clientAssistantModel": "Noklusējumā claude-haiku-5-5 (lēts, pietiek jautājumiem un pierakstiem).",
+        "clientAssistantModel": "Pēc noklusējuma piegādātāja lētais modelis (claude-haiku-5-5, gpt-4.1-nano, gemini-2.5-flash-lite, mistral-small-latest...). Tukšs = noklusējums.",
         "clientAssistantAddress": "Tukšs = adrese no zīmola.",
         "clientAssistantPhone": "Tiek rādīts apmeklētājiem un piedāvāts, kad čats nezina. Cipari un +.",
         "clientAssistantPayments": "Piem., “Skaidra nauda un kartes uz vietas; uzņēmumiem pēc rēķina”. Tukšs = čats saka, ka nezina.",
@@ -80,12 +89,18 @@
         "clientAssistantBookingsPerIpDay": "0 = čats nedrīkst pierakstīt.",
         "clientAssistantMaxSteps": "Ne vairāk kā 5 — absolūtie griesti.",
         "clientAssistantTurnSeconds": "Ne vairāk kā 60 — absolūtie griesti.",
-        "clientAssistantRetentionDays": "Vismaz 31 diena (limiti tiek summēti no žurnāla). Tīrīšana: bin/command client-assistant-purge un ikdienas darbs."
+        "clientAssistantRetentionDays": "Vismaz 31 diena (limiti tiek summēti no žurnāla). Tīrīšana: bin/command client-assistant-purge un ikdienas darbs.",
+        "clientAssistantApiKey": "Tikai ierakstīšana. Viena piegādātāja atslēga neder citam: ielīmējiet augstāk izvēlētā piegādātāja atslēgu."
     },
     "options": {
         "clientAssistantProvider": {
             "off": "Izslēgts",
-            "anthropic": "Anthropic (Claude)"
+            "anthropic": "Anthropic (Claude)",
+            "openai": "OpenAI",
+            "gemini": "Google Gemini",
+            "mistral": "Mistral AI",
+            "deepseek": "DeepSeek",
+            "groq": "Groq (Llama / Qwen)"
         }
     }
 }

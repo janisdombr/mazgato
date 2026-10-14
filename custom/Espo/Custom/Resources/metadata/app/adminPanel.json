@@ -87,11 +87,25 @@
                 "recordView": "custom:views/admin/accounting-export"
             },
             {
+                "url": "#Admin/accountingIntegration",
+                "label": "accountingIntegration",
+                "iconClass": "fas fa-right-left",
+                "description": "accountingIntegration",
+                "recordView": "custom:views/admin/accounting-integration"
+            },
+            {
                 "url": "#Admin/importCustomers",
                 "label": "importCustomers",
                 "iconClass": "fas fa-file-import",
                 "description": "importCustomers",
                 "recordView": "custom:views/admin/import-customers"
+            },
+            {
+                "url": "#Admin/loyalty",
+                "label": "loyalty",
+                "iconClass": "fas fa-gift",
+                "description": "loyalty",
+                "recordView": "custom:views/admin/loyalty"
             }
         ]
     }

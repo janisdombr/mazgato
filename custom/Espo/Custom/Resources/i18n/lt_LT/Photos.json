@@ -1,0 +1,23 @@
+{
+    "labels": {
+        "title": "Nuotraukos prieš / po",
+        "entryExit": "Įvažiavimas → išvažiavimas",
+        "beforeAfter": "Prieš → po",
+        "before": "Prieš",
+        "after": "Po",
+        "entry": "Įvažiavimas",
+        "exit": "Išvažiavimas",
+        "empty": "Nėra nuotraukų palyginimui",
+        "missing": "Nėra nuotraukos",
+        "slider": "Palyginti slankikliu",
+        "sideBySide": "Greta",
+        "enlarge": "Padidinti",
+        "close": "Uždaryti",
+        "prev": "Ankstesnė",
+        "next": "Kita",
+        "allPhotos": "Visos nuotraukos",
+        "takenAt": "Nufotografuota",
+        "sliderLabel": "Palyginimo slankiklis",
+        "loadError": "Nepavyko įkelti"
+    }
+}

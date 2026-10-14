@@ -51,6 +51,12 @@
                 "view": "custom:views/customer/record/panels/summary",
                 "aclScope": "WashOrder",
                 "sticked": true
+            },
+            {
+                "name": "customerLoyalty",
+                "label": "loyaltyPanel",
+                "view": "custom:views/customer/record/panels/loyalty",
+                "aclScope": "WashOrder"
             }
         ]
     },

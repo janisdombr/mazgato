@@ -1,0 +1,39 @@
+{
+    "fields": {
+        "name": "Klausimas",
+        "question": "Klausimas (kontaktai užmaskuoti)",
+        "answer": "Atsakymas",
+        "status": "Būsena",
+        "stopped": "Sustojimo priežastis",
+        "errorCode": "Klaidos kodas",
+        "toolNames": "Įrankiai",
+        "toolsJson": "Įrankių iškvietimai",
+        "steps": "Žingsniai",
+        "tokensIn": "Įvesties žetonai",
+        "tokensOut": "Išvesties žetonai",
+        "cacheReadTokens": "Talpyklos skaitymas",
+        "cacheWriteTokens": "Talpyklos rašymas",
+        "costUsd": "Kaina, USD",
+        "model": "Modelis",
+        "ms": "Laikas, ms",
+        "lang": "Kalba",
+        "chatId": "Pokalbis",
+        "ipHash": "Lankytojas (maiša)",
+        "bookingOrder": "Atlikta registracija",
+        "vault": "Saugykla",
+        "createdAt": "Laikas",
+        "modifiedAt": "Pakeista"
+    },
+    "links": {},
+    "options": {
+        "status": {
+            "Pending": "Laukiama",
+            "Answered": "Atsakyta",
+            "Stopped": "Sustabdyta",
+            "Failed": "Nepavyko"
+        }
+    },
+    "labels": {
+        "Create ClientChatMessage": "Sukurti įrašą"
+    }
+}

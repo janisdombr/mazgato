@@ -1,0 +1,20 @@
+{
+    "fields": {
+        "name": "Pavadinimas",
+        "subscription": "Abonementas",
+        "washOrder": "Užsakymas",
+        "usedAt": "Panaudota",
+        "refundedAt": "Grąžinta",
+        "listPrice": "Plovimo vertė"
+    },
+    "tooltips": {
+        "listPrice": "Kiek plovimas būtų kainavęs; pats užsakymas sumažinamas iki 0 EUR, kad pinigai būtų suskaičiuoti vieną kartą — pardavimo metu."
+    },
+    "links": {
+        "subscription": "Abonementas",
+        "washOrder": "Užsakymas"
+    },
+    "labels": {
+        "Create SubscriptionUse": "Sukurti"
+    }
+}

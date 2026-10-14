@@ -63,7 +63,7 @@ class QuickStart
         $lang = isset($d->lang) ? (string) $d->lang : null;
 
         if ($lang !== null && !in_array($lang, Starter::LANGS, true)) {
-            throw new BadRequest('invalid_value: lang must be lv_LV, ru_RU or en_US.');
+            throw new BadRequest('invalid_value: lang must be lv_LV, ru_RU, en_US or lt_LT.');
         }
 
         $r = $this->starter->load($lang, $prefix);

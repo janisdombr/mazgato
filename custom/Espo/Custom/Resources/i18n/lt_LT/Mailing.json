@@ -1,0 +1,61 @@
+{
+    "fields": {
+        "name": "Pavadinimas",
+        "channel": "Kanalas",
+        "subject": "Tema",
+        "body": "Turinys",
+        "offer": "Pasiūlymas",
+        "discountPercent": "Nuolaida %",
+        "status": "Būsena",
+        "sentAt": "Išsiųsta",
+        "recipientCount": "Gavėjai",
+        "description": "Pastabos",
+        "segment": "Auditorija",
+        "sentCount": "Išsiųsta",
+        "failedCount": "Nepavyko",
+        "recipients": "Gavėjai"
+    },
+    "labels": {
+        "preview": "Peržiūra",
+        "previewSample": "Pavyzdys",
+        "noSmtp": "SMTP nenustatytas — tik segmentavimas",
+        "send": "Siųsti",
+        "buildAudience": "Sudaryti gavėjus",
+        "addRecipients": "Pridėti gavėjus",
+        "onlyConsented": "Tik sutikę",
+        "found": "Rasta",
+        "noRecipients": "Gavėjų nėra",
+        "recipientsAdded": "Gavėjai pridėti",
+        "Create Mailing": "Sukurti siuntimą",
+        "moreTab": "Daugiau",
+        "Result": "Rezultatas"
+    },
+    "options": {
+        "channel": {
+            "WhatsApp": "WhatsApp",
+            "Email": "El. paštas",
+            "Phone": "Telefonas"
+        },
+        "status": {
+            "Draft": "Juodraštis",
+            "Sent": "Išsiųsta"
+        },
+        "segment": {
+            "All": "Visi (sutikę)",
+            "Corporate": "Tik įmonės",
+            "Individual": "Tik fiziniai asmenys"
+        }
+    },
+    "tooltips": {
+        "offer": "Nuolaidos pasiūlymo tekstas, siunčiamas klientams.",
+        "subject": "El. laiško tema. Galite naudoti vietos žymeklius: {name}, {discount}, {offer}.",
+        "body": "El. laiško turinys. Vietos žymekliai užpildomi automatiškai kliento duomenimis: {name} — vardas, {discount} — nuolaida %, {offer} — pasiūlymas, {phone} — telefonas.",
+        "discountPercent": "Pasiūlyme nurodytas nuolaidos procentas.",
+        "recipientCount": "Kiek klientų pasiekė šis siuntimas — tik sutikę šiuo kanalu. Užpildoma, kai būsena tampa „Išsiųsta“.",
+        "segment": "Kam pristatyti: visiems, sutikusiems per kanalą, ar tik įmonėms / fiziniams asmenims.",
+        "sentCount": "Kiek gavėjų iš tikrųjų buvo išsiųsta."
+    },
+    "links": {
+        "recipients": "Gavėjai"
+    }
+}

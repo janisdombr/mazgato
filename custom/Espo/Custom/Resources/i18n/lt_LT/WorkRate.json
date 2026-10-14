@@ -1,0 +1,22 @@
+{
+    "fields": {
+        "name": "Pavadinimas",
+        "work": "Darbas",
+        "service": "Paslauga",
+        "employee": "Darbuotojas",
+        "rate": "Įkainis"
+    },
+    "links": {
+        "work": "Darbas",
+        "service": "Paslauga",
+        "employee": "Darbuotojas"
+    },
+    "tooltips": {
+        "service": "Palikite tuščią, kad būtų taikoma kiekvienai paslaugai.",
+        "employee": "Palikite tuščią, kad būtų taikoma kiekvienam darbuotojui.",
+        "rate": "Mokama už vieną šio darbo atlikimą. Laimi tiksliausias sutapimas: darbas+paslauga+darbuotojas → darbas+paslauga → darbas+darbuotojas → darbas."
+    },
+    "labels": {
+        "Create WorkRate": "Sukurti įkainį"
+    }
+}

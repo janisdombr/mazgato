@@ -8,6 +8,7 @@ use Espo\Core\Exceptions\BadRequest;
 use Espo\Core\Exceptions\Forbidden;
 use Espo\Core\Utils\Config;
 use Espo\Core\Utils\Config\ConfigWriter;
+use Espo\Custom\Tools\Assistant\Providers;
 use Espo\Custom\Tools\Booking\FormToken;
 use Espo\Custom\Tools\Booking\RateLimiter;
 use Espo\Custom\Tools\ClientAssistant\ChatService;
@@ -41,7 +42,7 @@ class ClientAssistant
 {
     /** key => [type, secret?|max]  everything the administration page may write. */
     private const KEYS = [
-        'clientAssistantProvider' => ['enum'], 'assistantApiKey' => ['key', true],
+        'clientAssistantProvider' => ['enum'], 'assistantApiKey' => ['key', true], 'clientAssistantApiKey' => ['key', true],
         'clientAssistantModel' => ['model'], 'clientAssistantFallbackModel' => ['model'],
         'clientAssistantPerIpMinute' => ['int'], 'clientAssistantPerIpHour' => ['int'], 'clientAssistantPerIpDay' => ['int'],
         'clientAssistantDayQuestions' => ['int'], 'clientAssistantMonthQuestions' => ['int'], 'clientAssistantMonthTokens' => ['int'],
@@ -193,7 +194,7 @@ class ClientAssistant
         $chatId = $this->str($d, 'chatId', 32);
         $chatId = preg_match('/^[a-f0-9]{16,32}$/', $chatId) ? $chatId : bin2hex(random_bytes(8));
         $lang = $this->str($d, 'lang', 2);
-        $lang = in_array($lang, ['lv', 'ru', 'en'], true) ? $lang : substr((string) $this->config->get('language', 'lv_LV'), 0, 2);
+        $lang = in_array($lang, ['lv', 'ru', 'en', 'et', 'lt'], true) ? $lang : substr((string) $this->config->get('language', 'lv_LV'), 0, 2);
 
         // The journal row must be completed even if the browser or the proxy gives up waiting.
         ignore_user_abort(true);
@@ -246,6 +247,8 @@ class ClientAssistant
             'bookingUrl' => $site !== '' ? $site . '/booking/' : '/booking/',
             'ceilings' => ['steps' => ClientConfig::STEPS_CEILING, 'seconds' => ClientConfig::SECONDS_CEILING, 'budgetEur' => ClientConfig::BUDGET_CEILING_EUR],
             'knowledge' => $this->knowledge->block(),
+            'providers' => Providers::publicList(),
+            'sharedKeyAvailable' => trim((string) $this->config->get('assistantApiKey', '')) !== '',
         ];
     }
 
@@ -283,7 +286,7 @@ class ClientAssistant
         }
 
         foreach ((array) ($d->clear ?? []) as $k) {
-            if ($k === 'assistantApiKey') {
+            if ($k === 'assistantApiKey' || $k === 'clientAssistantApiKey') {
                 $set[$k] = '';
             }
         }
@@ -312,7 +315,7 @@ class ClientAssistant
 
     private function enum(string $key, string $v): string
     {
-        if ($key !== 'clientAssistantProvider' || !in_array($v, ['off', 'anthropic'], true)) {
+        if ($key !== 'clientAssistantProvider' || !in_array($v, array_merge(['off'], Providers::ids()), true)) {
             throw new BadRequest("Invalid value for $key.");
         }
 
@@ -328,8 +331,8 @@ class ClientAssistant
     {
         $v = trim($v);
 
-        if ($v !== '' && !preg_match('/^claude-[a-z0-9.\-]{2,60}$/', $v)) {
-            throw new BadRequest('A model id looks like claude-haiku-5-5.');
+        if ($v !== '' && !preg_match('/^[A-Za-z0-9][A-Za-z0-9._\-:\/]{1,80}$/', $v)) {
+            throw new BadRequest('A model id looks like claude-haiku-5-5 or gpt-4.1-nano.');
         }
 
         return $v;
@@ -339,7 +342,7 @@ class ClientAssistant
     {
         $v = trim($v);
 
-        if (!preg_match('/^[A-Za-z0-9_\-]{20,300}$/', $v)) {
+        if (!preg_match('/^[A-Za-z0-9._\-]{20,300}$/', $v)) {
             throw new BadRequest('That does not look like an API key.');
         }
 

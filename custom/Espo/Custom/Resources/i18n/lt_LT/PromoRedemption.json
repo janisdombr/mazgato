@@ -1,0 +1,28 @@
+{
+    "fields": {
+        "name": "Kodas",
+        "promoCode": "Akcijos kodas",
+        "washOrder": "Užsakymas",
+        "customer": "Klientas",
+        "amount": "Nuolaida, EUR",
+        "status": "Būsena",
+        "createdAt": "Sukurta",
+        "modifiedAt": "Pakeista"
+    },
+    "links": {
+        "promoCode": "Akcijos kodas",
+        "washOrder": "Užsakymas",
+        "customer": "Klientas"
+    },
+    "labels": {
+        "PromoRedemption": "Akcijos kodo panaudojimas",
+        "Overview": "Apžvalga"
+    },
+    "options": {
+        "status": {
+            "Reserved": "Rezervuota",
+            "Used": "Panaudota",
+            "Released": "Atlaisvinta"
+        }
+    }
+}

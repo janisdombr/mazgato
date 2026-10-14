@@ -36,7 +36,9 @@
         "language": {
             "lv_LV": "Latvian",
             "ru_RU": "Russian",
-            "en_US": "English"
+            "en_US": "English",
+            "et_EE": "Estonian",
+            "lt_LT": "Lithuanian"
         }
     },
     "tooltips": {

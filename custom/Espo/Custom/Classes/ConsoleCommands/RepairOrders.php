@@ -29,6 +29,7 @@ class RepairOrders implements Command
         'lv_LV' => 'Bez vārda (atjaunots)',
         'ru_RU' => 'Без имени (восстановлено)',
         'en_US' => 'Unnamed (restored)',
+        'lt_LT' => 'Be vardo (atkurta)',
     ];
 
     public function __construct(private EntityManager $em, private Config $config, private Parties $parties)

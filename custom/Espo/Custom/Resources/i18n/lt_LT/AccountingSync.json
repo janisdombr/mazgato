@@ -1,0 +1,43 @@
+{
+    "fields": {
+        "name": "Dokumentas",
+        "washOrder": "Užsakymas",
+        "connector": "Programa",
+        "kind": "Rūšis",
+        "status": "Būsena",
+        "externalId": "Programos ID",
+        "externalNo": "Programos numeris",
+        "amount": "Suma",
+        "docHash": "Turinio kontrolinis kodas",
+        "paidIncluded": "Apmokėjimas išsiųstas kartu su pardavimu",
+        "error": "Klaida / pastaba",
+        "attempts": "Bandymai",
+        "nextAttemptAt": "Kitas bandymas",
+        "lastAttemptAt": "Paskutinis bandymas",
+        "sentAt": "Išsiųsta",
+        "createdAt": "Įtraukta į eilę",
+        "lockedUntil": "Užrakinta iki"
+    },
+    "links": {
+        "washOrder": "Užsakymas"
+    },
+    "options": {
+        "connector": {
+            "merit": "Merit Aktiva",
+            "smartaccounts": "SmartAccounts"
+        },
+        "kind": {
+            "Sale": "Pardavimas",
+            "Payment": "Apmokėjimas"
+        },
+        "status": {
+            "Pending": "Laukiama",
+            "Sent": "Išsiųsta",
+            "Failed": "Nepavyko",
+            "Skipped": "Praleista"
+        }
+    },
+    "labels": {
+        "Accounting": "Buhalterija"
+    }
+}

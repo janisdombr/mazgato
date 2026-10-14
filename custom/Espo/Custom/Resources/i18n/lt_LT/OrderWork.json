@@ -1,0 +1,43 @@
+{
+    "fields": {
+        "name": "Pavadinimas",
+        "washOrder": "Užsakymas",
+        "work": "Darbas",
+        "service": "Iš paslaugos",
+        "role": "Vaidmuo",
+        "employee": "Darbuotojas",
+        "rate": "Įkainis",
+        "share": "Dalis, %",
+        "amount": "Suma",
+        "description": "Pastabos",
+        "amountManual": "Suma nustatyta rankiniu būdu",
+        "startedAt": "Pradėta",
+        "doneAt": "Atlikta",
+        "doneBy": "Uždarė",
+        "doneDevice": "Įrenginys"
+    },
+    "links": {
+        "washOrder": "Užsakymas",
+        "work": "Darbas",
+        "service": "Iš paslaugos",
+        "role": "Vaidmuo",
+        "employee": "Darbuotojas",
+        "doneBy": "Uždarė",
+        "doneDevice": "Įrenginys"
+    },
+    "tooltips": {
+        "service": "Paslauga, kuri pridėjo šį darbą prie užsakymo.",
+        "role": "Užpildoma iš darbo numatytojo vaidmens; keiskite laisvai.",
+        "rate": "Iš anksto užpildoma iš įkainių matricos ir redaguojama. Išvalykite lauką, kad jis būtų nustatytas iš naujo.",
+        "share": "Įkainio procentas šiai eilutei. Norėdami padalyti darbą tarp dviejų darbuotojų, pridėkite tą patį darbą du kartus — pvz., 50 % + 50 %.",
+        "amount": "įkainis × dalis %. Apskaičiuojama.",
+        "amountManual": "Nustatoma automatiškai, kai įvedate sumą. Kol įjungta, įkainis × dalis neperskaičiuojami — pakeiskite įkainį ar dalį, kad grąžintumėte valdymą.",
+        "doneAt": "Kada darbas pažymėtas kaip atliktas (planšetė ar CRM). Įrašoma vieną kartą; išvalykite, kad būtų pažymėta iš naujo.",
+        "startedAt": "Kada darbuotojas planšetėje paspaudė „Pradėti“.",
+        "doneBy": "Kas pažymėjo darbą kaip atliktą. Planšetėje tai visada darbo vykdytojas.",
+        "doneDevice": "Kuri planšetė pažymėjo darbą."
+    },
+    "labels": {
+        "Create OrderWork": "Sukurti užsakymo darbą"
+    }
+}

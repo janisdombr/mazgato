@@ -1,0 +1,135 @@
+{
+    "fields": {
+        "name": {
+            "type": "varchar",
+            "readOnly": true
+        },
+        "washOrder": {
+            "type": "link",
+            "readOnly": true
+        },
+        "connector": {
+            "type": "enum",
+            "options": [
+                "merit",
+                "smartaccounts"
+            ],
+            "default": "merit",
+            "readOnly": true
+        },
+        "kind": {
+            "type": "enum",
+            "options": [
+                "Sale",
+                "Payment"
+            ],
+            "default": "Sale",
+            "readOnly": true
+        },
+        "status": {
+            "type": "enum",
+            "options": [
+                "Pending",
+                "Sent",
+                "Failed",
+                "Skipped"
+            ],
+            "default": "Pending",
+            "displayAsLabel": true,
+            "style": {
+                "Pending": "info",
+                "Sent": "success",
+                "Failed": "danger",
+                "Skipped": "warning"
+            },
+            "readOnly": true
+        },
+        "externalId": {
+            "type": "varchar",
+            "maxLength": 100,
+            "readOnly": true
+        },
+        "externalNo": {
+            "type": "varchar",
+            "maxLength": 60,
+            "readOnly": true
+        },
+        "amount": {
+            "type": "float",
+            "readOnly": true
+        },
+        "docHash": {
+            "type": "varchar",
+            "maxLength": 40,
+            "readOnly": true
+        },
+        "paidIncluded": {
+            "type": "bool",
+            "readOnly": true
+        },
+        "error": {
+            "type": "varchar",
+            "maxLength": 500,
+            "readOnly": true
+        },
+        "attempts": {
+            "type": "int",
+            "default": 0,
+            "readOnly": true
+        },
+        "nextAttemptAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "lastAttemptAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "lockedUntil": {
+            "type": "datetime",
+            "readOnly": true,
+            "utility": true
+        },
+        "sentAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "createdAt": {
+            "type": "datetime",
+            "readOnly": true
+        }
+    },
+    "links": {
+        "washOrder": {
+            "type": "belongsTo",
+            "entity": "WashOrder",
+            "foreign": "accountingSyncs"
+        }
+    },
+    "collection": {
+        "orderBy": "createdAt",
+        "order": "desc",
+        "textFilterFields": [
+            "name",
+            "externalNo"
+        ]
+    },
+    "indexes": {
+        "uniqueDoc": {
+            "type": "unique",
+            "columns": [
+                "washOrderId",
+                "connector",
+                "kind",
+                "deleted"
+            ]
+        },
+        "queue": {
+            "columns": [
+                "status",
+                "nextAttemptAt",
+                "deleted"
+            ]
+        }
+    }
+}

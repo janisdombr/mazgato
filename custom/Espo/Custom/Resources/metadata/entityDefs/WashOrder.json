@@ -293,6 +293,17 @@
             "type": "bool",
             "tooltip": true
         },
+        "capacityOverride": {
+            "type": "bool",
+            "readOnly": true,
+            "tooltip": true
+        },
+        "overrideCapacity": {
+            "type": "bool",
+            "notStorable": true,
+            "tooltip": true,
+            "view": "custom:views/fields/override-capacity"
+        },
         "manageToken": {
             "type": "varchar",
             "maxLength": 40,
@@ -380,6 +391,176 @@
             "type": "bool",
             "readOnly": true,
             "default": false
+        },
+        "accountingSyncs": {
+            "type": "linkMultiple",
+            "noLoad": true,
+            "readOnly": true
+        },
+        "promoCode": {
+            "type": "varchar",
+            "maxLength": 24,
+            "tooltip": true
+        },
+        "skipLoyalty": {
+            "type": "bool",
+            "default": false,
+            "tooltip": true
+        },
+        "loyaltyKind": {
+            "type": "enum",
+            "options": [
+                "",
+                "Promo",
+                "FreeWash"
+            ],
+            "default": "",
+            "readOnly": true,
+            "isSorted": false,
+            "style": {
+                "Promo": "success",
+                "FreeWash": "success"
+            }
+        },
+        "loyaltyDiscount": {
+            "type": "float",
+            "readOnly": true,
+            "default": 0,
+            "view": "custom:views/fields/money-eur"
+        },
+        "loyaltyNote": {
+            "type": "enum",
+            "options": [
+                "",
+                "skipped",
+                "promo_unknown",
+                "promo_inactive",
+                "promo_not_started",
+                "promo_expired",
+                "promo_exhausted",
+                "promo_customer_limit",
+                "promo_min_amount",
+                "promo_first_visit_only",
+                "promo_no_effect",
+                "promo_free_better",
+                "free_promo_better"
+            ],
+            "default": "",
+            "readOnly": true,
+            "isSorted": false
+        },
+        "loyaltyEvaluated": {
+            "type": "bool",
+            "default": false,
+            "readOnly": true,
+            "layoutListDisabled": true,
+            "layoutDetailDisabled": true,
+            "layoutFiltersDisabled": true,
+            "layoutMassUpdateDisabled": true
+        },
+        "loyaltyCounted": {
+            "type": "int",
+            "default": 0,
+            "readOnly": true,
+            "layoutListDisabled": true,
+            "layoutDetailDisabled": true,
+            "layoutFiltersDisabled": true,
+            "layoutMassUpdateDisabled": true
+        },
+        "loyaltyLinesJson": {
+            "type": "text",
+            "readOnly": true,
+            "layoutListDisabled": true,
+            "layoutDetailDisabled": true,
+            "layoutFiltersDisabled": true,
+            "layoutMassUpdateDisabled": true
+        },
+        "redeemPoints": {
+            "type": "int",
+            "default": 0,
+            "min": 0,
+            "tooltip": true,
+            "layoutListDisabled": true
+        },
+        "pointsRedeemed": {
+            "type": "int",
+            "default": 0,
+            "readOnly": true,
+            "layoutListDisabled": true
+        },
+        "pointsDiscount": {
+            "type": "float",
+            "default": 0,
+            "readOnly": true,
+            "view": "custom:views/fields/money-eur",
+            "layoutListDisabled": true
+        },
+        "pointsEarned": {
+            "type": "int",
+            "default": 0,
+            "readOnly": true,
+            "layoutListDisabled": true
+        },
+        "pointsNote": {
+            "type": "varchar",
+            "maxLength": 40,
+            "readOnly": true,
+            "layoutListDisabled": true
+        },
+        "pointsEvaluated": {
+            "type": "bool",
+            "default": false,
+            "readOnly": true,
+            "layoutListDisabled": true,
+            "layoutDetailDisabled": true,
+            "layoutFiltersDisabled": true,
+            "layoutMassUpdateDisabled": true
+        },
+        "pointsSettled": {
+            "type": "bool",
+            "default": false,
+            "readOnly": true,
+            "layoutListDisabled": true,
+            "layoutDetailDisabled": true,
+            "layoutFiltersDisabled": true,
+            "layoutMassUpdateDisabled": true
+        },
+        "pointsLinesJson": {
+            "type": "text",
+            "readOnly": true,
+            "layoutListDisabled": true,
+            "layoutDetailDisabled": true,
+            "layoutFiltersDisabled": true,
+            "layoutMassUpdateDisabled": true
+        },
+        "referralCode": {
+            "type": "varchar",
+            "maxLength": 12,
+            "tooltip": true,
+            "layoutListDisabled": true
+        },
+        "referralNote": {
+            "type": "varchar",
+            "maxLength": 40,
+            "readOnly": true,
+            "layoutListDisabled": true
+        },
+        "referralResolved": {
+            "type": "bool",
+            "default": false,
+            "readOnly": true,
+            "layoutListDisabled": true,
+            "layoutDetailDisabled": true,
+            "layoutFiltersDisabled": true,
+            "layoutMassUpdateDisabled": true
+        },
+        "pointsLotsJson": {
+            "type": "text",
+            "readOnly": true,
+            "layoutListDisabled": true,
+            "layoutDetailDisabled": true,
+            "layoutFiltersDisabled": true,
+            "layoutMassUpdateDisabled": true
         }
     },
     "links": {
@@ -454,6 +635,11 @@
             "type": "belongsTo",
             "entity": "Subscription",
             "foreign": "orders"
+        },
+        "accountingSyncs": {
+            "type": "hasMany",
+            "entity": "AccountingSync",
+            "foreign": "washOrder"
         }
     },
     "collection": {

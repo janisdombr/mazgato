@@ -1,0 +1,35 @@
+{
+    "fields": {
+        "name": "Pavadinimas",
+        "status": "Būsena",
+        "tokenHash": "Rakto maiša",
+        "enrollHash": "Registravimo maiša",
+        "enrollExpiresAt": "Registravimo raktas galioja iki",
+        "enrolledAt": "Užregistruota",
+        "lastSeenAt": "Paskutinis signalas",
+        "lastIp": "Paskutinis IP",
+        "version": "Versija",
+        "queueDepth": "Eilė mazge",
+        "clockSkewSeconds": "Laikrodžio nuokrypis, s",
+        "report": "Ataskaita",
+        "cameras": "Kameros",
+        "createdAt": "Sukurta",
+        "modifiedAt": "Pakeista"
+    },
+    "links": {
+        "cameras": "Kameros"
+    },
+    "options": {
+        "status": {
+            "Pending": "Laukia registracijos",
+            "Active": "Aktyvus",
+            "Revoked": "Atšauktas"
+        }
+    },
+    "tooltips": {
+        "queueDepth": "Kiek įvykių mazgas dar neįteikė (nutrūko tinklas)."
+    },
+    "labels": {
+        "Overview": "Apžvalga"
+    }
+}

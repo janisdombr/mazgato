@@ -32,6 +32,10 @@
         "noTime": "Nav laika",
         "incompleteBooking": "Nepilnīga rezervācija: papildiniet datus",
         "badPrice": "Cenas kļūda",
-        "tempPlate": "pag. numurs"
+        "tempPlate": "pag. numurs",
+        "clientLabel": "Klients",
+        "crewLabel": "Izpildītājs",
+        "crewLabelMany": "Izpildītāji",
+        "noCrew": "nav piešķirts"
     }
 }

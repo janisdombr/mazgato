@@ -35,6 +35,12 @@
             "type": "int",
             "min": 0
         },
+        "crewSize": {
+            "type": "int",
+            "min": 1,
+            "max": 20,
+            "tooltip": true
+        },
         "isActive": {
             "type": "bool",
             "default": true

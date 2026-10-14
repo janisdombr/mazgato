@@ -56,8 +56,9 @@ define(['view', 'custom:lib/state'], function (View, State) {
             var input;
 
             if (f.type === 'bool') {
-                return '<div class="cw-field cw-field--check"><input type="checkbox" id="' + id + '" data-key="' + f.key + '" data-type="bool"' + (v ? ' checked' : '') + '>' +
-                    '<label for="' + id + '">' + esc(label) + '</label></div>' + hint;
+                // the hint belongs to the checkbox: ONE grid cell (a hint as a sibling landed in the next cell, far from its box)
+                return '<div class="cw-field"><div class="cw-field--check"><input type="checkbox" id="' + id + '" data-key="' + f.key + '" data-type="bool"' + (v ? ' checked' : '') + '>' +
+                    '<label for="' + id + '">' + esc(label) + '</label></div>' + hint + '</div>';
             }
             if (f.type === 'select') {
                 input = '<select class="form-control" id="' + id + '" data-key="' + f.key + '">' + f.options.map(function (o) {

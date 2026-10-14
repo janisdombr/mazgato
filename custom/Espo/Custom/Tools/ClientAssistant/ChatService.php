@@ -4,7 +4,7 @@ namespace Espo\Custom\Tools\ClientAssistant;
 
 use Espo\Core\InjectableFactory;
 use Espo\Core\Utils\Log;
-use Espo\Custom\Tools\Assistant\AnthropicModel;
+use Espo\Custom\Tools\Assistant\ModelFactory;
 use Espo\Custom\Tools\Assistant\FallbackModel;
 use Espo\Custom\Tools\Assistant\Loop;
 use Espo\Custom\Tools\Assistant\Model;
@@ -103,10 +103,7 @@ class ChatService
             return new ScriptedModel($this->harness->script(), fn($c) => $this->harness->record($c));
         }
 
-        $main = new AnthropicModel($this->cfg, $this->cfg->model(), $this->log);
-        $fb = $this->cfg->fallbackModel() !== $this->cfg->model() ? new AnthropicModel($this->cfg, $this->cfg->fallbackModel(), $this->log, false) : null;
-
-        return new FallbackModel($main, $fb);
+        return ModelFactory::make($this->cfg, $this->log);
     }
 
     /** What the visitor may read: no markup, no control characters, bounded. */
@@ -150,7 +147,7 @@ class ChatService
         $now = $this->planner->now()->setTimezone($this->planner->tz());
         $system = ClientPrompt::system(
             $this->knowledge->block(), $now->format('Y-m-d l'), $this->cfg->timeZone(), $now->format('H:i'),
-            ['lv' => 'Latvian', 'ru' => 'Russian', 'en' => 'English'][$lang] ?? 'Latvian'
+            ['lv' => 'Latvian', 'ru' => 'Russian', 'en' => 'English', 'et' => 'Estonian', 'lt' => 'Lithuanian'][$lang] ?? 'Latvian'
         );
 
         $result = new TurnResult();
@@ -172,7 +169,7 @@ class ChatService
         return [
             'ok' => $ok,
             'state' => $ok ? 'answered' : 'error',
-            'answer' => $ok ? self::sanitize($result->text) : '',
+            'answer' => $ok ? $vault->restore(self::sanitize($result->text)) : '',
             'booking' => $box->booking,
         ];
     }

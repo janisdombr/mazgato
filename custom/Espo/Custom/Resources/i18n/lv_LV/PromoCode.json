@@ -1,0 +1,42 @@
+{
+    "fields": {
+        "name": "Nosaukums",
+        "code": "Kods",
+        "kind": "Veids",
+        "value": "Vērtība (% vai EUR)",
+        "active": "Aktīvs",
+        "validFrom": "Derīgs no",
+        "validTo": "Derīgs līdz",
+        "maxUses": "Maks. izmantojumu skaits (0 = neierobežoti)",
+        "usedCount": "Izmantots",
+        "perCustomerLimit": "Izmantojumi uz klientu (0 = neierobežoti)",
+        "minAmount": "Minimālā pasūtījuma summa, EUR",
+        "firstVisitOnly": "Tikai pirmajam apmeklējumam",
+        "note": "Piezīme",
+        "redemptions": "Izmantojumi"
+    },
+    "links": {
+        "redemptions": "Izmantojumi"
+    },
+    "tooltips": {
+        "code": "3–24 simboli: A–Z, 0–9 un domuzīme. Saglabājas ar lielajiem burtiem.",
+        "value": "Procentiem: 1–100. Fiksētai summai: EUR, kas lielāka par 0 (nepārsniedz pasūtījuma summu).",
+        "validFrom": "Vietējās dienas. Tukšs = bez ierobežojuma.",
+        "maxUses": "Rezervētie un izmantotie kopā. 0 = neierobežoti.",
+        "usedCount": "Servera lauks: pieaug, kad pasūtījums ir pabeigts.",
+        "perCustomerLimit": "Cik reižu viens klients drīkst izmantot kodu. 0 = neierobežoti.",
+        "minAmount": "Pasūtījuma rindu summa pirms atlaides. 0 = bez minimuma.",
+        "firstVisitOnly": "Der tikai klientam, kuram vēl nav pabeigta neviena pasūtījuma."
+    },
+    "labels": {
+        "Create PromoCode": "Izveidot akcijas kodu",
+        "PromoCode": "Akcijas kods",
+        "Overview": "Pārskats"
+    },
+    "options": {
+        "kind": {
+            "Percent": "Procenti (%)",
+            "Fixed": "Fiksēta summa (EUR)"
+        }
+    }
+}

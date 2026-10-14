@@ -21,6 +21,9 @@
         "assistantApiKey": {
             "level": "internal"
         },
+        "clientAssistantApiKey": {
+            "level": "internal"
+        },
         "turnstileSecret": {
             "level": "internal"
         },
@@ -31,6 +34,21 @@
             "level": "internal"
         },
         "licenseBackup": {
+            "level": "internal"
+        },
+        "accountingMeritKey": {
+            "level": "internal"
+        },
+        "accountingSmartKey": {
+            "level": "internal"
+        },
+        "accountingMeritId": {
+            "level": "internal"
+        },
+        "accountingSmartId": {
+            "level": "internal"
+        },
+        "accountingBackup": {
             "level": "internal"
         }
     }

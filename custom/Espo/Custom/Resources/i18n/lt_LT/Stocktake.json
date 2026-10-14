@@ -1,0 +1,29 @@
+{
+    "fields": {
+        "name": "Inventorizacija",
+        "status": "Būsena",
+        "reason": "Priežastis",
+        "postedAt": "Kada",
+        "postedBy": "Kas",
+        "linesCount": "Eilutės",
+        "varianceCount": "Skirtumai",
+        "lines": "Eilutės",
+        "createdBy": "Sukūrė"
+    },
+    "links": {
+        "lines": "Eilutės",
+        "postedBy": "Kas",
+        "createdBy": "Sukūrė"
+    },
+    "options": {
+        "status": {
+            "Posted": "Užregistruota"
+        }
+    },
+    "tooltips": {
+        "varianceCount": "Kiek eilučių skyrėsi nuo kiekio sistemoje."
+    },
+    "labels": {
+        "Create Stocktake": "Atlikite inventorizaciją mygtuku Medžiagų sąraše"
+    }
+}

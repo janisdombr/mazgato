@@ -1,0 +1,46 @@
+{
+    "fields": {
+        "name": "Valstybinis numeris",
+        "brand": "Markė",
+        "model": "Modelis",
+        "bodyType": "Kėbulo tipas",
+        "customer": "Klientas",
+        "orders": "Užsakymai",
+        "description": "Pastabos",
+        "createdAt": "Sukurta",
+        "modifiedAt": "Pakeista",
+        "createdBy": "Sukūrė",
+        "plateTemporary": "Laikinas numeris"
+    },
+    "links": {
+        "customer": "Klientas",
+        "orders": "Užsakymai"
+    },
+    "options": {
+        "bodyType": {
+            "Sedan": "Sedanas",
+            "Hatchback": "Hečbekas",
+            "Wagon": "Universalas",
+            "SUV": "Visureigis",
+            "Van": "Mikroautobusas",
+            "Truck": "Sunkvežimis",
+            "Other": "Kita"
+        }
+    },
+    "labels": {
+        "newOrder": "Naujas užsakymas",
+        "Create Vehicle": "Sukurti automobilį",
+        "setRealPlate": "Nustatyti tikrą numerį",
+        "realPlate": "Tikras valstybinis numeris",
+        "setRealPlateHint": "Automobilis išsaugo savo istoriją; laikinas numeris išnyksta.",
+        "mergeAsk": "Šis numeris jau priklauso kitam automobiliui. Sujungti šį automobilį su juo (visi jo užsakymai bus perkelti)?",
+        "merge": "Sujungti",
+        "plateChanged": "Numeris pakeistas",
+        "carsMerged": "Automobiliai sujungti",
+        "tempPlateBadge": "Laikinas numeris",
+        "plateRequired": "Įveskite valstybinį numerį"
+    },
+    "tooltips": {
+        "plateTemporary": "Numeris, kurį sistema suteikė neregistruotam automobiliui (BN-yymmdd-NNN). Pakeiskite jį tikru: mygtukas „Nustatyti tikrą numerį“."
+    }
+}

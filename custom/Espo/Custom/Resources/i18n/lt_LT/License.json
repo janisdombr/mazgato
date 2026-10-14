@@ -1,0 +1,50 @@
+{
+    "labels": {
+        "loading": "Įkeliama…",
+        "loadError": "Nepavyko įkelti duomenų",
+        "retry": "Bandyti dar kartą",
+        "installation": "Įdiegimas",
+        "installationHint": "Nusiųskite šį ID tiekėjui; licencija susiejama su juo. Patikra vyksta neprisijungus — niekas niekur nesiunčiama.",
+        "mode": "Licencijos režimas",
+        "modeEnforced": "Privalomas — veikia tik licencijuoti moduliai",
+        "modeOpen": "Atviras — moduliai seka skiltį Nustatymai → Įjungti moduliai",
+        "noKey": "Tiekėjo viešasis raktas nenustatytas, todėl jokios licencijos patikrinti negalima.",
+        "licence": "Licencija",
+        "status": "Būsena",
+        "customer": "Klientas",
+        "expires": "Galioja iki",
+        "graceUntil": "Lengvatinis laikotarpis iki",
+        "remove": "Pašalinti licenciją",
+        "uploaded": "Licencija įdiegta",
+        "uploadFailed": "Failas atmestas",
+        "modules": "Moduliai",
+        "module": "Modulis",
+        "licensed": "Licencijoje",
+        "enabled": "Aktyvus dabar"
+    },
+    "statuses": {
+        "missing": "Licencija neįdiegta",
+        "valid": "Galioja",
+        "grace": "Pasibaigė — lengvatinis laikotarpis",
+        "expired": "Pasibaigė",
+        "bad_signature": "Neteisingas parašas",
+        "wrong_installation": "Išduota kitam įdiegimui",
+        "malformed": "Neperskaitoma",
+        "no_key": "Nėra viešojo rakto"
+    },
+    "modules": {
+        "kiosk": "Darbuotojo planšetė",
+        "notify": "Pranešimai klientams",
+        "booking": "Registracija internetu",
+        "assistant": "DI asistentas",
+        "anpr": "Numerių atpažinimas",
+        "cameras": "Kameros",
+        "clientAssistant": "Klientų pokalbis (DI)"
+    },
+    "errors": {
+        "bad_signature": "Neteisingas parašas",
+        "wrong_installation": "Išduota kitam įdiegimui",
+        "malformed": "Tai nėra licencijos failas",
+        "no_key": "Tiekėjo viešasis raktas nenustatytas"
+    }
+}

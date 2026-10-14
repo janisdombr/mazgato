@@ -1,0 +1,12 @@
+[
+    {
+        "label": "Overview",
+        "rows": [
+            [{"name": "customer"}, {"name": "kind"}],
+            [{"name": "points"}, {"name": "balanceAfter"}],
+            [{"name": "washOrder"}, {"name": "createdAt"}],
+            [{"name": "remaining"}, {"name": "expiresAt"}],
+            [{"name": "note"}, {"name": "createdBy"}]
+        ]
+    }
+]

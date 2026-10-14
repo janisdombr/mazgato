@@ -32,6 +32,10 @@
         "noTime": "Нет времени",
         "incompleteBooking": "Неполная бронь: заполните данные",
         "badPrice": "Ошибка цены",
-        "tempPlate": "врем. номер"
+        "tempPlate": "врем. номер",
+        "clientLabel": "Клиент",
+        "crewLabel": "Исполнитель",
+        "crewLabelMany": "Исполнители",
+        "noCrew": "не назначен"
     }
 }

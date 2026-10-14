@@ -1,0 +1,9 @@
+[
+    {"name": "createdAt", "width": 16},
+    {"name": "customer", "width": 22},
+    {"name": "kind", "width": 12},
+    {"name": "points", "width": 10},
+    {"name": "balanceAfter", "width": 10},
+    {"name": "washOrder", "width": 16},
+    {"name": "note", "width": 14}
+]

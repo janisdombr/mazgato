@@ -1,0 +1,80 @@
+{
+    "fields": {
+        "name": {
+            "type": "varchar",
+            "maxLength": 60
+        },
+        "promoCode": {
+            "type": "link",
+            "required": true
+        },
+        "washOrder": {
+            "type": "link",
+            "required": true
+        },
+        "customer": {
+            "type": "link"
+        },
+        "amount": {
+            "type": "float",
+            "readOnly": true
+        },
+        "status": {
+            "type": "enum",
+            "options": [
+                "Reserved",
+                "Used",
+                "Released"
+            ],
+            "default": "Reserved",
+            "isSorted": false,
+            "style": {
+                "Reserved": "warning",
+                "Used": "success",
+                "Released": null
+            }
+        },
+        "createdAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "modifiedAt": {
+            "type": "datetime",
+            "readOnly": true
+        }
+    },
+    "links": {
+        "promoCode": {
+            "type": "belongsTo",
+            "entity": "PromoCode",
+            "foreign": "redemptions"
+        },
+        "washOrder": {
+            "type": "belongsTo",
+            "entity": "WashOrder"
+        },
+        "customer": {
+            "type": "belongsTo",
+            "entity": "Customer"
+        }
+    },
+    "collection": {
+        "orderBy": "createdAt",
+        "order": "desc"
+    },
+    "indexes": {
+        "oneRedemptionPerOrder": {
+            "type": "unique",
+            "columns": [
+                "washOrderId"
+            ]
+        },
+        "byPromo": {
+            "columns": [
+                "promoCodeId",
+                "status",
+                "deleted"
+            ]
+        }
+    }
+}

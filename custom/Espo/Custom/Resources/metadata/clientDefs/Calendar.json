@@ -1,0 +1,4 @@
+{
+    "controller": "custom:controllers/calendar",
+    "iconClass": "fas fa-calendar-days"
+}

@@ -1,0 +1,10 @@
+{
+    "labels": {
+        "refresh": "Rodyti",
+        "employee": "Darbuotojas",
+        "works": "Darbai",
+        "earned": "Uždirbta",
+        "total": "Iš viso",
+        "noData": "Šiuo laikotarpiu įvykdytų užsakymų nėra."
+    }
+}

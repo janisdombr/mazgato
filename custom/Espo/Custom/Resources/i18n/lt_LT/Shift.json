@@ -1,0 +1,21 @@
+{
+    "fields": {
+        "name": "Pavadinimas",
+        "employee": "Darbuotojas",
+        "startedAt": "Atėjo",
+        "finishedAt": "Išėjo",
+        "hours": "Valandos",
+        "description": "Pastabos"
+    },
+    "links": {
+        "employee": "Darbuotojas"
+    },
+    "tooltips": {
+        "startedAt": "Kada darbuotojas atvyko.",
+        "finishedAt": "Kada išėjo. Tuščia = pamaina dar atvira.",
+        "hours": "Apskaičiuojama nuo atėjimo iki išėjimo."
+    },
+    "labels": {
+        "Create Shift": "Sukurti pamainą"
+    }
+}

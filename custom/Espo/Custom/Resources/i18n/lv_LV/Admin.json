@@ -20,7 +20,9 @@
         "importCustomers": "Klientu imports",
         "quickStart": "Ātrā sākšana",
         "clientAssistant": "Klientu čats (AI)",
-        "carwashRoles": "Lomas un piekļuve"
+        "carwashRoles": "Lomas un piekļuve",
+        "accountingIntegration": "Grāmatvedības integrācija",
+        "loyalty": "Lojalitāte"
     },
     "messages": {
         "brandReload": "Saglabāts. Zīmola krāsa un nosaukums stāsies spēkā pēc lapas pārlādes."
@@ -37,6 +39,8 @@
         "importCustomers": "Klienti un auto no iepriekšējās sistēmas CSV: vispirms pārbaude, bez dublikātiem.",
         "quickStart": "Cenas, darbi, likmes un darbinieki vienā tabulā, ar pilnības pārbaudi.",
         "clientAssistant": "Publisks AI čats apmeklētājiem: ieslēgšana, zināšanas, limiti, izmaksu griesti, pārbaude.",
-        "carwashRoles": "Trīs līmeņi vienkārši: ko drīkst īpašnieks, vadītājs, operators; lietotāji un viņu lomas."
+        "carwashRoles": "Trīs līmeņi vienkārši: ko drīkst īpašnieks, vadītājs, operators; lietotāji un viņu lomas.",
+        "accountingIntegration": "Pabeigto pasūtījumu sūtīšana grāmatvedības programmai: Merit Aktiva, SmartAccounts. Rinda, atkārtojumi, tests.",
+        "loyalty": "Katra N-tā mazgāšana bezmaksas: iestatījumi. Akcijas kodi ir sarakstā Akcijas kodi."
     }
 }

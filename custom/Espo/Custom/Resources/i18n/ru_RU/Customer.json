@@ -29,7 +29,19 @@
         "language": "Язык сообщений",
         "notifyChannel": "Предпочитаемый канал",
         "telegramChatId": "Чат Telegram",
-        "telegramLinkToken": "Токен привязки Telegram"
+        "telegramLinkToken": "Токен привязки Telegram",
+        "loyaltyWashes": "Засчитанные мойки (с последней бесплатной)",
+        "loyaltyFreeEarned": "Заработано бесплатных моек",
+        "loyaltyFreeUsed": "Использовано бесплатных моек",
+        "loyaltyFreeHeld": "Бесплатная мойка зарезервирована",
+        "loyaltyPoints": "Баллы лояльности",
+        "referralCode": "Код приглашения",
+        "referredBy": "Пригласил",
+        "referredAt": "Приглашён",
+        "referralState": "Награда за приглашение",
+        "referralDueAt": "Награда к выплате",
+        "referralOrderId": "Заказ приглашения",
+        "referralGen": "Отмен приглашения"
     },
     "labels": {
         "Marketing": "Маркетинг",
@@ -47,13 +59,40 @@
         "document": "Документ",
         "documentInvoice": "Счёт",
         "documentAct": "Акт выполненных работ",
-        "consentTab": "Согласия и сообщения"
+        "consentTab": "Согласия и сообщения",
+        "loyaltyPanel": "Лояльность",
+        "loyaltyCount": "Засчитанные мойки",
+        "loyaltyToNext": "До бесплатной мойки",
+        "loyaltyFreeNow": "Следующая мойка бесплатная",
+        "loyaltyFreeHeld": "Бесплатная мойка закреплена за заказом",
+        "loyaltyEarnedUsed": "Бесплатных: заработано / использовано",
+        "loyaltyOff": "Схема бесплатной мойки выключена",
+        "pointsBalance": "Баллы",
+        "pointsWorth": "на сумму",
+        "pointsNextExpiry": "Ближайшее сгорание",
+        "pointsNoExpiry": "без срока",
+        "pointsAdjust": "Скорректировать баллы",
+        "pointsAdjustPoints": "Баллы (+ или -)",
+        "pointsAdjustReason": "Причина (обязательно)",
+        "pointsAdjusted": "Баллы скорректированы",
+        "ledgerTitle": "Последние операции",
+        "ledgerNone": "Операций пока нет",
+        "referralCode": "Код приглашения",
+        "referralCopy": "Копировать",
+        "referralCopied": "Скопировано",
+        "referredByLabel": "Пригласил",
+        "referralCounts": "Приглашено / вознаграждено",
+        "referralPoints": "Баллы за приглашения",
+        "referralWaiting": "Награда ждёт окончания периода удержания",
+        "cancel": "Отмена",
+        "confirm": "Применить"
     },
     "links": {
         "vehicles": "Автомобили",
         "orders": "Заказы",
         "drivers": "Водители",
-        "subscriptions": "Абонементы"
+        "subscriptions": "Абонементы",
+        "referredBy": "Пригласил"
     },
     "tooltips": {
         "isCorporate": "Включите для юридических лиц. Корпоративным клиентам можно выставить счёт-фактуру с НДС и применить корпоративные цены.",
@@ -74,7 +113,9 @@
             "": "По умолчанию системы",
             "lv_LV": "Latviešu",
             "ru_RU": "Русский",
-            "en_US": "English"
+            "en_US": "English",
+            "et_EE": "Eesti",
+            "lt_LT": "Lietuvių"
         },
         "notifyChannel": {
             "Auto": "Автоматически (первый доступный)",
@@ -82,6 +123,12 @@
             "WhatsApp": "WhatsApp",
             "Sms": "SMS",
             "Telegram": "Telegram"
+        },
+        "referralState": {
+            "": "—",
+            "Pending": "Ожидает",
+            "Paid": "Выплачена",
+            "Reversed": "Отозвана"
         }
     }
 }

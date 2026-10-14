@@ -93,6 +93,27 @@
                         }
                     ]
                 }
+            },
+            "overrideCapacity": {
+                "visible": {
+                    "conditionGroup": [
+                        {
+                            "type": "equals",
+                            "attribute": "status",
+                            "value": "Reserved"
+                        }
+                    ]
+                }
+            },
+            "capacityOverride": {
+                "visible": {
+                    "conditionGroup": [
+                        {
+                            "type": "isTrue",
+                            "attribute": "capacityOverride"
+                        }
+                    ]
+                }
             }
         }
     },
@@ -101,5 +122,12 @@
     ],
     "checkAllResultMassActionList": [
         "export"
-    ]
+    ],
+    "relationshipPanels": {
+        "photos": {
+            "unlinkDisabled": true,
+            "massUnlinkDisabled": true,
+            "rowActionsView": "views/record/row-actions/relationship-no-unlink-actions"
+        }
+    }
 }

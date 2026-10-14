@@ -8,7 +8,7 @@ use Espo\Core\Console\IO;
 use Espo\Custom\Tools\QuickStart\Starter;
 
 /**
- * bin/command quickstart-seed [--lang=lv_LV|ru_RU|en_US] [--force] [--reset]
+ * bin/command quickstart-seed [--lang=lv_LV|ru_RU|en_US|lt_LT] [--force] [--reset]
  *
  * Loads the starter catalogue (docs/QUICKSTART.md): idempotent by name, never edits what exists. Skipped when it
  * was already loaded on this installation (marker) unless --force. --reset only clears the marker.
@@ -37,7 +37,7 @@ class QuickstartSeed implements Command
         $lang = $params->getOption('lang') ?: null;
 
         if ($lang !== null && !in_array($lang, Starter::LANGS, true)) {
-            $io->writeLine('error: --lang must be lv_LV, ru_RU or en_US');
+            $io->writeLine('error: --lang must be lv_LV, ru_RU, en_US or lt_LT');
             $io->setExitStatus(2);
 
             return;

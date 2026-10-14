@@ -1,0 +1,28 @@
+{
+    "fields": {
+        "name": "Kods",
+        "promoCode": "Akcijas kods",
+        "washOrder": "Pasūtījums",
+        "customer": "Klients",
+        "amount": "Atlaide, EUR",
+        "status": "Statuss",
+        "createdAt": "Izveidots",
+        "modifiedAt": "Mainīts"
+    },
+    "links": {
+        "promoCode": "Akcijas kods",
+        "washOrder": "Pasūtījums",
+        "customer": "Klients"
+    },
+    "labels": {
+        "PromoRedemption": "Akcijas koda izmantojums",
+        "Overview": "Pārskats"
+    },
+    "options": {
+        "status": {
+            "Reserved": "Rezervēts",
+            "Used": "Izmantots",
+            "Released": "Atbrīvots"
+        }
+    }
+}

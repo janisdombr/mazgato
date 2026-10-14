@@ -70,6 +70,8 @@ class Toolbox
                     'email' => ['type' => 'string', 'description' => 'optional, the placeholder e.g. [EMAIL-1]'],
                     'plate' => ['type' => 'string', 'description' => 'car plate number'],
                     'note' => ['type' => 'string', 'description' => 'optional wish of the customer, up to 200 characters'],
+                    'promo' => ['type' => 'string', 'description' => 'optional promo code exactly as the customer wrote it; leave it out if they gave none. Never invent one.'],
+                    'referral' => ['type' => 'string', 'description' => 'optional referral code of a friend who recommended the wash (letters and digits), exactly as the customer wrote it; leave it out if they gave none. Never invent one.'],
                 ], 'required' => ['confirmed', 'serviceId', 'date', 'time', 'name', 'phone', 'plate'], 'additionalProperties' => false],
             ],
         ];
@@ -157,7 +159,7 @@ class Toolbox
             } elseif (!($h = $this->planner->hoursFor($d))) {
                 $row += ['bookable' => false, 'reason' => 'closed that day'];
             } else {
-                $times = array_map(fn($s) => (string) $s['time'], $this->planner->slots($d->format('Y-m-d'), $minutes));
+                $times = array_map(fn($s) => (string) $s['time'], $this->planner->slots($d->format('Y-m-d'), $minutes, null, ['crew' => $this->planner->crewFor($svc->getId()), 'online' => true]));
                 $row += [
                     'bookable' => true,
                     'open' => sprintf('%02d:%02d', intdiv($h[0], 60), $h[0] % 60),
@@ -220,7 +222,7 @@ class Toolbox
             return $this->fail(400, 'email: pass the placeholder (like [EMAIL-1]) or leave it out.');
         }
 
-        $lang = ['lv' => 'lv_LV', 'ru' => 'ru_RU', 'en' => 'en_US'][$this->lang] ?? '';
+        $lang = ['lv' => 'lv_LV', 'ru' => 'ru_RU', 'en' => 'en_US', 'et' => 'et_EE', 'lt' => 'lt_LT'][$this->lang] ?? '';
         $note = $this->s($a['note'] ?? '', 200);
         $body = [
             'token' => $this->token,
@@ -235,6 +237,9 @@ class Toolbox
             'plate' => $this->s($a['plate'] ?? '', 20),
             'note' => '[chat] ' . Untrusted::clean($note, 200),
             'lang' => $lang,
+            // forwarded as it is: the booking code answers "ok" or "invalid" and counts failures per address
+            'promo' => $this->s($a['promo'] ?? '', 24),
+            'referral' => $this->s($a['referral'] ?? '', 12),
         ];
 
         // The ONE write path: the public booking form's own code, with the visitor's own address.
@@ -271,9 +276,13 @@ class Toolbox
     private function failure(int $status, string $error, array $fields): array
     {
         $fields = array_values(array_filter(array_map(fn($f) => preg_replace('/[^a-z]/', '', (string) $f), $fields)));
+        error_log('ClientAssistant: booking refused, HTTP ' . $status . ', ' . preg_replace('/[^A-Za-z0-9_.\-]/', '', mb_substr($error, 0, 40)) . ($fields ? ', fields ' . implode(',', $fields) : ''));
 
         return match (true) {
             $error === 'slot_taken' || $error === 'slot_unavailable' => $this->fail($status ?: 409, 'That time is not available (taken, outside hours or too soon). Call free_slots again and offer other times.'),
+            $error === 'day_full' => $this->fail($status ?: 409, 'That day is fully booked online. Call free_slots for other days and offer one of them, or suggest phoning.'),
+            $error === 'validation' && in_array('referral', $fields, true) => $this->fail(400, 'The referral code is not valid. Tell the customer it is not valid (do not say why, you do not know) and offer to book without it or with another code.'),
+            $error === 'validation' && in_array('promo', $fields, true) => $this->fail(400, 'The promo code is not valid. Tell the customer it is not valid (do not say why, you do not know) and offer to book without it or with another code.'),
             $error === 'validation' => $this->fail(400, 'Missing or invalid: ' . ($fields ? implode(', ', $fields) : 'some fields') . '. Ask the customer for it (plate: letters and digits only; phone: at least 8 digits).'),
             $status === 429 || $error === 'rate_limited' => $this->fail(429, 'Too many booking requests from this connection. Ask the customer to phone or try again later.'),
             in_array($error, ['bad-token', 'too-fast', 'expired'], true) => $this->fail(400, 'The chat session is not valid any more. Ask the customer to reload the page and try again.'),

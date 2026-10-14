@@ -1,0 +1,26 @@
+[
+    {
+        "name": "name"
+    },
+    {
+        "name": "connector"
+    },
+    {
+        "name": "kind"
+    },
+    {
+        "name": "status"
+    },
+    {
+        "name": "externalNo"
+    },
+    {
+        "name": "attempts"
+    },
+    {
+        "name": "error"
+    },
+    {
+        "name": "createdAt"
+    }
+]

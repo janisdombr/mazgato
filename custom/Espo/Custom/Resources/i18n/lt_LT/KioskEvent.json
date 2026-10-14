@@ -1,0 +1,43 @@
+{
+    "fields": {
+        "name": "Pavadinimas",
+        "action": "Veiksmas",
+        "outcome": "Rezultatas",
+        "errorCode": "Klaidos kodas",
+        "httpStatus": "HTTP būsena",
+        "employee": "Darbuotojas",
+        "device": "Planšetė",
+        "washOrder": "Užsakymas",
+        "orderWork": "Užsakymo darbas",
+        "clientActionId": "Kliento veiksmo ID",
+        "clientAt": "Kliento laikas",
+        "replayCount": "Pakartojimai",
+        "meta": "Išsami informacija",
+        "resultJson": "Rezultatas",
+        "ip": "IP",
+        "createdAt": "Laikas",
+        "modifiedAt": "Pakeista"
+    },
+    "links": {
+        "employee": "Darbuotojas",
+        "device": "Planšetė",
+        "washOrder": "Užsakymas",
+        "orderWork": "Užsakymo darbas"
+    },
+    "options": {
+        "outcome": {
+            "Ok": "Gerai",
+            "Denied": "Atmesta",
+            "Conflict": "Konfliktas",
+            "Failed": "Nepavyko",
+            "RateLimited": "Viršyta riba"
+        }
+    },
+    "tooltips": {
+        "clientActionId": "Unikalus planšetės sukurtas ID. Pakartotinis siuntimas (pvz., nutrūkus tinklui) niekada nekartoja veiksmo.",
+        "clientAt": "Kada darbuotojas paspaudė mygtuką planšetėje (skiriasi nuo gavimo laiko, jei nebuvo tinklo)."
+    },
+    "labels": {
+        "Create KioskEvent": "Sukurti įrašą"
+    }
+}

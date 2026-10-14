@@ -38,7 +38,12 @@
         "Stocktake": "Inventarizācija",
         "StocktakeLine": "Inventarizācijas pozīcija",
         "RevenueReports": "Ieņēmumu atskaites un statistika",
-        "ClientChatMessage": "Čata ziņa"
+        "ClientChatMessage": "Čata ziņa",
+        "AccountingSync": "Grāmatvedības sinhronizācija",
+        "PromoCode": "Akcijas kods",
+        "PromoRedemption": "Akcijas koda izmantojums",
+        "LoyaltyLedger": "Punktu ieraksts",
+        "CapacityOverride": "Pierakstīt virs jaudas"
     },
     "scopeNamesPlural": {
         "Customer": "Klienti",
@@ -79,7 +84,12 @@
         "Stocktake": "Inventarizācijas",
         "StocktakeLine": "Inventarizācijas pozīcijas",
         "RevenueReports": "Ieņēmumu atskaites un statistika",
-        "ClientChatMessage": "Čata ziņas"
+        "ClientChatMessage": "Čata ziņas",
+        "AccountingSync": "Grāmatvedības sinhronizācijas žurnāls",
+        "PromoCode": "Akcijas kodi",
+        "PromoRedemption": "Akcijas kodu izmantojumi",
+        "LoyaltyLedger": "Punktu žurnāls",
+        "CapacityOverride": "Pierakstīt virs jaudas"
     },
     "dashlets": {
         "QuickIntake": "Ātrā pieņemšana",
@@ -93,7 +103,8 @@
         "DaySchedule": "Dienas grafiks",
         "Assistant": "Palīgs",
         "Gate": "Pie iebrauktuves",
-        "QuickStart": "Iestatījumu pārbaude"
+        "QuickStart": "Iestatījumu pārbaude",
+        "CalendarWeek": "Pasūtījumu kalendārs"
     },
     "labels": {
         "listTotals": "Kopsavilkums",

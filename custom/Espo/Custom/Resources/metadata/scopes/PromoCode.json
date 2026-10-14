@@ -1,0 +1,14 @@
+{
+    "entity": true,
+    "object": true,
+    "isCustom": true,
+    "customizable": true,
+    "importable": false,
+    "notifications": false,
+    "stream": false,
+    "tab": true,
+    "acl": true,
+    "layouts": true,
+    "type": "Base",
+    "module": "Custom"
+}

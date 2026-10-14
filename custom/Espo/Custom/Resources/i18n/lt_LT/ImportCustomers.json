@@ -1,0 +1,51 @@
+{
+    "labels": {
+        "title": "Klientų importas iš CSV",
+        "intro": "Įkelkite klientų sąrašą, eksportuotą iš ankstesnės sistemos. Niekas nerašoma, kol neatliksite patikros ir nepatvirtinsite importo. Jau CRM esantys žmonės (tas pats telefonas, el. paštas ar įmonės kodas arba tas pats numeris) nekuriami du kartus ir niekada nekeičiami. Rinkodaros sutikimas NEPERIMAMAS: importuoti klientai negauna el. pašto, WhatsApp ar telefono siuntimų, kol nesutinka.",
+        "template": "Atsisiųsti CSV šabloną",
+        "file": "CSV failas",
+        "encoding": "Koduotė",
+        "mapping": "Kuris stulpelis kas yra",
+        "rows": "eilučių",
+        "check": "Patikrinti (nieko nerašoma)",
+        "doImport": "Importuoti dabar",
+        "confirmImport": "Importuoti šiuos klientus ir automobilius dabar?",
+        "loading": "Vykdoma…",
+        "readError": "Failo nepavyko perskaityti arba susiejimas neteisingas",
+        "reportDry": "Patikros rezultatas — nieko nerašyta",
+        "reportDone": "Importuota",
+        "customersNew": "naujų klientų",
+        "customersExisting": "jau yra CRM",
+        "carsNew": "naujų automobilių",
+        "carsExisting": "automobilių jau yra",
+        "skipped": "praleista eilučių",
+        "reason": "Problema"
+    },
+    "targets": {
+        "name": "Vardas (pilnas)",
+        "firstName": "Vardas",
+        "lastName": "Pavardė",
+        "phone": "Telefonas",
+        "email": "El. paštas",
+        "plate": "Numeris (-iai)",
+        "brand": "Markė",
+        "model": "Modelis",
+        "regNumber": "Įmonės kodas",
+        "pvnNumber": "PVM mokėtojo kodas",
+        "legalAddress": "Juridinis adresas",
+        "birthday": "Gimimo diena",
+        "description": "Pastabos",
+        "isCorporate": "Įmonė? (taip/ne)",
+        "allowEmail": "Sutiko su rinkodara el. paštu (taip/ne)"
+    },
+    "reasons": {
+        "empty_row": "Tuščia eilutė, praleista",
+        "invalid_email": "El. paštas neteisingas, praleistas",
+        "invalid_plate": "Numeris neteisingas, automobilis nesukurtas",
+        "plate_conflict": "Numeris jau priklauso kitam klientui, neperkeltas",
+        "no_customer_for_plate": "Numeris be asmens, praleista",
+        "customer_failed": "Kliento nepavyko išsaugoti",
+        "vehicle_failed": "Automobilio nepavyko išsaugoti",
+        "name_only_key": "Tik vardas asmeniui atpažinti (pakartotinis importas sutaps pagal tikslų vardą)"
+    }
+}

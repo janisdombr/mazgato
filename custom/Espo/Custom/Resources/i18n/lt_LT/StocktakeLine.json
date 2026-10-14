@@ -1,0 +1,14 @@
+{
+    "fields": {
+        "name": "Medžiaga",
+        "stocktake": "Inventorizacija",
+        "supply": "Medžiaga",
+        "expectedQuantity": "Sistemoje",
+        "countedQuantity": "Suskaičiuota",
+        "difference": "Skirtumas"
+    },
+    "links": {
+        "stocktake": "Inventorizacija",
+        "supply": "Medžiaga"
+    }
+}

@@ -1,0 +1,33 @@
+{
+    "fields": {
+        "name": "Pavadinimas",
+        "employee": "Darbuotojas",
+        "device": "Planšetė",
+        "tokenHash": "Rakto maiša",
+        "startedAt": "Pradėta",
+        "expiresAt": "Baigiasi",
+        "lastSeenAt": "Paskutinį kartą matyta",
+        "endedAt": "Baigta",
+        "endReason": "Pabaigos priežastis",
+        "ip": "IP",
+        "createdAt": "Sukurta",
+        "modifiedAt": "Pakeista"
+    },
+    "links": {
+        "employee": "Darbuotojas",
+        "device": "Planšetė"
+    },
+    "options": {
+        "endReason": {
+            "": "",
+            "Logout": "Atsijungė",
+            "Idle": "Neveikla",
+            "Expired": "Pasibaigė",
+            "Revoked": "Atšaukta",
+            "Replaced": "Pakeista"
+        }
+    },
+    "labels": {
+        "Create KioskSession": "Sukurti sesiją"
+    }
+}

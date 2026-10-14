@@ -1,0 +1,98 @@
+{
+    "fields": {
+        "name": {
+            "type": "varchar",
+            "maxLength": 100,
+            "required": true
+        },
+        "code": {
+            "type": "varchar",
+            "maxLength": 60,
+            "required": true,
+            "tooltip": true
+        },
+        "kind": {
+            "type": "enum",
+            "options": [
+                "Percent",
+                "Fixed"
+            ],
+            "default": "Percent",
+            "isSorted": false
+        },
+        "value": {
+            "type": "float",
+            "required": true,
+            "min": 0,
+            "tooltip": true
+        },
+        "active": {
+            "type": "bool",
+            "default": true
+        },
+        "validFrom": {
+            "type": "date",
+            "tooltip": true
+        },
+        "validTo": {
+            "type": "date"
+        },
+        "maxUses": {
+            "type": "int",
+            "default": 0,
+            "min": 0,
+            "tooltip": true
+        },
+        "usedCount": {
+            "type": "int",
+            "default": 0,
+            "readOnly": true,
+            "tooltip": true
+        },
+        "perCustomerLimit": {
+            "type": "int",
+            "default": 1,
+            "min": 0,
+            "tooltip": true
+        },
+        "minAmount": {
+            "type": "float",
+            "default": 0,
+            "min": 0,
+            "tooltip": true
+        },
+        "firstVisitOnly": {
+            "type": "bool",
+            "default": false,
+            "tooltip": true
+        },
+        "note": {
+            "type": "text",
+            "rows": 3
+        },
+        "createdAt": {
+            "type": "datetime",
+            "readOnly": true
+        }
+    },
+    "links": {
+        "redemptions": {
+            "type": "hasMany",
+            "entity": "PromoRedemption",
+            "foreign": "promoCode"
+        }
+    },
+    "collection": {
+        "orderBy": "createdAt",
+        "order": "desc"
+    },
+    "indexes": {
+        "uniqueCode": {
+            "type": "unique",
+            "columns": [
+                "code",
+                "deleted"
+            ]
+        }
+    }
+}

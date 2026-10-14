@@ -18,6 +18,10 @@
             "type": "varchar",
             "maxLength": 255
         },
+        "textLt": {
+            "type": "varchar",
+            "maxLength": 255
+        },
         "description": {
             "type": "text"
         },
@@ -34,7 +38,7 @@
     "collection": {
         "orderBy": "name",
         "order": "asc",
-        "textFilterFields": ["name", "textLv", "textRu", "textEn"]
+        "textFilterFields": ["name", "textLv", "textRu", "textEn", "textLt"]
     },
     "indexes": {
         "nameUnique": {

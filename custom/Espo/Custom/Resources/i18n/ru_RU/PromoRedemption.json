@@ -1,0 +1,28 @@
+{
+    "fields": {
+        "name": "Код",
+        "promoCode": "Промокод",
+        "washOrder": "Заказ",
+        "customer": "Клиент",
+        "amount": "Скидка, EUR",
+        "status": "Статус",
+        "createdAt": "Создано",
+        "modifiedAt": "Изменено"
+    },
+    "links": {
+        "promoCode": "Промокод",
+        "washOrder": "Заказ",
+        "customer": "Клиент"
+    },
+    "labels": {
+        "PromoRedemption": "Использование промокода",
+        "Overview": "Обзор"
+    },
+    "options": {
+        "status": {
+            "Reserved": "Зарезервировано",
+            "Used": "Использовано",
+            "Released": "Освобождено"
+        }
+    }
+}

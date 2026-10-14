@@ -1,0 +1,41 @@
+{
+    "fields": {
+        "name": "Pavadinimas",
+        "type": "Tipas",
+        "status": "Būsena",
+        "camera": "Kamera",
+        "edgeNode": "Krašto mazgas",
+        "requestedBy": "Užklausė",
+        "requestedAt": "Užklausta",
+        "leasedAt": "Perduota mazgui",
+        "doneAt": "Atlikta",
+        "error": "Klaida",
+        "params": "Parametrai",
+        "result": "Rezultatas",
+        "hasFile": "Kadras",
+        "fileKey": "Kadro raktas",
+        "createdAt": "Sukurta",
+        "modifiedAt": "Pakeista"
+    },
+    "links": {
+        "camera": "Kamera",
+        "edgeNode": "Krašto mazgas",
+        "requestedBy": "Užklausė"
+    },
+    "options": {
+        "type": {
+            "Snapshot": "Kadras",
+            "Clips": "Įrašai"
+        },
+        "status": {
+            "Queued": "Eilėje",
+            "Leased": "Išduota",
+            "Done": "Atlikta",
+            "Failed": "Nepavyko",
+            "Expired": "Pasibaigė"
+        }
+    },
+    "labels": {
+        "Overview": "Apžvalga"
+    }
+}

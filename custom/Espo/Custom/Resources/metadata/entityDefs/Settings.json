@@ -49,7 +49,9 @@
                 "assistant",
                 "anpr",
                 "cameras",
-                "clientAssistant"
+                "clientAssistant",
+                "accounting",
+                "loyalty"
             ],
             "tooltip": true
         },

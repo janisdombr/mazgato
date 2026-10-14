@@ -1,0 +1,97 @@
+{
+    "labels": {
+        "save": "Сохранить",
+        "saved": "Сохранено",
+        "clear": "Удалить",
+        "secretSet": "задан - оставьте пустым, чтобы сохранить",
+        "moduleOff": "Модуль выключен в Настройки → Включённые модули (по умолчанию ВЫКЛЮЧЕН).",
+        "loading": "Загрузка…",
+        "loadError": "Не удалось загрузить данные",
+        "retry": "Повторить",
+        "intro": "Завершённые заказы отправляются в бухгалтерскую программу по одному разу. Частное лицо записывается на одного общего клиента (персональные данные из CRM не уходят); компания с регистрационным номером - по номеру. Менять настройки может только администратор.",
+        "test": "Проверить соединение",
+        "testOk": "Соединение работает",
+        "testFail": "Соединение не удалось",
+        "run": "Отправить сейчас",
+        "runResult": "Отправлено {sent}, ошибок {failed}, пропущено {skipped}, ещё ждут {pending}",
+        "enqueue": "Поставить в очередь завершённые заказы периода",
+        "queued": "Поставлено в очередь: {n}",
+        "resendAll": "Отправить ошибочные заново",
+        "requeued": "Снова в очереди: {n}",
+        "summary": "Сверить период",
+        "dateFrom": "С",
+        "dateTo": "По",
+        "sent": "Отправлено",
+        "failedN": "Ошибки",
+        "pending": "Ожидают",
+        "skippedN": "Пропущено",
+        "failedList": "Документы с ошибкой",
+        "missingList": "Завершённые заказы, не попавшие в очередь",
+        "driftList": "Отправлено, но заказ потом изменён (исправьте в бухгалтерской программе, например кредит-нотой)",
+        "none": "Нет",
+        "order": "Заказ",
+        "error": "Ошибка",
+        "attempts": "Попытки",
+        "amount": "Сумма",
+        "sentNow": "Сейчас",
+        "resend": "Отправить снова",
+        "totals": "Заказов на {a} / отправлено на {b}",
+        "testModeOn": "ТЕСТОВЫЙ РЕЖИМ: запросы идут на поддельный сервер, а не к провайдеру.",
+        "noProvider": "Сначала выберите программу.",
+        "verifyNote": "Ещё не проверено на живом аккаунте программы - сначала пройдите чек-лист владельца в docs/ACCOUNTING_INTEGRATIONS.md на ТЕСТОВОЙ компании.",
+        "listLink": "Открыть полный журнал"
+    },
+    "groups": {
+        "general": "Что и когда",
+        "merit": "Merit Aktiva",
+        "smart": "SmartAccounts",
+        "mapping": "Соответствие программе"
+    },
+    "fields": {
+        "accountingProvider": "Бухгалтерская программа",
+        "accountingMode": "Режим",
+        "accountingStartDate": "Первая выгрузка с (дата визита)",
+        "accountingBatchTime": "Время пакета (местное)",
+        "accountingMeritHost": "Регион Merit",
+        "accountingMeritId": "Merit API ID",
+        "accountingMeritKey": "Merit API ключ",
+        "accountingMeritIban": "Банковский счёт Merit (IBAN) для поздних оплат",
+        "accountingSmartId": "SmartAccounts публичный API ключ",
+        "accountingSmartKey": "SmartAccounts секретный ключ",
+        "accountingRetailName": "Общий клиент для частных лиц",
+        "accountingItemCodeBase": "Код позиции основной мойки",
+        "accountingItemCodeAddon": "Код позиции допов",
+        "accountingNumberPrefix": "Префикс номера счёта",
+        "accountingDueDays": "Дней на оплату для заказов по счёту",
+        "accountingVatId21": "Id НДС 21% в программе (пусто = найти)",
+        "accountingVatId0": "Id НДС 0% в программе (пусто = найти)",
+        "accountingPayMethodCash": "Название способа оплаты для наличных",
+        "accountingPayMethodCard": "Название способа оплаты для карты",
+        "accountingPayAccountCash": "Касса (SmartAccounts, поздние оплаты)",
+        "accountingPayAccountCard": "Банковский счёт (SmartAccounts, поздние оплаты)"
+    },
+    "hints": {
+        "accountingStartDate": "Ничего раньше этой даты не отправляется. Пусто = автоматически ничего не уходит.",
+        "accountingMode": "Вручную: только то, что вы поставили в очередь. Автоматически: каждый завершённый заказ ставится в очередь и уходит за минуты. Пакет: в очередь сразу, отправка после времени пакета.",
+        "accountingRetailName": "Отображается в программе как покупатель всех частных продаж.",
+        "accountingPayMethodCash": "Должен уже существовать в программе.",
+        "accountingMeritId": "Merit: Settings → API Settings. Ключ больше не показывается.",
+        "accountingSmartKey": "SmartAccounts: Settings → Connected services → API."
+    },
+    "options": {
+        "accountingProvider": {
+            "off": "Выключено",
+            "merit": "Merit Aktiva",
+            "smartaccounts": "SmartAccounts"
+        },
+        "accountingMode": {
+            "manual": "Вручную",
+            "auto": "Автоматически после завершения",
+            "batch": "Пакетом в конце дня"
+        },
+        "accountingMeritHost": {
+            "ee": "Эстония (aktiva.merit.ee)",
+            "pl": "Польша (360ksiegowosc.pl)"
+        }
+    }
+}

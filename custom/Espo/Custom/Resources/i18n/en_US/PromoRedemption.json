@@ -1,0 +1,28 @@
+{
+    "fields": {
+        "name": "Code",
+        "promoCode": "Promo code",
+        "washOrder": "Order",
+        "customer": "Customer",
+        "amount": "Discount, EUR",
+        "status": "Status",
+        "createdAt": "Created",
+        "modifiedAt": "Modified"
+    },
+    "links": {
+        "promoCode": "Promo code",
+        "washOrder": "Order",
+        "customer": "Customer"
+    },
+    "labels": {
+        "PromoRedemption": "Promo redemption",
+        "Overview": "Overview"
+    },
+    "options": {
+        "status": {
+            "Reserved": "Reserved",
+            "Used": "Used",
+            "Released": "Released"
+        }
+    }
+}

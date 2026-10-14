@@ -1,0 +1,41 @@
+{
+    "fields": {
+        "name": "Pavadinimas",
+        "washOrder": "Užsakymas",
+        "kind": "Rūšis",
+        "source": "Šaltinis",
+        "file": "Nuotrauka",
+        "employee": "Darbuotojas",
+        "takenAt": "Nufotografuota",
+        "retainUntil": "Saugoti iki",
+        "note": "Pastaba",
+        "createdAt": "Sukurta",
+        "modifiedAt": "Pakeista"
+    },
+    "links": {
+        "washOrder": "Užsakymas",
+        "employee": "Darbuotojas"
+    },
+    "options": {
+        "kind": {
+            "Before": "Prieš",
+            "After": "Po",
+            "Entry": "Įvažiavimas",
+            "Exit": "Išvažiavimas",
+            "Other": "Kita"
+        },
+        "source": {
+            "Kiosk": "Planšetė",
+            "Camera": "Kamera",
+            "Manual": "Rankinis"
+        }
+    },
+    "tooltips": {
+        "retainUntil": "Nuotrauka automatiškai ištrinama po šios datos (saugojimas nustatomas skiltyje Nustatymai).",
+        "source": "Iš kur nuotrauka: darbuotojo planšetė, kamera ar rankinis įkėlimas."
+    },
+    "labels": {
+        "Create OrderPhoto": "Pridėti nuotrauką",
+        "Photos": "Nuotraukos"
+    }
+}

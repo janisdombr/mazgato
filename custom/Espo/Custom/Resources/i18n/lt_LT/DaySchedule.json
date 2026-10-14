@@ -1,0 +1,14 @@
+{
+    "labels": {
+        "title": "Dienos tvarkaraštis",
+        "bay": "Postas",
+        "today": "Šiandien",
+        "prev": "Ankstesnė diena",
+        "next": "Kita diena",
+        "closed": "Šią dieną uždaryta",
+        "empty": "Automobilių neužregistruota.",
+        "start": "Pradėti",
+        "noShow": "Neatvyko",
+        "min": "min."
+    }
+}

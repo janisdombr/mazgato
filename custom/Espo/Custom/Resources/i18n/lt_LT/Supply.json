@@ -1,0 +1,69 @@
+{
+    "fields": {
+        "name": "Pavadinimas",
+        "unit": "Vienetas",
+        "stockQuantity": "Sandėlyje",
+        "reorderLevel": "Užsakymo riba",
+        "needsReorder": "Reikia užsakyti",
+        "unitCost": "Vieneto savikaina",
+        "supplier": "Tiekėjas",
+        "description": "Pastabos",
+        "usages": "Naudoja paslaugos",
+        "movements": "Judėjimo žurnalas"
+    },
+    "links": {
+        "usages": "Naudoja paslaugos",
+        "movements": "Judėjimo žurnalas"
+    },
+    "options": {
+        "unit": {
+            "L": "l",
+            "ml": "ml",
+            "kg": "kg",
+            "g": "g",
+            "pcs": "vnt."
+        }
+    },
+    "tooltips": {
+        "stockQuantity": "Dabartinės atsargos. Keiskite per „Priėmimas“ (gaunama) arba „Inventorizacija“ (skaičiavimas); užsakymai nurašo jas patys. Kiekvienas pakeitimas yra judėjimo žurnale.",
+        "reorderLevel": "Kai atsargos pasiekia šią ribą, medžiaga pažymima užsakymui.",
+        "needsReorder": "Nustatoma automatiškai, kai atsargos ≤ užsakymo ribos. Filtruokite sąrašą pagal tai, kad suplanuotumėte pirkimus."
+    },
+    "labels": {
+        "usageReport": "Sunaudojimo ataskaita",
+        "Create Supply": "Sukurti medžiagą",
+        "receipt": "Priėmimas",
+        "stocktake": "Inventorizacija",
+        "movementsLog": "Judėjimo žurnalas",
+        "receiptsList": "Priėmimai",
+        "receiptHeader": "Prekių priėmimas",
+        "supplier": "Tiekėjas",
+        "invoiceNumber": "Sąskaitos Nr.",
+        "receiptDate": "Data",
+        "chooseSupply": "— medžiaga —",
+        "qtyCol": "Kiekis",
+        "priceCol": "Vieneto kaina, €",
+        "sumCol": "Suma, €",
+        "addLine": "+ Pridėti eilutę",
+        "removeLine": "Pašalinti eilutę",
+        "receiptTotal": "Iš viso",
+        "postReceipt": "Užregistruoti priėmimą",
+        "receiptPosted": "Priėmimas užregistruotas",
+        "costHint": "Vieneto savikaina perskaičiuojama (svertinė); tuščia kaina palieka ją nepakeistą.",
+        "stocktakeHeader": "Inventorizacija",
+        "stocktakeReason": "Priežastis (privaloma)",
+        "reasonPlaceholder": "pvz., mėnesio skaičiavimas",
+        "systemQty": "Sistemoje",
+        "countedQty": "Suskaičiuota",
+        "diffCol": "Skirtumas",
+        "unitCol": "Vnt.",
+        "stocktakeHint": "Užpildykite tik tai, ką suskaičiavote; tuščios eilutės lieka nepakeistos. Skirtumai patenka į žurnalą su jūsų vardu ir priežastimi.",
+        "postStocktake": "Užregistruoti inventorizaciją",
+        "stocktakeDone": "Inventorizacija užregistruota",
+        "differencesWord": "skirtumai",
+        "nothingCounted": "Nieko nesuskaičiuota",
+        "reasonRequired": "Įveskite priežastį",
+        "noLines": "Pridėkite bent vieną eilutę su medžiaga ir kiekiu",
+        "failed": "Nepavyko išsaugoti"
+    }
+}

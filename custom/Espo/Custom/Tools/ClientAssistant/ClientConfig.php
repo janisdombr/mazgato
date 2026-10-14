@@ -4,6 +4,8 @@ namespace Espo\Custom\Tools\ClientAssistant;
 
 use Espo\Core\Utils\Config;
 use Espo\Custom\Tools\Assistant\AssistantConfig;
+use Espo\Custom\Tools\Assistant\Providers;
+use Espo\Custom\Tools\Assistant\Secret;
 
 /**
  * Settings of the PUBLIC (customer-facing) chat. It is an AssistantConfig, so the Loop and the
@@ -38,27 +40,73 @@ class ClientConfig extends AssistantConfig
         return $v === null || $v === '' || !is_numeric($v) ? $default : max($min, min($max, (int) $v));
     }
 
-    private function modelOr(string $key, string $default): string
-    {
-        $v = trim((string) $this->src->get($key, ''));
-
-        return preg_match('/^claude-[a-z0-9.\-]{2,60}$/', $v) ? $v : $default;
-    }
-
-    /** off | anthropic | scripted (scripted only while the shared test mode is on). */
+    /** off | a catalogue provider (Providers::CATALOG) | scripted (only while the shared test mode is on). */
     public function provider(): string
     {
         if ($this->testMode() && (string) $this->src->get('assistantProvider') === 'scripted') {
             return 'scripted';
         }
 
-        return (string) $this->src->get('clientAssistantProvider', 'off') === 'anthropic' ? 'anthropic' : 'off';
+        $p = (string) $this->src->get('clientAssistantProvider', 'off');
+
+        return Providers::has($p) ? $p : 'off';
     }
 
-    // A public chat is a cheap FAQ + booking helper: the small model by default.
-    public function model(): string { return $this->modelOr('clientAssistantModel', self::DEFAULT_FALLBACK); }
+    /**
+     * The chat's key: its own (`clientAssistantApiKey`, internal, write-only) - a different provider needs a different key.
+     * Anthropic falls back to the staff assistant's shared key. In test mode the shared key is used for any provider,
+     * so the tests need not touch a real key.
+     */
+    public function key(): Secret
+    {
+        $shared = parent::key();
 
-    public function fallbackModel(): string { return $this->modelOr('clientAssistantFallbackModel', self::DEFAULT_FALLBACK); }
+        if ($this->testMode() && $shared->isSet()) {
+            return $shared;
+        }
+
+        $own = trim((string) $this->src->get('clientAssistantApiKey', ''));
+
+        if ($own !== '') {
+            return new Secret($own);
+        }
+
+        return $this->provider() === 'anthropic' ? $shared : new Secret('');
+    }
+
+    public function isConfigured(): bool
+    {
+        $p = $this->provider();
+
+        return $p === 'scripted' || (Providers::has($p) && $this->key()->isSet());
+    }
+
+    /**
+     * The provider's fixed base URL. Only the test mode may point elsewhere (a mock server), so a stored value can
+     * never redirect the key to an arbitrary host.
+     */
+    public function apiBase(): string
+    {
+        $b = rtrim((string) $this->src->get('assistantApiBase', ''), '/');
+
+        if ($this->testMode() && preg_match('#^https?://[^\s]+$#', $b)) {
+            return $b;
+        }
+
+        return Providers::get($this->provider())['base'];
+    }
+
+    private function modelOr(string $key, string $default): string
+    {
+        $v = trim((string) $this->src->get($key, ''));
+
+        return Providers::validModel($this->provider(), $v) ? $v : $default;
+    }
+
+    // A public chat is a cheap FAQ + booking helper: the provider's small model by default.
+    public function model(): string { return $this->modelOr('clientAssistantModel', Providers::get($this->provider())['model']); }
+
+    public function fallbackModel(): string { return $this->modelOr('clientAssistantFallbackModel', Providers::get($this->provider())['model']); }
 
     public function effort(): string { return ''; }
 

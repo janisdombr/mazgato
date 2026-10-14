@@ -10,7 +10,37 @@
         "rateReset": "Ierobežojumi atiestatīti",
         "loading": "Ielādē…",
         "loadError": "Neizdevās ielādēt datus",
-        "retry": "Mēģināt vēlreiz"
+        "retry": "Mēģināt vēlreiz",
+        "calcTitle": "Jaudas kalkulators",
+        "calcIntro": "Ko mazgātava var apkalpot ar augstāk norādītajiem skaitļiem (pirms saglabāšanas). Auto stundā un dienā rēķina tas pats plānotājs, kas piedāvā laikus klientiem.",
+        "calcService": "Pakalpojums",
+        "calcCars": "auto/dienā",
+        "calcPerHour": "stundā",
+        "calcLines": "līnijas",
+        "calcOnline": "tiešsaistē",
+        "calcClosed": "slēgts",
+        "calcMinutes": "min",
+        "calcCrew": "mazgātāji/auto",
+        "calcDayRow": "Dienas jauda (līniju minūtes)",
+        "calcNone": "Vēl nav aktīvu pamatpakalpojumu.",
+        "calcError": "Aprēķins neizdevās. Pārbaudiet skaitļus.",
+        "calcWarnings": "Pārbaudiet",
+        "warn_washers_lt_posts": "Mazgātāju ir mazāk nekā posteņu: daži posteņi nekad netiks izmantoti vienlaikus.",
+        "warn_online_share_zero": "Tiešsaistes daļa ir 0 %: forma un čats nepiedāvās laikus.",
+        "warn_no_duration": "Ilgums nav norādīts: pieņemtas 30 minūtes.",
+        "warn_buffer_gt_duration": "Starplaiks starp auto ir garāks par pašu mazgāšanu.",
+        "warn_hour_cap_binds": "Auto stundā ierobežojums ir zemāks nekā līnijas spētu.",
+        "warn_day_cap_binds": "Auto dienā ierobežojums ir zemāks nekā diena spētu.",
+        "warn_crew_exceeds_washers": "Šim pakalpojumam vajag vairāk mazgātāju, nekā ir maiņā: to nevar pierakstīt.",
+        "warn_bays_idle": "Mazgātāji (÷ brigāde) ierobežo līnijas zem posteņu skaita: daļa posteņu stāv tukša.",
+        "warn_longer_than_day": "Mazgāšana kopā ar starplaiku ir garāka par darba laiku.",
+        "Mon": "Pr",
+        "Tue": "Ot",
+        "Wed": "Tr",
+        "Thu": "Ce",
+        "Fri": "Pk",
+        "Sat": "Se",
+        "Sun": "Sv"
     },
     "groups": {
         "hours": "Darba laiks",
@@ -40,7 +70,12 @@
         "bookingMinFillSeconds": "Minimālās sekundes formas aizpildei",
         "turnstileSiteKey": "Turnstile vietnes atslēga (publiskā)",
         "turnstileSecret": "Turnstile slepenā atslēga",
-        "turnstileHostname": "Sagaidāmais domēns (neobligāti)"
+        "turnstileHostname": "Sagaidāmais domēns (neobligāti)",
+        "bookingWashers": "Mazgātāji maiņā",
+        "bookingWashersByWeekday": "Mazgātāji pa nedēļas dienām (pēc izvēles)",
+        "bookingCrewDefault": "Mazgātāji vienam auto",
+        "bookingDayCapacityPercent": "Dienas daļa tiešsaistes pierakstam, %",
+        "bookingMaxCarsPerDay": "Maks. auto dienā (0 = tikai aprēķinātais)"
     },
     "hints": {
         "bookingHoursMon": "HH:MM-HH:MM. Ierakstiet 'closed', lai diena būtu slēgta; tukšs = noklusējuma laiks.",
@@ -49,6 +84,11 @@
         "bookingReminderHours": "Nepieciešams CRM cron (BookingMaintenance, ik 5 min).",
         "turnstileSiteKey": "No Cloudflare paneļa (Turnstile). Publiska: tiek rādīta apmeklētājiem. Tukšs = nav robotu pārbaudes.",
         "turnstileSecret": "Tikai ierakstīšanai: tiek glabāta serverī un netiek rādīta. Pārbaude ieslēgta tikai, kamēr slepenā atslēga ir norādīta; ja Cloudflare nav sasniedzams, pieraksts tiek noraidīts (slēgts).",
-        "turnstileHostname": "Tukšs = CRM adreses domēns. Tikai testiem (Cloudflare testa atslēgas atbild ar example.com)."
+        "turnstileHostname": "Tukšs = CRM adreses domēns. Tikai testiem (Cloudflare testa atslēgas atbild ar example.com).",
+        "bookingWashers": "Tukšs = pa vienam uz posteni, tāpēc nekas nemainās. Nevienā minūtē netiek mazgāts vairāk auto nekā posteņu, un šo auto mazgātāju summa nepārsniedz šo skaitli.",
+        "bookingWashersByWeekday": "Pēc izvēles: \"Sat=4, Sun=4\" (Mon Tue Wed Thu Fri Sat Sun). Nenorādītai dienai ir skaitlis iepriekš.",
+        "bookingCrewDefault": "Noklusējums visiem pakalpojumiem; pakalpojums var to mainīt. Līnijas = posteņi vai mazgātāji / brigāde, kas ir mazāk.",
+        "bookingDayCapacityPercent": "Forma un čats pārstāj piedāvāt laikus, kad šī dienas daļa (līnijas x darba minūtes) ir aizpildīta. Klātienes auto un darbinieku pieraksti izmanto visu dienu. Tukšs = 100.",
+        "bookingMaxCarsPerDay": "Stingrs auto skaita ierobežojums dienā (pierakstīti, uz posteņiem un pabeigti); vadītājs to var apzināti pārsniegt."
     }
 }

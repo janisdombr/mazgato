@@ -38,7 +38,12 @@
         "Stocktake": "Stocktake",
         "StocktakeLine": "Stocktake line",
         "RevenueReports": "Revenue reports and statistics",
-        "ClientChatMessage": "Chat message"
+        "ClientChatMessage": "Chat message",
+        "AccountingSync": "Accounting sync",
+        "PromoCode": "Promo code",
+        "PromoRedemption": "Promo redemption",
+        "LoyaltyLedger": "Points entry",
+        "CapacityOverride": "Book over capacity (reservations)"
     },
     "scopeNamesPlural": {
         "Customer": "Customers",
@@ -79,7 +84,12 @@
         "Stocktake": "Stocktakes",
         "StocktakeLine": "Stocktake lines",
         "RevenueReports": "Revenue reports and statistics",
-        "ClientChatMessage": "Chat messages"
+        "ClientChatMessage": "Chat messages",
+        "AccountingSync": "Accounting sync log",
+        "PromoCode": "Promo codes",
+        "PromoRedemption": "Promo redemptions",
+        "LoyaltyLedger": "Points ledger",
+        "CapacityOverride": "Book over capacity (reservations)"
     },
     "dashlets": {
         "QuickIntake": "Quick Intake",
@@ -93,7 +103,8 @@
         "DaySchedule": "Day schedule",
         "Assistant": "Assistant",
         "Gate": "At the entrance",
-        "QuickStart": "Setup check"
+        "QuickStart": "Setup check",
+        "CalendarWeek": "Order calendar"
     },
     "labels": {
         "listTotals": "Totals",

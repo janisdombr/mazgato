@@ -1,0 +1,97 @@
+{
+    "labels": {
+        "save": "Saglabāt",
+        "saved": "Saglabāts",
+        "clear": "Noņemt",
+        "secretSet": "iestatīts - atstāj tukšu, lai paturētu",
+        "moduleOff": "Šis modulis ir izslēgts sadaļā Iestatījumi → Ieslēgtie moduļi (pēc noklusējuma IZSLĒGTS).",
+        "loading": "Ielādē…",
+        "loadError": "Neizdevās ielādēt datus",
+        "retry": "Mēģināt vēlreiz",
+        "intro": "Pabeigtie pasūtījumi tiek nosūtīti grāmatvedības programmai vienu reizi. Privātpersona tiek uzskaitīta uz vienu vispārīgu klientu (personas dati no CRM neaiziet); uzņēmums ar reģistrācijas numuru - pēc numura. Iestatījumus maina tikai administrators.",
+        "test": "Pārbaudīt savienojumu",
+        "testOk": "Savienojums darbojas",
+        "testFail": "Savienojums neizdevās",
+        "run": "Sūtīt tagad",
+        "runResult": "Nosūtīti {sent}, kļūdas {failed}, izlaisti {skipped}, vēl gaida {pending}",
+        "enqueue": "Ievietot rindā perioda pabeigtos pasūtījumus",
+        "queued": "Ievietoti rindā: {n}",
+        "resendAll": "Sūtīt kļūdainos vēlreiz",
+        "requeued": "Atkal rindā: {n}",
+        "summary": "Salīdzināt periodu",
+        "dateFrom": "No",
+        "dateTo": "Līdz",
+        "sent": "Nosūtīti",
+        "failedN": "Kļūdas",
+        "pending": "Gaida",
+        "skippedN": "Izlaisti",
+        "failedList": "Dokumenti ar kļūdu",
+        "missingList": "Pabeigti pasūtījumi, kas nav nonākuši rindā",
+        "driftList": "Nosūtīts, bet pasūtījums vēlāk mainīts (labo grāmatvedības programmā, piem., ar kredītrēķinu)",
+        "none": "Nav",
+        "order": "Pasūtījums",
+        "error": "Kļūda",
+        "attempts": "Mēģinājumi",
+        "amount": "Summa",
+        "sentNow": "Tagad",
+        "resend": "Sūtīt vēlreiz",
+        "totals": "Pasūtījumi kopā {a} / nosūtīti {b}",
+        "testModeOn": "TESTA REŽĪMS: pieprasījumi iet uz viltotu serveri, nevis pie pakalpojuma sniedzēja.",
+        "noProvider": "Vispirms izvēlies programmu.",
+        "verifyNote": "Vēl nav pārbaudīts programmas dzīvajā kontā - vispirms izpildi īpašnieka kontrolsarakstu docs/ACCOUNTING_INTEGRATIONS.md uz TESTA uzņēmuma.",
+        "listLink": "Atvērt pilno žurnālu"
+    },
+    "groups": {
+        "general": "Ko un kad",
+        "merit": "Merit Aktiva",
+        "smart": "SmartAccounts",
+        "mapping": "Atbilstība programmai"
+    },
+    "fields": {
+        "accountingProvider": "Grāmatvedības programma",
+        "accountingMode": "Režīms",
+        "accountingStartDate": "Pirmā eksportēšana no (apmeklējuma datums)",
+        "accountingBatchTime": "Pakešu laiks (vietējais)",
+        "accountingMeritHost": "Merit reģions",
+        "accountingMeritId": "Merit API ID",
+        "accountingMeritKey": "Merit API atslēga",
+        "accountingMeritIban": "Merit bankas konts (IBAN) vēlākiem maksājumiem",
+        "accountingSmartId": "SmartAccounts publiskā API atslēga",
+        "accountingSmartKey": "SmartAccounts slepenā atslēga",
+        "accountingRetailName": "Vispārīgais klients privātpersonām",
+        "accountingItemCodeBase": "Pamata mazgāšanas preces kods",
+        "accountingItemCodeAddon": "Papildpakalpojumu preces kods",
+        "accountingNumberPrefix": "Rēķina numura priedēklis",
+        "accountingDueDays": "Apmaksas dienas rēķina pasūtījumiem",
+        "accountingVatId21": "21% PVN id programmā (tukšs = atrast)",
+        "accountingVatId0": "0% PVN id programmā (tukšs = atrast)",
+        "accountingPayMethodCash": "Maksāšanas veida nosaukums skaidrai naudai",
+        "accountingPayMethodCard": "Maksāšanas veida nosaukums kartei",
+        "accountingPayAccountCash": "Kases konts (SmartAccounts, vēlāki maksājumi)",
+        "accountingPayAccountCard": "Bankas konts (SmartAccounts, vēlāki maksājumi)"
+    },
+    "hints": {
+        "accountingStartDate": "Neviens dokuments pirms šī datuma netiks sūtīts. Tukšs = automātiski nekas netiek sūtīts.",
+        "accountingMode": "Manuāli: tikai tas, ko ievieto rindā. Automātiski: katrs pabeigts pasūtījums tiek ievietots rindā un nosūtīts dažu minūšu laikā. Pakete: rindā uzreiz, sūta pēc pakešu laika.",
+        "accountingRetailName": "Programmā redzams kā katra privātā pārdevuma pircējs.",
+        "accountingPayMethodCash": "Jābūt jau izveidotam programmā.",
+        "accountingMeritId": "Merit: Settings → API Settings. Atslēga vairs netiek rādīta.",
+        "accountingSmartKey": "SmartAccounts: Settings → Connected services → API."
+    },
+    "options": {
+        "accountingProvider": {
+            "off": "Izslēgts",
+            "merit": "Merit Aktiva",
+            "smartaccounts": "SmartAccounts"
+        },
+        "accountingMode": {
+            "manual": "Manuāli",
+            "auto": "Automātiski pēc pabeigšanas",
+            "batch": "Pakete dienas beigās"
+        },
+        "accountingMeritHost": {
+            "ee": "Igaunija (aktiva.merit.ee)",
+            "pl": "Polija (360ksiegowosc.pl)"
+        }
+    }
+}

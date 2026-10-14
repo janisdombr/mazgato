@@ -37,7 +37,7 @@ define(['custom:views/dashlets/base', 'custom:lib/period'], function (Dep, Perio
         // Role names are data — localize them through the Translation table.
         loadTranslations: function () {
             var lang = this.getPreferences().get('language') || this.getConfig().get('language') || 'lv_LV';
-            var field = {lv_LV: 'textLv', ru_RU: 'textRu', en_US: 'textEn'}[lang];
+            var field = {lv_LV: 'textLv', ru_RU: 'textRu', en_US: 'textEn', lt_LT: 'textLt'}[lang];
 
             if (!field) { this.trMap = {}; return Promise.resolve(); }
 

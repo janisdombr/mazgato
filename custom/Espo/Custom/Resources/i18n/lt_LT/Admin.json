@@ -1,0 +1,46 @@
+{
+    "labels": {
+        "siteContent": "Svetainės turinys",
+        "siteContentHint": "Puslapio HTML išsaugomas ir iškart paskelbiamas. Prieš redaguodami nukopijuokite dabartinį turinį. Netinkamas HTML gali sugadinti puslapio išdėstymą.",
+        "siteContentMissing": "Šio puslapio dar nėra — išsaugojus jis bus sukurtas.",
+        "siteVersions": "Versijos",
+        "siteVersionLoaded": "Versija įkelta į redaktorių — spauskite „Išsaugoti“, kad ją atkurtumėte.",
+        "carwashPanel": "Plovykla",
+        "brand": "Prekės ženklas",
+        "Identity": "Tapatybė",
+        "Documents": "Dokumentai",
+        "Mail": "Paštas",
+        "kiosk": "Planšetės",
+        "booking": "Registracija internetu",
+        "clientMessages": "Pranešimai",
+        "assistant": "DI asistentas",
+        "anpr": "Numeriai ir kameros",
+        "license": "Licencija",
+        "accountingExport": "Buhalterinis eksportas",
+        "importCustomers": "Klientų importas",
+        "quickStart": "Greita pradžia",
+        "clientAssistant": "Klientų pokalbis (DI)",
+        "carwashRoles": "Rolės ir prieiga",
+        "accountingIntegration": "Buhalterijos integracija",
+        "loyalty": "Lojalumas"
+    },
+    "messages": {
+        "brandReload": "Išsaugota. Prekės ženklo spalva ir pavadinimas pritaikomi perkrovus puslapį."
+    },
+    "descriptions": {
+        "brand": "Kliento logotipas, pavadinimas, spalva, dokumento antraštė ir parašas.",
+        "kiosk": "Darbuotojo planšetė: įrenginiai, PIN kodai, veiksmų žurnalas ir nustatymai.",
+        "booking": "Viešas registracijos puslapis: valandos, postai, laikai, priminimai, apsaugos.",
+        "clientMessages": "Žinutės „automobilis paruoštas“ ir registracijos žinutės: kanalai, prisijungimo duomenys, atsiliepimo nuoroda, bandomasis siuntimas.",
+        "assistant": "Vadovo asistentas: tiekėjas, raktas, modeliai, ribos, privatumas, kaina.",
+        "anpr": "Numerių atpažinimas: krašto mazgai, kameros, ribos, saugojimas ir privatumas.",
+        "license": "Pasirašyta modulių licencija: įdiegimo ID, įkėlimas, būsena, lengvatinis laikotarpis.",
+        "accountingExport": "Įvykdytų užsakymų pardavimų žurnalas buhalteriui: CSV arba XML.",
+        "importCustomers": "Klientai ir automobiliai iš ankstesnės sistemos CSV: pirmiausia patikra, jokių dublikatų.",
+        "quickStart": "Kainos, darbai, įkainiai ir darbuotojai vienoje lentelėje su išsamumo patikra.",
+        "clientAssistant": "Viešas DI pokalbis lankytojams: įjungti / išjungti, žinios, ribos, išlaidų riba, bandymas.",
+        "carwashRoles": "Trys lygiai paprastais žodžiais: ką gali savininkas, vadovas ir operatorius; vartotojai ir jų rolės.",
+        "accountingIntegration": "Siųsti įvykdytus užsakymus į buhalterinę programą: Merit Aktiva, SmartAccounts. Eilė, pakartojimai, bandymas.",
+        "loyalty": "Kas N-tas plovimas nemokamas: nustatymai. Akcijos kodai yra Akcijos kodų sąraše."
+    }
+}

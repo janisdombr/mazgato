@@ -20,7 +20,9 @@
         "importCustomers": "Import customers",
         "quickStart": "Quick start",
         "clientAssistant": "Customer chat (AI)",
-        "carwashRoles": "Roles and access"
+        "carwashRoles": "Roles and access",
+        "accountingIntegration": "Accounting integration",
+        "loyalty": "Loyalty"
     },
     "messages": {
         "brandReload": "Saved. The brand colour and name apply after a page reload."
@@ -37,6 +39,8 @@
         "importCustomers": "Customers and cars from a CSV of the previous system: check first, no duplicates.",
         "quickStart": "Prices, works, rates and staff in one table, with a completeness check.",
         "clientAssistant": "Public AI chat for visitors: on/off, knowledge, limits, cost ceiling, test.",
-        "carwashRoles": "Three levels in plain words: what the owner, manager and operator may do; users and their roles."
+        "carwashRoles": "Three levels in plain words: what the owner, manager and operator may do; users and their roles.",
+        "accountingIntegration": "Send completed orders to the accounting program: Merit Aktiva, SmartAccounts. Queue, retries, test.",
+        "loyalty": "Every N-th wash free: settings. Promo codes are in the Promo codes list."
     }
 }

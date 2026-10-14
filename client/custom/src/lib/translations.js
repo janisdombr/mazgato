@@ -5,7 +5,7 @@
  */
 define(function () {
 
-    var FIELD = {lv_LV: 'textLv', ru_RU: 'textRu', en_US: 'textEn'};
+    var FIELD = {lv_LV: 'textLv', ru_RU: 'textRu', en_US: 'textEn', lt_LT: 'textLt'};
     var promise = null;
     var map = null;
 

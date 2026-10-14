@@ -1,0 +1,38 @@
+{
+    "fields": {
+        "name": "Judėjimas",
+        "kind": "Rūšis",
+        "supply": "Medžiaga",
+        "delta": "Pokytis",
+        "quantityBefore": "Prieš",
+        "quantityAfter": "Po",
+        "unitCost": "Vieneto savikaina",
+        "reason": "Priežastis",
+        "occurredAt": "Kada",
+        "washOrder": "Užsakymas",
+        "receipt": "Priėmimas",
+        "stocktake": "Inventorizacija",
+        "createdBy": "Kas"
+    },
+    "links": {
+        "supply": "Medžiaga",
+        "washOrder": "Užsakymas",
+        "receipt": "Priėmimas",
+        "stocktake": "Inventorizacija",
+        "createdBy": "Kas"
+    },
+    "options": {
+        "kind": {
+            "Receipt": "Priėmimas",
+            "Consumption": "Sunaudota pagal užsakymą",
+            "Stocktake": "Inventorizacija",
+            "Manual": "Rankinis pakeitimas"
+        }
+    },
+    "tooltips": {
+        "unitCost": "Medžiagos vieneto savikaina po šio judėjimo."
+    },
+    "labels": {
+        "Create SupplyMovement": "Žurnalas tik skaitomas"
+    }
+}

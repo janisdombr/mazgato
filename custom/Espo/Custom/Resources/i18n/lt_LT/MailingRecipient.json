@@ -1,0 +1,29 @@
+{
+    "fields": {
+        "name": "Klientas",
+        "contact": "Kontaktas",
+        "status": "Pristatymo būsena",
+        "error": "Klaida",
+        "deliveredAt": "Pristatyta",
+        "customer": "Klientas",
+        "mailing": "Siuntimas"
+    },
+    "links": {
+        "customer": "Klientas",
+        "mailing": "Siuntimas"
+    },
+    "options": {
+        "status": {
+            "Pending": "Laukiama",
+            "Sent": "Išsiųsta",
+            "Failed": "Nepavyko",
+            "Skipped": "Praleista"
+        }
+    },
+    "tooltips": {
+        "contact": "El. paštas ar telefonas, kuriuo išsiųsta (pagal kanalą)."
+    },
+    "labels": {
+        "Create MailingRecipient": "Sukurti siuntimo gavėją"
+    }
+}

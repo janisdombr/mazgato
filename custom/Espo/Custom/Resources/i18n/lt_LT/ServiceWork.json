@@ -1,0 +1,20 @@
+{
+    "fields": {
+        "name": "Pavadinimas",
+        "service": "Paslauga",
+        "work": "Darbas",
+        "role": "Vaidmuo",
+        "sortOrder": "Rikiavimo eilė"
+    },
+    "links": {
+        "service": "Paslauga",
+        "work": "Darbas",
+        "role": "Vaidmuo"
+    },
+    "tooltips": {
+        "role": "Pakeičia darbo numatytąjį vaidmenį tik šiai paslaugai. Palikite tuščią, kad būtų naudojamas numatytasis."
+    },
+    "labels": {
+        "Create ServiceWork": "Sukurti paslaugos darbą"
+    }
+}

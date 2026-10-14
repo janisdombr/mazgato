@@ -29,7 +29,19 @@
         "language": "Message language",
         "notifyChannel": "Preferred channel",
         "telegramChatId": "Telegram chat",
-        "telegramLinkToken": "Telegram link token"
+        "telegramLinkToken": "Telegram link token",
+        "loyaltyWashes": "Counted washes (since the last free one)",
+        "loyaltyFreeEarned": "Free washes earned",
+        "loyaltyFreeUsed": "Free washes used",
+        "loyaltyFreeHeld": "Free wash reserved",
+        "loyaltyPoints": "Loyalty points",
+        "referralCode": "Referral code",
+        "referredBy": "Referred by",
+        "referredAt": "Referred on",
+        "referralState": "Referral reward",
+        "referralDueAt": "Reward due",
+        "referralOrderId": "Referral order",
+        "referralGen": "Referral reversals"
     },
     "labels": {
         "Marketing": "Marketing",
@@ -47,13 +59,40 @@
         "document": "Document",
         "documentInvoice": "Invoice",
         "documentAct": "Act of work performed",
-        "consentTab": "Consents and messages"
+        "consentTab": "Consents and messages",
+        "loyaltyPanel": "Loyalty",
+        "loyaltyCount": "Counted washes",
+        "loyaltyToNext": "Washes to the free one",
+        "loyaltyFreeNow": "The next wash is free",
+        "loyaltyFreeHeld": "The free wash is reserved for an order",
+        "loyaltyEarnedUsed": "Free washes: earned / used",
+        "loyaltyOff": "The free-wash scheme is off",
+        "pointsBalance": "Points",
+        "pointsWorth": "worth",
+        "pointsNextExpiry": "Next expiry",
+        "pointsNoExpiry": "no expiry",
+        "pointsAdjust": "Adjust points",
+        "pointsAdjustPoints": "Points (+ or -)",
+        "pointsAdjustReason": "Reason (required)",
+        "pointsAdjusted": "Points adjusted",
+        "ledgerTitle": "Last operations",
+        "ledgerNone": "No operations yet",
+        "referralCode": "Referral code",
+        "referralCopy": "Copy",
+        "referralCopied": "Copied",
+        "referredByLabel": "Referred by",
+        "referralCounts": "Referred / rewarded",
+        "referralPoints": "Points from referrals",
+        "referralWaiting": "The reward is waiting for the hold period",
+        "cancel": "Cancel",
+        "confirm": "Apply"
     },
     "links": {
         "vehicles": "Vehicles",
         "orders": "Orders",
         "drivers": "Drivers",
-        "subscriptions": "Subscriptions"
+        "subscriptions": "Subscriptions",
+        "referredBy": "Referred by"
     },
     "tooltips": {
         "isCorporate": "Enable for legal entities. Corporate customers can be issued a VAT invoice (rēķins) and use corporate pricing.",
@@ -74,7 +113,9 @@
             "": "System default",
             "lv_LV": "Latviešu",
             "ru_RU": "Русский",
-            "en_US": "English"
+            "en_US": "English",
+            "et_EE": "Eesti",
+            "lt_LT": "Lietuvių"
         },
         "notifyChannel": {
             "Auto": "Automatic (first available)",
@@ -82,6 +123,12 @@
             "WhatsApp": "WhatsApp",
             "Sms": "SMS",
             "Telegram": "Telegram"
+        },
+        "referralState": {
+            "": "—",
+            "Pending": "Waiting",
+            "Paid": "Paid",
+            "Reversed": "Taken back"
         }
     }
 }

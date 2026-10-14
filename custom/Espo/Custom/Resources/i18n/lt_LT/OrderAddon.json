@@ -1,0 +1,22 @@
+{
+    "fields": {
+        "name": "Pavadinimas",
+        "price": "Kaina",
+        "washOrder": "Užsakymas",
+        "service": "Paslauga",
+        "sortOrder": "Rikiavimo eilė",
+        "isBase": "Pagrindinis plovimas"
+    },
+    "links": {
+        "washOrder": "Užsakymas",
+        "service": "Paslauga"
+    },
+    "tooltips": {
+        "name": "Papildomos paslaugos pavadinimas, kaip jis rodomas kvite.",
+        "price": "Kaina, kuri iš tikrųjų paimta už šią papildomą paslaugą šiame užsakyme. Išsaugoma spausdinamam kvitui.",
+        "isBase": "Ši eilutė yra užsakymo pagrindinis plovimas, o ne papildoma paslauga."
+    },
+    "labels": {
+        "Create OrderAddon": "Sukurti užsakymo papildomą paslaugą"
+    }
+}

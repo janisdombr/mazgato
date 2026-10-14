@@ -1,0 +1,35 @@
+{
+    "fields": {
+        "name": "Dokumentas",
+        "supplier": "Tiekėjas",
+        "invoiceNumber": "Sąskaitos numeris",
+        "receiptDate": "Data",
+        "status": "Būsena",
+        "postedAt": "Užregistruota",
+        "postedBy": "Užregistravo",
+        "total": "Iš viso",
+        "note": "Pastaba",
+        "lines": "Eilutės",
+        "createdBy": "Sukūrė"
+    },
+    "links": {
+        "lines": "Eilutės",
+        "postedBy": "Užregistravo",
+        "createdBy": "Sukūrė"
+    },
+    "options": {
+        "status": {
+            "Draft": "Juodraštis",
+            "Posted": "Užregistruota"
+        }
+    },
+    "tooltips": {
+        "status": "Juodraštį galima redaguoti. Užregistravimas padidina atsargas lygiai vieną kartą; užregistruoto dokumento keisti ar trinti nebegalima."
+    },
+    "labels": {
+        "Create SupplyReceipt": "Naujas priėmimas",
+        "postReceipt": "Užregistruoti priėmimą",
+        "posted": "Priėmimas užregistruotas",
+        "alreadyPosted": "Jau užregistruota anksčiau — atsargos nepakeistos"
+    }
+}

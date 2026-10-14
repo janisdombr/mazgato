@@ -1,0 +1,20 @@
+{
+    "fields": {
+        "name": "Medžiaga",
+        "receipt": "Priėmimas",
+        "supply": "Medžiaga",
+        "quantity": "Kiekis",
+        "unitPrice": "Vieneto kaina",
+        "lineTotal": "Eilutės suma"
+    },
+    "links": {
+        "receipt": "Priėmimas",
+        "supply": "Medžiaga"
+    },
+    "tooltips": {
+        "unitPrice": "Vieneto savikaina be PVM. Palikite tuščią, kad savikaina nepasikeistų."
+    },
+    "labels": {
+        "Create SupplyReceiptLine": "Pridėti eilutę"
+    }
+}

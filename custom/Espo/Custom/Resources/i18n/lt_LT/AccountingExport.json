@@ -1,0 +1,24 @@
+{
+    "labels": {
+        "title": "Buhalterinis eksportas — pardavimų žurnalas",
+        "intro": "Laikotarpio įvykdyti užsakymai, po vieną kartą (tie patys užsakymai, kuriuos Statistika skaičiuoja kaip pajamas). Atšaukti ir nebaigti užsakymai neįtraukiami.",
+        "dateFrom": "Nuo",
+        "dateTo": "Iki",
+        "format": "Formatas",
+        "delimiter": "CSV skirtukas",
+        "decimal": "Dešimtainis skyriklis",
+        "lines": "Viena eilutė kiekvienai kaina pažymėtai eilutei (pagrindinis plovimas + papildomos paslaugos) vietoje vienos eilutės užsakymui",
+        "preview": "Peržiūra",
+        "download": "Atsisiųsti",
+        "downloaded": "Failas išsaugotas",
+        "loading": "Įkeliama…",
+        "error": "Nepavyko sudaryti eksporto",
+        "retry": "Bandyti dar kartą",
+        "orders": "užsakymų",
+        "gross": "iš viso",
+        "net": "be PVM",
+        "fiscalPending": "Grynųjų / kortelės pardavimai, dar laukiantys kasos kvito numerio",
+        "empty": "Šiuo laikotarpiu įvykdytų užsakymų nėra.",
+        "mapping": "Stulpeliai fiksuoti ir aprašyti (docs/FISCAL.md). Tai universalus žurnalas, o ne konkrečios buhalterinės programos importo formatas: susiekite stulpelius programos importe. „Jumis“ ir „Horizon“ importo specifikacijų patikrinti nepavyko — paprašykite tiekėjo importo aprašymo."
+    }
+}

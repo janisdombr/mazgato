@@ -11,7 +11,8 @@
         "modifiedAt": "Modified At",
         "workLines": "Works",
         "sortOrder": "Sort order",
-        "supplyLines": "Supply lines"
+        "supplyLines": "Supply lines",
+        "crewSize": "Washers needed"
     },
     "links": {
         "orders": "Orders",
@@ -26,7 +27,8 @@
         }
     },
     "tooltips": {
-        "sortOrder": "Order in lists and in the quick-intake form — a smaller number comes first."
+        "sortOrder": "Order in lists and in the quick-intake form — a smaller number comes first.",
+        "crewSize": "How many washers work on ONE car of this service at the same time. Empty = the default crew from Online booking -> Capacity. A complex wash that needs two people takes two washers away from the other cars."
     },
     "labels": {
         "sortServices": "Reorder",

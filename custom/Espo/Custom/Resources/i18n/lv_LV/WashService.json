@@ -11,7 +11,8 @@
         "modifiedAt": "Mainīts",
         "workLines": "Darbi",
         "sortOrder": "Kārtība",
-        "supplyLines": "Materiālu normas"
+        "supplyLines": "Materiālu normas",
+        "crewSize": "Nepieciešamie mazgātāji"
     },
     "links": {
         "orders": "Pasūtījumi",
@@ -26,7 +27,8 @@
         }
     },
     "tooltips": {
-        "sortOrder": "Secība sarakstos un ātrās pieņemšanas formā — mazāks skaitlis ir augstāk."
+        "sortOrder": "Secība sarakstos un ātrās pieņemšanas formā — mazāks skaitlis ir augstāk.",
+        "crewSize": "Cik mazgātāju vienlaikus strādā pie VIENA šī pakalpojuma auto. Tukšs = noklusētā brigāde no Tiešsaistes pieraksta -> Jauda. Kompleksā mazgāšana ar diviem cilvēkiem aiztur divus mazgātājus no citām mašīnām."
     },
     "labels": {
         "sortServices": "Kārtība",

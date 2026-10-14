@@ -1,0 +1,43 @@
+{
+    "fields": {
+        "name": "Document",
+        "washOrder": "Order",
+        "connector": "Program",
+        "kind": "Kind",
+        "status": "Status",
+        "externalId": "Program id",
+        "externalNo": "Program number",
+        "amount": "Amount",
+        "docHash": "Content fingerprint",
+        "paidIncluded": "Payment sent with the sale",
+        "error": "Error / note",
+        "attempts": "Attempts",
+        "nextAttemptAt": "Next attempt",
+        "lastAttemptAt": "Last attempt",
+        "sentAt": "Sent at",
+        "createdAt": "Queued at",
+        "lockedUntil": "Locked until"
+    },
+    "links": {
+        "washOrder": "Order"
+    },
+    "options": {
+        "connector": {
+            "merit": "Merit Aktiva",
+            "smartaccounts": "SmartAccounts"
+        },
+        "kind": {
+            "Sale": "Sale",
+            "Payment": "Payment"
+        },
+        "status": {
+            "Pending": "Waiting",
+            "Sent": "Sent",
+            "Failed": "Failed",
+            "Skipped": "Skipped"
+        }
+    },
+    "labels": {
+        "Accounting": "Accounting"
+    }
+}

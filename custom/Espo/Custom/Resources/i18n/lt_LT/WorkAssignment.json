@@ -1,0 +1,29 @@
+{
+    "fields": {
+        "name": "Pavadinimas",
+        "washOrder": "Užsakymas",
+        "employee": "Darbuotojas",
+        "role": "Vaidmuo",
+        "bonusEarned": "Uždirbta premija",
+        "description": "Pastabos",
+        "createdAt": "Sukurta",
+        "modifiedAt": "Pakeista"
+    },
+    "links": {
+        "washOrder": "Užsakymas",
+        "employee": "Darbuotojas"
+    },
+    "options": {
+        "role": {
+            "Washer": "Plovėjas",
+            "Detailer": "Poliruotojas",
+            "Vacuum": "Siurbėjas",
+            "Polish": "Poliravimas",
+            "Supervisor": "Prižiūrėtojas",
+            "Other": "Kita"
+        }
+    },
+    "labels": {
+        "Create WorkAssignment": "Sukurti darbo paskyrimą"
+    }
+}

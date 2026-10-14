@@ -9,7 +9,7 @@ namespace Espo\Custom\Tools\Notify;
  */
 class Texts
 {
-    public const LANGS = ['lv_LV', 'ru_RU', 'en_US'];
+    public const LANGS = ['lv_LV', 'ru_RU', 'en_US', 'et_EE', 'lt_LT'];
 
     private const T = [
         'lv_LV' => [
@@ -59,6 +59,38 @@ class Texts
             'subjectReminder' => 'Booking reminder',
             'subjectCancelled' => 'Booking cancelled',
             'subjectTest' => 'Test message',
+        ],
+        'et_EE' => [
+            'Ready' => 'Teie auto %plate% on valmis, võite järele tulla.',
+            'Booked' => 'Broneering kinnitatud: %plate%, %when%.',
+            'Reminder' => 'Meeldetuletus: teie broneering on %when%, auto %plate%.',
+            'Cancelled' => 'Broneering %when% (auto %plate%) on tühistatud.',
+            'Test' => 'Testsõnum.',
+            'amount' => 'Summa: %amount% EUR',
+            'review' => 'Aitäh! Jätke arvustus: %url%',
+            'manage' => 'Tühista või muuda broneeringut: %url%',
+            'stop' => 'Loobu teavitustest: %url%',
+            'subjectReady' => 'Auto %plate% on valmis',
+            'subjectBooked' => 'Broneering kinnitatud',
+            'subjectReminder' => 'Broneeringu meeldetuletus',
+            'subjectCancelled' => 'Broneering tühistatud',
+            'subjectTest' => 'Testsõnum',
+        ],
+        'lt_LT' => [
+            'Ready' => 'Jūsų automobilis %plate% paruoštas, galite atvykti pasiimti.',
+            'Booked' => 'Registracija patvirtinta: %plate%, %when%.',
+            'Reminder' => 'Priminimas: jūsų registracija %when%, automobilis %plate%.',
+            'Cancelled' => 'Registracija %when% (automobilis %plate%) atšaukta.',
+            'Test' => 'Bandomoji žinutė.',
+            'amount' => 'Suma: %amount% EUR',
+            'review' => 'Ačiū! Palikite atsiliepimą: %url%',
+            'manage' => 'Atšaukti arba perkelti registraciją: %url%',
+            'stop' => 'Atsisakyti pranešimų: %url%',
+            'subjectReady' => 'Automobilis %plate% paruoštas',
+            'subjectBooked' => 'Registracija patvirtinta',
+            'subjectReminder' => 'Priminimas apie registraciją',
+            'subjectCancelled' => 'Registracija atšaukta',
+            'subjectTest' => 'Bandomoji žinutė',
         ],
     ];
 

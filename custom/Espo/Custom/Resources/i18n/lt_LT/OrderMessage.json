@@ -1,0 +1,43 @@
+{
+    "fields": {
+        "name": "Žinutė",
+        "kind": "Rūšis",
+        "channel": "Kanalas",
+        "status": "Būsena",
+        "error": "Klaida",
+        "recipient": "Gavėjas",
+        "body": "Tekstas",
+        "sentAt": "Išsiųsta",
+        "customer": "Klientas",
+        "washOrder": "Užsakymas",
+        "createdAt": "Sukurta"
+    },
+    "links": {
+        "customer": "Klientas",
+        "washOrder": "Užsakymas"
+    },
+    "options": {
+        "kind": {
+            "Ready": "Automobilis paruoštas",
+            "Booked": "Registracija patvirtinta",
+            "Reminder": "Priminimas",
+            "Cancelled": "Registracija atšaukta",
+            "Test": "Bandomoji"
+        },
+        "channel": {
+            "": "—",
+            "Email": "El. paštas",
+            "WhatsApp": "WhatsApp",
+            "Sms": "SMS",
+            "Telegram": "Telegram"
+        },
+        "status": {
+            "Sent": "Išsiųsta",
+            "Failed": "Nepavyko",
+            "Skipped": "Praleista"
+        }
+    },
+    "labels": {
+        "Create OrderMessage": "Sukurti žinutę"
+    }
+}

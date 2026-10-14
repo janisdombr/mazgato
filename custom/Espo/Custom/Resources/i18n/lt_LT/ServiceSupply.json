@@ -1,0 +1,18 @@
+{
+    "fields": {
+        "name": "Pavadinimas",
+        "service": "Paslauga",
+        "supply": "Medžiaga",
+        "quantity": "Kiekis vienam panaudojimui"
+    },
+    "links": {
+        "service": "Paslauga",
+        "supply": "Medžiaga"
+    },
+    "tooltips": {
+        "quantity": "Kiek medžiagos (jos vienetais) sunaudoja vienas šios paslaugos atlikimas."
+    },
+    "labels": {
+        "Create ServiceSupply": "Sukurti paslaugos medžiagą"
+    }
+}

@@ -1,0 +1,97 @@
+{
+    "labels": {
+        "save": "Save",
+        "saved": "Saved",
+        "clear": "Remove",
+        "secretSet": "set - leave blank to keep",
+        "moduleOff": "This module is switched off in Settings → Enabled modules (it is OFF by default).",
+        "loading": "Loading…",
+        "loadError": "Could not load the data",
+        "retry": "Retry",
+        "intro": "Completed orders are sent to the accounting program once each. A private customer is booked on one general customer (no personal data leaves the CRM); a company with a registration number is booked by its number. Only an administrator can change these settings.",
+        "test": "Test connection",
+        "testOk": "Connection works",
+        "testFail": "Connection failed",
+        "run": "Send now",
+        "runResult": "Sent {sent}, failed {failed}, skipped {skipped}, still waiting {pending}",
+        "enqueue": "Queue completed orders of the period",
+        "queued": "Queued: {n}",
+        "resendAll": "Send failed again",
+        "requeued": "Back in the queue: {n}",
+        "summary": "Reconcile the period",
+        "dateFrom": "From",
+        "dateTo": "To",
+        "sent": "Sent",
+        "failedN": "Failed",
+        "pending": "Waiting",
+        "skippedN": "Skipped",
+        "failedList": "Failed documents",
+        "missingList": "Completed orders that never reached the queue",
+        "driftList": "Sent, but the order changed afterwards (correct it in the accounting program, e.g. with a credit note)",
+        "none": "None",
+        "order": "Order",
+        "error": "Error",
+        "attempts": "Attempts",
+        "amount": "Amount",
+        "sentNow": "Now",
+        "resend": "Send again",
+        "totals": "Orders total {a} / sent {b}",
+        "testModeOn": "TEST MODE: requests go to a fake server, not to the provider.",
+        "noProvider": "Choose a program first.",
+        "verifyNote": "Not yet verified on a live account of the program - run the owner checklist in docs/ACCOUNTING_INTEGRATIONS.md on a TEST company first.",
+        "listLink": "Open the full log"
+    },
+    "groups": {
+        "general": "What and when",
+        "merit": "Merit Aktiva",
+        "smart": "SmartAccounts",
+        "mapping": "Mapping to the program"
+    },
+    "fields": {
+        "accountingProvider": "Accounting program",
+        "accountingMode": "Mode",
+        "accountingStartDate": "First export from (visit date)",
+        "accountingBatchTime": "Batch time (local)",
+        "accountingMeritHost": "Merit region",
+        "accountingMeritId": "Merit API ID",
+        "accountingMeritKey": "Merit API key",
+        "accountingMeritIban": "Merit bank account (IBAN) for later payments",
+        "accountingSmartId": "SmartAccounts public API key",
+        "accountingSmartKey": "SmartAccounts secret key",
+        "accountingRetailName": "General customer for private persons",
+        "accountingItemCodeBase": "Item code of the base wash",
+        "accountingItemCodeAddon": "Item code of add-ons",
+        "accountingNumberPrefix": "Invoice number prefix",
+        "accountingDueDays": "Days to pay for invoiced orders",
+        "accountingVatId21": "Program id of the 21% VAT (blank = find it)",
+        "accountingVatId0": "Program id of the 0% VAT (blank = find it)",
+        "accountingPayMethodCash": "Payment method name for cash",
+        "accountingPayMethodCard": "Payment method name for card",
+        "accountingPayAccountCash": "Cash account (SmartAccounts, later payments)",
+        "accountingPayAccountCard": "Bank account (SmartAccounts, later payments)"
+    },
+    "hints": {
+        "accountingStartDate": "Nothing before this date is ever sent. Empty = nothing is sent automatically.",
+        "accountingMode": "Manual: only what you queue. Automatic: every completed order is queued and sent within minutes. Batch: queued at once, sent after the batch time.",
+        "accountingRetailName": "Shown in the program as the buyer of every private sale.",
+        "accountingPayMethodCash": "Must already exist in the program (Merit: payment method; SmartAccounts: payment method).",
+        "accountingMeritId": "Settings → API Settings in Merit. The key is never shown again.",
+        "accountingSmartKey": "SmartAccounts: Settings → Connected services → API."
+    },
+    "options": {
+        "accountingProvider": {
+            "off": "Off",
+            "merit": "Merit Aktiva",
+            "smartaccounts": "SmartAccounts"
+        },
+        "accountingMode": {
+            "manual": "Manual",
+            "auto": "Automatic when completed",
+            "batch": "Batch at the end of the day"
+        },
+        "accountingMeritHost": {
+            "ee": "Estonia (aktiva.merit.ee)",
+            "pl": "Poland (360ksiegowosc.pl)"
+        }
+    }
+}

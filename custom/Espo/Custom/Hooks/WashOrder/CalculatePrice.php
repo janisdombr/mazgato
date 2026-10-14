@@ -25,6 +25,16 @@ class CalculatePrice
             return;
         }
 
+        // An order that already has priced lines is priced BY them (the lines are the one truth about the money, see Recalculator): a total
+        // of 0 on it is a 100 % discount (a promo, a free wash, a wash paid entirely with points), never "work it out" - that used to
+        // bring the full catalogue price back on the next save, e.g. when a zero-total order was completed.
+        if (
+            !$entity->isNew()
+            && $this->entityManager->getRDBRepository('OrderAddon')->where(['washOrderId' => $entity->getId(), 'deleted' => false])->count() > 0
+        ) {
+            return;
+        }
+
         // An EXPLICIT edit down to 0 on an existing order is a 100 % discount, not "work it out"
         // (clearing the field sends null, which still recomputes). A new order keeps 0 = "work it out":
         // createOrder applies its own explicit total to the lines afterwards.

@@ -1,0 +1,37 @@
+{
+    "fields": {
+        "name": "Įrašas",
+        "customer": "Klientas",
+        "kind": "Rūšis",
+        "points": "Taškai",
+        "balanceAfter": "Likutis po",
+        "washOrder": "Užsakymas",
+        "note": "Pastaba",
+        "remaining": "Liko šioje partijoje",
+        "expiresAt": "Nustoja galioti",
+        "createdAt": "Data",
+        "createdBy": "Kas"
+    },
+    "links": {
+        "customer": "Klientas",
+        "washOrder": "Užsakymas",
+        "createdBy": "Kas"
+    },
+    "labels": {
+        "LoyaltyLedger": "Taškų įrašas",
+        "Overview": "Apžvalga"
+    },
+    "tooltips": {
+        "remaining": "Šio kredito taškai, kurie dar neišleisti. Išleidžiant pirmiausia imamos seniausios partijos."
+    },
+    "options": {
+        "kind": {
+            "Earn": "Uždirbta",
+            "Redeem": "Išleista",
+            "Adjust": "Korekcija",
+            "Expire": "Nustojo galioti",
+            "Referral": "Rekomendacija",
+            "Reverse": "Atšaukimas"
+        }
+    }
+}

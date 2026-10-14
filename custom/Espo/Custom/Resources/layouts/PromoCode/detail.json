@@ -1,0 +1,61 @@
+[
+    {
+        "label": "Overview",
+        "rows": [
+            [
+                {
+                    "name": "name"
+                },
+                {
+                    "name": "code"
+                }
+            ],
+            [
+                {
+                    "name": "kind"
+                },
+                {
+                    "name": "value"
+                }
+            ],
+            [
+                {
+                    "name": "active"
+                },
+                {
+                    "name": "firstVisitOnly"
+                }
+            ],
+            [
+                {
+                    "name": "validFrom"
+                },
+                {
+                    "name": "validTo"
+                }
+            ],
+            [
+                {
+                    "name": "maxUses"
+                },
+                {
+                    "name": "usedCount"
+                }
+            ],
+            [
+                {
+                    "name": "perCustomerLimit"
+                },
+                {
+                    "name": "minAmount"
+                }
+            ],
+            [
+                {
+                    "name": "note"
+                },
+                false
+            ]
+        ]
+    }
+]

@@ -1,0 +1,16 @@
+{
+    "fields": {
+        "name": "Šaltinio tekstas",
+        "textLv": "Latviškai",
+        "textRu": "Rusiškai",
+        "textEn": "Angliškai",
+        "textLt": "Lietuviškai",
+        "description": "Pastabos"
+    },
+    "tooltips": {
+        "name": "Reikšmė tiksliai tokia, kokia saugoma duomenyse — pvz., vaidmens ar darbo pavadinimas. Palikite kitus laukus tuščius ir šaltinio tekstas bus rodomas kaip yra."
+    },
+    "labels": {
+        "Create Translation": "Sukurti vertimą"
+    }
+}

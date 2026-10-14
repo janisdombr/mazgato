@@ -1,0 +1,37 @@
+{
+    "fields": {
+        "name": "Ieraksts",
+        "customer": "Klients",
+        "kind": "Veids",
+        "points": "Punkti",
+        "balanceAfter": "Atlikums pēc",
+        "washOrder": "Pasūtījums",
+        "note": "Piezīme",
+        "remaining": "Palicis šajā partijā",
+        "expiresAt": "Derīgs līdz",
+        "createdAt": "Datums",
+        "createdBy": "Kas veica"
+    },
+    "links": {
+        "customer": "Klients",
+        "washOrder": "Pasūtījums",
+        "createdBy": "Kas veica"
+    },
+    "labels": {
+        "LoyaltyLedger": "Punktu ieraksts",
+        "Overview": "Pārskats"
+    },
+    "tooltips": {
+        "remaining": "Šīs ieskaitīšanas punkti, kas vēl nav iztērēti. Tērējot vispirms tiek ņemtas vecākās partijas."
+    },
+    "options": {
+        "kind": {
+            "Earn": "Nopelnīti",
+            "Redeem": "Iztērēti",
+            "Adjust": "Korekcija",
+            "Expire": "Novecojuši",
+            "Referral": "Ieteikums",
+            "Reverse": "Atsaukums"
+        }
+    }
+}

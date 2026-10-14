@@ -1,0 +1,11 @@
+{
+    "controller": "controllers/record",
+    "iconClass": "fas fa-tags",
+    "color": "#16a34a",
+    "relationshipPanels": {
+        "redemptions": {
+            "create": false,
+            "select": false
+        }
+    }
+}

@@ -8,7 +8,7 @@
 (function () {
     'use strict';
 
-    var LABEL = {lv: 'Pirmkods', ru: 'Исходный код', en: 'Source code'};
+    var LABEL = {lv: 'Pirmkods', ru: 'Исходный код', en: 'Source code', lt: 'Šaltinio kodas'};
     var url = null, asked = false, defLang = '';
 
     function lang() {

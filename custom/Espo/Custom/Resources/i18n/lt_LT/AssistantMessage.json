@@ -1,0 +1,41 @@
+{
+    "fields": {
+        "name": "Klausimas",
+        "question": "Klausimas",
+        "answer": "Atsakymas",
+        "status": "Būsena",
+        "stopped": "Sustojimo priežastis",
+        "errorCode": "Klaidos kodas",
+        "toolNames": "Įrankiai",
+        "toolsJson": "Įrankių iškvietimai",
+        "draftsJson": "Juodraščiai",
+        "pseudonyms": "Pseudonimai",
+        "unsourced": "Skaičiai be šaltinio",
+        "steps": "Žingsniai",
+        "tokensIn": "Įvesties žetonai",
+        "tokensOut": "Išvesties žetonai",
+        "cacheReadTokens": "Talpyklos skaitymas",
+        "cacheWriteTokens": "Talpyklos rašymas",
+        "costUsd": "Kaina, USD",
+        "model": "Modelis",
+        "ms": "Laikas, ms",
+        "fromPage": "Iš puslapio",
+        "assignedUser": "Vartotojas",
+        "createdAt": "Laikas",
+        "modifiedAt": "Pakeista"
+    },
+    "links": {
+        "assignedUser": "Vartotojas"
+    },
+    "options": {
+        "status": {
+            "Pending": "Laukiama",
+            "Answered": "Atsakyta",
+            "Stopped": "Sustabdyta",
+            "Failed": "Nepavyko"
+        }
+    },
+    "labels": {
+        "Create AssistantMessage": "Sukurti įrašą"
+    }
+}

@@ -214,6 +214,22 @@ define(['custom:views/dashlets/base', 'custom:lib/period'], function (Dep, Perio
             return sum || this.durations[o.serviceId] || 0;
         },
 
+        // Personal data on a screen the whole counter sees: a private person's surname shows as its first letter ("Jānis B.").
+        // Companies are not people - SIA / AS / IK ... names stay whole.
+        shortName: function (name) {
+            name = String(name || '').trim();
+
+            if (!name || /\b(SIA|AS|IK|ZS|OÜ|UAB|AB|Ltd|LLC|GmbH|Oy)\b|["«»“”]/i.test(name)) { return name; }
+
+            var parts = name.split(/\s+/);
+
+            if (parts.length < 2) { return name; }
+
+            var last = parts.pop();
+
+            return parts.join(' ') + ' ' + last.charAt(0).toUpperCase() + '.';
+        },
+
         performers: function (o) {
             var w = (this.workers[o.id] || []).slice();
 
@@ -344,8 +360,9 @@ define(['custom:views/dashlets/base', 'custom:lib/period'], function (Dep, Perio
                     '<span style="width:' + Math.min(100, Math.round(mins * 100 / plan)) + '%"></span></div>';
             }
 
-            var who = this.performers(o).join(' · ');
-            var customer = this.esc(o.customerName || '');
+            var staff = this.performers(o).map(this.shortName.bind(this));
+            var who = staff.join(' · ');
+            var customer = this.esc(this.shortName(o.customerName || ''));
             var reserved = o.status === 'Reserved';
             var incomplete = this.isIncomplete(o);
             var phone = o.customerPhone || '';
@@ -360,21 +377,34 @@ define(['custom:views/dashlets/base', 'custom:lib/period'], function (Dep, Perio
             var timerHtml = timer;
             if (reserved && !o.orderDateTime) { timerHtml = this.missing(this.t('noTime')); }
 
+            // Two kinds of people on one card, kept apart: the CLIENT (who pays) and the CREW (who washes). Each line has its own
+            // label and icon, so a name is never guessed to be the other kind.
+            var labelled = function (cls, icon, label, inner) {
+                return '<div class="cw-card__who cw-card__who--' + cls + '"><span class="cw-card__who-label"><i class="fas ' + icon + '" aria-hidden="true"></i> ' +
+                    this.esc(label) + '</span> ' + inner + '</div>';
+            }.bind(this);
+
             var clientHtml = '';
             if (reserved) {
-                clientHtml = '<div class="cw-card__who">' + (o.customerId
-                    ? '<i class="fas fa-user" aria-hidden="true"></i> ' + customer + (phone ? ' · <span class="cw-card__phone">' + this.esc(phone) + '</span>' : '')
-                    : this.missing(this.t('noClient'))) + '</div>';
+                clientHtml = labelled('client', 'fa-address-card', this.t('clientLabel'), o.customerId
+                    ? customer + (phone ? ' · <span class="cw-card__phone">' + this.esc(phone) + '</span>' : '')
+                    : this.missing(this.t('noClient')));
             } else if (customer) {
-                clientHtml = '<div class="cw-card__who">' + customer + '</div>';
+                clientHtml = labelled('client', 'fa-address-card', this.t('clientLabel'), customer);
+            }
+
+            var crewHtml = '';
+            if (who) {
+                crewHtml = labelled('crew', 'fa-hard-hat', this.t(staff.length > 1 ? 'crewLabelMany' : 'crewLabel'), this.esc(who));
+            } else if (o.status === 'New' || o.status === 'In Progress') {
+                crewHtml = labelled('crew', 'fa-hard-hat', this.t('crewLabel'), '<span class="cw-meta">' + this.esc(this.t('noCrew')) + '</span>');
             }
 
             return '<div class="cw-card cw-card--' + cls + (incomplete ? ' cw-card--incomplete' : '') + '">' +
                 '<div class="cw-card__head">' + plate + timerHtml + '</div>' + bar +
                 (incomplete ? '<div class="cw-card__warn"><i class="fas fa-triangle-exclamation" aria-hidden="true"></i> ' + this.esc(this.t('incompleteBooking')) + '</div>' : '') +
                 '<div class="cw-card__line"><span class="cw-card__service">' + this.esc(this.serviceText(o)) + '</span>' + this.priceHtml(o) + '</div>' +
-                clientHtml +
-                (who ? '<div class="cw-card__who"><i class="fas fa-user" aria-hidden="true"></i> ' + this.esc(who) + '</div>' : '') +
+                clientHtml + crewHtml +
                 '<div class="cw-card__chips">' + this.statusChip(o) + (overrun ? this.chip('overrun', 'fa-stopwatch', this.t('overrun')) : '') +
                     (badPrice ? this.chip('unpaid', 'fa-triangle-exclamation', this.t('badPrice')) : '') + this.payChip(o) + '</div>' +
                 this.actionsHtml(o) +

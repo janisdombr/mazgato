@@ -28,6 +28,15 @@
         "other": "Прочее",
         "ordersLabel": "Заказы",
         "day": "День",
-        "hour": "Час"
+        "hour": "Час",
+        "loyaltyTitle": "Лояльность",
+        "loyaltyPromo": "Скидки: промокоды",
+        "loyaltyFree": "Скидки: бесплатные мойки",
+        "loyaltyPointsDiscount": "Скидки: оплачено баллами",
+        "loyaltyDiscountTotal": "Роздано скидок всего",
+        "loyaltyEarned": "Начислено баллов",
+        "loyaltyRedeemed": "Списано баллов",
+        "loyaltyExpired": "Сгорело баллов",
+        "loyaltyReferrals": "Выплачено наград за приглашения"
     }
 }

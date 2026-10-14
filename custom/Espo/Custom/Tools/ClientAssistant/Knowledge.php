@@ -19,7 +19,7 @@ class Knowledge
 {
     private const DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
-    public function __construct(private EntityManager $em, private Planner $planner, private Brand $brand, private ClientConfig $cfg)
+    public function __construct(private EntityManager $em, private Planner $planner, private Brand $brand, private ClientConfig $cfg, private \Espo\Custom\Tools\Licensing\Modules $modules, private \Espo\Custom\Tools\Loyalty\Promo $promo, private \Espo\Custom\Tools\Loyalty\Referral $referral)
     {}
 
     private function clean(string $s, int $max = 300): string
@@ -124,6 +124,15 @@ class Knowledge
         foreach ($this->services() as $s) {
             $l[] = sprintf('  id=%s | %s | %s | %.2f EUR | %d min%s', $s['id'], $s['name'], $s['category'], $s['price'], $s['minutes'],
                 $s['description'] !== '' ? ' | ' . $s['description'] : '');
+        }
+
+        // Only while the loyalty module is on and some promo code could work. No code is ever listed here.
+        if ($this->modules->moduleEnabled(\Espo\Custom\Tools\Licensing\Modules::LOYALTY) && $this->promo->anyPublic()) {
+            $l[] = 'Promo codes: a customer may give a promo code when booking (pass it to create_booking as promo). Never list, suggest or guess codes and never promise a discount: the booking system decides whether a code works and you cannot know.';
+        }
+
+        if ($this->modules->moduleEnabled(\Espo\Custom\Tools\Licensing\Modules::LOYALTY) && $this->referral->enabled()) {
+            $l[] = 'Referral codes: a customer may give a friend\'s referral code when booking (pass it to create_booking as referral). Never list, suggest or guess codes and never promise a reward: the booking system decides and you cannot know.';
         }
 
         $faq = $this->cfg->text('clientAssistantFaq', 4000);

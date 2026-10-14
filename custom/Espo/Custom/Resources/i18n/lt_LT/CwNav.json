@@ -1,0 +1,10 @@
+{
+    "labels": {
+        "home": "Pradžia",
+        "administration": "Administravimas",
+        "create": "Sukurti",
+        "edit": "Taisyti",
+        "carwashRoles": "Rolės ir prieiga",
+        "userInterface": "Kalba, tema, formatas"
+    }
+}

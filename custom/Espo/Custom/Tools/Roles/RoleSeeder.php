@@ -22,8 +22,8 @@ final class RoleSeeder
 {
     /** @var array<string, array<string, string>> */
     public const NAMES = [
-        'operator' => ['lv_LV' => 'Operators', 'ru_RU' => 'Оператор', 'en_US' => 'Operator'],
-        'manager' => ['lv_LV' => 'Vadītājs', 'ru_RU' => 'Менеджер', 'en_US' => 'Manager'],
+        'operator' => ['lv_LV' => 'Operators', 'ru_RU' => 'Оператор', 'en_US' => 'Operator', 'lt_LT' => 'Operatorius'],
+        'manager' => ['lv_LV' => 'Vadītājs', 'ru_RU' => 'Менеджер', 'en_US' => 'Manager', 'lt_LT' => 'Vadovas'],
     ];
 
     public function __construct(private EntityManager $entityManager)
@@ -59,6 +59,8 @@ final class RoleSeeder
             'ServiceSupply' => self::lvl('no', 'all', 'no', 'no'),
             'Translation' => self::lvl('no', 'all', 'no', 'no'),
             'Supply' => self::lvl('no', 'all', 'no', 'no'),
+            // the order calendar (#Calendar, nav entry; the data behind it still needs read: all on WashOrder)
+            'Calendar' => true,
             // the gate on the board
             'PlateEvent' => self::lvl('no', 'all', 'all', 'no'),
             'Camera' => self::lvl('no', 'all', 'no', 'no'),
@@ -69,13 +71,22 @@ final class RoleSeeder
             $d['Customer'] = self::lvl('yes', 'all', 'all', 'all');
             $d['Employee'] = self::lvl('no', 'all', 'all', 'no');
             $d['Subscription'] = self::lvl('yes', 'all', 'all', 'no');
+            // a client may ask for a photo of their car to be erased: the manager can remove it for real (the record AND the file, Hooks/OrderPhoto/RemoveFile)
+            $d['OrderPhoto'] = self::lvl('yes', 'all', 'no', 'all');
 
             foreach (['Supply', 'SupplyReceipt', 'SupplyReceiptLine', 'Stocktake', 'StocktakeLine', 'Mailing', 'MailingRecipient'] as $s) {
                 $d[$s] = self::lvl('yes', 'all', 'all', 'no');
             }
 
             $d['SupplyMovement'] = self::lvl('no', 'all', 'no', 'no');
+            // promo codes (module loyalty): the manager makes and switches them; the operator only TYPES a code (the server checks it)
+            $d['PromoCode'] = self::lvl('yes', 'all', 'all', 'no');
+            $d['PromoRedemption'] = self::lvl('no', 'all', 'no', 'no');
+            // the points journal (read only): the manager sees every change of a customer's points
+            $d['LoyaltyLedger'] = self::lvl('no', 'all', 'no', 'no');
             $d['RevenueReports'] = true;
+            // may book a reservation over the capacity of the slot / the day, knowingly (flagged on the order; docs/BOOKING.md)
+            $d['CapacityOverride'] = true;
         }
 
         return $d;

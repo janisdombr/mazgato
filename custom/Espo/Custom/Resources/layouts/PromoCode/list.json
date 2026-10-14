@@ -1,0 +1,35 @@
+[
+    {
+        "name": "code",
+        "width": 14,
+        "link": true
+    },
+    {
+        "name": "name",
+        "width": 24
+    },
+    {
+        "name": "kind",
+        "width": 10
+    },
+    {
+        "name": "value",
+        "width": 8
+    },
+    {
+        "name": "validTo",
+        "width": 12
+    },
+    {
+        "name": "usedCount",
+        "width": 8
+    },
+    {
+        "name": "maxUses",
+        "width": 8
+    },
+    {
+        "name": "active",
+        "width": 8
+    }
+]

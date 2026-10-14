@@ -1,0 +1,25 @@
+{
+    "fields": {
+        "name": "Pavadinimas",
+        "defaultRole": "Numatytasis vaidmuo",
+        "sortOrder": "Rikiavimo eilė",
+        "isActive": "Aktyvus",
+        "baseRate": "Bazinis įkainis",
+        "serviceLinks": "Paslaugos",
+        "rates": "Įkainiai",
+        "description": "Pastabos"
+    },
+    "links": {
+        "defaultRole": "Numatytasis vaidmuo",
+        "serviceLinks": "Paslaugos",
+        "rates": "Įkainiai",
+        "orderWorks": "Užsakymų darbai"
+    },
+    "tooltips": {
+        "defaultRole": "Kas paprastai atlieka šį darbą. Naudojama, kai paslauga prideda jį prie užsakymo.",
+        "baseRate": "Atsarginis įkainis, naudojamas, kai nė vienas Darbas × Paslauga × Darbuotojas įkainis netinka."
+    },
+    "labels": {
+        "Create Work": "Sukurti darbą"
+    }
+}

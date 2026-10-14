@@ -1,0 +1,32 @@
+{
+    "fields": {
+        "name": "Pavadinimas",
+        "kind": "Kas peržiūrėta",
+        "user": "Vartotojas",
+        "plateEvent": "Numerio įvykis",
+        "orderPhoto": "Užsakymo nuotrauka",
+        "camera": "Kamera",
+        "detail": "Išsami informacija",
+        "ip": "IP",
+        "createdAt": "Laikas"
+    },
+    "links": {
+        "user": "Vartotojas",
+        "plateEvent": "Numerio įvykis",
+        "orderPhoto": "Užsakymo nuotrauka",
+        "camera": "Kamera"
+    },
+    "options": {
+        "kind": {
+            "PlateEvent": "Numerio nuotrauka",
+            "OrderPhoto": "Užsakymo kameros nuotrauka",
+            "Snapshot": "Pagal poreikį gautas kadras",
+            "Live": "Tiesioginis vaizdas",
+            "Clip": "Įrašai",
+            "Erase": "Ištrynimas pagal prašymą"
+        }
+    },
+    "labels": {
+        "Overview": "Apžvalga"
+    }
+}

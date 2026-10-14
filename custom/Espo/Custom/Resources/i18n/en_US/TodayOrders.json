@@ -32,6 +32,10 @@
         "noTime": "No time",
         "incompleteBooking": "Incomplete booking: fill in the details",
         "badPrice": "Price error",
-        "tempPlate": "temp. plate"
+        "tempPlate": "temp. plate",
+        "clientLabel": "Client",
+        "crewLabel": "Washer",
+        "crewLabelMany": "Washers",
+        "noCrew": "not assigned"
     }
 }

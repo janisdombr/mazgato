@@ -1,0 +1,27 @@
+[
+    {
+        "name": "washOrder",
+        "width": 26,
+        "link": true
+    },
+    {
+        "name": "promoCode",
+        "width": 22
+    },
+    {
+        "name": "customer",
+        "width": 24
+    },
+    {
+        "name": "amount",
+        "width": 10
+    },
+    {
+        "name": "status",
+        "width": 10
+    },
+    {
+        "name": "createdAt",
+        "width": 14
+    }
+]

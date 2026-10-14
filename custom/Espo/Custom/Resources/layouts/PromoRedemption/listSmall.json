@@ -1,0 +1,12 @@
+[
+    {
+        "name": "washOrder",
+        "link": true
+    },
+    {
+        "name": "amount"
+    },
+    {
+        "name": "status"
+    }
+]

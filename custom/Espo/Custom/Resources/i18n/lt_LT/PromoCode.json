@@ -1,0 +1,42 @@
+{
+    "fields": {
+        "name": "Pavadinimas",
+        "code": "Kodas",
+        "kind": "Tipas",
+        "value": "Reikšmė (% arba EUR)",
+        "active": "Aktyvus",
+        "validFrom": "Galioja nuo",
+        "validTo": "Galioja iki",
+        "maxUses": "Daugiausia panaudojimų (0 = neribota)",
+        "usedCount": "Panaudota",
+        "perCustomerLimit": "Panaudojimų vienam klientui (0 = neribota)",
+        "minAmount": "Mažiausia užsakymo suma, EUR",
+        "firstVisitOnly": "Tik pirmam apsilankymui",
+        "note": "Pastaba",
+        "redemptions": "Panaudojimai"
+    },
+    "links": {
+        "redemptions": "Panaudojimai"
+    },
+    "tooltips": {
+        "code": "3–24 simboliai: A–Z, 0–9 ir brūkšnelis. Išsaugoma didžiosiomis raidėmis.",
+        "value": "Procentai: 1–100. Fiksuota: EUR daugiau už 0 (niekada daugiau už užsakymo sumą).",
+        "validFrom": "Vietos dienos. Tuščia = be ribos.",
+        "maxUses": "Rezervuota ir panaudota kartu. 0 = neribota.",
+        "usedCount": "Serverio valdoma: didėja, kai užsakymas įvykdomas.",
+        "perCustomerLimit": "Kiek kartų vienas klientas gali naudoti kodą. 0 = neribota.",
+        "minAmount": "Užsakymo eilučių suma prieš nuolaidą. 0 = be minimumo.",
+        "firstVisitOnly": "Tik klientui, kuris dar neturi įvykdyto užsakymo."
+    },
+    "labels": {
+        "Create PromoCode": "Sukurti akcijos kodą",
+        "PromoCode": "Akcijos kodas",
+        "Overview": "Apžvalga"
+    },
+    "options": {
+        "kind": {
+            "Percent": "Procentai (%)",
+            "Fixed": "Fiksuota suma (EUR)"
+        }
+    }
+}

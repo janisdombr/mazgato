@@ -61,7 +61,22 @@
         "fiscalNote": "Fiscal note",
         "subscription": "Subscription",
         "subscriptionSale": "Subscription sale",
-        "vehiclePlateTemporary": "Temporary plate"
+        "vehiclePlateTemporary": "Temporary plate",
+        "accountingSyncs": "Accounting",
+        "promoCode": "Promo code",
+        "skipLoyalty": "Do not apply discounts (promo code / free wash)",
+        "loyaltyKind": "Loyalty discount",
+        "loyaltyDiscount": "Discount, EUR",
+        "loyaltyNote": "Loyalty note",
+        "redeemPoints": "Points to use",
+        "pointsRedeemed": "Points used",
+        "pointsDiscount": "Points discount, EUR",
+        "pointsEarned": "Points earned",
+        "pointsNote": "Points note",
+        "referralCode": "Referral code",
+        "referralNote": "Referral note",
+        "capacityOverride": "Booked over capacity",
+        "overrideCapacity": "Book anyway (over capacity)"
     },
     "links": {
         "customer": "Customer",
@@ -77,7 +92,8 @@
         "orderAddons": "This order's services and prices",
         "photos": "Photos",
         "messages": "Messages to the client",
-        "subscription": "Subscription"
+        "subscription": "Subscription",
+        "accountingSyncs": "Accounting"
     },
     "options": {
         "status": {
@@ -112,6 +128,26 @@
             "Pending": "Pending",
             "Registered": "Registered",
             "Receipt": "Registered receipt (kvits)"
+        },
+        "loyaltyKind": {
+            "": "—",
+            "Promo": "Promo code",
+            "FreeWash": "Free wash"
+        },
+        "loyaltyNote": {
+            "": "—",
+            "promo_unknown": "Promo code not found",
+            "promo_inactive": "Promo code is switched off",
+            "promo_not_started": "Promo code is not valid yet",
+            "promo_expired": "Promo code has expired",
+            "promo_exhausted": "Promo code is used up",
+            "promo_customer_limit": "This customer has already used the promo code",
+            "promo_min_amount": "The order is below the promo code minimum",
+            "promo_first_visit_only": "The promo code is for a first visit only",
+            "promo_no_effect": "The promo code gives no discount here",
+            "skipped": "Discounts are switched off for this order",
+            "promo_free_better": "The free wash is better; the promo code was not used",
+            "free_promo_better": "The promo code is better; the free wash is kept for next time"
         }
     },
     "tooltips": {
@@ -137,7 +173,13 @@
         "fiscalIntegrationId": "The ID under which this CRM is declared as an integrated information system in the register's technical passport.",
         "fiscalPrintedAt": "Date and time on the register's document.",
         "fiscalHash": "SHA-1 checksum printed on the register's document, copied as is (optional).",
-        "subscription": "Pay this wash from the customer's subscription. The wash is spent when the order is Completed and given back if it is cancelled; the order price becomes 0 EUR (the money was taken when the subscription was sold)."
+        "subscription": "Pay this wash from the customer's subscription. The wash is spent when the order is Completed and given back if it is cancelled; the order price becomes 0 EUR (the money was taken when the subscription was sold).",
+        "promoCode": "Enter the code before the order starts. The discount is applied when the order starts and the check passes.",
+        "skipLoyalty": "Tick before the order is completed — the discount is taken off and the prices come back.",
+        "redeemPoints": "Points of the customer to pay part of this order with. They are taken when the order starts and given back if it is cancelled.",
+        "referralCode": "A friend's referral code. Linked to the customer when the order starts, if the rules allow.",
+        "capacityOverride": "A manager knowingly booked this order although the slot or the day was full. Set by the server, cannot be edited.",
+        "overrideCapacity": "Only for a manager or administrator: save the reservation even when the slot or the day is full. The order is then marked \"Booked over capacity\" and shown in the calendar."
     },
     "labels": {
         "emailInvoice": "Email Invoice",
@@ -149,7 +191,9 @@
         "Create WashOrder": "Create Order",
         "entryExit": "Before / after photos",
         "Fiscal": "Fiscal",
-        "moreTab": "More"
+        "moreTab": "More",
+        "loyaltyTab": "Loyalty",
+        "Loyalty": "Loyalty"
     },
     "messages": {
         "emailInvoiceConfirm": "Generate the invoice PDF and email it to the customer?",

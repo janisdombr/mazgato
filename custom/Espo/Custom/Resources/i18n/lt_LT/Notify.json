@@ -1,0 +1,59 @@
+{
+    "labels": {
+        "save": "Išsaugoti",
+        "saved": "Išsaugota",
+        "clear": "Pašalinti",
+        "secretSet": "nustatyta — palikite tuščią, kad išsaugotumėte",
+        "moduleOff": "Šis modulis išjungtas skiltyje Nustatymai → Įjungti moduliai.",
+        "ready": "paruošta",
+        "notReady": "nenustatyta",
+        "send": "Siųsti bandomąją",
+        "testHint": "Siunčia bandomąjį tekstą per to kanalo tikrąjį adapterį. Nėra rakto — taip ir pasako.",
+        "testOk": "Išsiųsta",
+        "testFail": "Neišsiųsta",
+        "loading": "Įkeliama…",
+        "loadError": "Nepavyko įkelti duomenų",
+        "retry": "Bandyti dar kartą"
+    },
+    "groups": {
+        "general": "Bendra",
+        "email": "El. paštas",
+        "whatsapp": "WhatsApp",
+        "sms": "SMS (HTTP šliuzas)",
+        "telegram": "Telegram robotas",
+        "inbound": "Atsakymai (STOP)",
+        "test": "Bandomasis siuntimas"
+    },
+    "fields": {
+        "reviewUrl": "Atsiliepimo nuoroda",
+        "notifyChannelOrder": "Kanalų pirmenybė",
+        "notifyCountryCode": "Numatytasis šalies kodas",
+        "notifyEmailOn": "El. paštas įjungtas (naudoja sistemos SMTP)",
+        "notifyWhatsappOn": "WhatsApp įjungtas",
+        "whatsappPhoneNumberId": "Telefono numerio ID",
+        "whatsappAccessToken": "Prieigos raktas",
+        "whatsappNotifyTemplate": "Patvirtinto šablono pavadinimas",
+        "whatsappTemplateLang": "Šablono kalba",
+        "notifySmsOn": "SMS įjungtos",
+        "smsWebhookUrl": "Šliuzo URL",
+        "smsWebhookMethod": "Metodas",
+        "smsWebhookFormat": "Turinio formatas",
+        "smsWebhookBody": "Turinio šablonas",
+        "smsWebhookHeaders": "Papildomos antraštės",
+        "smsBasicAuth": "Basic auth vartotojas:slaptažodis",
+        "smsFrom": "Siuntėjas",
+        "notifyTelegramOn": "Telegram įjungtas",
+        "telegramBotUsername": "Roboto vardas (be @)",
+        "telegramBotToken": "Roboto raktas",
+        "telegramWebhookSecret": "Webhook paslaptis",
+        "notifyInboundSecret": "Paslaptis SMS / WhatsApp atsakymams"
+    },
+    "hints": {
+        "reviewUrl": "Pridedama prie žinutės „automobilis paruoštas“. Tuščia = eilutės nėra.",
+        "notifyChannelOrder": "Atskirta kableliais: Telegram,Email,WhatsApp,Sms. Pats kliento pasirinkimas turi pirmenybę.",
+        "whatsappNotifyTemplate": "Neprivaloma. Už 24 val. lango ribų Meta priima tik šablonus; visas tekstas perduodamas kaip kintamasis {{1}}.",
+        "smsWebhookBody": "Vietos žymekliai {to} {text} {from}. Tuščia = paprastas JSON / formos turinys.",
+        "smsWebhookHeaders": "Viena „Pavadinimas: reikšmė“ eilutėje.",
+        "notifyInboundSecret": "Webhook: POST /api/v1/Notify/inbound/sms?secret=… (Meta WhatsApp: …/whatsapp?secret=…)"
+    }
+}

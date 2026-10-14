@@ -1,0 +1,19 @@
+{
+    "labels": {
+        "refresh": "Rodyti",
+        "orders": "Užsakymai",
+        "works": "Darbai",
+        "supply": "Medžiaga",
+        "quantity": "Sunaudota",
+        "unitCost": "Vieneto savikaina",
+        "cost": "Savikaina",
+        "total": "Iš viso",
+        "noData": "Šiuo laikotarpiu medžiagų nesunaudota.",
+        "services": "Paslaugos",
+        "byService": "Savikaina pagal paslaugą",
+        "bySupply": "Sunaudojimas pagal medžiagą",
+        "service": "Paslauga",
+        "times": "Kartai",
+        "costPerUnit": "Savikaina vienam atlikimui"
+    }
+}

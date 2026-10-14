@@ -1,0 +1,17 @@
+[
+    {
+        "name": "connector"
+    },
+    {
+        "name": "kind"
+    },
+    {
+        "name": "status"
+    },
+    {
+        "name": "externalNo"
+    },
+    {
+        "name": "error"
+    }
+]

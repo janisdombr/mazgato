@@ -27,9 +27,17 @@
         "rateReset": "Counters reset",
         "privacyHint": "Visitors' phone numbers and e-mails never reach the model or the journal: they are replaced by placeholders and the real value is kept for 24 hours only to complete a booking. The chat has no tool that reads customers, orders, revenue or staff.",
         "legalHint": "Before switching on: tell visitors they talk to an AI (the widget does), a data-processing agreement with the provider, an entry in your processing register. See docs/CLIENT_ASSISTANT.md.",
-        "keyHint": "The API key is shared with the staff assistant (write-only, kept in data/config-internal.php).",
+        "keyHint": "The key belongs to the chosen provider (write-only, kept in data/config-internal.php). For Anthropic, an empty field uses the staff assistant's key. Set a spending limit in the provider's console as well.",
         "knowledgeNote": "This is exactly what the chat may state as fact. Hours come from Online booking, prices from the service list, address from Brand unless overridden below.",
-        "title": "Customer chat (AI)"
+        "title": "Customer chat (AI)",
+        "providerSendsTo": "The key is sent only to",
+        "providerModels": "Models:",
+        "providerNote_anthropic": "US company; data-processing agreement available.",
+        "providerNote_openai": "Data-processing agreement; EU data residency only for a project created with region Europe.",
+        "providerNote_gemini": "Use a PAID key: content sent with a free key may be used by Google to improve its products.",
+        "providerNote_mistral": "EU company, data hosted in the EU by default, data-processing agreement available.",
+        "providerNote_deepseek": "Servers in China: not suitable for customer names and phones without a lawful transfer basis.",
+        "providerNote_groq": "US company; its price is not in our table, so the cost estimate is deliberately high."
     },
     "groups": {
         "switch": "Switch",
@@ -65,13 +73,14 @@
         "clientAssistantTurnSeconds": "Time limit per question, s",
         "clientAssistantTurnTokens": "Input tokens per question",
         "clientAssistantMaxOutputTokens": "Answer length (tokens)",
-        "clientAssistantRetentionDays": "Journal retention, days"
+        "clientAssistantRetentionDays": "Journal retention, days",
+        "clientAssistantApiKey": "API key (this provider)"
     },
     "hints": {
         "clientAssistantEnabled": "Off by default. When on, the chat appears on /booking/ and at /booking/chat/ — only if a provider and key are set.",
         "clientAssistantProvider": "Off: the chat answers “unavailable” and nothing is sent anywhere.",
         "assistantApiKey": "Write-only. Shared with the staff assistant.",
-        "clientAssistantModel": "Default claude-haiku-5-5 (cheap, enough for questions and bookings).",
+        "clientAssistantModel": "Default: the provider's cheap model (claude-haiku-5-5, gpt-4.1-nano, gemini-2.5-flash-lite, mistral-small-latest...). Leave empty for the default.",
         "clientAssistantAddress": "Empty = the address from Brand.",
         "clientAssistantPhone": "Shown to visitors and offered when the chat does not know. Digits and +.",
         "clientAssistantPayments": "E.g. “Cash and cards at the desk; companies by invoice”. Empty = the chat says it does not know.",
@@ -80,12 +89,18 @@
         "clientAssistantBookingsPerIpDay": "0 = the chat may not book.",
         "clientAssistantMaxSteps": "At most 5 — a hard ceiling.",
         "clientAssistantTurnSeconds": "At most 60 — a hard ceiling.",
-        "clientAssistantRetentionDays": "At least 31 days (the limits are summed from the journal). Cleanup: bin/command client-assistant-purge and the daily job."
+        "clientAssistantRetentionDays": "At least 31 days (the limits are summed from the journal). Cleanup: bin/command client-assistant-purge and the daily job.",
+        "clientAssistantApiKey": "Write-only. A key of one provider does not work with another: paste the key of the provider chosen above."
     },
     "options": {
         "clientAssistantProvider": {
             "off": "Off",
-            "anthropic": "Anthropic (Claude)"
+            "anthropic": "Anthropic (Claude)",
+            "openai": "OpenAI",
+            "gemini": "Google Gemini",
+            "mistral": "Mistral AI",
+            "deepseek": "DeepSeek",
+            "groq": "Groq (Llama / Qwen)"
         }
     }
 }

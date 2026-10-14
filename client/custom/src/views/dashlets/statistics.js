@@ -177,6 +177,35 @@ define(['custom:views/dashlets/base', 'custom:lib/charts', 'custom:lib/period'],
                     this.table('<th>' + t('employee') + '</th><th class="cw-right">' + t('works') + '</th><th class="cw-right">' + t('hours') + '</th>' + (showPay ? '<th class="cw-right">€</th>' : ''), empRows));
             }
 
+            // Loyalty (module loyalty): what was given away and the points that moved. Absent while the module is off.
+            if (res.loyalty) {
+                var ly = res.loyalty;
+                var dd = ly.discounts || {};
+                var pp = ly.points || {};
+                var rr = ly.referrals || {};
+                var lrows = [
+                    [t('loyaltyPromo'), m(dd.promo || 0)],
+                    [t('loyaltyFree'), m(dd.free || 0)],
+                    [t('loyaltyPointsDiscount'), m(dd.points || 0)],
+                    [t('loyaltyDiscountTotal'), m(dd.total || 0)],
+                    [t('loyaltyEarned'), String(pp.earned || 0)],
+                    [t('loyaltyRedeemed'), String(pp.redeemed || 0)],
+                    [t('loyaltyExpired'), String(pp.expired || 0)],
+                    [t('loyaltyReferrals'), String(rr.rewarded || 0)],
+                ].map(function (r) {
+                    return '<tr><td>' + this.esc(r[0]) + '</td><td class="cw-right"><b>' + this.esc(r[1]) + '</b></td></tr>';
+                }.bind(this)).join('');
+
+                html += this.block(t('loyaltyTitle'),
+                    '<div class="cw-kpis cw-kpis--stats">' +
+                        this.tile(t('loyaltyDiscountTotal'), m(dd.total || 0), dd.total, undefined) +
+                        this.tile(t('loyaltyEarned'), String(pp.earned || 0), pp.earned, undefined) +
+                        this.tile(t('loyaltyRedeemed'), String(pp.redeemed || 0), pp.redeemed, undefined) +
+                        this.tile(t('loyaltyReferrals'), String(rr.rewarded || 0), rr.rewarded, undefined) +
+                    '</div>' +
+                    '<table class="cw-table"><tbody>' + lrows + '</tbody></table>');
+            }
+
             $body.html(html);
         },
 

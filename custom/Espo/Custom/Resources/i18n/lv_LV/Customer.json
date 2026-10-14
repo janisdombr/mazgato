@@ -29,7 +29,19 @@
         "language": "Ziņu valoda",
         "notifyChannel": "Vēlamais kanāls",
         "telegramChatId": "Telegram čats",
-        "telegramLinkToken": "Telegram saites token"
+        "telegramLinkToken": "Telegram saites token",
+        "loyaltyWashes": "Skaitītās mazgāšanas (kopš pēdējās bezmaksas)",
+        "loyaltyFreeEarned": "Nopelnītas bezmaksas mazgāšanas",
+        "loyaltyFreeUsed": "Izmantotas bezmaksas mazgāšanas",
+        "loyaltyFreeHeld": "Bezmaksas mazgāšana rezervēta",
+        "loyaltyPoints": "Lojalitātes punkti",
+        "referralCode": "Ieteikuma kods",
+        "referredBy": "Ieteicis",
+        "referredAt": "Ieteikts",
+        "referralState": "Atlīdzība par ieteikumu",
+        "referralDueAt": "Atlīdzība pienākas",
+        "referralOrderId": "Ieteikuma pasūtījums",
+        "referralGen": "Ieteikuma atsaukumi"
     },
     "labels": {
         "Marketing": "Mārketings",
@@ -47,13 +59,40 @@
         "document": "Dokuments",
         "documentInvoice": "Rēķins",
         "documentAct": "Izpildīto darbu akts",
-        "consentTab": "Piekrišanas un ziņas"
+        "consentTab": "Piekrišanas un ziņas",
+        "loyaltyPanel": "Lojalitāte",
+        "loyaltyCount": "Skaitītās mazgāšanas",
+        "loyaltyToNext": "Līdz bezmaksas mazgāšanai",
+        "loyaltyFreeNow": "Nākamā mazgāšana ir bezmaksas",
+        "loyaltyFreeHeld": "Bezmaksas mazgāšana ir rezervēta pasūtījumam",
+        "loyaltyEarnedUsed": "Bezmaksas: nopelnītas / izmantotas",
+        "loyaltyOff": "Bezmaksas mazgāšanas shēma ir izslēgta",
+        "pointsBalance": "Punkti",
+        "pointsWorth": "vērtība",
+        "pointsNextExpiry": "Tuvākais derīguma termiņš",
+        "pointsNoExpiry": "bez derīguma termiņa",
+        "pointsAdjust": "Koriģēt punktus",
+        "pointsAdjustPoints": "Punkti (+ vai -)",
+        "pointsAdjustReason": "Iemesls (obligāts)",
+        "pointsAdjusted": "Punkti pielāgoti",
+        "ledgerTitle": "Pēdējās darbības",
+        "ledgerNone": "Darbību vēl nav",
+        "referralCode": "Ieteikuma kods",
+        "referralCopy": "Kopēt",
+        "referralCopied": "Nokopēts",
+        "referredByLabel": "Ieteicis",
+        "referralCounts": "Ieteikti / atlīdzināti",
+        "referralPoints": "Punkti par ieteikumiem",
+        "referralWaiting": "Atlīdzība gaida aizturēšanas periodu",
+        "cancel": "Atcelt",
+        "confirm": "Piemērot"
     },
     "links": {
         "vehicles": "Transportlīdzekļi",
         "orders": "Pasūtījumi",
         "drivers": "Vadītāji",
-        "subscriptions": "Abonementi"
+        "subscriptions": "Abonementi",
+        "referredBy": "Ieteicis"
     },
     "tooltips": {
         "isCorporate": "Ieslēdziet juridiskām personām. Korporatīviem klientiem var izrakstīt PVN rēķinu un piemērot korporatīvās cenas.",
@@ -74,7 +113,9 @@
             "": "Sistēmas noklusējums",
             "lv_LV": "Latviešu",
             "ru_RU": "Русский",
-            "en_US": "English"
+            "en_US": "English",
+            "et_EE": "Eesti",
+            "lt_LT": "Lietuvių"
         },
         "notifyChannel": {
             "Auto": "Automātiski (pirmais pieejamais)",
@@ -82,6 +123,12 @@
             "WhatsApp": "WhatsApp",
             "Sms": "SMS",
             "Telegram": "Telegram"
+        },
+        "referralState": {
+            "": "—",
+            "Pending": "Gaida",
+            "Paid": "Izmaksāta",
+            "Reversed": "Atsaukta"
         }
     }
 }

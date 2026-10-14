@@ -1,0 +1,6 @@
+[
+    {"name": "createdAt"},
+    {"name": "kind"},
+    {"name": "points"},
+    {"name": "balanceAfter"}
+]

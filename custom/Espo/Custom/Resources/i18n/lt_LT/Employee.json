@@ -1,0 +1,63 @@
+{
+    "fields": {
+        "name": "Vardas",
+        "phone": "Telefonas",
+        "position": "Pareigos",
+        "salaryRate": "Orientacinis įkainis / val.",
+        "workAssignments": "Darbo paskyrimai",
+        "description": "Pastabos",
+        "createdAt": "Sukurta",
+        "modifiedAt": "Pakeista",
+        "status": "Būsena",
+        "onShift": "Pamainoje",
+        "shiftStartedAt": "Pamaina pradėta",
+        "language": "Kalba",
+        "workRole": "Įprastas vaidmuo",
+        "pinSetAt": "PIN nustatytas",
+        "pinLockedUntil": "PIN užrakintas iki"
+    },
+    "links": {
+        "workAssignments": "Darbo paskyrimai",
+        "rates": "Įkainiai",
+        "orderWorks": "Atlikti darbai",
+        "shifts": "Pamainos",
+        "workRole": "Įprastas vaidmuo"
+    },
+    "options": {
+        "position": {
+            "Washer": "Plovėjas",
+            "Administrator": "Administratorius"
+        },
+        "status": {
+            "Hired": "Dirba",
+            "OnLeave": "Atostogose",
+            "Dismissed": "Atleistas"
+        },
+        "language": {
+            "lv_LV": "Latvių",
+            "ru_RU": "Rusų",
+            "en_US": "Anglų",
+            "et_EE": "Estų",
+            "lt_LT": "Lietuvių"
+        }
+    },
+    "tooltips": {
+        "salaryRate": "Tik orientacinis. Užmokestis skaičiuojamas UŽ ATLIKTUS DARBUS: darbų įkainiai nustatomi „Greitoje pradžioje“ ir įkainių matricoje. Pamainų valandos eina į statistiką.",
+        "status": "Dirba = gali būti paskirtas darbams. „Atostogose“ ir „Atleistas“ greitame priėmime nesiūlomi.",
+        "onShift": "Nustatoma atsiregistravus atėjimui / išėjimui. Tik skaitymas — naudokite pamainos įrašą arba pamainų skydelį.",
+        "shiftStartedAt": "Kada prasidėjo dabartinė pamaina.",
+        "language": "Planšetės kalba, kai darbuotojas prisijungia PIN kodu.",
+        "workRole": "Planšetės „Pasiimti“ priskiria tik šio vaidmens darbus. Kai tuščia — kiekvieną laisvą darbą.",
+        "pinSetAt": "Pats PIN niekada nesaugomas ir nerodomas, tik jo maiša. Keiskite darbuotojo kortelėje arba Administravimas → Planšetės.",
+        "pinLockedUntil": "Kelis kartus neteisingai įvedus PIN, prisijungimas kuriam laikui užblokuojamas."
+    },
+    "labels": {
+        "Create Employee": "Sukurti darbuotoją",
+        "Kiosk": "Planšetė",
+        "setPin": "Nustatyti PIN",
+        "pinHint": "4–6 skaitmenys. PIN nematomas ir neatkuriamas — pamirštą galima tik pakeisti.",
+        "pinSaved": "PIN išsaugotas",
+        "pinInvalid": "PIN turi būti 4–6 skaitmenų, ne visi vienodi ir ne einantys paeiliui.",
+        "moreTab": "Daugiau"
+    }
+}

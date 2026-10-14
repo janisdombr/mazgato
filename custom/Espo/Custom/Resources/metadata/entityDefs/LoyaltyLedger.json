@@ -1,0 +1,137 @@
+{
+    "fields": {
+        "name": {
+            "type": "varchar",
+            "maxLength": 80
+        },
+        "customer": {
+            "type": "link",
+            "required": true
+        },
+        "kind": {
+            "type": "enum",
+            "options": [
+                "Earn",
+                "Redeem",
+                "Adjust",
+                "Expire",
+                "Referral",
+                "Reverse"
+            ],
+            "default": "Earn",
+            "isSorted": false,
+            "style": {
+                "Earn": "success",
+                "Redeem": "warning",
+                "Adjust": "info",
+                "Expire": "default",
+                "Referral": "success",
+                "Reverse": "danger"
+            }
+        },
+        "points": {
+            "type": "int",
+            "readOnly": true
+        },
+        "balanceAfter": {
+            "type": "int",
+            "readOnly": true
+        },
+        "washOrder": {
+            "type": "link"
+        },
+        "note": {
+            "type": "varchar",
+            "maxLength": 250
+        },
+        "remaining": {
+            "type": "int",
+            "default": 0,
+            "readOnly": true,
+            "tooltip": true
+        },
+        "expiresAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "lotsJson": {
+            "type": "text",
+            "readOnly": true,
+            "layoutListDisabled": true,
+            "layoutDetailDisabled": true,
+            "layoutFiltersDisabled": true,
+            "layoutMassUpdateDisabled": true
+        },
+        "uniqueKey": {
+            "type": "varchar",
+            "maxLength": 80,
+            "readOnly": true,
+            "layoutListDisabled": true,
+            "layoutDetailDisabled": true,
+            "layoutFiltersDisabled": true,
+            "layoutMassUpdateDisabled": true
+        },
+        "createdAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "createdBy": {
+            "type": "link",
+            "readOnly": true
+        },
+        "seq": {
+            "type": "int",
+            "readOnly": true,
+            "layoutListDisabled": true,
+            "layoutDetailDisabled": true,
+            "layoutFiltersDisabled": true,
+            "layoutMassUpdateDisabled": true
+        }
+    },
+    "links": {
+        "customer": {
+            "type": "belongsTo",
+            "entity": "Customer"
+        },
+        "washOrder": {
+            "type": "belongsTo",
+            "entity": "WashOrder"
+        },
+        "createdBy": {
+            "type": "belongsTo",
+            "entity": "User"
+        }
+    },
+    "collection": {
+        "orderBy": "createdAt",
+        "order": "desc"
+    },
+    "indexes": {
+        "oneRowPerKey": {
+            "type": "unique",
+            "columns": [
+                "uniqueKey"
+            ]
+        },
+        "byCustomer": {
+            "columns": [
+                "customerId",
+                "deleted",
+                "createdAt"
+            ]
+        },
+        "lots": {
+            "columns": [
+                "customerId",
+                "remaining",
+                "expiresAt"
+            ]
+        },
+        "byOrder": {
+            "columns": [
+                "washOrderId",
+                "kind"
+            ]
+        }
+    }
+}

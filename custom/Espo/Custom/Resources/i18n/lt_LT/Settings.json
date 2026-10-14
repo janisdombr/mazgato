@@ -1,0 +1,80 @@
+{
+    "fields": {
+        "productName": "Produkto pavadinimas",
+        "brandColor": "Prekės ženklo spalva",
+        "brandDocHeader": "Dokumento antraštė (pavadinimas)",
+        "brandDocAddress": "Dokumento adresas",
+        "brandDocRegNo": "Įmonės kodas",
+        "brandDocPvnNo": "PVM mokėtojo kodas",
+        "brandDocFooter": "Dokumento poraštė",
+        "brandEmailSignature": "El. laiško parašas",
+        "landingSiteUrl": "Svetainės adresas (atsisakymo puslapis)",
+        "enabledModules": "Įjungti moduliai",
+        "kioskTheme": "Planšetės tema",
+        "kioskIdleSeconds": "Planšetė: atsijungti po neveiklumo, s",
+        "kioskSessionHours": "Planšetė: sesijos trukmė, val.",
+        "kioskPinMaxAttempts": "PIN: leidžiama neteisingų bandymų",
+        "kioskPinLockMinutes": "PIN: užrakinimo laikas, min.",
+        "kioskRateLimitPerMinute": "Planšetė: veiksmų per minutę",
+        "photoRetentionDays": "Nuotraukų saugojimas, dienos",
+        "anprAutoCreate": "Numeriai: sukurti užsakymą automatiškai",
+        "anprMinConfidence": "Numeriai: žemesnė tikimybės riba",
+        "anprHighConfidence": "Numeriai: aukšta tikimybės riba",
+        "anprDedupSeconds": "Numeriai: dublikatų šalinimo langas, s",
+        "anprRetentionDays": "Numeriai: nuotraukų saugojimas, dienos",
+        "anprEventRetentionDays": "Numeriai: įvykių saugojimas, dienos",
+        "anprAccessLogDays": "Prieigos prie paveikslėlių žurnalas, dienos",
+        "anprRateLimitPerMinute": "Mazgas: įvykių per minutę",
+        "anprPollSeconds": "Lentos atnaujinimas, s",
+        "anprMaxEventAgeHours": "Mazgas: seniausias priimamas įvykis, val.",
+        "anprAlertSound": "Garso signalas apie naują automobilį",
+        "camerasFrameKeepHours": "Pagal poreikį gauti kadrai: saugojimas, val.",
+        "camerasViewBase": "Tiesioginio vaizdo adresas (kelias)",
+        "sourceCodeUrl": "Šaltinio kodo adresas"
+    },
+    "tooltips": {
+        "brandColor": "Formatas #rrggbb. Nuspalvina prekės ženklo plokštelę, prisijungimo juostelę ir akcentus; pagrindinis mygtukas lieka produkto spalvos.",
+        "brandDocHeader": "Juridinis ar komercinis pavadinimas kvituose ir sąskaitose. Kai tuščia, naudojamas programos pavadinimas.",
+        "landingSiteUrl": "Svetainė, kurioje yra el. laiškų atsisakymo puslapis (unsubscribe.html). Kai tuščia, atsisakymo nuoroda veda tiesiai į CRM.",
+        "enabledModules": "Galimi moduliai. Tuščia ar pašalinta — atitinkamas API atsako 403, o planšetė rodo pranešimą. Pasirašyta licencija vėliau užpildys šį sąrašą.",
+        "kioskIdleSeconds": "Sekundės be prisilietimo, po kurių planšetė grįžta į PIN ekraną.",
+        "kioskSessionHours": "Kiek laiko darbuotojo prisijungimas PIN kodu galioja serveryje (taip pat neprisijungusių veiksmų siuntimui).",
+        "kioskPinMaxAttempts": "Po tiek neteisingų įvedimų PIN kuriam laikui užrakinamas.",
+        "kioskRateLimitPerMinute": "Apsauga nuo spaudinėjimo: daugiausia veiksmų, kuriuos viena planšetė gali siųsti per minutę.",
+        "photoRetentionDays": "Kiek dienų saugomos užsakymų nuotraukos. Valymas: bin/command purge-photos (ir kasdienė užduotis).",
+        "anprAutoCreate": "Pagal nutylėjimą IŠJUNGTA. Kai įjungta: automobilis, nuskaitytas su didele tikimybe, jau žinomas ir neturintis aktyvaus užsakymo, gauna užsakymą su paskutine paslauga. Kitais atvejais sprendžia operatorius.",
+        "anprMinConfidence": "Žemiau šios (0–1) įvykis visada laukia operatoriaus.",
+        "anprHighConfidence": "Nuo šios reikšmės (0–1) sistema gali veikti pati (kai įjungta „kurti automatiškai“).",
+        "anprDedupSeconds": "Tas pats numeris toje pačioje kameroje per šį langą yra vienas įvykis.",
+        "anprRetentionDays": "Po kiek dienų nuotraukos ištrinamos. Orientyras: 30. PASITARKITE SU TEISININKU.",
+        "anprEventRetentionDays": "Po kiek dienų ištrinamas įvykio įrašas (numeris, laikas, kamera). Orientyras: 90. PASITARKITE SU TEISININKU.",
+        "anprAccessLogDays": "Kiek laiko saugoti žurnalą „kas žiūrėjo paveikslėlius“.",
+        "anprAlertSound": "Lenta paleidžia trumpą pyptelėjimą, kai atsiranda naujas automobilis.",
+        "camerasViewBase": "Kelias ar adresas, kuriuo atvirkštinis tarpinis serveris skelbia go2rtc/Frigate peržiūros langą (numatytasis /cam).",
+        "sourceCodeUrl": "Adresas, kuriuo skelbiamas ŠIOS versijos šaltinio kodas (AGPL 13 skirsnis). Rodomas kaip nuoroda „Šaltinio kodas“ poraštėje ir skiltyje Apie. Būtinas viešam ar SaaS diegimui."
+    },
+    "labels": {
+        "Identity": "Tapatybė",
+        "Documents": "Dokumentai",
+        "Mail": "Paštas",
+        "Kiosk": "Planšetė"
+    },
+    "options": {
+        "enabledModules": {
+            "kiosk": "Darbuotojo planšetė",
+            "notify": "Pranešimai klientams",
+            "booking": "Registracija internetu",
+            "assistant": "DI asistentas",
+            "anpr": "Numerių atpažinimas",
+            "cameras": "Kameros",
+            "clientAssistant": "Klientų pokalbis (DI)",
+            "accounting": "Buhalterijos integracija",
+            "loyalty": "Lojalumas (akcijos kodai, kas N-tas nemokamas)"
+        },
+        "kioskTheme": {
+            "dark": "Tamsi",
+            "light": "Šviesi",
+            "auto": "Pagal įrenginį"
+        }
+    }
+}

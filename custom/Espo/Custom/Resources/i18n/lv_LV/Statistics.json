@@ -28,6 +28,15 @@
         "other": "Pārējie",
         "ordersLabel": "Pasūtījumi",
         "day": "Diena",
-        "hour": "Stunda"
+        "hour": "Stunda",
+        "loyaltyTitle": "Lojalitāte",
+        "loyaltyPromo": "Atlaides: akcijas kodi",
+        "loyaltyFree": "Atlaides: bezmaksas mazgāšanas",
+        "loyaltyPointsDiscount": "Atlaides: apmaksāts ar punktiem",
+        "loyaltyDiscountTotal": "Atlaides kopā",
+        "loyaltyEarned": "Nopelnītie punkti",
+        "loyaltyRedeemed": "Iztērētie punkti",
+        "loyaltyExpired": "Novecojušie punkti",
+        "loyaltyReferrals": "Izmaksātās atlīdzības par ieteikumiem"
     }
 }

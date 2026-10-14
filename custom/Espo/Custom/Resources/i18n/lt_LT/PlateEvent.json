@@ -1,0 +1,82 @@
+{
+    "fields": {
+        "name": "Numeris",
+        "plateRaw": "Kaip nuskaityta",
+        "plate": "Numeris",
+        "plateSuggested": "Siūlomas numeris",
+        "matchKind": "Sutapimas",
+        "confidence": "Tikimybė",
+        "direction": "Kryptis",
+        "source": "Šaltinis",
+        "status": "Būsena",
+        "takenAt": "Užfiksuota",
+        "receivedAt": "Gauta",
+        "lastSeenAt": "Paskutinį kartą matyta",
+        "seenCount": "Kiek kartų matyta",
+        "externalId": "Įvykio ID",
+        "hasSnapshot": "Nuotrauka",
+        "snapshotKey": "Nuotraukos raktas",
+        "snapshotRetainUntil": "Saugoti nuotrauką iki",
+        "retainUntil": "Saugoti įvykį iki",
+        "camera": "Kamera",
+        "edgeNode": "Krašto mazgas",
+        "vehicle": "Automobilis",
+        "customer": "Klientas",
+        "washOrder": "Užsakymas",
+        "decidedBy": "Nusprendė",
+        "decidedAt": "Nuspręsta",
+        "autoCreated": "Sukurta automatiškai",
+        "corrected": "Numeris pataisytas",
+        "dupIds": "Pasikartojantys ID",
+        "note": "Pastaba",
+        "createdAt": "Sukurta",
+        "modifiedAt": "Pakeista"
+    },
+    "links": {
+        "camera": "Kamera",
+        "edgeNode": "Krašto mazgas",
+        "vehicle": "Automobilis",
+        "customer": "Klientas",
+        "washOrder": "Užsakymas",
+        "decidedBy": "Nusprendė"
+    },
+    "options": {
+        "status": {
+            "Pending": "Laukiama",
+            "Confirmed": "Patvirtinta",
+            "Dismissed": "Atmesta",
+            "Matched": "Susieta"
+        },
+        "matchKind": {
+            "None": "Nėra",
+            "Exact": "Tikslus",
+            "Fuzzy": "Panašus"
+        },
+        "direction": {
+            "Unknown": "Nežinoma",
+            "In": "Įvažiuoja",
+            "Out": "Išvažiuoja"
+        },
+        "source": {
+            "Hikvision": "Hikvision",
+            "Dahua": "Dahua",
+            "Frigate": "Frigate",
+            "CodeProject": "CodeProject.AI",
+            "Simulator": "Imitatorius",
+            "Manual": "Rankinis",
+            "Other": "Kita"
+        }
+    },
+    "tooltips": {
+        "plateRaw": "Ką nuskaitė atpažinimo variklis prieš normalizavimą.",
+        "plateSuggested": "Panašus numeris iš automobilių sąrašo (skiriasi vienu simboliu). Tik pasiūlymas — sprendžia operatorius.",
+        "seenCount": "Kiek kartų tas pats numeris toje pačioje kameroje pateko į dublikatų šalinimo langą.",
+        "externalId": "Mazgo sukurtas ID; pakartotinis jo siuntimas niekada nesukuria dublikato.",
+        "snapshotRetainUntil": "Paveikslėlis ištrinamas po šios datos (nustatymas). Pasitarkite su teisininku.",
+        "retainUntil": "Įvykio įrašas ištrinamas po šios datos. Pasitarkite su teisininku.",
+        "autoCreated": "Užsakymą sukūrė sistema, o ne operatorius (nustatymas „Kurti automatiškai“)."
+    },
+    "labels": {
+        "Overview": "Apžvalga"
+    }
+}

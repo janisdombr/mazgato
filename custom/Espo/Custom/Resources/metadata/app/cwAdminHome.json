@@ -131,6 +131,32 @@
             ]
         },
         {
+            "id": "loyalty",
+            "icon": "fas fa-gift",
+            "items": [
+                {
+                    "id": "loyaltySettings",
+                    "url": "#Admin/loyalty",
+                    "icon": "fas fa-gift"
+                },
+                {
+                    "id": "promoCode",
+                    "url": "#PromoCode",
+                    "icon": "fas fa-tags"
+                },
+                {
+                    "id": "promoRedemption",
+                    "url": "#PromoRedemption",
+                    "icon": "fas fa-receipt"
+                },
+                {
+                    "id": "loyaltyLedger",
+                    "url": "#LoyaltyLedger",
+                    "icon": "fas fa-coins"
+                }
+            ]
+        },
+        {
             "id": "stock",
             "icon": "fas fa-boxes-stacked",
             "items": [
@@ -164,6 +190,11 @@
                     "id": "accountingExport",
                     "url": "#Admin/accountingExport",
                     "icon": "fas fa-file-export"
+                },
+                {
+                    "id": "accountingIntegration",
+                    "url": "#Admin/accountingIntegration",
+                    "icon": "fas fa-right-left"
                 },
                 {
                     "id": "fiscal",

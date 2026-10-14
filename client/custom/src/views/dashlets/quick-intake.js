@@ -9,7 +9,6 @@ define(['custom:views/dashlets/base'], function (Dep) {
         templateContent: `
             <div class="quick-intake cw-pad" data-cw-fit>
                 <div class="cw-intake-search">
-                    <div class="intake-suggest cw-suggest" style="display:none;"></div>
                     <input type="text" class="form-control field-plate cw-input-plate"
                         placeholder="{{translate 'platePlaceholderHotkey' category='labels' scope='QuickIntake'}}"
                         title="{{translate 'hotkeyHint' category='labels' scope='QuickIntake'}}"
@@ -32,7 +31,7 @@ define(['custom:views/dashlets/base'], function (Dep) {
                 if (e.key === 'Enter') {
                     e.preventDefault();
                     // Enter takes the highlighted suggestion if the list is open.
-                    var $active = this.$el.find('.intake-suggest .suggest-item.active');
+                    var $active = this.suggestEl().find('.suggest-item.active');
 
                     if ($active.length) { this.pickSuggestion($active.data('plate')); return; }
 
@@ -50,10 +49,6 @@ define(['custom:views/dashlets/base'], function (Dep) {
             'blur .field-plate': function () {
                 // Delayed so a click on a suggestion still lands.
                 setTimeout(function () { this.hideSuggest(); }.bind(this), 200);
-            },
-            'mousedown .suggest-item': function (e) {
-                e.preventDefault();
-                this.pickSuggestion($(e.currentTarget).data('plate'));
             },
             'click .action-noplate': function () { this.noPlateStart(); },
             'click .action-intake-close': function () { this.closeIntake(); },
@@ -115,6 +110,7 @@ define(['custom:views/dashlets/base'], function (Dep) {
             this.loadWorkPresets();
             this.loadTranslations();
             this.loadCarModels();
+            this.loadLoyalty();
             // preventScroll: autofocus must never make the page jump to the field.
             var plateEl = this.$el.find('.field-plate').get(0);
             if (plateEl) { plateEl.focus({ preventScroll: true }); }
@@ -193,6 +189,186 @@ define(['custom:views/dashlets/base'], function (Dep) {
 
         esc: function (v) { return $('<div>').text(v == null ? '' : v).html(); },
 
+        // ---- loyalty (module `loyalty`): promo code + "every N-th wash free" -------------------------------------------
+        // The server decides everything (Tools/Loyalty); this only asks for a preview and shows it. Off / unreachable = nothing is drawn.
+        L: function (key, section) { return this.translate(key, section || 'labels', 'Loyalty'); },
+
+        loadLoyalty: function () {
+            if (this.loyaltyLoaded) { return; }
+
+            this.loyaltyLoaded = true;
+            Espo.Ajax.postRequest('Loyalty/action/status', {})
+                .then(function (r) {
+                    this.loyalty = r && r.enabled ? r : null;
+                }.bind(this))
+                .catch(function (xhr) {
+                    if (xhr && typeof xhr === 'object') { xhr.errorIsHandled = true; }
+                    this.loyalty = null;
+                }.bind(this));
+        },
+
+        loyaltyHtml: function (res) {
+            var st = this.loyalty;
+
+            if (!st) { return ''; }
+
+            var info = res && res.loyalty;
+            var badge = '';
+
+            if (info && info.enabled) {
+                if (info.freeAvailable) {
+                    badge = '<span class="cw-chip cw-chip--done" role="status">' + this.esc(this.L('freeBadge').replace('{n}', info.every)) + '</span>';
+                } else if (info.held) {
+                    badge = '<span class="cw-meta">' + this.esc(this.translate('loyaltyFreeHeld', 'labels', 'Customer')) + '</span>';
+                } else {
+                    badge = '<span class="cw-chip">' + this.esc(this.L('freeNext').replace('{n}', info.toNext)) + '</span>';
+                }
+            }
+
+            var promo = st.promos
+                ? '<label class="cw-meta" for="qi-promo">' + this.esc(this.L('promo')) + '</label>' +
+                  '<input type="text" id="qi-promo" class="form-control field-promo cw-input-promo" maxlength="24" autocomplete="off" placeholder="' + this.esc(this.L('promoPlaceholder')) + '">'
+                : '';
+            var skip = (st.promos || (info && info.freeAvailable))
+                ? '<label class="cw-opt"><input type="checkbox" class="field-skip-loyalty"> ' + this.esc(this.L('skip')) + '</label>' : '';
+
+            // Points: the balance and the "Use points" field appear once a customer with points is known (refreshLoyalty fills them in).
+            var points = st.points && st.points.enabled
+                ? '<div class="cw-intake__points" hidden>' +
+                  '<span class="cw-meta intake-points-balance"></span> ' +
+                  '<label class="cw-meta" for="qi-points">' + this.esc(this.L('usePoints')) + '</label>' +
+                  '<input type="number" min="0" step="1" id="qi-points" class="form-control field-points cw-input-points" autocomplete="off" placeholder="' + this.esc(this.L('usePointsPlaceholder')) + '"> ' +
+                  '<button type="button" class="btn btn-link btn-sm action-points-max">' + this.esc(this.L('pointsUseAll')) + '</button>' +
+                  '<span class="cw-meta intake-points-cap"></span></div>'
+                : '';
+            // Referral code: only for a new customer or one who has not washed yet (the server enforces it; this only hides the field).
+            var referral = st.referral
+                ? '<div class="cw-intake__referral" hidden><label class="cw-meta" for="qi-referral">' + this.esc(this.L('referral')) + '</label>' +
+                  '<input type="text" id="qi-referral" class="form-control field-referral cw-input-promo" maxlength="12" autocomplete="off" placeholder="' + this.esc(this.L('referralPlaceholder')) + '">' +
+                  '<span class="cw-meta">' + this.esc(this.L('referralNewOnly')) + '</span></div>'
+                : '';
+
+            if (!badge && !promo && !skip && !points && !referral) { return ''; }
+
+            return '<div class="cw-intake__loyalty">' + badge + promo + skip + points + referral +
+                '<div class="intake-loyalty-msg cw-loyalty-msg" role="status" aria-live="polite" hidden></div></div>';
+        },
+
+        loyaltyCustomerId: function () {
+            var res = this.panelRes || {};
+            var $f = this.$el.find('.intake-form');
+
+            if (res.found && res.customerId) { return res.customerId; }
+
+            return $f.find('.field-cust-mode:checked').val() === 'existing' ? ($f.find('.field-existingCustomerId').val() || null) : null;
+        },
+
+        loyaltyLater: function () {
+            clearTimeout(this.loyaltyTimer);
+            this.loyaltyTimer = setTimeout(this.refreshLoyalty.bind(this), 250);
+        },
+
+        // Does the referral field make sense now? A new customer, or a known one without a completed order.
+        referralEligible: function () {
+            var res = this.panelRes || {};
+
+            if (res.found && res.customerId) { return !(res.stats && res.stats.completedOrders > 0); }
+
+            return true;
+        },
+
+        // Live preview next to the total: what the promo code / the free wash / the points would take off the typed total.
+        refreshLoyalty: function () {
+            var $f = this.$el.find('.intake-form');
+            var $msg = $f.find('.intake-loyalty-msg');
+
+            if (!this.loyalty || !$msg.length) { return; }
+
+            $f.find('.cw-intake__referral').prop('hidden', !this.referralEligible());
+
+            var code = ($f.find('.field-promo').val() || '').trim();
+            var skip = $f.find('.field-skip-loyalty').is(':checked');
+            var cid = this.loyaltyCustomerId();
+            var info = (this.panelRes || {}).loyalty;
+            var freeNow = !!(info && info.freeAvailable);
+            var amount = parseFloat($f.find('.intake-total').val());
+            var attr = this.isCorporate() ? 'corp' : 'retail';
+            var base = parseFloat($f.find('.field-base:checked').data(attr)) || 0;
+
+            $f.find('.field-promo').removeClass('is-invalid');
+
+            var pointsOn = !!(this.loyalty.points && this.loyalty.points.enabled);
+            var asked = parseInt($f.find('.field-points').val(), 10) || 0;
+
+            if (isNaN(amount) || amount <= 0 || (!pointsOn && (skip || (code === '' && !freeNow)))) {
+                $msg.prop('hidden', true).text('').removeClass('cw-loyalty-msg--bad');
+                $f.find('.cw-intake__points').prop('hidden', true);
+
+                return;
+            }
+
+            if (!pointsOn && !cid) { return; }
+
+            var seq = this.loyaltySeq = (this.loyaltySeq || 0) + 1;
+
+            Espo.Ajax.postRequest('Loyalty/action/checkPromo', {code: code, customerId: cid, amount: amount, baseAmount: base, skipLoyalty: skip, redeemPoints: asked})
+                .then(function (r) {
+                    if (seq !== this.loyaltySeq) { return; }
+
+                    var parts = [];
+                    var bad = false;
+                    var pt = r.points || {};
+
+                    // the points block: only for a known customer who has some
+                    var showPts = !!(pt.enabled && cid && pt.balance > 0);
+                    var $pb = $f.find('.cw-intake__points');
+
+                    $pb.prop('hidden', !showPts);
+                    this.pointsMax = pt.maxPoints || 0;
+
+                    if (showPts) {
+                        $pb.find('.intake-points-balance').text(this.L('pointsBalance').replace('{n}', pt.balance).replace('{amount}', this.money(pt.value)));
+                        $pb.find('.intake-points-cap').text(pt.maxPoints > 0
+                            ? this.L('pointsCap').replace('{max}', pt.maxPoints).replace('{percent}', pt.maxPercent) : '');
+                    }
+
+                    if (asked > 0 && pt.reason) {
+                        bad = true;
+                        $f.find('.field-points').addClass('is-invalid');
+                        parts.push(this.L('pointsRefused').replace('{reason}', this.L(pt.reason, 'pointsNotes')));
+                    } else {
+                        $f.find('.field-points').removeClass('is-invalid');
+
+                        if (asked > 0 && pt.ok) { parts.push(this.L('pointsApplied').replace('{amount}', this.money(pt.discount))); }
+                    }
+
+                    if (r.promo && !r.promo.ok) {
+                        bad = true;
+                        $f.find('.field-promo').addClass('is-invalid');
+                        parts.push(this.L(r.promo.reason, 'reasons'));
+                    }
+
+                    if (r.applies === 'promo') {
+                        parts.push(this.L('promoApplied').replace('{code}', r.promo.code).replace('{amount}', this.money(r.discount)));
+                    } else if (r.applies === 'free') {
+                        parts.push(this.L('freeApplied').replace('{amount}', this.money(r.discount)));
+                    }
+
+                    if (r.note === 'free_promo_better') { parts.push(this.L('freeKept')); }
+                    if (r.note === 'promo_free_better') { parts.push(this.L('promo_free_better', 'notes')); }
+
+                    if (r.applies !== 'none' || (asked > 0 && pt.ok)) { parts.push(this.L('toPay').replace('{total}', this.money(r.total))); }
+
+                    $msg.toggleClass('cw-loyalty-msg--bad', bad && r.applies === 'none').text(parts.join(' · ')).prop('hidden', parts.length === 0);
+                }.bind(this))
+                .catch(function (xhr) {
+                    if (xhr && typeof xhr === 'object') { xhr.errorIsHandled = true; }
+                    if (seq !== this.loyaltySeq) { return; }
+
+                    $msg.addClass('cw-loyalty-msg--bad').text(this.L('checkFailed')).prop('hidden', false);
+                }.bind(this));
+        },
+
         t: function (name) { return this.translate(name, 'labels', 'QuickIntake'); },
 
         // Data-level localization: role/work/service names are records, not i18n keys.
@@ -206,7 +382,7 @@ define(['custom:views/dashlets/base'], function (Dep) {
 
         loadTranslations: function () {
             var lang = this.getPreferences().get('language') || this.getConfig().get('language') || 'lv_LV';
-            var field = { lv_LV: 'textLv', ru_RU: 'textRu', en_US: 'textEn' }[lang];
+            var field = { lv_LV: 'textLv', ru_RU: 'textRu', en_US: 'textEn', lt_LT: 'textLt' }[lang];
 
             if (!field) { this.trMap = {}; return; }
 
@@ -396,7 +572,7 @@ define(['custom:views/dashlets/base'], function (Dep) {
         },
 
         renderSuggestions: function (list) {
-            var $box = this.$el.find('.intake-suggest');
+            var $box = this.suggestEl();
 
             if (!list.length) { this.hideSuggest(); return; }
 
@@ -412,18 +588,60 @@ define(['custom:views/dashlets/base'], function (Dep) {
                     '</div>';
             }.bind(this)).join('')).show();
 
+            this.placeSuggest();
             this.highlightSuggestion();
         },
 
+        // The result list is a floating layer on <body>, not a child of the dashlet: a dashlet clips its content, so a list inside it
+        // vanished unless the block was dragged tall (and the setting was lost on every rebuild). Fixed-positioned under the plate
+        // field it rides over every other block, follows scrolling and resizing, and needs no height setting at all.
+        suggestEl: function () {
+            if (!this._$suggest) {
+                this._$suggest = $('<div class="intake-suggest cw-suggest cw-suggest--float" role="listbox"></div>').hide().appendTo('body');
+
+                this._$suggest.on('mousedown', '.suggest-item', function (e) {
+                    e.preventDefault();
+                    this.pickSuggestion($(e.currentTarget).data('plate'));
+                }.bind(this));
+
+                this._suggestPlace = function () { if (this._$suggest && this._$suggest.is(':visible')) { this.placeSuggest(); } }.bind(this);
+                window.addEventListener('scroll', this._suggestPlace, true);
+                window.addEventListener('resize', this._suggestPlace);
+            }
+
+            return this._$suggest;
+        },
+
+        placeSuggest: function () {
+            var $in = this.$el.find('.field-plate');
+
+            if (!this._$suggest || !$in.length) { return; }
+
+            var r = $in[0].getBoundingClientRect();
+            var below = window.innerHeight - r.bottom - 12;
+            var above = r.top - 12;
+            // under the field when there is room (or more room than above), otherwise above it
+            var up = below < 180 && above > below;
+            var maxH = Math.max(120, Math.min(360, up ? above : below));
+
+            this._$suggest.css({
+                left: Math.max(8, r.left) + 'px',
+                width: Math.min(Math.max(r.width, 320), window.innerWidth - 16) + 'px',
+                maxHeight: maxH + 'px',
+                top: up ? '' : (r.bottom + 4) + 'px',
+                bottom: up ? (window.innerHeight - r.top + 4) + 'px' : '',
+            });
+        },
+
         highlightSuggestion: function () {
-            this.$el.find('.intake-suggest .suggest-item').each(function () {
+            this.suggestEl().find('.suggest-item').each(function () {
                 var $i = $(this);
                 $i.toggleClass('is-active', $i.hasClass('active'));
             });
         },
 
         moveSuggestion: function (step) {
-            var $items = this.$el.find('.intake-suggest:visible .suggest-item');
+            var $items = this.suggestEl().filter(':visible').find('.suggest-item');
 
             if (!$items.length) { return; }
 
@@ -443,7 +661,7 @@ define(['custom:views/dashlets/base'], function (Dep) {
         },
 
         hideSuggest: function () {
-            this.$el.find('.intake-suggest').hide().empty();
+            if (this._$suggest) { this._$suggest.hide().empty(); }
         },
 
         // Report a client-side failure to the server log instead of losing it in the
@@ -452,12 +670,22 @@ define(['custom:views/dashlets/base'], function (Dep) {
             try {
                 console.error('CarWash:', where, e);
 
-                Espo.Ajax.postRequest('CarWash/action/logClientError', {
+                // same rules as the page-wide logger (dashlets/base.js): never report 401/403/429, never feed itself, 5 a minute
+                if (e && /^(401|403|429|0)$/.test(String(e.status))) { return; }
+
+                var now = Date.now();
+                window.__cwIntakeErrs = (window.__cwIntakeErrs || []).filter(function (t) { return now - t < 60000; });
+                if (window.__cwIntakeErrs.length >= 5) { return; }
+                window.__cwIntakeErrs.push(now);
+
+                var p = Espo.Ajax.postRequest('CarWash/action/logClientError', {
                     where: where,
                     message: (e && (e.message || e.statusText)) || String(e),
                     stack: (e && e.stack) || '',
                     url: window.location.hash,
                 });
+
+                if (p && typeof p.catch === 'function') { p.catch(function () {}); }
             } catch (ignore) { }
         },
 
@@ -685,6 +913,7 @@ define(['custom:views/dashlets/base'], function (Dep) {
                         '<select class="field-payment" hidden>' + this.paymentOptions() + '</select>' +
                         '<label class="pvn-wrap cw-check" style="display:none;"><input type="checkbox" class="field-pvn" checked> PVN</label>' +
                     '</div>' +
+                    this.loyaltyHtml(res) +
                     '<div class="cw-intake__total"><span>' + t('total') + '</span>' +
                         '<input type="number" step="0.01" min="0" class="form-control intake-total cw-input-total"> <span>EUR</span></div>' +
                     '<div class="intake-discount cw-meta" hidden></div>' +
@@ -738,6 +967,13 @@ define(['custom:views/dashlets/base'], function (Dep) {
             // A typed total below the lines is a discount (down to 0 = free): show it, never refuse it.
             $form.on('input change', '.intake-total', function () {
                 this.showDiscount();
+                this.loyaltyLater();
+            }.bind(this));
+            $form.on('input change', '.field-promo, .field-skip-loyalty, .field-points', function () { this.loyaltyLater(); }.bind(this));
+            $form.on('change', '.field-existingCustomerId, .field-cust-mode', function () { this.loyaltyLater(); }.bind(this));
+            $form.on('click', '.action-points-max', function () {
+                $form.find('.field-points').val(this.pointsMax || '');
+                this.loyaltyLater();
             }.bind(this));
             $form.on('change', '.field-contract', function () {
                 this.syncPaymentDefault();
@@ -1154,6 +1390,13 @@ define(['custom:views/dashlets/base'], function (Dep) {
         },
 
         onRemove: function () {
+            if (this._suggestPlace) {
+                window.removeEventListener('scroll', this._suggestPlace, true);
+                window.removeEventListener('resize', this._suggestPlace);
+            }
+
+            if (this._$suggest) { this._$suggest.remove(); this._$suggest = null; }
+
             $(document).off('keydown.cwIntakeHotkey', this.hotkeyHandler);
             $('body').removeClass('cw-modal-open');
         },
@@ -1235,6 +1478,7 @@ define(['custom:views/dashlets/base'], function (Dep) {
 
             $f.find('.intake-total').val(Math.round(total * 100) / 100);
             this.showDiscount();
+            this.loyaltyLater();
         },
 
         // Sum of the lines as the form stands (base + ticked add-ons at their own prices).
@@ -1358,6 +1602,18 @@ define(['custom:views/dashlets/base'], function (Dep) {
                 model: ($f.find('.field-model').val() || '').trim() || null,
             };
 
+            // Loyalty: the typed total above is BEFORE any discount; the server takes the promo / free wash off it.
+            var promoCode = ($f.find('.field-promo').val() || '').trim();
+
+            if (promoCode) { payload.promoCode = promoCode; }
+            if ($f.find('.field-skip-loyalty').is(':checked')) { payload.skipLoyalty = true; }
+
+            var usePoints = parseInt($f.find('.field-points').val(), 10) || 0;
+            var refCode = $f.find('.cw-intake__referral').prop('hidden') ? '' : ($f.find('.field-referral').val() || '').trim();
+
+            if (usePoints > 0) { payload.redeemPoints = usePoints; }
+            if (refCode) { payload.referralCode = refCode; }
+
             var $sub = this.$el.find('.field-use-subscription:checked');
 
             if ($sub.length && res.found && res.customerId && (!$sub.data('service') || $sub.data('service') === payload.serviceId)) {
@@ -1391,12 +1647,38 @@ define(['custom:views/dashlets/base'], function (Dep) {
 
             Espo.Ajax.postRequest('CarWash/action/createOrder', payload)
                 .then(function (r) {
-                    Espo.Ui.success(this.t('orderCreated') + (r.plateTemporary ? ' · ' + this.t('tempPlateAssigned').replace('{plate}', r.vehiclePlate || '') : ''));
+                    Espo.Ui.success(this.t('orderCreated') + (r.plateTemporary ? ' · ' + this.t('tempPlateAssigned').replace('{plate}', r.vehiclePlate || '') : '') +
+                        (r.loyalty && r.loyalty.discount > 0 ? ' · ' + this.L('orderApplied').replace('{kind}', this.translate(r.loyalty.kind, 'kinds', 'Loyalty')).replace('{amount}', this.money(r.loyalty.discount)) : '') +
+                        (r.loyalty && r.loyalty.pointsRedeemed > 0 ? ' · ' + this.L('orderPoints').replace('{n}', r.loyalty.pointsRedeemed).replace('{amount}', this.money(r.loyalty.pointsDiscount)) : ''));
+
+                    // a request the server could not honour after all (another till took the points first): say so, the order stands
+                    if (r.loyalty && r.loyalty.pointsNote) { Espo.Ui.warning(this.L('pointsRefused').replace('{reason}', this.L(r.loyalty.pointsNote, 'pointsNotes'))); }
                     this.closeIntake();
                     this.getRouter().navigate('#WashOrder/view/' + r.orderId, { trigger: true });
                 }.bind(this))
-                .catch(function () {
+                .catch(function (xhr) {
                     // e.g. 409 one-car-one-ramp: the server message is shown by Espo; the form stays as it was.
+                    // A refused promo code (400 promo_<reason>) gets its own plain text next to the field.
+                    var reason = xhr && xhr.getResponseHeader ? (xhr.getResponseHeader('X-Status-Reason') || '') : '';
+
+                    if (/^points_/.test(reason)) {
+                        xhr.errorIsHandled = true;
+                        Espo.Ui.warning(this.L('pointsRefused').replace('{reason}', this.L(reason.split(':')[0], 'pointsNotes')));
+                        $f.find('.field-points').addClass('is-invalid');
+                    }
+
+                    if (/^referral_/.test(reason)) {
+                        xhr.errorIsHandled = true;
+                        Espo.Ui.warning(this.L('referralBad').replace('{reason}', this.L(reason.replace(/^referral_/, '').split(':')[0], 'referralReasons')));
+                        $f.find('.field-referral').addClass('is-invalid');
+                    }
+
+                    if (/^promo_/.test(reason)) {
+                        xhr.errorIsHandled = true;
+                        Espo.Ui.warning(this.L(reason.replace(/^promo_/, '').split(':')[0], 'reasons'));
+                        $f.find('.field-promo').addClass('is-invalid');
+                    }
+
                     $btn.removeClass('is-busy').html(idle);
                     $f.find('input, select, button').prop('disabled', false);
                 }.bind(this));

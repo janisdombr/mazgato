@@ -28,6 +28,12 @@
             ],
             [
                 {
+                    "name": "overrideCapacity"
+                },
+                false
+            ],
+            [
+                {
                     "name": "service"
                 },
                 {
@@ -83,6 +89,12 @@
             ],
             [
                 {
+                    "name": "capacityOverride"
+                },
+                false
+            ],
+            [
+                {
                     "name": "readyNotifiedAt"
                 },
                 {
@@ -110,6 +122,65 @@
                     "name": "description"
                 },
                 false
+            ]
+        ]
+    },
+    {
+        "label": "Loyalty",
+        "tabBreak": true,
+        "tabLabel": "$label:loyaltyTab",
+        "rows": [
+            [
+                {
+                    "name": "promoCode"
+                },
+                {
+                    "name": "skipLoyalty"
+                }
+            ],
+            [
+                {
+                    "name": "loyaltyKind"
+                },
+                {
+                    "name": "loyaltyDiscount"
+                }
+            ],
+            [
+                {
+                    "name": "loyaltyNote"
+                },
+                false
+            ],
+            [
+                {
+                    "name": "redeemPoints"
+                },
+                {
+                    "name": "pointsRedeemed"
+                }
+            ],
+            [
+                {
+                    "name": "pointsDiscount"
+                },
+                {
+                    "name": "pointsEarned"
+                }
+            ],
+            [
+                {
+                    "name": "pointsNote"
+                },
+                false
+            ],
+            [
+                {
+                    "name": "referralCode"
+                },
+                {
+                    "name": "referralNote"
+                }
             ]
         ]
     },

@@ -1,0 +1,42 @@
+{
+    "fields": {
+        "name": "Name",
+        "code": "Code",
+        "kind": "Type",
+        "value": "Value (% or EUR)",
+        "active": "Active",
+        "validFrom": "Valid from",
+        "validTo": "Valid until",
+        "maxUses": "Max uses (0 = unlimited)",
+        "usedCount": "Used",
+        "perCustomerLimit": "Uses per customer (0 = unlimited)",
+        "minAmount": "Minimum order amount, EUR",
+        "firstVisitOnly": "First visit only",
+        "note": "Note",
+        "redemptions": "Redemptions"
+    },
+    "links": {
+        "redemptions": "Redemptions"
+    },
+    "tooltips": {
+        "code": "3–24 characters: A–Z, 0–9 and a dash. Saved in upper case.",
+        "value": "Percent: 1–100. Fixed: EUR above 0 (never more than the order total).",
+        "validFrom": "Local days. Empty = no limit.",
+        "maxUses": "Reserved and used together. 0 = unlimited.",
+        "usedCount": "Server-owned: goes up when the order is completed.",
+        "perCustomerLimit": "How many times one customer may use the code. 0 = unlimited.",
+        "minAmount": "Order lines total before the discount. 0 = no minimum.",
+        "firstVisitOnly": "Only for a customer with no completed order yet."
+    },
+    "labels": {
+        "Create PromoCode": "Create promo code",
+        "PromoCode": "Promo code",
+        "Overview": "Overview"
+    },
+    "options": {
+        "kind": {
+            "Percent": "Percent (%)",
+            "Fixed": "Fixed sum (EUR)"
+        }
+    }
+}

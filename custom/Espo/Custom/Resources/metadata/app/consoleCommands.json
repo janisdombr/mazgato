@@ -62,5 +62,17 @@
     "repairOrders": {
         "className": "Espo\\Custom\\Classes\\ConsoleCommands\\RepairOrders",
         "listed": true
+    },
+    "accountingSync": {
+        "className": "Espo\\Custom\\Classes\\ConsoleCommands\\AccountingSync",
+        "listed": true
+    },
+    "accountingTestMode": {
+        "className": "Espo\\Custom\\Classes\\ConsoleCommands\\AccountingTestMode",
+        "listed": false
+    },
+    "loyaltyExpire": {
+        "className": "Espo\\Custom\\Classes\\ConsoleCommands\\LoyaltyExpire",
+        "listed": true
     }
 }

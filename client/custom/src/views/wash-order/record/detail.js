@@ -19,7 +19,7 @@ define(['views/record/detail', 'custom:lib/format', 'custom:lib/state'], functio
         setup: function () {
             Dep.prototype.setup.call(this);
 
-            this.listenTo(this.model, 'sync change:status change:paymentStatus change:finalPrice', function () {
+            this.listenTo(this.model, 'sync change:status change:paymentStatus change:finalPrice change:loyaltyDiscount change:loyaltyNote change:pointsRedeemed change:pointsEarned change:pointsNote change:referralNote', function () {
                 if (this.isRendered()) { this.renderHead(); }
             });
         },
@@ -32,6 +32,24 @@ define(['views/record/detail', 'custom:lib/format', 'custom:lib/state'], functio
             }
 
             this.renderHead();
+            this.hideLoyaltyWhenOff();
+        },
+
+        // Module `loyalty` off (or unreachable): the order form shows no promo / loyalty fields at all.
+        hideLoyaltyWhenOff: function () {
+            if (this.loyaltyChecked) { return; }
+
+            this.loyaltyChecked = true;
+            Espo.Ajax.postRequest('Loyalty/action/status', {}).then(function (r) {
+                if (r && r.enabled) { return; }
+
+                ['promoCode', 'skipLoyalty', 'loyaltyKind', 'loyaltyDiscount', 'loyaltyNote', 'redeemPoints', 'pointsRedeemed', 'pointsDiscount', 'pointsEarned', 'pointsNote', 'referralCode', 'referralNote'].forEach(function (f) { this.hideField(f); }, this);
+                var label = this.translate('loyaltyTab', 'labels', 'WashOrder');
+
+                this.$el.find('.nav-tabs li, .nav-tabs a').filter(function () { return $.trim($(this).text()) === label; }).prop('hidden', true);
+            }.bind(this)).catch(function (xhr) {
+                if (xhr && typeof xhr === 'object') { xhr.errorIsHandled = true; }
+            });
         },
 
         l: function (key, scope) { return this.translate(key, 'labels', scope || 'TodayOrders'); },
@@ -81,13 +99,52 @@ define(['views/record/detail', 'custom:lib/format', 'custom:lib/state'], functio
                     '<div class="cw-meta">' + State.esc([m.get('customerName'), m.get('serviceName')].filter(Boolean).join(' · ')) + '</div>' +
                 '</div>' +
                 '<div class="cw-order-head__sum"><div class="cw-meta">' + State.esc(this.translate('finalPrice', 'fields', 'WashOrder')) + '</div>' +
-                    '<div class="cw-hero cw-num">' + State.esc(Fmt.fmtMoney(m.get('finalPrice'), lang) || '—') + '</div></div>' +
+                    '<div class="cw-hero cw-num">' + State.esc(Fmt.fmtMoney(m.get('finalPrice'), lang) || '—') + '</div>' +
+                    this.loyaltyLine(lang) + '</div>' +
                 '<div class="cw-actions">' + btns + '</div>'
             );
 
             this.$el.find('.cw-order-head [data-act]').off('click').on('click', function (e) {
                 this.headAction($(e.currentTarget));
             }.bind(this));
+        },
+
+        // What the loyalty rules did to this order: the discount taken off, or why a promo code did not apply.
+        loyaltyLine: function (lang) {
+            var m = this.model;
+            var L = function (k, sec) { return this.translate(k, sec || 'labels', 'Loyalty'); }.bind(this);
+            var off = parseFloat(m.get('loyaltyDiscount')) || 0;
+            var note = m.get('loyaltyNote');
+            var out = '';
+
+            if (off > 0 && m.get('loyaltyKind')) {
+                out += '<div class="cw-meta">' + State.esc(L('orderApplied')
+                    .replace('{kind}', L(m.get('loyaltyKind'), 'kinds')).replace('{amount}', Fmt.fmtMoney(off, lang))) + '</div>';
+            }
+            if (note) {
+                out += '<div class="cw-meta">' + State.esc(L('orderNote').replace('{note}', L(note, 'notes'))) + '</div>';
+            }
+
+            // points: what this order spent and what it earned, or why the request was not honoured
+            var spent = parseInt(m.get('pointsRedeemed'), 10) || 0;
+            var earned = parseInt(m.get('pointsEarned'), 10) || 0;
+            var pnote = m.get('pointsNote');
+            var rnote = m.get('referralNote');
+
+            if (spent > 0) {
+                out += '<div class="cw-meta">' + State.esc(L('orderPoints').replace('{n}', spent).replace('{amount}', Fmt.fmtMoney(parseFloat(m.get('pointsDiscount')) || 0, lang))) + '</div>';
+            }
+            if (earned > 0) {
+                out += '<div class="cw-meta">' + State.esc(L('orderEarned').replace('{n}', earned)) + '</div>';
+            }
+            if (pnote) {
+                out += '<div class="cw-meta">' + State.esc(L('pointsRefused').replace('{reason}', L(pnote, 'pointsNotes'))) + '</div>';
+            }
+            if (rnote) {
+                out += '<div class="cw-meta">' + State.esc(L('orderReferral').replace('{note}', L(rnote, 'referralReasons'))) + '</div>';
+            }
+
+            return out;
         },
 
         headAction: function ($b) {

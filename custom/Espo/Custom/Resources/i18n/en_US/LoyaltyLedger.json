@@ -1,0 +1,37 @@
+{
+    "fields": {
+        "name": "Entry",
+        "customer": "Customer",
+        "kind": "Kind",
+        "points": "Points",
+        "balanceAfter": "Balance after",
+        "washOrder": "Order",
+        "note": "Note",
+        "remaining": "Left in this lot",
+        "expiresAt": "Expires",
+        "createdAt": "Date",
+        "createdBy": "By"
+    },
+    "links": {
+        "customer": "Customer",
+        "washOrder": "Order",
+        "createdBy": "By"
+    },
+    "labels": {
+        "LoyaltyLedger": "Points entry",
+        "Overview": "Overview"
+    },
+    "tooltips": {
+        "remaining": "Points of this credit that are not spent yet. Spending takes the oldest lots first."
+    },
+    "options": {
+        "kind": {
+            "Earn": "Earned",
+            "Redeem": "Spent",
+            "Adjust": "Adjustment",
+            "Expire": "Expired",
+            "Referral": "Referral",
+            "Reverse": "Reversal"
+        }
+    }
+}

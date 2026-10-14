@@ -1,0 +1,97 @@
+{
+    "labels": {
+        "save": "Išsaugoti",
+        "saved": "Išsaugota",
+        "clear": "Pašalinti",
+        "secretSet": "nustatyta — palikite tuščią, kad išsaugotumėte",
+        "moduleOff": "Šis modulis išjungtas skiltyje Nustatymai → Įjungti moduliai (pagal nutylėjimą jis IŠJUNGTAS).",
+        "loading": "Įkeliama…",
+        "loadError": "Nepavyko įkelti duomenų",
+        "retry": "Bandyti dar kartą",
+        "intro": "Įvykdyti užsakymai į buhalterinę programą siunčiami po vieną kartą. Fizinis asmuo registruojamas vienam bendram klientui (jokie asmens duomenys iš CRM neišeina); įmonė su registracijos numeriu registruojama pagal jį. Šiuos nustatymus gali keisti tik administratorius.",
+        "test": "Patikrinti ryšį",
+        "testOk": "Ryšys veikia",
+        "testFail": "Ryšys nepavyko",
+        "run": "Siųsti dabar",
+        "runResult": "Išsiųsta {sent}, nepavyko {failed}, praleista {skipped}, dar laukia {pending}",
+        "enqueue": "Įtraukti laikotarpio įvykdytus užsakymus į eilę",
+        "queued": "Įtraukta į eilę: {n}",
+        "resendAll": "Siųsti nepavykusius dar kartą",
+        "requeued": "Vėl eilėje: {n}",
+        "summary": "Suderinti laikotarpį",
+        "dateFrom": "Nuo",
+        "dateTo": "Iki",
+        "sent": "Išsiųsta",
+        "failedN": "Nepavyko",
+        "pending": "Laukia",
+        "skippedN": "Praleista",
+        "failedList": "Nepavykę dokumentai",
+        "missingList": "Įvykdyti užsakymai, kurie niekada nepateko į eilę",
+        "driftList": "Išsiųsta, bet užsakymas vėliau pasikeitė (pataisykite buhalterinėje programoje, pvz., kreditine sąskaita)",
+        "none": "Nėra",
+        "order": "Užsakymas",
+        "error": "Klaida",
+        "attempts": "Bandymai",
+        "amount": "Suma",
+        "sentNow": "Dabar",
+        "resend": "Siųsti dar kartą",
+        "totals": "Užsakymų iš viso {a} / išsiųsta {b}",
+        "testModeOn": "BANDOMASIS REŽIMAS: užklausos eina į netikrą serverį, o ne į tiekėją.",
+        "noProvider": "Pirmiausia pasirinkite programą.",
+        "verifyNote": "Dar nepatikrinta su tikra programos paskyra — pirmiausia atlikite savininko kontrolinį sąrašą docs/ACCOUNTING_INTEGRATIONS.md su BANDOMĄJA įmone.",
+        "listLink": "Atverti pilną žurnalą"
+    },
+    "groups": {
+        "general": "Ką ir kada",
+        "merit": "Merit Aktiva",
+        "smart": "SmartAccounts",
+        "mapping": "Susiejimas su programa"
+    },
+    "fields": {
+        "accountingProvider": "Buhalterinė programa",
+        "accountingMode": "Režimas",
+        "accountingStartDate": "Pirmas eksportas nuo (apsilankymo data)",
+        "accountingBatchTime": "Paketo laikas (vietos)",
+        "accountingMeritHost": "Merit regionas",
+        "accountingMeritId": "Merit API ID",
+        "accountingMeritKey": "Merit API raktas",
+        "accountingMeritIban": "Merit banko sąskaita (IBAN) vėlesniems mokėjimams",
+        "accountingSmartId": "SmartAccounts viešasis API raktas",
+        "accountingSmartKey": "SmartAccounts slaptasis raktas",
+        "accountingRetailName": "Bendras klientas fiziniams asmenims",
+        "accountingItemCodeBase": "Pagrindinio plovimo prekės kodas",
+        "accountingItemCodeAddon": "Papildomų paslaugų prekės kodas",
+        "accountingNumberPrefix": "Sąskaitos numerio priešdėlis",
+        "accountingDueDays": "Dienos apmokėti sąskaita išrašytus užsakymus",
+        "accountingVatId21": "Programos 21% PVM ID (tuščia = rasti)",
+        "accountingVatId0": "Programos 0% PVM ID (tuščia = rasti)",
+        "accountingPayMethodCash": "Grynųjų apmokėjimo būdo pavadinimas",
+        "accountingPayMethodCard": "Kortelės apmokėjimo būdo pavadinimas",
+        "accountingPayAccountCash": "Kasa (SmartAccounts, vėlesni mokėjimai)",
+        "accountingPayAccountCard": "Banko sąskaita (SmartAccounts, vėlesni mokėjimai)"
+    },
+    "hints": {
+        "accountingStartDate": "Niekas iki šios datos niekada nesiunčiama. Tuščia = nieko nesiunčiama automatiškai.",
+        "accountingMode": "Rankinis: tik tai, ką įtraukiate į eilę. Automatinis: kiekvienas įvykdytas užsakymas įtraukiamas į eilę ir išsiunčiamas per kelias minutes. Paketinis: įtraukiamas iš karto, išsiunčiamas po paketo laiko.",
+        "accountingRetailName": "Programoje rodomas kaip kiekvieno fizinio asmens pardavimo pirkėjas.",
+        "accountingPayMethodCash": "Turi jau egzistuoti programoje (Merit: apmokėjimo būdas; SmartAccounts: apmokėjimo būdas).",
+        "accountingMeritId": "Settings → API Settings sistemoje Merit. Raktas daugiau niekada nerodomas.",
+        "accountingSmartKey": "SmartAccounts: Settings → Connected services → API."
+    },
+    "options": {
+        "accountingProvider": {
+            "off": "Išjungta",
+            "merit": "Merit Aktiva",
+            "smartaccounts": "SmartAccounts"
+        },
+        "accountingMode": {
+            "manual": "Rankinis",
+            "auto": "Automatinis įvykdžius",
+            "batch": "Paketas dienos pabaigoje"
+        },
+        "accountingMeritHost": {
+            "ee": "Estija (aktiva.merit.ee)",
+            "pl": "Lenkija (360ksiegowosc.pl)"
+        }
+    }
+}

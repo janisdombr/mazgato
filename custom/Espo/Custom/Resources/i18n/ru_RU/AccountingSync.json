@@ -1,0 +1,43 @@
+{
+    "fields": {
+        "name": "Документ",
+        "washOrder": "Заказ",
+        "connector": "Программа",
+        "kind": "Вид",
+        "status": "Статус",
+        "externalId": "ID в программе",
+        "externalNo": "Номер в программе",
+        "amount": "Сумма",
+        "docHash": "Отпечаток содержимого",
+        "paidIncluded": "Оплата отправлена вместе с продажей",
+        "error": "Ошибка / заметка",
+        "attempts": "Попытки",
+        "nextAttemptAt": "Следующая попытка",
+        "lastAttemptAt": "Последняя попытка",
+        "sentAt": "Отправлено",
+        "createdAt": "Поставлено в очередь",
+        "lockedUntil": "Заблокировано до"
+    },
+    "links": {
+        "washOrder": "Заказ"
+    },
+    "options": {
+        "connector": {
+            "merit": "Merit Aktiva",
+            "smartaccounts": "SmartAccounts"
+        },
+        "kind": {
+            "Sale": "Продажа",
+            "Payment": "Платёж"
+        },
+        "status": {
+            "Pending": "Ожидает",
+            "Sent": "Отправлено",
+            "Failed": "Ошибка",
+            "Skipped": "Пропущено"
+        }
+    },
+    "labels": {
+        "Accounting": "Бухгалтерия"
+    }
+}

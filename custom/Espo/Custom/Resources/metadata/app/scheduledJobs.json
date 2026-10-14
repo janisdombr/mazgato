@@ -23,5 +23,15 @@
         "name": "Purge old public chat journal rows",
         "isSystem": true,
         "scheduling": "45 3 * * *"
+    },
+    "AccountingSync": {
+        "name": "Send completed orders to the accounting program",
+        "isSystem": true,
+        "scheduling": "*/5 * * * *"
+    },
+    "LoyaltyExpire": {
+        "name": "Expire loyalty points and release referral rewards",
+        "isSystem": true,
+        "scheduling": "10 4 * * *"
     }
 }

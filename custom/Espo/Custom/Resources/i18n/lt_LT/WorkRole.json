@@ -1,0 +1,22 @@
+{
+    "fields": {
+        "name": "Pavadinimas",
+        "sortOrder": "Rikiavimo eilė",
+        "isActive": "Aktyvus",
+        "defaultEmployee": "Numatytasis darbuotojas",
+        "works": "Darbai",
+        "description": "Pastabos"
+    },
+    "links": {
+        "defaultEmployee": "Numatytasis darbuotojas",
+        "works": "Darbai",
+        "orderWorks": "Užsakymų darbai"
+    },
+    "tooltips": {
+        "sortOrder": "Mažesnis eina pirmas. Aktyvūs vaidmenys pagal eilę yra vykdytojai, siūlomi greitame priėmime.",
+        "defaultEmployee": "Darbuotojas, parenkamas iš anksto šiam vaidmeniui greito priėmimo formoje."
+    },
+    "labels": {
+        "Create WorkRole": "Sukurti vaidmenį"
+    }
+}

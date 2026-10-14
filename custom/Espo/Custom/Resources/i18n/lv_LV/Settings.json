@@ -67,7 +67,9 @@
             "assistant": "AI palīgs",
             "anpr": "Numuru atpazīšana",
             "cameras": "Kameras",
-            "clientAssistant": "Klientu čats (AI)"
+            "clientAssistant": "Klientu čats (AI)",
+            "accounting": "Grāmatvedības integrācija",
+            "loyalty": "Lojalitāte (akcijas kodi, katra N-tā bezmaksas)"
         },
         "kioskTheme": {
             "dark": "Tumšā",

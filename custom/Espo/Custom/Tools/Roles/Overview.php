@@ -275,7 +275,7 @@ final class Overview
         $diff = [];
 
         foreach ($scopes as $scope) {
-            if ($scope === 'RevenueReports') {
+            if (in_array($scope, ['RevenueReports', 'CapacityOverride', 'Calendar'], true)) {
                 if ($this->switchOn($role, $scope) !== (($preset[$scope] ?? false) === true)) {
                     $diff[] = $scope;
                 }

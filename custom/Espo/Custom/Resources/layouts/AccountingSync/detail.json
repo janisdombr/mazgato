@@ -1,0 +1,61 @@
+[
+    {
+        "label": "Overview",
+        "rows": [
+            [
+                {
+                    "name": "name"
+                },
+                {
+                    "name": "status"
+                }
+            ],
+            [
+                {
+                    "name": "connector"
+                },
+                {
+                    "name": "kind"
+                }
+            ],
+            [
+                {
+                    "name": "washOrder"
+                },
+                {
+                    "name": "externalNo"
+                }
+            ],
+            [
+                {
+                    "name": "externalId"
+                },
+                {
+                    "name": "amount"
+                }
+            ],
+            [
+                {
+                    "name": "attempts"
+                },
+                {
+                    "name": "nextAttemptAt"
+                }
+            ],
+            [
+                {
+                    "name": "lastAttemptAt"
+                },
+                {
+                    "name": "sentAt"
+                }
+            ],
+            [
+                {
+                    "name": "error"
+                },
+                false
+            ]
+        ]
+    }
+]

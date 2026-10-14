@@ -1,0 +1,37 @@
+{
+    "fields": {
+        "name": "Pavadinimas",
+        "category": "Kategorija",
+        "priceRetail": "Mažmeninė kaina",
+        "priceCorporate": "Įmonių kaina",
+        "durationMinutes": "Trukmė (min.)",
+        "isActive": "Aktyvi",
+        "description": "Aprašymas",
+        "createdAt": "Sukurta",
+        "modifiedAt": "Pakeista",
+        "workLines": "Darbai",
+        "sortOrder": "Rikiavimo eilė",
+        "supplyLines": "Medžiagų eilutės",
+        "crewSize": "Reikia plovėjų"
+    },
+    "links": {
+        "orders": "Užsakymai",
+        "supplyLines": "Medžiagos (sunaudojimas)",
+        "addonOrders": "Užsakymai (kaip papildoma paslauga)",
+        "workLines": "Darbai (šablonas)"
+    },
+    "options": {
+        "category": {
+            "Base": "Pagrindinis plovimas",
+            "Add-on": "Papildoma paslauga"
+        }
+    },
+    "tooltips": {
+        "sortOrder": "Eilė sąrašuose ir greito priėmimo formoje — mažesnis skaičius rodomas pirmas.",
+        "crewSize": "Kiek plovėjų vienu metu dirba prie VIENO šios paslaugos automobilio. Tuščia = numatytoji brigada iš Registracija internetu -> Pajėgumas. Kompleksiniam plovimui, kuriam reikia dviejų žmonių, du plovėjai atitraukiami nuo kitų automobilių."
+    },
+    "labels": {
+        "sortServices": "Pakeisti eilę",
+        "Create WashService": "Sukurti paslaugą"
+    }
+}

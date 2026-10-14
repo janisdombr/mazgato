@@ -1,0 +1,67 @@
+{
+    "fields": {
+        "name": "Pavadinimas",
+        "customer": "Klientas",
+        "kind": "Tipas",
+        "washesTotal": "Plovimų pakete",
+        "washesRemaining": "Liko plovimų",
+        "service": "Tik paslaugai",
+        "validFrom": "Galioja nuo",
+        "validTo": "Galioja iki",
+        "price": "Kaina",
+        "status": "Būsena",
+        "saleOrder": "Pardavimo užsakymas",
+        "uses": "Panaudoti plovimai",
+        "orders": "Juo apmokėti užsakymai",
+        "description": "Pastabos"
+    },
+    "tooltips": {
+        "service": "Tuščia = bet kuris pagrindinis plovimas. Nurodykite, kad abonementas būtų apribotas vienu plovimo tipu.",
+        "validTo": "Paketas gali neturėti pabaigos datos; neribotas abonementas privalo."
+    },
+    "options": {
+        "kind": {
+            "Pack": "Plovimų paketas",
+            "Unlimited": "Neribotas laikotarpiui"
+        },
+        "status": {
+            "Active": "Aktyvus",
+            "Exhausted": "Išnaudotas",
+            "Expired": "Pasibaigęs",
+            "Cancelled": "Atšauktas"
+        }
+    },
+    "links": {
+        "customer": "Klientas",
+        "service": "Paslauga",
+        "saleOrder": "Pardavimo užsakymas",
+        "uses": "Panaudoti plovimai",
+        "orders": "Juo apmokėti užsakymai"
+    },
+    "labels": {
+        "Create Subscription": "Sukurti abonementą",
+        "Subscription": "Abonementas",
+        "Overview": "Apžvalga",
+        "sell": "Parduoti abonementą",
+        "sellTitle": "Parduoti abonementą",
+        "sellHint": "Sukuria abonementą ir įvykdytą pardavimo užsakymą su viena kaina pažymėta eilute. Grynųjų ir kortelės pardavimams vis tiek reikia kasos kvito (užsakymo skiltis „Fiskalinė dalis“).",
+        "sold": "Abonementas parduotas",
+        "washes": "Plovimai",
+        "paid": "Sumokėta prie kasos",
+        "left": "liko",
+        "until": "iki",
+        "byService": "tik",
+        "unlimited": "neribotas",
+        "cancel": "Atšaukti",
+        "none": "Abonementų nėra"
+    },
+    "messages": {
+        "subscription_wrong_customer": "Šis abonementas priklauso kitam klientui.",
+        "subscription_expired": "Šio abonemento galiojimas pasibaigė.",
+        "subscription_exhausted": "Šiame abonemente plovimų nebeliko.",
+        "subscription_cancelled": "Šis abonementas atšauktas.",
+        "subscription_not_started": "Šis abonementas dar negalioja.",
+        "subscription_wrong_service": "Šis abonementas šio plovimo neapima.",
+        "subscription_not_found": "Abonementas nerastas."
+    }
+}

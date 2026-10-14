@@ -110,7 +110,7 @@ class Assistant
         $l = $p ? (string) $p->get('language') : '';
 
         return match (substr($l ?: $this->cfg->language(), 0, 2)) {
-            'ru' => 'Russian', 'en' => 'English', default => 'Latvian',
+            'ru' => 'Russian', 'en' => 'English', 'lt' => 'Lithuanian', default => 'Latvian',
         };
     }
 

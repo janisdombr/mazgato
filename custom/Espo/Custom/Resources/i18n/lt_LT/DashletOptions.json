@@ -1,0 +1,22 @@
+{
+    "fields": {
+        "dashletWidth": "Plotis",
+        "dashletHeight": "Aukštis"
+    },
+    "options": {
+        "dashletWidth": {
+            "": "Kaip nutempta",
+            "2": "1 stulpelis",
+            "4": "2 stulpeliai (visas plotis)"
+        },
+        "dashletHeight": {
+            "": "Kaip nutempta",
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6"
+        }
+    }
+}

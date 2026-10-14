@@ -68,14 +68,30 @@ define(['views/dashlets/abstract/base', 'custom:lib/state', 'custom:lib/format']
 
             window.__cwErrorLogger = true;
 
-            var send = function (where, message, stack) {
+            // The logger must never feed itself: its own failed POST (signed out 401, rate limit 429, offline) used to surface as an
+            // unhandled rejection, which was reported again, forever - a signed-out tab then hammered the server and got the whole
+            // address rate-limited. So: the POST's own rejection is swallowed, a failure that carries an HTTP status is not reported
+            // (it is the app's problem to show, not a bug report), and at most 5 reports a minute leave one page.
+            var sent = [];
+            var send = function (where, message, stack, reason) {
                 try {
-                    Espo.Ajax.postRequest('CarWash/action/logClientError', {
+                    if (reason && (reason.status || reason.statusText) && /^(401|403|429|0)$/.test(String(reason.status))) { return; }
+
+                    var now = Date.now();
+                    sent = sent.filter(function (t) { return now - t < 60000; });
+
+                    if (sent.length >= 5) { return; }
+
+                    sent.push(now);
+
+                    var p = Espo.Ajax.postRequest('CarWash/action/logClientError', {
                         where: where,
                         message: String(message || '').slice(0, 500),
                         stack: String(stack || '').slice(0, 2000),
                         url: window.location.hash,
                     });
+
+                    if (p && typeof p.catch === 'function') { p.catch(function () {}); }
                 } catch (ignore) {}
             };
 
@@ -85,7 +101,7 @@ define(['views/dashlets/abstract/base', 'custom:lib/state', 'custom:lib/format']
 
             window.addEventListener('unhandledrejection', function (e) {
                 var r = e.reason;
-                send('unhandledrejection', r && (r.message || r.statusText || r), r && r.stack);
+                send('unhandledrejection', r && (r.message || r.statusText || r), r && r.stack, r);
             });
         },
 

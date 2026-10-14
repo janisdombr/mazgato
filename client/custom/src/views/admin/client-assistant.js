@@ -25,8 +25,8 @@ define(['custom:views/admin/settings-page', 'custom:lib/state'], function (Dep, 
         groups: [
             {title: 'switch', fields: [{key: 'clientAssistantEnabled', type: 'bool'}]},
             {title: 'provider', fields: [
-                {key: 'clientAssistantProvider', type: 'select', options: ['off', 'anthropic']},
-                {key: 'assistantApiKey', type: 'secret'},
+                {key: 'clientAssistantProvider', type: 'select', options: ['off', 'anthropic', 'openai', 'gemini', 'mistral', 'deepseek', 'groq']},
+                {key: 'clientAssistantApiKey', type: 'secret'},
                 {key: 'clientAssistantModel', type: 'text', placeholder: 'claude-haiku-5-5'},
                 {key: 'clientAssistantFallbackModel', type: 'text', placeholder: 'claude-haiku-5-5'},
             ]},
@@ -72,7 +72,34 @@ define(['custom:views/admin/settings-page', 'custom:lib/state'], function (Dep, 
                 '<textarea readonly rows="16" class="form-control ap-knowledge" aria-label="' + esc(this.L('preview', 'groups')) + '">' + esc(this.data.knowledge || '') + '</textarea></section>';
         },
 
-        afterPaint: function () { this.loadUsage(); },
+        afterPaint: function () {
+            this.loadUsage();
+            this.$el.find('#ap-clientAssistantProvider').on('change', this.providerInfo.bind(this));
+            this.providerInfo();
+        },
+
+        /**
+         * Under the provider select: where the key will be sent (the fixed base URL from the server's catalogue), the
+         * provider's data note, and the provider's default model as the placeholder of both model fields.
+         */
+        providerInfo: function () {
+            var id = this.$el.find('#ap-clientAssistantProvider').val();
+            var p = (this.data.providers || []).filter(function (x) { return x.id === id; })[0];
+            var $box = this.$el.find('.ap-provider-info');
+
+            if (!$box.length) {
+                $box = $('<div class="cw-meta ap-provider-info" role="status"></div>');
+                this.$el.find('#ap-clientAssistantProvider').closest('.cw-field').append($box);
+            }
+
+            if (!p) {
+                $box.text('');
+                return;
+            }
+
+            $box.text(this.L('providerSendsTo') + ' ' + p.base + ' - ' + this.L('providerNote_' + p.id) + ' ' + this.L('providerModels') + ' ' + p.models.join(', '));
+            this.$el.find('#ap-clientAssistantModel, #ap-clientAssistantFallbackModel').attr('placeholder', p.model);
+        },
 
         loadUsage: function () {
             var $u = this.$el.find('.ap-usage');

@@ -10,7 +10,37 @@
         "rateReset": "Limits reset",
         "loading": "Loading…",
         "loadError": "Could not load the data",
-        "retry": "Retry"
+        "retry": "Retry",
+        "calcTitle": "Capacity calculator",
+        "calcIntro": "What the wash can take with the numbers above (before saving). Cars per hour and per day are computed by the same planner that offers times to customers.",
+        "calcService": "Service",
+        "calcCars": "cars/day",
+        "calcPerHour": "per hour",
+        "calcLines": "lines",
+        "calcOnline": "online",
+        "calcClosed": "closed",
+        "calcMinutes": "min",
+        "calcCrew": "washers/car",
+        "calcDayRow": "Day capacity (line-minutes)",
+        "calcNone": "No active base services yet.",
+        "calcError": "The calculation failed. Check the numbers.",
+        "calcWarnings": "Check",
+        "warn_washers_lt_posts": "Fewer washers than bays: some bays can never be used at the same time.",
+        "warn_online_share_zero": "Online share is 0 %: the form and the chat will offer no times.",
+        "warn_no_duration": "No duration set: 30 minutes are assumed.",
+        "warn_buffer_gt_duration": "The buffer between cars is longer than the wash itself.",
+        "warn_hour_cap_binds": "The cars-per-hour limit is lower than the lines could do.",
+        "warn_day_cap_binds": "The cars-per-day limit is lower than the day could take.",
+        "warn_crew_exceeds_washers": "This service needs more washers than are on duty: it cannot be booked.",
+        "warn_bays_idle": "Washers (÷ crew) limit the lines below the number of bays: some bays stay idle.",
+        "warn_longer_than_day": "The wash with the buffer is longer than the opening hours.",
+        "Mon": "Mon",
+        "Tue": "Tue",
+        "Wed": "Wed",
+        "Thu": "Thu",
+        "Fri": "Fri",
+        "Sat": "Sat",
+        "Sun": "Sun"
     },
     "groups": {
         "hours": "Working hours",
@@ -40,7 +70,12 @@
         "bookingMinFillSeconds": "Minimum seconds to fill the form",
         "turnstileSiteKey": "Turnstile site key (public)",
         "turnstileSecret": "Turnstile secret key",
-        "turnstileHostname": "Expected hostname (optional)"
+        "turnstileHostname": "Expected hostname (optional)",
+        "bookingWashers": "Washers on duty",
+        "bookingWashersByWeekday": "Washers by weekday (optional)",
+        "bookingCrewDefault": "Washers needed for one car",
+        "bookingDayCapacityPercent": "Share of the day open to ONLINE booking, %",
+        "bookingMaxCarsPerDay": "Max cars per day (0 = computed only)"
     },
     "hints": {
         "bookingHoursMon": "HH:MM-HH:MM. Type 'closed' to shut that weekday; empty = default hours.",
@@ -49,6 +84,11 @@
         "bookingReminderHours": "Needs the CRM cron (job BookingMaintenance, every 5 min).",
         "turnstileSiteKey": "From the Cloudflare dashboard (Turnstile). Public: it is shown to visitors. Empty = no bot check.",
         "turnstileSecret": "Write-only: kept on the server and never shown again. The check is on only while the secret is set; if Cloudflare is unreachable, booking is refused (closed).",
-        "turnstileHostname": "Empty = the host of the CRM address. Only for tests (Cloudflare's dummy keys answer example.com)."
+        "turnstileHostname": "Empty = the host of the CRM address. Only for tests (Cloudflare's dummy keys answer example.com).",
+        "bookingWashers": "Empty = one per bay, so nothing changes for a wash that never set it. At no minute more cars are washed than bays, and the washers of those cars add up to at most this number.",
+        "bookingWashersByWeekday": "Optional: \"Sat=4, Sun=4\" (Mon Tue Wed Thu Fri Sat Sun). A day not listed uses the number above.",
+        "bookingCrewDefault": "Default for every service; a service can override it (Services -> Washers needed). Lines = bays or washers / crew, whichever is fewer.",
+        "bookingDayCapacityPercent": "The form and the chat stop offering times when this share of the day (lines x opening minutes) is booked. Walk-ins and staff reservations use the whole day. Empty = 100.",
+        "bookingMaxCarsPerDay": "A hard stop on the number of cars (reserved, on the bays and finished) in one day; staff may still book over it knowingly (manager)."
     }
 }

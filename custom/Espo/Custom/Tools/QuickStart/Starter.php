@@ -21,46 +21,46 @@ use Espo\ORM\EntityManager;
 class Starter
 {
     public const MARKER = 'quickStartLoaded';
-    public const LANGS = ['lv_LV', 'ru_RU', 'en_US'];
+    public const LANGS = ['lv_LV', 'ru_RU', 'en_US', 'lt_LT'];
 
     /**
-     * Names in [lv, ru, en] order, everything else is language-free.
+     * Names in [lv, ru, en, lt] order, everything else is language-free.
      * works: key => [names, role key, baseRate]; services: [category, names, retail, corporate, minutes, [work keys]]
      */
     private const ROLES = [
-        'wash' => [['Mazgātājs', 'Мойщик', 'Washer']],
-        'salon' => [['Salona meistars', 'Мастер салона', 'Interior master']],
-        'detail' => [['Pulētājs', 'Детейлер', 'Detailer']],
+        'wash' => [['Mazgātājs', 'Мойщик', 'Washer', 'Plovėjas']],
+        'salon' => [['Salona meistars', 'Мастер салона', 'Interior master', 'Salono meistras']],
+        'detail' => [['Pulētājs', 'Детейлер', 'Detailer', 'Poliruotojas']],
     ];
 
     private const WORKS = [
-        'foam' => [['Priekšmazgāšana ar putām', 'Пена, предмойка', 'Foam pre-wash'], 'wash', 1.5],
-        'ext' => [['Virsbūves mazgāšana', 'Мойка кузова', 'Exterior wash'], 'wash', 5],
-        'wheels' => [['Riteņu un loku mazgāšana', 'Мойка дисков и арок', 'Wheels and arches'], 'wash', 2],
-        'dry' => [['Žāvēšana', 'Сушка', 'Drying'], 'wash', 3],
-        'vac' => [['Salona putekļsūkšana', 'Пылесос салона', 'Interior vacuuming'], 'salon', 3],
-        'int' => [['Salona tīrīšana', 'Чистка салона', 'Interior cleaning'], 'salon', 6],
-        'glass' => [['Stiklu tīrīšana iekšpusē', 'Стёкла изнутри', 'Windows inside'], 'salon', 2],
-        'plastic' => [['Plastmasas kopšana', 'Уход за пластиком', 'Plastics dressing'], 'salon', 2],
-        'wax' => [['Vaskošana un pulēšana', 'Воск и полировка', 'Wax and polish'], 'detail', 8],
-        'engine' => [['Motora nodalījuma mazgāšana', 'Мойка моторного отсека', 'Engine bay wash'], 'detail', 6],
+        'foam' => [['Priekšmazgāšana ar putām', 'Пена, предмойка', 'Foam pre-wash', 'Išankstinis plovimas putomis'], 'wash', 1.5],
+        'ext' => [['Virsbūves mazgāšana', 'Мойка кузова', 'Exterior wash', 'Kėbulo plovimas'], 'wash', 5],
+        'wheels' => [['Riteņu un loku mazgāšana', 'Мойка дисков и арок', 'Wheels and arches', 'Ratų ir arkų plovimas'], 'wash', 2],
+        'dry' => [['Žāvēšana', 'Сушка', 'Drying', 'Džiovinimas'], 'wash', 3],
+        'vac' => [['Salona putekļsūkšana', 'Пылесос салона', 'Interior vacuuming', 'Salono siurbimas'], 'salon', 3],
+        'int' => [['Salona tīrīšana', 'Чистка салона', 'Interior cleaning', 'Salono valymas'], 'salon', 6],
+        'glass' => [['Stiklu tīrīšana iekšpusē', 'Стёкла изнутри', 'Windows inside', 'Langų valymas iš vidaus'], 'salon', 2],
+        'plastic' => [['Plastmasas kopšana', 'Уход за пластиком', 'Plastics dressing', 'Plastiko priežiūra'], 'salon', 2],
+        'wax' => [['Vaskošana un pulēšana', 'Воск и полировка', 'Wax and polish', 'Vaškavimas ir poliravimas'], 'detail', 8],
+        'engine' => [['Motora nodalījuma mazgāšana', 'Мойка моторного отсека', 'Engine bay wash', 'Variklio skyriaus plovimas'], 'detail', 6],
     ];
 
     private const SERVICES = [
-        ['Base', ['Ekspress mazgāšana', 'Экспресс-мойка', 'Express wash'], 10, 8, 20, ['foam', 'ext', 'dry']],
-        ['Base', ['Mazgāšana S', 'Мойка S', 'Wash S'], 15, 12, 30, ['foam', 'ext', 'wheels', 'dry']],
-        ['Base', ['Mazgāšana M', 'Мойка M', 'Wash M'], 20, 16, 40, ['foam', 'ext', 'wheels', 'dry']],
-        ['Base', ['Mazgāšana L', 'Мойка L', 'Wash L'], 25, 20, 50, ['foam', 'ext', 'wheels', 'dry']],
-        ['Base', ['Mazgāšana SUV/busiņš', 'Мойка внедорожник/бус', 'Wash SUV/van'], 30, 24, 60, ['foam', 'ext', 'wheels', 'dry']],
-        ['Base', ['Komplekss M', 'Комплекс M', 'Complex M'], 35, 28, 75, ['foam', 'ext', 'wheels', 'dry', 'vac', 'glass']],
-        ['Add-on', ['Salona putekļsūkšana', 'Пылесос салона', 'Interior vacuuming'], 5, 4, 15, ['vac']],
-        ['Add-on', ['Pilna salona tīrīšana', 'Полная чистка салона', 'Full interior cleaning'], 15, 12, 40, ['int']],
-        ['Add-on', ['Stikli iekšpusē', 'Стёкла изнутри', 'Windows inside'], 3, 2.5, 10, ['glass']],
-        ['Add-on', ['Plastmasas kopšana', 'Уход за пластиком', 'Plastics dressing'], 4, 3, 10, ['plastic']],
-        ['Add-on', ['Vaskošana', 'Нанесение воска', 'Wax'], 12, 10, 30, ['wax']],
-        ['Add-on', ['Motora mazgāšana', 'Мойка двигателя', 'Engine wash'], 15, 12, 30, ['engine']],
-        ['Add-on', ['Disku kopšana', 'Уход за дисками', 'Wheel care'], 4, 3, 10, ['wheels']],
-        ['Add-on', ['Dzīvnieku spalvu tīrīšana', 'Чистка от шерсти', 'Pet hair removal'], 10, 8, 30, ['vac', 'int']],
+        ['Base', ['Ekspress mazgāšana', 'Экспресс-мойка', 'Express wash', 'Greitasis plovimas'], 10, 8, 20, ['foam', 'ext', 'dry']],
+        ['Base', ['Mazgāšana S', 'Мойка S', 'Wash S', 'Plovimas S'], 15, 12, 30, ['foam', 'ext', 'wheels', 'dry']],
+        ['Base', ['Mazgāšana M', 'Мойка M', 'Wash M', 'Plovimas M'], 20, 16, 40, ['foam', 'ext', 'wheels', 'dry']],
+        ['Base', ['Mazgāšana L', 'Мойка L', 'Wash L', 'Plovimas L'], 25, 20, 50, ['foam', 'ext', 'wheels', 'dry']],
+        ['Base', ['Mazgāšana SUV/busiņš', 'Мойка внедорожник/бус', 'Wash SUV/van', 'Plovimas visureigiui / mikroautobusui'], 30, 24, 60, ['foam', 'ext', 'wheels', 'dry']],
+        ['Base', ['Komplekss M', 'Комплекс M', 'Complex M', 'Kompleksas M'], 35, 28, 75, ['foam', 'ext', 'wheels', 'dry', 'vac', 'glass']],
+        ['Add-on', ['Salona putekļsūkšana', 'Пылесос салона', 'Interior vacuuming', 'Salono siurbimas'], 5, 4, 15, ['vac']],
+        ['Add-on', ['Pilna salona tīrīšana', 'Полная чистка салона', 'Full interior cleaning', 'Pilnas salono valymas'], 15, 12, 40, ['int']],
+        ['Add-on', ['Stikli iekšpusē', 'Стёкла изнутри', 'Windows inside', 'Langai iš vidaus'], 3, 2.5, 10, ['glass']],
+        ['Add-on', ['Plastmasas kopšana', 'Уход за пластиком', 'Plastics dressing', 'Plastiko priežiūra'], 4, 3, 10, ['plastic']],
+        ['Add-on', ['Vaskošana', 'Нанесение воска', 'Wax', 'Vaškavimas'], 12, 10, 30, ['wax']],
+        ['Add-on', ['Motora mazgāšana', 'Мойка двигателя', 'Engine wash', 'Variklio plovimas'], 15, 12, 30, ['engine']],
+        ['Add-on', ['Disku kopšana', 'Уход за дисками', 'Wheel care', 'Ratlankių priežiūra'], 4, 3, 10, ['wheels']],
+        ['Add-on', ['Dzīvnieku spalvu tīrīšana', 'Чистка от шерсти', 'Pet hair removal', 'Gyvūnų plaukų valymas'], 10, 8, 30, ['vac', 'int']],
     ];
 
     /** Rate matrix: work key, service index (see SERVICES), rate. Larger cars pay the washer more. */
@@ -71,13 +71,13 @@ class Starter
 
     /** employees: names, role key */
     private const EMPLOYEES = [
-        ['wash', 'Darbinieks 1', 'Сотрудник 1', 'Employee 1'],
-        ['wash', 'Darbinieks 2', 'Сотрудник 2', 'Employee 2'],
-        ['salon', 'Darbinieks 3', 'Сотрудник 3', 'Employee 3'],
-        ['detail', 'Darbinieks 4', 'Сотрудник 4', 'Employee 4'],
+        ['wash', 'Darbinieks 1', 'Сотрудник 1', 'Employee 1', 'Darbuotojas 1'],
+        ['wash', 'Darbinieks 2', 'Сотрудник 2', 'Employee 2', 'Darbuotojas 2'],
+        ['salon', 'Darbinieks 3', 'Сотрудник 3', 'Employee 3', 'Darbuotojas 3'],
+        ['detail', 'Darbinieks 4', 'Сотрудник 4', 'Employee 4', 'Darbuotojas 4'],
     ];
 
-    private const NOTE = ['Sākuma cena - pārbaudiet', 'Стартовая цена - проверьте', 'Starter price - review'];
+    private const NOTE = ['Sākuma cena - pārbaudiet', 'Стартовая цена - проверьте', 'Starter price - review', 'Pradinė kaina - patikrinkite'];
 
     /** @var string[] */
     private array $createdTranslations = [];
@@ -264,7 +264,7 @@ class Starter
         return $res;
     }
 
-    /** @param string[] $names lv, ru, en */
+    /** @param string[] $names lv, ru, en, lt */
     private function translate(array $names, string $prefix, int $i): void
     {
         $em = $this->entityManager;
@@ -275,7 +275,7 @@ class Starter
         }
 
         $t = $em->getNewEntity('Translation');
-        $t->set(['name' => $key, 'textLv' => $prefix . $names[0], 'textRu' => $prefix . $names[1], 'textEn' => $prefix . $names[2]]);
+        $t->set(['name' => $key, 'textLv' => $prefix . $names[0], 'textRu' => $prefix . $names[1], 'textEn' => $prefix . $names[2], 'textLt' => $prefix . $names[3]]);
         $em->saveEntity($t);
         $this->createdTranslations[] = $t->getId();
     }

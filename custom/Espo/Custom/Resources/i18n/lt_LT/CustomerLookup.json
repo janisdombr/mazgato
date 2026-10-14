@@ -1,0 +1,11 @@
+{
+    "labels": {
+        "platePlaceholder": "Valstybinis numeris…",
+        "lookup": "Rasti",
+        "corporate": "Įmonė",
+        "history": "Užsakymai",
+        "spent": "Išleista",
+        "notFound": "Pagal šį numerį kliento nerasta.",
+        "noHistory": "Užsakymų dar nėra"
+    }
+}

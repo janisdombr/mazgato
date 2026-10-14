@@ -1,0 +1,22 @@
+{
+    "fields": {
+        "name": "Vardas",
+        "phone": "Telefonas",
+        "email": "El. paštas",
+        "customer": "Klientas",
+        "isPrimary": "Pagrindinis vairuotojas",
+        "isActive": "Aktyvus",
+        "description": "Pastabos"
+    },
+    "links": {
+        "customer": "Klientas",
+        "orders": "Užsakymai"
+    },
+    "tooltips": {
+        "customer": "Įmonė ar asmuo, kuriam priklauso šis vairuotojas. Įmonė gali turėti kelis vairuotojus tiems patiems automobiliams.",
+        "isPrimary": "Įprastas šio kliento vairuotojas."
+    },
+    "labels": {
+        "Create Driver": "Sukurti vairuotoją"
+    }
+}

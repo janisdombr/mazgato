@@ -1,0 +1,37 @@
+{
+    "fields": {
+        "name": "Запись",
+        "customer": "Клиент",
+        "kind": "Вид",
+        "points": "Баллы",
+        "balanceAfter": "Остаток после",
+        "washOrder": "Заказ",
+        "note": "Примечание",
+        "remaining": "Осталось в этой партии",
+        "expiresAt": "Действует до",
+        "createdAt": "Дата",
+        "createdBy": "Кто выполнил"
+    },
+    "links": {
+        "customer": "Клиент",
+        "washOrder": "Заказ",
+        "createdBy": "Кто выполнил"
+    },
+    "labels": {
+        "LoyaltyLedger": "Запись по баллам",
+        "Overview": "Обзор"
+    },
+    "tooltips": {
+        "remaining": "Баллы этого начисления, которые ещё не потрачены. Списание берёт самые старые партии первыми."
+    },
+    "options": {
+        "kind": {
+            "Earn": "Начислено",
+            "Redeem": "Списано",
+            "Adjust": "Корректировка",
+            "Expire": "Сгорело",
+            "Referral": "Приглашение",
+            "Reverse": "Отмена"
+        }
+    }
+}

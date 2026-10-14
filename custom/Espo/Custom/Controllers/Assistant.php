@@ -277,7 +277,7 @@ class Assistant
     {
         $v = trim($v);
 
-        if (!preg_match('/^[A-Za-z0-9_\-]{20,300}$/', $v)) {
+        if (!preg_match('/^[A-Za-z0-9._\-]{20,300}$/', $v)) {
             throw new BadRequest('That does not look like an API key.');
         }
 

@@ -125,7 +125,9 @@
                 "",
                 "lv_LV",
                 "ru_RU",
-                "en_US"
+                "en_US",
+                "et_EE",
+                "lt_LT"
             ],
             "default": "",
             "tooltip": true
@@ -162,6 +164,111 @@
             "readOnly": true,
             "layoutDetailDisabled": true,
             "layoutListDisabled": true
+        },
+        "loyaltyWashes": {
+            "type": "int",
+            "default": 0,
+            "readOnly": true,
+            "layoutListDisabled": true,
+            "layoutFiltersDisabled": true,
+            "layoutMassUpdateDisabled": true
+        },
+        "loyaltyFreeEarned": {
+            "type": "int",
+            "default": 0,
+            "readOnly": true,
+            "layoutListDisabled": true,
+            "layoutFiltersDisabled": true,
+            "layoutMassUpdateDisabled": true
+        },
+        "loyaltyFreeUsed": {
+            "type": "int",
+            "default": 0,
+            "readOnly": true,
+            "layoutListDisabled": true,
+            "layoutFiltersDisabled": true,
+            "layoutMassUpdateDisabled": true
+        },
+        "loyaltyFreeHeld": {
+            "type": "bool",
+            "default": false,
+            "readOnly": true,
+            "layoutListDisabled": true,
+            "layoutDetailDisabled": true,
+            "layoutFiltersDisabled": true,
+            "layoutMassUpdateDisabled": true
+        },
+        "loyaltyPoints": {
+            "type": "int",
+            "default": 0,
+            "readOnly": true,
+            "layoutListDisabled": true,
+            "layoutFiltersDisabled": true,
+            "layoutMassUpdateDisabled": true
+        },
+        "referralCode": {
+            "type": "varchar",
+            "maxLength": 8,
+            "readOnly": true,
+            "layoutListDisabled": true,
+            "layoutFiltersDisabled": true,
+            "layoutMassUpdateDisabled": true
+        },
+        "referredBy": {
+            "type": "link",
+            "readOnly": true,
+            "layoutListDisabled": true,
+            "layoutMassUpdateDisabled": true
+        },
+        "referredAt": {
+            "type": "datetime",
+            "readOnly": true,
+            "layoutListDisabled": true,
+            "layoutDetailDisabled": true,
+            "layoutFiltersDisabled": true,
+            "layoutMassUpdateDisabled": true
+        },
+        "referralDueAt": {
+            "type": "datetime",
+            "readOnly": true,
+            "layoutListDisabled": true,
+            "layoutDetailDisabled": true,
+            "layoutFiltersDisabled": true,
+            "layoutMassUpdateDisabled": true
+        },
+        "referralState": {
+            "type": "enum",
+            "options": [
+                "",
+                "Pending",
+                "Paid",
+                "Reversed"
+            ],
+            "default": "",
+            "readOnly": true,
+            "isSorted": false,
+            "layoutListDisabled": true,
+            "layoutDetailDisabled": true,
+            "layoutFiltersDisabled": true,
+            "layoutMassUpdateDisabled": true
+        },
+        "referralOrderId": {
+            "type": "varchar",
+            "maxLength": 24,
+            "readOnly": true,
+            "layoutListDisabled": true,
+            "layoutDetailDisabled": true,
+            "layoutFiltersDisabled": true,
+            "layoutMassUpdateDisabled": true
+        },
+        "referralGen": {
+            "type": "int",
+            "default": 0,
+            "readOnly": true,
+            "layoutListDisabled": true,
+            "layoutDetailDisabled": true,
+            "layoutFiltersDisabled": true,
+            "layoutMassUpdateDisabled": true
         }
     },
     "links": {
@@ -192,6 +299,10 @@
             "type": "hasMany",
             "entity": "Subscription",
             "foreign": "customer"
+        },
+        "referredBy": {
+            "type": "belongsTo",
+            "entity": "Customer"
         }
     },
     "collection": {
@@ -208,6 +319,18 @@
         "name": {
             "columns": [
                 "name",
+                "deleted"
+            ]
+        },
+        "referralCode": {
+            "type": "unique",
+            "columns": [
+                "referralCode"
+            ]
+        },
+        "referredBy": {
+            "columns": [
+                "referredById",
                 "deleted"
             ]
         }

@@ -1,0 +1,11 @@
+{
+    "labels": {
+        "in": "Atėjo",
+        "out": "Išėjo",
+        "onShift": "pamainoje nuo",
+        "noEmployees": "Dirbančių darbuotojų nėra.",
+        "clockedIn": "Atsiregistravo atėjimui",
+        "clockedOut": "Atsiregistravo išėjimui",
+        "hoursShort": "val."
+    }
+}

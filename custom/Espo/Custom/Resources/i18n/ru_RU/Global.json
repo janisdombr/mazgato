@@ -38,7 +38,12 @@
         "Stocktake": "Инвентаризация",
         "StocktakeLine": "Позиция инвентаризации",
         "RevenueReports": "Отчёты по выручке и статистика",
-        "ClientChatMessage": "Сообщение чата"
+        "ClientChatMessage": "Сообщение чата",
+        "AccountingSync": "Бухгалтерская синхронизация",
+        "PromoCode": "Промокод",
+        "PromoRedemption": "Использование промокода",
+        "LoyaltyLedger": "Запись по баллам",
+        "CapacityOverride": "Запись сверх мощности"
     },
     "scopeNamesPlural": {
         "Customer": "Клиенты",
@@ -79,7 +84,12 @@
         "Stocktake": "Инвентаризации",
         "StocktakeLine": "Позиции инвентаризации",
         "RevenueReports": "Отчёты по выручке и статистика",
-        "ClientChatMessage": "Сообщения чата"
+        "ClientChatMessage": "Сообщения чата",
+        "AccountingSync": "Журнал бухгалтерской синхронизации",
+        "PromoCode": "Промокоды",
+        "PromoRedemption": "Использования промокодов",
+        "LoyaltyLedger": "Журнал баллов",
+        "CapacityOverride": "Запись сверх мощности"
     },
     "dashlets": {
         "QuickIntake": "Быстрый приём",
@@ -93,7 +103,8 @@
         "DaySchedule": "Расписание дня",
         "Assistant": "Помощник",
         "Gate": "У въезда",
-        "QuickStart": "Проверка настройки"
+        "QuickStart": "Проверка настройки",
+        "CalendarWeek": "Календарь заказов"
     },
     "labels": {
         "listTotals": "Итоги",

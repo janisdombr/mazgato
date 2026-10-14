@@ -28,6 +28,15 @@
         "other": "Other",
         "ordersLabel": "Orders",
         "day": "Day",
-        "hour": "Hour"
+        "hour": "Hour",
+        "loyaltyTitle": "Loyalty",
+        "loyaltyPromo": "Discounts: promo codes",
+        "loyaltyFree": "Discounts: free washes",
+        "loyaltyPointsDiscount": "Discounts: paid with points",
+        "loyaltyDiscountTotal": "Given away in total",
+        "loyaltyEarned": "Points earned",
+        "loyaltyRedeemed": "Points spent",
+        "loyaltyExpired": "Points expired",
+        "loyaltyReferrals": "Referral rewards paid"
     }
 }

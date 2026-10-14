@@ -67,7 +67,9 @@
             "assistant": "AI assistant",
             "anpr": "Plate recognition",
             "cameras": "Cameras",
-            "clientAssistant": "Customer chat (AI)"
+            "clientAssistant": "Customer chat (AI)",
+            "accounting": "Accounting integration",
+            "loyalty": "Loyalty (promo codes, every N-th free)"
         },
         "kioskTheme": {
             "dark": "Dark",

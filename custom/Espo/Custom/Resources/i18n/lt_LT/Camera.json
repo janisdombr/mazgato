@@ -1,0 +1,57 @@
+{
+    "fields": {
+        "name": "Pavadinimas",
+        "code": "Kodas",
+        "role": "Vaidmuo",
+        "post": "Posto Nr.",
+        "edgeNode": "Krašto mazgas",
+        "streamName": "Srauto pavadinimas",
+        "isActive": "Aktyvi",
+        "online": "Prisijungusi",
+        "lastFrameAt": "Paskutinis kadras",
+        "lastError": "Paskutinė klaida",
+        "secretInput": "Prieigos paslaptis (tik rašymui)",
+        "secretClear": "Pašalinti paslaptį",
+        "secretSet": "Paslaptis nustatyta",
+        "secretCipher": "Užšifruota paslaptis",
+        "note": "Pastaba",
+        "plateEvents": "Numerių įvykiai",
+        "createdAt": "Sukurta",
+        "modifiedAt": "Pakeista"
+    },
+    "links": {
+        "edgeNode": "Krašto mazgas",
+        "plateEvents": "Numerių įvykiai"
+    },
+    "options": {
+        "role": {
+            "Entry": "Įvažiavimas",
+            "Exit": "Išvažiavimas",
+            "Bay": "Postas",
+            "Overview": "Apžvalga"
+        }
+    },
+    "tooltips": {
+        "code": "Trumpas pavadinimas, kuriuo krašto mazgas pažįsta kamerą (a-z, 0-9, _ -). Pavyzdžiui, entry1.",
+        "post": "Kuriam postui kamera priklauso (neprivaloma).",
+        "edgeNode": "Krašto mazgas, kuris renka šios kameros įvykius ir kadrus.",
+        "streamName": "Tik go2rtc/Frigate srauto pavadinimas — be adreso, be prisijungimo vardo.",
+        "secretInput": "Kameros slaptažodis mazgui. Tik rašymui: išsaugojus niekur nerodomas ir API niekada negrąžinamas."
+    },
+    "labels": {
+        "Overview": "Apžvalga",
+        "cameraLive": "Tiesioginis vaizdas ir kadras",
+        "snapshot": "Kadras",
+        "snapshotWaiting": "Laukiama kadro iš mazgo…",
+        "snapshotFailed": "Nepavyko gauti kadro",
+        "liveStart": "Tiesioginis vaizdas",
+        "liveStop": "Stabdyti",
+        "liveHint": "Prieiga trunka 5 minutes ir įrašoma į prieigos žurnalą.",
+        "liveNoStream": "Šiai kamerai srauto pavadinimas nenustatytas.",
+        "clips": "Įrašai",
+        "clipsNone": "Įrašų nėra",
+        "nodeOffline": "Krašto mazgas atsijungęs",
+        "viewAccessNote": "Kiekviena peržiūra užfiksuojama.",
+        "Create Camera": "Pridėti kamerą"
+    }
+}

@@ -27,9 +27,17 @@
         "rateReset": "Счётчики сброшены",
         "privacyHint": "Телефоны и e-mail посетителей никогда не попадают ни к модели, ни в журнал: они заменяются заглушками, а настоящее значение хранится только 24 часа, чтобы завершить запись. У чата нет инструмента, читающего клиентов, заказы, выручку или сотрудников.",
         "legalHint": "Перед включением: сообщите посетителям, что они говорят с ИИ (виджет это делает), заключите соглашение об обработке данных с провайдером, внесите запись в реестр обработки. См. docs/CLIENT_ASSISTANT.md.",
-        "keyHint": "API-ключ общий с помощником для персонала (только запись, хранится в data/config-internal.php).",
+        "keyHint": "Ключ принадлежит выбранному провайдеру (только запись, хранится в data/config-internal.php). Для Anthropic пустое поле означает ключ помощника для персонала. Задайте лимит расходов и в консоли провайдера.",
         "knowledgeNote": "Ровно это чат вправе утверждать как факт. Часы работы берутся из онлайн-записи, цены из прайса, адрес из бренда, если ниже не задан свой.",
-        "title": "Чат для клиентов (ИИ)"
+        "title": "Чат для клиентов (ИИ)",
+        "providerSendsTo": "Ключ отправляется только на",
+        "providerModels": "Модели:",
+        "providerNote_anthropic": "Американская компания; есть соглашение об обработке данных.",
+        "providerNote_openai": "Есть соглашение об обработке данных; хранение в ЕС только для проекта, созданного с регионом Europe.",
+        "providerNote_gemini": "Нужен ПЛАТНЫЙ ключ: содержимое запросов с бесплатным ключом Google может использовать для улучшения своих продуктов.",
+        "providerNote_mistral": "Европейская компания, данные по умолчанию в ЕС, есть соглашение об обработке данных.",
+        "providerNote_deepseek": "Серверы в Китае: имена и телефоны клиентов без законного основания для передачи отправлять нельзя.",
+        "providerNote_groq": "Американская компания; цены нет в нашей таблице, поэтому оценка расходов намеренно завышена."
     },
     "groups": {
         "switch": "Переключатель",
@@ -65,13 +73,14 @@
         "clientAssistantTurnSeconds": "Лимит времени на вопрос, с",
         "clientAssistantTurnTokens": "Входных токенов на вопрос",
         "clientAssistantMaxOutputTokens": "Длина ответа (токены)",
-        "clientAssistantRetentionDays": "Хранение журнала, дней"
+        "clientAssistantRetentionDays": "Хранение журнала, дней",
+        "clientAssistantApiKey": "API-ключ (этого провайдера)"
     },
     "hints": {
         "clientAssistantEnabled": "По умолчанию выключен. Включённый чат появляется на /booking/ и /booking/chat/ — только если задан провайдер и ключ.",
         "clientAssistantProvider": "Выкл.: чат отвечает «недоступен», ничего никуда не отправляется.",
         "assistantApiKey": "Только запись. Общий с помощником для персонала.",
-        "clientAssistantModel": "По умолчанию claude-haiku-5-5 (дёшево, хватает для вопросов и записи).",
+        "clientAssistantModel": "По умолчанию дешёвая модель провайдера (claude-haiku-5-5, gpt-4.1-nano, gemini-2.5-flash-lite, mistral-small-latest...). Пусто = по умолчанию.",
         "clientAssistantAddress": "Пусто = адрес из бренда.",
         "clientAssistantPhone": "Показывается посетителям и предлагается, когда чат не знает ответа. Цифры и +.",
         "clientAssistantPayments": "Напр.: «Наличные и карты на месте; компаниям по счёту». Пусто = чат скажет, что не знает.",
@@ -80,12 +89,18 @@
         "clientAssistantBookingsPerIpDay": "0 = чат не может записывать.",
         "clientAssistantMaxSteps": "Не более 5 — жёсткий потолок.",
         "clientAssistantTurnSeconds": "Не более 60 — жёсткий потолок.",
-        "clientAssistantRetentionDays": "Не менее 31 дня (лимиты суммируются по журналу). Очистка: bin/command client-assistant-purge и ежедневное задание."
+        "clientAssistantRetentionDays": "Не менее 31 дня (лимиты суммируются по журналу). Очистка: bin/command client-assistant-purge и ежедневное задание.",
+        "clientAssistantApiKey": "Только запись. Ключ одного провайдера не подходит другому: вставьте ключ провайдера, выбранного выше."
     },
     "options": {
         "clientAssistantProvider": {
             "off": "Выключен",
-            "anthropic": "Anthropic (Claude)"
+            "anthropic": "Anthropic (Claude)",
+            "openai": "OpenAI",
+            "gemini": "Google Gemini",
+            "mistral": "Mistral AI",
+            "deepseek": "DeepSeek",
+            "groq": "Groq (Llama / Qwen)"
         }
     }
 }

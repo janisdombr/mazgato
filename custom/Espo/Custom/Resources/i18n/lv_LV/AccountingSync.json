@@ -1,0 +1,43 @@
+{
+    "fields": {
+        "name": "Dokuments",
+        "washOrder": "Pasūtījums",
+        "connector": "Programma",
+        "kind": "Veids",
+        "status": "Statuss",
+        "externalId": "Programmas ID",
+        "externalNo": "Numurs programmā",
+        "amount": "Summa",
+        "docHash": "Satura nospiedums",
+        "paidIncluded": "Apmaksa nosūtīta kopā ar pārdošanu",
+        "error": "Kļūda / piezīme",
+        "attempts": "Mēģinājumi",
+        "nextAttemptAt": "Nākamais mēģinājums",
+        "lastAttemptAt": "Pēdējais mēģinājums",
+        "sentAt": "Nosūtīts",
+        "createdAt": "Ievietots rindā",
+        "lockedUntil": "Bloķēts līdz"
+    },
+    "links": {
+        "washOrder": "Pasūtījums"
+    },
+    "options": {
+        "connector": {
+            "merit": "Merit Aktiva",
+            "smartaccounts": "SmartAccounts"
+        },
+        "kind": {
+            "Sale": "Pārdošana",
+            "Payment": "Maksājums"
+        },
+        "status": {
+            "Pending": "Gaida",
+            "Sent": "Nosūtīts",
+            "Failed": "Kļūda",
+            "Skipped": "Izlaists"
+        }
+    },
+    "labels": {
+        "Accounting": "Grāmatvedība"
+    }
+}

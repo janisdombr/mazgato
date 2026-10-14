@@ -61,7 +61,22 @@
         "fiscalNote": "Fiskālā piezīme",
         "subscription": "Abonements",
         "subscriptionSale": "Abonementa pārdošana",
-        "vehiclePlateTemporary": "Pagaidu numurs"
+        "vehiclePlateTemporary": "Pagaidu numurs",
+        "accountingSyncs": "Grāmatvedība",
+        "promoCode": "Akcijas kods",
+        "skipLoyalty": "Nepiemērot atlaides (akcijas kods / bezmaksas mazgāšana)",
+        "loyaltyKind": "Lojalitātes atlaide",
+        "loyaltyDiscount": "Atlaide, EUR",
+        "loyaltyNote": "Lojalitātes piezīme",
+        "redeemPoints": "Izmantojamie punkti",
+        "pointsRedeemed": "Izmantotie punkti",
+        "pointsDiscount": "Atlaide par punktiem, EUR",
+        "pointsEarned": "Nopelnītie punkti",
+        "pointsNote": "Punktu piezīme",
+        "referralCode": "Ieteikuma kods",
+        "referralNote": "Ieteikuma piezīme",
+        "capacityOverride": "Pieteikts virs jaudas",
+        "overrideCapacity": "Pierakstīt tāpat (virs jaudas)"
     },
     "links": {
         "customer": "Klients",
@@ -77,7 +92,8 @@
         "orderAddons": "Šī pasūtījuma pakalpojumi un cenas",
         "photos": "Foto",
         "messages": "Ziņas klientam",
-        "subscription": "Abonements"
+        "subscription": "Abonements",
+        "accountingSyncs": "Grāmatvedība"
     },
     "options": {
         "status": {
@@ -112,6 +128,26 @@
             "Pending": "Gaida",
             "Registered": "Reģistrēts",
             "Receipt": "Reģistrēta kvīts"
+        },
+        "loyaltyKind": {
+            "": "—",
+            "Promo": "Akcijas kods",
+            "FreeWash": "Bezmaksas mazgāšana"
+        },
+        "loyaltyNote": {
+            "": "—",
+            "promo_unknown": "Šāds akcijas kods nav atrasts",
+            "promo_inactive": "Akcijas kods ir izslēgts",
+            "promo_not_started": "Akcijas kods vēl nav spēkā",
+            "promo_expired": "Akcijas kodam ir beidzies termiņš",
+            "promo_exhausted": "Akcijas koda izmantojumi ir izsmelti",
+            "promo_customer_limit": "Šis klients akcijas kodu jau ir izmantojis",
+            "promo_min_amount": "Pasūtījuma summa ir zem akcijas koda minimuma",
+            "promo_first_visit_only": "Akcijas kods ir tikai pirmajam apmeklējumam",
+            "promo_no_effect": "Akcijas kods šeit nedod atlaidi",
+            "skipped": "Atlaides šim pasūtījumam izslēgtas",
+            "promo_free_better": "Bezmaksas mazgāšana ir izdevīgāka; akcijas kods nav izmantots",
+            "free_promo_better": "Akcijas kods ir izdevīgāks; bezmaksas mazgāšana paliek nākamajai reizei"
         }
     },
     "tooltips": {
@@ -137,7 +173,13 @@
         "fiscalIntegrationId": "ID, ar kuru šī CRM ir norādīta kases tehniskajā pasē kā integrētā informācijas sistēma.",
         "fiscalPrintedAt": "Datums un laiks kases dokumentā.",
         "fiscalHash": "Kases dokumentā izdrukātā SHA-1 kontrolsumma, pārrakstīta kā ir (nav obligāta).",
-        "subscription": "Apmaksāt šo mazgāšanu no klienta abonementa. Mazgāšana tiek norakstīta, kad pasūtījums ir Pabeigts, un atgriezta, ja tas tiek atcelts; pasūtījuma cena kļūst 0 EUR (nauda saņemta abonementa pārdošanas brīdī)."
+        "subscription": "Apmaksāt šo mazgāšanu no klienta abonementa. Mazgāšana tiek norakstīta, kad pasūtījums ir Pabeigts, un atgriezta, ja tas tiek atcelts; pasūtījuma cena kļūst 0 EUR (nauda saņemta abonementa pārdošanas brīdī).",
+        "promoCode": "Ievadiet kodu pirms pasūtījuma sākšanas. Atlaide tiek piemērota, kad pasūtījums sākas un pārbaude ir veiksmīga.",
+        "skipLoyalty": "Atzīmējiet pirms pasūtījuma pabeigšanas — atlaide tiks noņemta, cenas atgriezīsies.",
+        "redeemPoints": "Klienta punkti, ar kuriem apmaksāt daļu pasūtījuma. Tos ņem, kad pasūtījums sākas, un atgriež, ja tas tiek atcelts.",
+        "referralCode": "Drauga ieteikuma kods. Ja noteikumi atļauj, to piesaista klientam, kad pasūtījums sākas.",
+        "capacityOverride": "Vadītājs apzināti pierakstīja šo pasūtījumu, lai gan laiks vai diena bija pilna. Aizpilda serveris.",
+        "overrideCapacity": "Tikai vadītājam vai administratoram: saglabāt pierakstu pat tad, ja laiks vai diena ir pilna. Pasūtījums tiek atzīmēts un parādīts kalendārā."
     },
     "labels": {
         "emailInvoice": "Sūtīt rēķinu e-pastā",
@@ -149,7 +191,9 @@
         "Create WashOrder": "Izveidot pasūtījumu",
         "entryExit": "Foto pirms / pēc",
         "Fiscal": "Fiskālie dati",
-        "moreTab": "Papildus"
+        "moreTab": "Papildus",
+        "loyaltyTab": "Lojalitāte",
+        "Loyalty": "Lojalitāte"
     },
     "messages": {
         "emailInvoiceConfirm": "Sagatavot rēķina PDF un nosūtīt klientam e-pastā?",

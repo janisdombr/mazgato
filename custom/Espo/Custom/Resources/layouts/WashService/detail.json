@@ -28,6 +28,12 @@
             ],
             [
                 {
+                    "name": "crewSize"
+                },
+                false
+            ],
+            [
+                {
                     "name": "description"
                 },
                 false

@@ -23,6 +23,12 @@ final class ContactVault
         return $this->map;
     }
 
+    /** The visitor's own numbers back into the text they are about to read (never into the journal or a model request). */
+    public function restore(string $text): string
+    {
+        return $this->map ? strtr($text, $this->map) : $text;
+    }
+
     private function placeholderFor(string $kind, string $value): string
     {
         $found = array_search($value, $this->map, true);
